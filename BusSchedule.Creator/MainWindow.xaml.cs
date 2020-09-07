@@ -115,5 +115,11 @@ namespace BusSchedule.Creator
                 _viewModel.OnBusServiceChanged(busService.Id);
             }
         }
+
+        private void EditRoute_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new EditRouteDialog((BusService)BusServicesList.SelectedItem, _viewModel.BusStations);
+            dialog.ShowDialog();
+        }
     }
 }

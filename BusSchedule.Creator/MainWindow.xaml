@@ -8,7 +8,7 @@
         Title="MainWindow">
 
     <DockPanel Margin="8">
-        
+
 
         <Grid DockPanel.Dock="Left" MinWidth="128">
             <Grid.RowDefinitions>
@@ -31,7 +31,7 @@
                 <RowDefinition Height="64"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Kierunek:"/>
-            <ListBox Name="RoutesList" ItemsSource="{Binding Routes}" Grid.Row="1"/>
+            <ListBox Name="RoutesList" ItemsSource="{Binding RoutesForService}" Grid.Row="1"/>
             <WrapPanel Orientation="Horizontal" Grid.Row="2" Margin="8">
                 <Button Content="+" Margin="0,0" MinWidth="64" Click="AddRoute_Click"/>
                 <Button Content="-" Margin="0,0" MinWidth="64" Click="RemoveRoute_Click"/>
@@ -46,10 +46,7 @@
             </Grid.RowDefinitions>
             <TextBlock Text="Trasa:"/>
             <ListBox Name="RoutesList1" Grid.Row="1"/>
-            <WrapPanel Orientation="Horizontal" Grid.Row="2" Margin="8">
-                <Button Content="+" Margin="0,0" MinWidth="64" Click="AddBusService_Click"/>
-                <Button Content="-" Margin="0,0" MinWidth="64" Click="RemoveBusService_Click"/>
-            </WrapPanel>
+            <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="2" Click="EditRoute_Click"/>
         </Grid>
 
 

@@ -18,14 +18,16 @@ namespace BusSchedule.Creator
 
         public ObservableCollection<BusService> BusServices { get; private set; }
         public ObservableCollection<BusStation> BusStations { get; private set; }
-        public ObservableCollection<BusRoute> Routes { get; private set; }
+        public List<BusRoute> Routes { get; private set; }
+        public List<BusRoute> RoutesForService { get; private set; }
 
         public MainWindowViewModel()
         {
             _theSchedule = new ScheduleData();
             BusStations = new ObservableCollection<BusStation>();
             BusServices = new ObservableCollection<BusService>();
-            Routes = new ObservableCollection<BusRoute>();
+            Routes = new List<BusRoute>();
+            RoutesForService = new List<BusRoute>();
         }
 
         internal void Setup(string jsonData)
@@ -42,10 +44,8 @@ namespace BusSchedule.Creator
                 {
                     BusStations.Add(station);
                 }
-                foreach(var routes in _theSchedule.Routes)
-                {
-                    Routes.Add(routes);
-                }
+                Routes.AddRange(_theSchedule.Routes);
+
                 OnPropertyChanged(nameof(BusServices));
                 OnPropertyChanged(nameof(BusStations));
             }
@@ -99,7 +99,8 @@ namespace BusSchedule.Creator
 
         internal void OnBusServiceChanged(int busServiceId)
         {
-            var routesForBusService = Routes.Where(route => route.BusServiceId == busServiceId);
+            RoutesForService = Routes.Where(route => route.BusServiceId == busServiceId).ToList();
+            OnPropertyChanged(nameof(RoutesForService));
         }
 
         internal void AddRoute(BusRoute route)
