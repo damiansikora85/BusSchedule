@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Android", "BusSchedule.Android\BusSchedule.Android.csproj", "{E1E97511-BC81-454E-BE09-58CB84B463F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule", "BusSchedule\BusSchedule.csproj", "{68446F50-BC1D-487E-9B11-7D9C61192192}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule", "BusSchedule\BusSchedule.csproj", "{68446F50-BC1D-487E-9B11-7D9C61192192}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.UnitTests", "BusSchedule.UnitTests\BusSchedule.UnitTests.csproj", "{D5DF775A-3FE5-413D-928C-7B9CACD963DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.Core", "BusSchedule.Core\BusSchedule.Core.csproj", "{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Core", "BusSchedule.Core\BusSchedule.Core.csproj", "{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.UnitTests", "BusSchedule.UnitTests\BusSchedule.UnitTests.csproj", "{70DB3E14-166C-4500-8936-7CEA8601C3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Creator", "BusSchedule.Creator\BusSchedule.Creator.csproj", "{7913E5A5-AD91-4B88-A8D3-C24453058DF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +31,18 @@ Global
 		{68446F50-BC1D-487E-9B11-7D9C61192192}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68446F50-BC1D-487E-9B11-7D9C61192192}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68446F50-BC1D-487E-9B11-7D9C61192192}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{D5DF775A-3FE5-413D-928C-7B9CACD963DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5DF775A-3FE5-413D-928C-7B9CACD963DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5DF775A-3FE5-413D-928C-7B9CACD963DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5DF775A-3FE5-413D-928C-7B9CACD963DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
