@@ -31,7 +31,7 @@
                 <RowDefinition Height="64"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Kierunek:"/>
-            <ListBox Name="RoutesList" ItemsSource="{Binding RoutesForService}" Grid.Row="1"/>
+            <ListBox Name="RoutesList" ItemsSource="{Binding RoutesForService}" Grid.Row="1" SelectionChanged="RouteChanged"/>
             <WrapPanel Orientation="Horizontal" Grid.Row="2" Margin="8">
                 <Button Content="+" Margin="0,0" MinWidth="64" Click="AddRoute_Click"/>
                 <Button Content="-" Margin="0,0" MinWidth="64" Click="RemoveRoute_Click"/>
@@ -40,13 +40,26 @@
 
         <Grid DockPanel.Dock="Left" MinWidth="128">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="24"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="64"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="32"/>
             </Grid.RowDefinitions>
             <TextBlock Text="Trasa:"/>
-            <ListBox Name="RoutesList1" Grid.Row="1"/>
+            <ListBox Name="RouteDetailsList" ItemsSource="{Binding RouteDetailsForRoute}" Grid.Row="1"/>
             <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="2" Click="EditRoute_Click"/>
+
+            <TextBlock Text="Czas rozpoczęcia:" Grid.Row="3"/>
+            <ComboBox x:Name="scheduleDaysSwitch" SelectedIndex="0" Grid.Row="4" SelectionChanged="ScheduleDaysChanged">
+                <ComboBoxItem>Dni powszednie</ComboBoxItem>
+                <ComboBoxItem>Sobota</ComboBoxItem>
+                <ComboBoxItem>Niedziele i święta</ComboBoxItem>
+            </ComboBox>
+            <ListBox Name="BeginTimesList" ItemsSource="{Binding BeginTimesForRoute}" Grid.Row="5" />
+            <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="6" Click="EditBeginTime_Click" />
         </Grid>
 
 

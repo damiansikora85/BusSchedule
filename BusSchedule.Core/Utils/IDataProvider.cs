@@ -2,12 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusSchedule.Core.Utils
 {
     public interface IDataProvider
     {
-        IList<BusService> GetBusServices();
-        IList<BusRoute> GetBusRoutes(int busServiceId);
+        Task<List<BusService>> GetBusServices();
+        Task<List<BusRoute>> GetBusRoutes(int busServiceId);
+        Task UpdateAsync(ScheduleData schedule);
     }
 }

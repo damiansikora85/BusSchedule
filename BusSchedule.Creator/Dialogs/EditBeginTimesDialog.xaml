@@ -1,27 +1,23 @@
-﻿<Window x:Class="BusSchedule.Creator.Dialogs.EditRouteDialog"
+﻿<Window x:Class="BusSchedule.Creator.Dialogs.EditBeginTimesDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusSchedule.Creator.Dialogs"
         mc:Ignorable="d"
-        Title="Edycja trasy" Height="600" Width="450">
+        Title="Czas rozpoczęcia trasy" Height="450" Width="800">
     <Grid Margin="8">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="24"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="32"/>
-            <RowDefinition Height="32"/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="StationsList" ItemsSource="{Binding Stations}" Height="24" VerticalAlignment="Top"/>
-        <TextBox x:Name="TimeDiff" Grid.Column="1" Height="24" VerticalAlignment="Top" Margin="4"/>
-        <ListBox Grid.Column="2" ItemsSource="{Binding Route}"/>
-        <Button Content="Dodaj" Grid.Row="1" Grid.Column="2" Click="Add_Click" Height="24"/>
-        <Button Grid.ColumnSpan="3" Grid.Row="2" Content="Zapisz" Height="24" Width="64" Click="Save_Click"/>
+        <TextBox x:Name="time" KeyDown="time_KeyDown" Height="24" Text="{Binding Path=Time, Mode=TwoWay}" />
+        <ListBox ItemsSource="{Binding Times}" Grid.Column="1"/>
+        <Button Grid.ColumnSpan="2" Grid.Row="2" Content="Zapisz" Height="24" Width="64" Click="Save_Click"/>
     </Grid>
 </Window>

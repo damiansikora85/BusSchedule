@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Core.Model;
+using BusSchedule.Creator.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,13 +24,43 @@ namespace BusSchedule.Creator.Dialogs
     {
         public BusService BusService { get; }
         public ObservableCollection<BusStation> BusStations { get; }
+        public ObservableCollection<RouteStationViewModel> Route { get; }
 
-        public EditRouteDialog(BusService busService, ObservableCollection<BusStation> busStations)
+        private int _routeId;
+
+        public EditRouteDialog(int routeId, BusService busService, ObservableCollection<BusStation> busStations)
         {
+            _routeId = routeId;
             InitializeComponent();
             BusService = busService;
             BusStations = busStations;
             StationsList.ItemsSource = BusStations;
+            Route = new ObservableCollection<RouteStationViewModel>();
+            DataContext = this;
+        }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            if(StationsList.SelectedItem != null && StationsList.SelectedItem is BusStation station)
+            {
+                Route.Add(new RouteStationViewModel
+                {
+                    RouteId = _routeId,
+                    BusStation = station,
+                    TimeDiff = int.Parse(TimeDiff.Text),
+                    OrderNum = Route.Count
+                });
+            }
+        }
+
+        public List<RouteStationViewModel> GetResult()
+        {
+            return Route.ToList();
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

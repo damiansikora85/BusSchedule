@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style x:Key="BgBlue" TargetType="View">
+                <Setter Property="BackgroundColor" Value="#237194"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

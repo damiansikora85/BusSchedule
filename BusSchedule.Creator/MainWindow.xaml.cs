@@ -1,5 +1,6 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Creator.Dialogs;
+using BusSchedule.Creator.Model;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -118,8 +119,71 @@ namespace BusSchedule.Creator
 
         private void EditRoute_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new EditRouteDialog((BusService)BusServicesList.SelectedItem, _viewModel.BusStations);
+            var dialog = new EditRouteDialog(((BusRoute)RoutesList.SelectedItem).Id, (BusService)BusServicesList.SelectedItem, _viewModel.BusStations);
             dialog.ShowDialog();
+            var result = dialog.GetResult();
+            _viewModel.AddRouteDetails(result);
+        }
+
+        private void RouteChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
+            {
+                _viewModel.OnRouteChanged(route, GetSelectedScheduleDays());
+            }
+        }
+
+        private void EditBeginTime_Click(object sender, RoutedEventArgs e)
+        {
+            if (RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
+            {
+                var dialog = new EditBeginTimesDialog();
+                dialog.ShowDialog();
+                var result = dialog.GetResult();
+                var scheduleDays = GetSelectedScheduleDays();
+                foreach (var time in result)
+                {
+                    time.Days = scheduleDays;
+                    time.RouteId = route.Id;
+                }
+                _viewModel.AddRouteBeginTimes(result);
+            }
+        }
+
+        private RouteBeginTime.ScheduleDays GetSelectedScheduleDays()
+        {
+            switch(scheduleDaysSwitch.SelectedIndex)
+            {
+                case 0:
+                    return RouteBeginTime.ScheduleDays.WorkingDays;
+                case 1:
+                    return RouteBeginTime.ScheduleDays.Saturday;
+                case 2:
+                    return RouteBeginTime.ScheduleDays.SundayAndHolidays;
+                default:
+                    return RouteBeginTime.ScheduleDays.WorkingDays;
+            }
+        }
+
+        private void ScheduleDaysChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
+            {
+                RouteBeginTime.ScheduleDays sd = RouteBeginTime.ScheduleDays.WorkingDays;
+                switch (scheduleDaysSwitch.SelectedIndex)
+                {
+                    case 0:
+                        sd = RouteBeginTime.ScheduleDays.WorkingDays;
+                        break;
+                    case 1:
+                        sd = RouteBeginTime.ScheduleDays.Saturday;
+                        break;
+                    case 2:
+                        sd = RouteBeginTime.ScheduleDays.SundayAndHolidays;
+                        break;
+                }
+                _viewModel.OnScheduleDaysChanged(route.Id, sd);
+            }
         }
     }
 }

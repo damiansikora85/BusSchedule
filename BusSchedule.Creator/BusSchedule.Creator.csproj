@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\EditBeginTimesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\EditRouteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,6 +97,9 @@
     <Compile Include="Dialogs\AddRouteDialog.xaml.cs">
       <DependentUpon>AddRouteDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\EditBeginTimesDialog.xaml.cs">
+      <DependentUpon>EditBeginTimesDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\EditRouteDialog.xaml.cs">
       <DependentUpon>EditRouteDialog.xaml</DependentUpon>
     </Compile>
@@ -103,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\RouteStationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
