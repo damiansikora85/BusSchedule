@@ -12,6 +12,10 @@ namespace BusSchedule.Components.ViewModels
 {
     public class BusServiceViewModel
     {
+        public string Name => _busService.Name;
+        public Action<BusService> OnClick;
+        private BusService _busService;
+
         public ICommand TapCommand
         {
             get
@@ -22,21 +26,6 @@ namespace BusSchedule.Components.ViewModels
                 });
             }
         }
-
-        //public ICommand TapCommand
-        //{
-        //    get
-        //    {
-        //        return new Command<BusService>((busService) =>
-        //        {
-        //            OnClick?.Invoke(busService);
-        //        });
-        //    }
-        //}
-
-        public string Name => _busService.Name;
-        public Action<BusService> OnClick;
-        private BusService _busService;
 
         public BusServiceViewModel(BusService busService)
         {

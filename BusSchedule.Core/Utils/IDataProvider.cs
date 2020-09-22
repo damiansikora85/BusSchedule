@@ -11,5 +11,6 @@ namespace BusSchedule.Core.Utils
         Task<List<BusService>> GetBusServices();
         Task<List<BusRoute>> GetBusRoutes(int busServiceId);
         Task UpdateAsync(ScheduleData schedule);
+        Task<List<BusStation>> GetStationsForRoute(BusRoute route);
     }
 }

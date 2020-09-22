@@ -3,6 +3,7 @@ using BusSchedule.Core.Utils;
 using BusSchedule.Providers;
 using BusSchedule.Tools;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -17,9 +18,9 @@ namespace BusSchedule.Pages.ViewModels
         private IDataProvider _dataProvider;
         public List<BusService> BusServices { get; private set; }
 
-        public BusServicesPageViewModel()
+        public BusServicesPageViewModel(IDataProvider dataProvider)
         {
-            _dataProvider = TinyIoCContainer.Current.Resolve<IDataProvider>();
+            _dataProvider = dataProvider;
             UpdateData();
         }
 
@@ -31,6 +32,11 @@ namespace BusSchedule.Pages.ViewModels
         internal async Task RefreshBusServicesAsync()
         {
             BusServices = await _dataProvider.GetBusServices();
+        }
+
+        internal Task<List<BusRoute>> GetRoutesForServiceAsync(BusService busService)
+        {
+            return _dataProvider.GetBusRoutes(busService.Id);
         }
     }
 }

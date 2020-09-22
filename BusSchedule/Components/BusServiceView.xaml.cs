@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Components.ViewModels;
+using BusSchedule.Core.Model;
 using BusSchedule.Providers;
 using BusSchedule.Tools;
 using System;
@@ -15,12 +16,19 @@ namespace BusSchedule.Components
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BusServiceView : ContentView
     {
+        public Action<BusService> OnServiceClicked;
         private BusServiceViewModel _viewModel;
-        public BusServiceView(Core.Model.BusService busService)
+        public BusServiceView(BusService busService)
         {
             InitializeComponent();
             _viewModel = new BusServiceViewModel(busService);
+            _viewModel.OnClick += OnClick;
             BindingContext = _viewModel;
+        }
+
+        private void OnClick(BusService busService)
+        {
+            OnServiceClicked?.Invoke(busService);
         }
     }
 }
