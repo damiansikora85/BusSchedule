@@ -48,7 +48,7 @@ namespace BusSchedule.Pages
             var dialog = new RouteSelectionDialog(routes);
             await PopupNavigation.Instance.PushAsync(dialog);
             var route = await dialog.WaitForResult();
-            await Navigation.PushAsync(new RoutePage(route));
+            await Navigation.PushAsync(new RoutePage(busService, route));
         }
     }
 }

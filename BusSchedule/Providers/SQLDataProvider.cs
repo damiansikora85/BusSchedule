@@ -35,8 +35,8 @@ namespace BusSchedule.Providers
 
         public async Task<List<BusStation>> GetStationsForRoute(BusRoute route)
         {
-            var connection = await GetDatabaseConnectionAsync<BusStation>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<BusStation>("Select * From BusStation WHERE Id = (SELECT BusStopId FROM BusRouteDetails WHERE BusRouteId = ?)", route.Id));
+            var connection = await GetDatabaseConnectionAsync<BusStation, BusRouteDetails>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<BusStation>("Select * From BusStation WHERE Id IN (SELECT BusStopId FROM BusRouteDetails WHERE BusRouteId = ?)", route.Id));
         }
 
         public async Task UpdateAsync(ScheduleData schedule)
@@ -61,6 +61,17 @@ namespace BusSchedule.Providers
             {
                 await _connection.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
                 await _connection.CreateTablesAsync(CreateFlags.None, typeof(T)).ConfigureAwait(false);
+            }
+
+            return _connection;
+        }
+
+        protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T,U>()
+        {
+            if (!(_connection.TableMappings.Any(x => x.MappedType == typeof(T)) && _connection.TableMappings.Any(t => t.MappedType == typeof(U))))
+            {
+                await _connection.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
+                await _connection.CreateTablesAsync(CreateFlags.None, new Type[] { typeof(T), typeof(U) }).ConfigureAwait(false);
             }
 
             return _connection;
