@@ -33,7 +33,7 @@ namespace BusSchedule.Pages
         private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if(e.SelectedItem is BusStation station)
-            await Navigation.PushAsync(new TimetablePage(station));
+            await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route));
         }
     }
 }

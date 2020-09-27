@@ -39,20 +39,40 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.QueryAsync<BusStation>("Select * From BusStation WHERE Id IN (SELECT BusStopId FROM BusRouteDetails WHERE BusRouteId = ?)", route.Id));
         }
 
+        public async Task<List<BusRouteDetails>> GetStationsDetailsForRoute(BusRoute route)
+        {
+            var connection = await GetDatabaseConnectionAsync<BusRouteDetails>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<BusRouteDetails>().Where(station => station.BusRouteId == route.Id).ToListAsync()).ConfigureAwait(false);
+        }
+
+        public async Task<List<RouteBeginTime>> GetRouteBeginTimes(BusRoute route)
+        {
+            var connection = await GetDatabaseConnectionAsync<RouteBeginTime>().ConfigureAwait(false);
+            //var t = await connection.QueryAsync<List<RouteBeginTime>>("Select * From RoutesBeginTimes");
+            return await AttemptAndRetry(() => connection.Table<RouteBeginTime>().Where(time => time.RouteId == route.Id).ToListAsync()).ConfigureAwait(false);
+        }
+
         public async Task UpdateAsync(ScheduleData schedule)
         {
-            var connection = await GetDatabaseConnectionAsync<BusService>().ConfigureAwait(false);
-            await AttemptAndRetry(() => connection.DeleteAllAsync<BusService>()).ConfigureAwait(false);
-            await AttemptAndRetry(() => connection.InsertAllAsync(schedule.BusServices)).ConfigureAwait(false);
+            await UpdateTableAsync(schedule.BusServices);
+            await UpdateTableAsync(schedule.Routes);
+            await UpdateTableAsync(schedule.BusStations);
+            await UpdateTableAsync(schedule.RoutesBeginTimes);
+            await UpdateTableAsync(schedule.RoutesDetails);
+        }
 
-            await AttemptAndRetry(() => connection.DeleteAllAsync<BusRoute>()).ConfigureAwait(false);
-            await AttemptAndRetry(() => connection.InsertAllAsync(schedule.Routes)).ConfigureAwait(false);
-
-            await AttemptAndRetry(() => connection.DeleteAllAsync<BusStation>()).ConfigureAwait(false);
-            await AttemptAndRetry(() => connection.InsertAllAsync(schedule.BusStations)).ConfigureAwait(false);
-
-            await AttemptAndRetry(() => connection.DeleteAllAsync<BusRouteDetails>()).ConfigureAwait(false);
-            await AttemptAndRetry(() => connection.InsertAllAsync(schedule.RoutesDetails)).ConfigureAwait(false);
+        private async Task UpdateTableAsync<T>(IList<T> data)
+        {
+            try
+            {
+                var connection = await GetDatabaseConnectionAsync<T>().ConfigureAwait(false);
+                await AttemptAndRetry(() => connection.DeleteAllAsync<T>()).ConfigureAwait(false);
+                await AttemptAndRetry(() => connection.InsertAllAsync(data)).ConfigureAwait(false);
+            }
+            catch(SQLiteException exc)
+            {
+                var msg = exc.Message;
+            }
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()

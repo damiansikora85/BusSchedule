@@ -4,9 +4,7 @@
              x:Class="BusSchedule.Pages.TimetablePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding Times}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
