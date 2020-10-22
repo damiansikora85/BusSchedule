@@ -24,9 +24,9 @@ namespace BusSchedule.Creator.Dialogs
         public ObservableCollection<TimeSpan> Times { get; set; }
         public string Time { get; set; }
 
-        public EditBeginTimesDialog()
+        public EditBeginTimesDialog(IEnumerable<TimeSpan> times)
         {
-            Times = new ObservableCollection<TimeSpan>();
+            Times = new ObservableCollection<TimeSpan>(times);
             InitializeComponent();
             DataContext = this;
         }
@@ -39,6 +39,14 @@ namespace BusSchedule.Creator.Dialogs
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(list.SelectedItem != null)
+            {
+                Times.Remove((TimeSpan)list.SelectedItem);
+            }
         }
 
         private void time_KeyDown(object sender, KeyEventArgs e)

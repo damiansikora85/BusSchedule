@@ -12,6 +12,7 @@ namespace BusSchedule.Core.Model
         public List<BusRoute> Routes { get; set; } = new List<BusRoute>();
         public List<BusRouteDetails> RoutesDetails { get; set; } = new List<BusRouteDetails>();
         public List<RouteBeginTime> RoutesBeginTimes { get; set; } = new List<RouteBeginTime>();
+        public List<StationTimeAdjustment> TimeAdjustments { get; set; } = new List<StationTimeAdjustment>();
 
         public ScheduleData()
         {

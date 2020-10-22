@@ -16,6 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Content="Linia:" VerticalContentAlignment="Center"/>
         <Label x:Name="serviceName" Content="" Grid.Column="1" VerticalContentAlignment="Center"/>
@@ -26,6 +27,9 @@
         <Label Content="Przystanek końcowy" Grid.Row="2" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="endStationList" Grid.Row="2" Grid.Column="1" IsTextSearchEnabled="True" ItemsSource="{Binding Stations}" Height="24"/>
 
-        <Button Content="Zapisz" Grid.ColumnSpan="2" Grid.Row="3" Click="Save_Click" Height="64" />
+        <Label Content="Liczba wariantów trasy" Grid.Row="3" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="VariantsNum" Height="24" Grid.Row="3" Grid.Column="1"/>
+
+        <Button Content="Zapisz" Grid.ColumnSpan="2" Grid.Row="4" Click="Save_Click" Height="64" />
     </Grid>
 </Window>

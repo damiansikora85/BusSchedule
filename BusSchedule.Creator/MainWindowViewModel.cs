@@ -21,10 +21,13 @@ namespace BusSchedule.Creator
         public ObservableCollection<BusStation> BusStations { get; private set; }
         public List<BusRoute> Routes { get; private set; }
         public List<BusRoute> RoutesForService { get; private set; }
+        public List<int> RouteVariants { get; private set; }
         public List<RouteStationViewModel> RouteDetails { get; private set; }
         public List<RouteStationViewModel> RouteDetailsForRoute { get; private set; }
         public List<RouteBeginTime> RouteBeginTimes { get; private set; }
         public List<RouteBeginTime> BeginTimesForRoute { get; private set; }
+        public List<TimeAdjustmentViewModel> TimeAdjustments { get; private set; }
+        public List<TimeAdjustmentViewModel> TimeAdjustmentsForSelection { get; private set; }
 
         public MainWindowViewModel()
         {
@@ -33,8 +36,10 @@ namespace BusSchedule.Creator
             BusServices = new ObservableCollection<BusService>();
             Routes = new List<BusRoute>();
             RoutesForService = new List<BusRoute>();
+            RouteVariants = new List<int>();
             RouteDetails = new List<RouteStationViewModel>();
             RouteBeginTimes = new List<RouteBeginTime>();
+            TimeAdjustments = new List<TimeAdjustmentViewModel>();
         }
 
         internal void Setup(string jsonData)
@@ -57,10 +62,13 @@ namespace BusSchedule.Creator
                 Routes.AddRange(_theSchedule.Routes);
 
                 RouteDetails.Clear();
-                RouteDetails.AddRange(_theSchedule.RoutesDetails.Select(rd => new RouteStationViewModel { RouteId = rd.BusRouteId, BusStation = BusStations.FirstOrDefault(BusStopSchedule => BusStopSchedule.Id == rd.BusStopId), OrderNum = rd.OrderNum, TimeDiff = rd.TimeDiff }));
+                RouteDetails.AddRange(_theSchedule.RoutesDetails.Select(rd => new RouteStationViewModel { RouteId = rd.BusRouteId, BusStation = BusStations.FirstOrDefault(BusStopSchedule => BusStopSchedule.Id == rd.BusStopId), OrderNum = rd.OrderNum, TimeDiff = rd.TimeDiff, RouteVariantId = rd.RouteVariant }));
 
                 RouteBeginTimes.Clear();
                 RouteBeginTimes.AddRange(_theSchedule.RoutesBeginTimes);
+
+                TimeAdjustments.Clear();
+                TimeAdjustments.AddRange(_theSchedule.TimeAdjustments.Select(adj => new TimeAdjustmentViewModel(RouteBeginTimes.First(rbt => rbt.RouteId == adj.RouteId && rbt.RouteVariant == adj.RouteVariantId && rbt.Id == adj.BeginTimeId && rbt.Days == adj.Days), TimeSpan.FromMinutes(adj.TimeAdjustmentMin), adj.StationId)));
 
                 OnPropertyChanged(nameof(BusServices));
                 OnPropertyChanged(nameof(BusStations));
@@ -79,12 +87,21 @@ namespace BusSchedule.Creator
             schedule.Routes.AddRange(Routes);
             schedule.RoutesDetails.AddRange(GetRoutesDetails(RouteDetails));
             schedule.RoutesBeginTimes.AddRange(RouteBeginTimes);
+            schedule.TimeAdjustments.AddRange(TimeAdjustments.Select(item => new StationTimeAdjustment
+                {
+                    BeginTimeId = item.RouteBeginTime.Id,
+                    RouteId = item.RouteBeginTime.RouteId,
+                    RouteVariantId = item.RouteBeginTime.RouteVariant,
+                    StationId = item.StationId,
+                    TimeAdjustmentMin = (int)item.TimeAdjustment.TotalMinutes,
+                    Days = item.RouteBeginTime.Days
+                }));
             return JsonConvert.SerializeObject(schedule);
         }
 
         private IEnumerable<BusRouteDetails> GetRoutesDetails(List<RouteStationViewModel> routeDetails)
         {
-            return routeDetails.Select(rd => new BusRouteDetails { BusRouteId = rd.RouteId, BusStopId = rd.BusStation.Id, TimeDiff = rd.TimeDiff, OrderNum = rd.OrderNum });
+            return routeDetails.Select(rd => new BusRouteDetails { BusRouteId = rd.RouteId, BusStopId = rd.BusStation.Id, TimeDiff = rd.TimeDiff, OrderNum = rd.OrderNum, RouteVariant = rd.RouteVariantId });
         }
 
         internal void AddBusService(string name, int id)
@@ -133,32 +150,62 @@ namespace BusSchedule.Creator
             OnPropertyChanged(nameof(Routes));
         }
 
-        internal void OnRouteChanged(BusRoute selectedRoute, RouteBeginTime.ScheduleDays scheduleDays)
+        internal void OnRouteChanged(BusRoute selectedRoute, RouteBeginTime.ScheduleDays scheduleDays, int routeVariant)
         {
-            RouteDetailsForRoute = RouteDetails.Where(route => route.RouteId == selectedRoute.Id).ToList();
-            BeginTimesForRoute = RouteBeginTimes.Where(beginTime => beginTime.RouteId == selectedRoute.Id && beginTime.Days == scheduleDays).ToList();
+            RouteDetailsForRoute = RouteDetails.Where(route => route.RouteId == selectedRoute.Id && route.RouteVariantId == routeVariant).ToList();
+            BeginTimesForRoute = RouteBeginTimes.Where(beginTime => beginTime.RouteId == selectedRoute.Id && beginTime.Days == scheduleDays && beginTime.RouteVariant == routeVariant).OrderBy(beginTime => beginTime.Time).ToList();
+            RouteVariants = Enumerable.Range(0, selectedRoute.VariantsNum).ToList();
+
             OnPropertyChanged(nameof(RouteDetailsForRoute));
             OnPropertyChanged(nameof(BeginTimesForRoute));
+            OnPropertyChanged(nameof(RouteVariants));
         }
 
         internal void AddRouteDetails(List<RouteStationViewModel> routeDetails)
         {
+            RouteDetails.RemoveAll(item => item.RouteId == routeDetails[0].RouteId && item.RouteVariantId == routeDetails[0].RouteVariantId);
             RouteDetails.AddRange(routeDetails);
             RouteDetailsForRoute = routeDetails;
             OnPropertyChanged(nameof(RouteDetailsForRoute));
         }
 
+        internal TimeSpan GetTimeShiftForStation(BusRoute route, RouteStationViewModel routeStationView)
+        {
+            var timespan = TimeSpan.Zero;
+            foreach (var station in RouteDetailsForRoute)
+            {
+                timespan += TimeSpan.FromMinutes(station.TimeDiff);
+                if (station.BusStation.Id == routeStationView.BusStation.Id)
+                {
+                    break;
+                }
+            }
+
+            return timespan;
+        }
+
+        internal void UpdateTimeAdjustments(IEnumerable<TimeAdjustmentViewModel> timeAdjustments)
+        {
+            var first = timeAdjustments.First();
+            TimeAdjustments.RemoveAll(item => item.RouteBeginTime.RouteId == first.RouteBeginTime.RouteId && item.RouteBeginTime.Id == first.RouteBeginTime.Id && item.RouteBeginTime.RouteVariant == first.RouteBeginTime.RouteVariant && item.StationId == first.StationId);
+            TimeAdjustments.AddRange(timeAdjustments);
+            TimeAdjustmentsForSelection = timeAdjustments.ToList();
+            OnPropertyChanged(nameof(TimeAdjustmentsForSelection));
+        }
+
         internal void AddRouteBeginTimes(IEnumerable<RouteBeginTime> beginTimes)
         {
+            var first = beginTimes.First();
+            RouteBeginTimes.RemoveAll(item => item.RouteId == first.RouteId && item.RouteVariant == first.RouteVariant && item.Days == first.Days);
             RouteBeginTimes.AddRange(beginTimes);
             BeginTimesForRoute = beginTimes.ToList();
             OnPropertyChanged(nameof(BeginTimesForRoute));
         }
 
-        internal void OnScheduleDaysChanged(int routeId, RouteBeginTime.ScheduleDays scheduleDays)
+        internal void OnRouteStationChanged(BusRoute route, int routeVariant, RouteBeginTime.ScheduleDays scheduleDays, RouteStationViewModel stationViewModel)
         {
-            BeginTimesForRoute = RouteBeginTimes.Where(beginTime => beginTime.RouteId == routeId && beginTime.Days == scheduleDays).ToList();
-            OnPropertyChanged(nameof(BeginTimesForRoute));
+            TimeAdjustmentsForSelection = TimeAdjustments.Where(item => item.RouteBeginTime.RouteId == route.Id && item.RouteBeginTime.RouteVariant == routeVariant && item.RouteBeginTime.Days == scheduleDays && item.StationId == stationViewModel.BusStation.Id).ToList();
+            OnPropertyChanged(nameof(TimeAdjustmentsForSelection));
         }
     }
 }

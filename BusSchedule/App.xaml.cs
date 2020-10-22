@@ -5,6 +5,10 @@ using System;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+
 
 namespace BusSchedule
 {
@@ -25,6 +29,8 @@ namespace BusSchedule
 
         protected override void OnStart()
         {
+            AppCenter.Start("android=fc2cc03c-f502-42d6-b5ed-8373e82d03c2;",
+                  typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()

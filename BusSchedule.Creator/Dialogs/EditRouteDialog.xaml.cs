@@ -27,15 +27,21 @@ namespace BusSchedule.Creator.Dialogs
         public ObservableCollection<RouteStationViewModel> Route { get; }
 
         private int _routeId;
+        private int _routeVariant;
 
-        public EditRouteDialog(int routeId, BusService busService, ObservableCollection<BusStation> busStations)
+        public EditRouteDialog(int routeId, BusService busService, ObservableCollection<BusStation> busStations, List<RouteStationViewModel> routeDetailsForRoute, int routeVariant)
         {
             _routeId = routeId;
+            _routeVariant = routeVariant;
             InitializeComponent();
             BusService = busService;
             BusStations = busStations;
             StationsList.ItemsSource = BusStations;
             Route = new ObservableCollection<RouteStationViewModel>();
+            foreach(var rd in routeDetailsForRoute)
+            {
+                Route.Add(rd);
+            }
             DataContext = this;
         }
 
@@ -48,8 +54,17 @@ namespace BusSchedule.Creator.Dialogs
                     RouteId = _routeId,
                     BusStation = station,
                     TimeDiff = int.Parse(TimeDiff.Text),
-                    OrderNum = Route.Count
+                    OrderNum = Route.Count,
+                    RouteVariantId = _routeVariant
                 });
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            if(RouteStations.SelectedItem != null && RouteStations.SelectedItem is RouteStationViewModel routeStationView)
+            {
+                Route.Remove(routeStationView);
             }
         }
 

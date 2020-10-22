@@ -37,10 +37,6 @@ namespace BusSchedule.Core.UseCase
             throw new NotImplementedException();
         }
 
-        public BusStopSchedule GetScheduleForBusStop(int busRouteId, int busStopId)
-        {
-            throw new NotImplementedException();
-        }
 
         public BusRouteDetails GetRouteDetails(int busRouteId)
         {

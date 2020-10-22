@@ -10,5 +10,6 @@ namespace BusSchedule.Core.Model
         public int BusStopId { get; set; }
         public int TimeDiff { get; set; }
         public int OrderNum { get; set; }
+        public int RouteVariant { get; set; }
     }
 }

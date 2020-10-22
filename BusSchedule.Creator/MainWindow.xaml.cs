@@ -119,7 +119,7 @@ namespace BusSchedule.Creator
 
         private void EditRoute_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new EditRouteDialog(((BusRoute)RoutesList.SelectedItem).Id, (BusService)BusServicesList.SelectedItem, _viewModel.BusStations);
+            var dialog = new EditRouteDialog(((BusRoute)RoutesList.SelectedItem).Id, (BusService)BusServicesList.SelectedItem, _viewModel.BusStations, _viewModel.RouteDetailsForRoute, RouteVariants.SelectedIndex);
             dialog.ShowDialog();
             var result = dialog.GetResult();
             _viewModel.AddRouteDetails(result);
@@ -129,7 +129,16 @@ namespace BusSchedule.Creator
         {
             if(RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
             {
-                _viewModel.OnRouteChanged(route, GetSelectedScheduleDays());
+                _viewModel.OnRouteChanged(route, GetSelectedScheduleDays(), 0);
+                RouteVariants.SelectedIndex = 0;
+            }
+        }
+
+        private void RouteVariants_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
+            {
+                _viewModel.OnRouteChanged(route, GetSelectedScheduleDays(), RouteVariants.SelectedIndex);
             }
         }
 
@@ -137,16 +146,45 @@ namespace BusSchedule.Creator
         {
             if (RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route)
             {
-                var dialog = new EditBeginTimesDialog();
-                dialog.ShowDialog();
+                var dialog = new EditBeginTimesDialog(_viewModel.BeginTimesForRoute.Select(item => item.Time));
+                try
+                {
+                    dialog.ShowDialog();
+                }
+                catch(Exception exc)
+                {
+                    var msg = exc.Message;
+                }
                 var result = dialog.GetResult();
                 var scheduleDays = GetSelectedScheduleDays();
+                var id = 0;
                 foreach (var time in result)
                 {
+                    time.Id = id++;
                     time.Days = scheduleDays;
                     time.RouteId = route.Id;
+                    time.RouteVariant = RouteVariants.SelectedIndex;
                 }
-                _viewModel.AddRouteBeginTimes(result);
+                if (result.Count() > 0)
+                {
+                    _viewModel.AddRouteBeginTimes(result);
+                }
+            }
+        }
+
+        private void AdjustTime_Click(object sender, RoutedEventArgs e)
+        {
+            if(RouteDetailsList.SelectedItem is RouteStationViewModel routeStationView)
+            {
+                //var route = RoutesList.SelectedItem as BusRoute;
+                var defaultTimeShift = _viewModel.GetTimeShiftForStation(RoutesList.SelectedItem as BusRoute, routeStationView);
+                var dialog = new TimeAdjustmentWindow(defaultTimeShift, routeStationView, _viewModel.BeginTimesForRoute);
+                dialog.ShowDialog();
+                var result = dialog.GetResult();
+                if (result.Count() > 0)
+                {
+                    _viewModel.UpdateTimeAdjustments(result);
+                }
             }
         }
 
@@ -182,7 +220,15 @@ namespace BusSchedule.Creator
                         sd = RouteBeginTime.ScheduleDays.SundayAndHolidays;
                         break;
                 }
-                _viewModel.OnScheduleDaysChanged(route.Id, sd);
+                _viewModel.OnRouteChanged(route, sd, RouteVariants.SelectedIndex);
+            }
+        }
+
+        private void RouteStationsSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (RoutesList.SelectedItem != null && RoutesList.SelectedItem is BusRoute route && RouteDetailsList.SelectedItem is RouteStationViewModel stationViewModel)
+            {
+                _viewModel.OnRouteStationChanged(route, RouteVariants.SelectedIndex, GetSelectedScheduleDays(), stationViewModel);
             }
         }
     }

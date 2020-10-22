@@ -80,6 +80,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\TimeAdjustmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -103,6 +107,9 @@
     <Compile Include="Dialogs\EditRouteDialog.xaml.cs">
       <DependentUpon>EditRouteDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\TimeAdjustmentWindow.xaml.cs">
+      <DependentUpon>TimeAdjustmentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -111,6 +118,7 @@
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Model\RouteStationViewModel.cs" />
+    <Compile Include="Model\TimeAdjustmentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

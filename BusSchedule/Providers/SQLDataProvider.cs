@@ -39,17 +39,33 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.QueryAsync<BusStation>("Select * From BusStation WHERE Id IN (SELECT BusStopId FROM BusRouteDetails WHERE BusRouteId = ?)", route.Id));
         }
 
-        public async Task<List<BusRouteDetails>> GetStationsDetailsForRoute(BusRoute route)
+        public async Task<List<BusRouteDetails>> GetStationsDetailsForRouteVariant(BusRoute route, int routeVariant)
         {
             var connection = await GetDatabaseConnectionAsync<BusRouteDetails>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<BusRouteDetails>().Where(station => station.BusRouteId == route.Id).ToListAsync()).ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<BusRouteDetails>().Where(station => station.BusRouteId == route.Id && station.RouteVariant == routeVariant).ToListAsync()).ConfigureAwait(false);
         }
 
         public async Task<List<RouteBeginTime>> GetRouteBeginTimes(BusRoute route)
         {
             var connection = await GetDatabaseConnectionAsync<RouteBeginTime>().ConfigureAwait(false);
-            //var t = await connection.QueryAsync<List<RouteBeginTime>>("Select * From RoutesBeginTimes");
             return await AttemptAndRetry(() => connection.Table<RouteBeginTime>().Where(time => time.RouteId == route.Id).ToListAsync()).ConfigureAwait(false);
+        }
+
+        public async Task<List<BusRouteDetails>> GetStationDetailsForRoute(BusRoute route, BusStation station)
+        {
+            var connection = await GetDatabaseConnectionAsync<BusRouteDetails>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<BusRouteDetails>("Select * From BusRouteDetails Where BusRouteId = ? And BusStopId = ?", route.Id, station.Id)).ConfigureAwait(false);
+        }
+
+        public async Task<List<StationTimeAdjustment>> GetTimeAdjustmentForRoute(int routeId)
+        {
+            var connection = await GetDatabaseConnectionAsync<StationTimeAdjustment>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<StationTimeAdjustment>("Select * From StationTimeAdjustment Where RouteId = ?", routeId));
+        }
+
+        public Task<List<BusStation>> GetBusRoutes(List<BusRouteDetails> stationsDetails)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdateAsync(ScheduleData schedule)
@@ -59,6 +75,7 @@ namespace BusSchedule.Providers
             await UpdateTableAsync(schedule.BusStations);
             await UpdateTableAsync(schedule.RoutesBeginTimes);
             await UpdateTableAsync(schedule.RoutesDetails);
+            await UpdateTableAsync(schedule.TimeAdjustments);
         }
 
         private async Task UpdateTableAsync<T>(IList<T> data)

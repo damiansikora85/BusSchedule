@@ -4,7 +4,34 @@
              x:Class="BusSchedule.Pages.TimetablePage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Times}"/>
+            <!--<ListView ItemsSource="{Binding Times}"/>-->
+            <Label Text="Dnie robocze:"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableWorkingDays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+            <Label Text="Soboty:"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableSaturdays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+
+            <Label Text="Niedziele i święta:"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableHolidays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding .}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+            <ListView ItemsSource="{Binding RouteDetails}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

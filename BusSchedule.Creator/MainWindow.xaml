@@ -41,6 +41,8 @@
         <Grid DockPanel.Dock="Left" MinWidth="128">
             <Grid.RowDefinitions>
                 <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
+                <RowDefinition Height="24"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="32"/>
                 <RowDefinition Height="24"/>
@@ -48,25 +50,39 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="32"/>
             </Grid.RowDefinitions>
-            <TextBlock Text="Trasa:"/>
-            <ListBox Name="RouteDetailsList" ItemsSource="{Binding RouteDetailsForRoute}" Grid.Row="1"/>
-            <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="2" Click="EditRoute_Click"/>
+            <Label Content="Warianty trasy:"/>
+            <ComboBox x:Name="RouteVariants" ItemsSource="{Binding RouteVariants}" Grid.Row="1" SelectionChanged="RouteVariants_SelectionChanged"/>
 
-            <TextBlock Text="Czas rozpoczęcia:" Grid.Row="3"/>
-            <ComboBox x:Name="scheduleDaysSwitch" SelectedIndex="0" Grid.Row="4" SelectionChanged="ScheduleDaysChanged">
+            <TextBlock Text="Trasa:" Grid.Row="2"/>
+            <ListBox Name="RouteDetailsList" ItemsSource="{Binding RouteDetailsForRoute}" Grid.Row="3" SelectionChanged="RouteStationsSelectionChanged"/>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+                <Button Content="Edycja" Margin="0,0" MinWidth="64" Click="EditRoute_Click"/>
+                <Button Content="Dostosuj czas" Margin="0,0" MinWidth="64" Click="AdjustTime_Click"/>
+            </StackPanel>
+
+            <TextBlock Text="Czas rozpoczęcia:" Grid.Row="5"/>
+            <ComboBox x:Name="scheduleDaysSwitch" SelectedIndex="0" Grid.Row="6" SelectionChanged="ScheduleDaysChanged">
                 <ComboBoxItem>Dni powszednie</ComboBoxItem>
                 <ComboBoxItem>Sobota</ComboBoxItem>
                 <ComboBoxItem>Niedziele i święta</ComboBoxItem>
             </ComboBox>
-            <ListBox Name="BeginTimesList" ItemsSource="{Binding BeginTimesForRoute}" Grid.Row="5" />
-            <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="6" Click="EditBeginTime_Click" />
+            <ListBox Name="BeginTimesList" ItemsSource="{Binding BeginTimesForRoute}" Grid.Row="7" />
+            <Button Content="Edycja" Margin="0,0" MinWidth="64" Grid.Row="8" Click="EditBeginTime_Click" />
         </Grid>
 
 
-        <WrapPanel Orientation="Horizontal" DockPanel.Dock="Left">
-            <Button Content="Load" Margin="10,0" Click="LoadButton_Click"/>
-            <Button Content="Save" Margin="10,0" Click="SaveButton_Click"/>
-        </WrapPanel>
+        <Grid DockPanel.Dock="Left" MinWidth="128">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <WrapPanel Orientation="Horizontal">
+                <Button Content="Load" Margin="10,0" Click="LoadButton_Click"/>
+                <Button Content="Save" Margin="10,0" Click="SaveButton_Click"/>
+            </WrapPanel>
+            <ListView x:Name="TimeAdjustments" Grid.Row="1" ItemsSource="{Binding TimeAdjustmentsForSelection}"/>
+        </Grid>
 
         <Grid DockPanel.Dock="Right" MinWidth="128">
             <Grid.RowDefinitions>

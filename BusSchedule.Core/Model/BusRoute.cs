@@ -11,6 +11,7 @@ namespace BusSchedule.Core.Model
         public int StartStationId { get; set; }
         public int EndStationId { get; set; }
         public string Name { get; set; }
+        public int VariantsNum { get; set; }
 
         public override string ToString()
         {

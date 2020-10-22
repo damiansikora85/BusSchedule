@@ -13,6 +13,7 @@ namespace BusSchedule.Creator.Model
         public BusStation BusStation { get; set; }
         public int TimeDiff { get; set; }
         public int OrderNum { get; set; }
+        public int RouteVariantId { get; set; }
 
         public override string ToString()
         {

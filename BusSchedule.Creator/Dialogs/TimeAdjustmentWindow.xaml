@@ -1,13 +1,14 @@
-﻿<Window x:Class="BusSchedule.Creator.Dialogs.EditBeginTimesDialog"
+﻿<Window x:Class="BusSchedule.Creator.Dialogs.TimeAdjustmentWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusSchedule.Creator.Dialogs"
         mc:Ignorable="d"
-        Title="Czas rozpoczęcia trasy" Height="450" Width="800">
-    <Grid Margin="8">
+        Title="TimeAdjustmentWindow" Height="450" Width="800">
+    <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -16,9 +17,12 @@
             <RowDefinition Height="32"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="time" KeyDown="time_KeyDown" Height="24" Text="{Binding Path=Time, Mode=TwoWay}" />
-        <ListBox x:Name="list" ItemsSource="{Binding Times}" Grid.Column="1"/>
-        <Button  Grid.Row="2" Content="Zapisz" Height="24" Width="64" Click="Save_Click"/>
-        <Button Grid.Column="1" Grid.Row="2" Content="Usuń" Height="24" Width="64" Click="Delete_Click"/>
+        <ListView x:Name="DefaultTimes" ItemsSource="{Binding Times}"/>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBox x:Name="AdjustmentEntry"/>
+            <Button Content="Dopasuj" Click="AddAdjustmentClick"/>
+        </StackPanel>
+        <ListView ItemsSource="{Binding TimeAdjustments}" Grid.Column="2"/>
+        <Button Content="Zapisz" Grid.Row="1"  Grid.Column="1" Click="OnSaveClick"/>
     </Grid>
 </Window>

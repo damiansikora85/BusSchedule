@@ -19,7 +19,7 @@ namespace BusSchedule.Creator.Dialogs
     /// Interaction logic for AddRouteDialog.xaml
     /// </summary>
     public partial class AddRouteDialog : Window
-    { 
+    {
         public AddRouteDialog(string name, List<BusStation> stations)
         {
             InitializeComponent();
@@ -38,7 +38,13 @@ namespace BusSchedule.Creator.Dialogs
             if (startStationList.SelectedItem != null && startStationList.SelectedItem is BusStation startStation
                 && endStationList.SelectedItem != null && endStationList.SelectedItem is BusStation endStation)
             {
-                return new BusRoute { StartStationId = startStation.Id, EndStationId = endStation.Id, Name = $"{serviceName.Content}-{startStation.Name}-{endStation.Name}" };
+                return new BusRoute
+                {
+                    StartStationId = startStation.Id,
+                    EndStationId = endStation.Id,
+                    Name = $"{serviceName.Content}-{startStation.Name}-{endStation.Name}",
+                    VariantsNum = int.Parse(VariantsNum.Text)
+                };
             }
             return null;
         }
