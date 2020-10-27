@@ -26,7 +26,7 @@ namespace BusSchedule.Creator.Dialogs
         public ObservableCollection<TimeAdjustmentViewModel> TimeAdjustments { get; }
         private RouteStationViewModel _station;
 
-        public TimeAdjustmentWindow(TimeSpan defaultTimeShift, RouteStationViewModel station, List<RouteBeginTime> beginTimes)
+        public TimeAdjustmentWindow(TimeSpan defaultTimeShift, RouteStationViewModel station, List<RouteBeginTime> beginTimes, IEnumerable<TimeAdjustmentViewModel> timeAdjustments)
         {
             TimeAdjustments = new ObservableCollection<TimeAdjustmentViewModel>();
             Times = new List<RouteBeginTime>();
@@ -34,9 +34,16 @@ namespace BusSchedule.Creator.Dialogs
             {
                 var timeForStation = new RouteBeginTime(beginTime);
                 timeForStation.Time += defaultTimeShift;
+                var adjustments = timeAdjustments.Where(item => item.RouteBeginTime.Id == beginTime.Id);
+                if(adjustments.Count() > 0)
+                {
+                    foreach (var adj in adjustments)
+                    {
+                        timeForStation.Time += adj.TimeAdjustment;
+                    }
+                }
                 Times.Add(timeForStation);
             }
-//            Times.ForEach(item => item.Time += defaultTimeShift);
 
             _station = station;
             InitializeComponent();

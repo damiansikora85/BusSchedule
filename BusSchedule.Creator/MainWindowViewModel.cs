@@ -161,6 +161,11 @@ namespace BusSchedule.Creator
             OnPropertyChanged(nameof(RouteVariants));
         }
 
+        internal IEnumerable<TimeAdjustmentViewModel> GetTimeAdjustmentsForRouteVariant(BusRoute route, int routeVariant, RouteBeginTime.ScheduleDays scheduleDays)
+        {
+            return TimeAdjustments.Where(item => item.RouteBeginTime.RouteId == route.Id && item.RouteBeginTime.RouteVariant == routeVariant && item.RouteBeginTime.Days == scheduleDays);
+        }
+
         internal void AddRouteDetails(List<RouteStationViewModel> routeDetails)
         {
             RouteDetails.RemoveAll(item => item.RouteId == routeDetails[0].RouteId && item.RouteVariantId == routeDetails[0].RouteVariantId);
@@ -169,7 +174,7 @@ namespace BusSchedule.Creator
             OnPropertyChanged(nameof(RouteDetailsForRoute));
         }
 
-        internal TimeSpan GetTimeShiftForStation(BusRoute route, RouteStationViewModel routeStationView)
+        internal TimeSpan GetTimeShiftForStation(RouteStationViewModel routeStationView)
         {
             var timespan = TimeSpan.Zero;
             foreach (var station in RouteDetailsForRoute)
@@ -187,7 +192,12 @@ namespace BusSchedule.Creator
         internal void UpdateTimeAdjustments(IEnumerable<TimeAdjustmentViewModel> timeAdjustments)
         {
             var first = timeAdjustments.First();
-            TimeAdjustments.RemoveAll(item => item.RouteBeginTime.RouteId == first.RouteBeginTime.RouteId && item.RouteBeginTime.Id == first.RouteBeginTime.Id && item.RouteBeginTime.RouteVariant == first.RouteBeginTime.RouteVariant && item.StationId == first.StationId);
+            TimeAdjustments.RemoveAll(item => item.RouteBeginTime.RouteId == first.RouteBeginTime.RouteId
+            && item.RouteBeginTime.Id == first.RouteBeginTime.Id
+            && item.RouteBeginTime.RouteVariant == first.RouteBeginTime.RouteVariant
+            && item.RouteBeginTime.Days == first.RouteBeginTime.Days
+            && item.StationId == first.StationId);
+
             TimeAdjustments.AddRange(timeAdjustments);
             TimeAdjustmentsForSelection = timeAdjustments.ToList();
             OnPropertyChanged(nameof(TimeAdjustmentsForSelection));

@@ -176,9 +176,8 @@ namespace BusSchedule.Creator
         {
             if(RouteDetailsList.SelectedItem is RouteStationViewModel routeStationView)
             {
-                //var route = RoutesList.SelectedItem as BusRoute;
-                var defaultTimeShift = _viewModel.GetTimeShiftForStation(RoutesList.SelectedItem as BusRoute, routeStationView);
-                var dialog = new TimeAdjustmentWindow(defaultTimeShift, routeStationView, _viewModel.BeginTimesForRoute);
+                var defaultTimeShift = _viewModel.GetTimeShiftForStation(routeStationView);
+                var dialog = new TimeAdjustmentWindow(defaultTimeShift, routeStationView, _viewModel.BeginTimesForRoute, _viewModel.GetTimeAdjustmentsForRouteVariant((BusRoute)RoutesList.SelectedItem, RouteVariants.SelectedIndex, GetSelectedScheduleDays()));
                 dialog.ShowDialog();
                 var result = dialog.GetResult();
                 if (result.Count() > 0)

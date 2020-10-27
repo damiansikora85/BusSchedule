@@ -14,7 +14,7 @@ namespace BusSchedule.Tools
         public static void SetupData(IDataProvider dataProvider)
         {
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
-            var stream = assembly.GetManifestResourceStream("BusSchedule.test2.json");
+            var stream = assembly.GetManifestResourceStream("BusSchedule.data.json");
             string jsonData = "";
             using (var reader = new System.IO.StreamReader(stream))
             {
