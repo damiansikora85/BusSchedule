@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.UnitTests", "Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Creator", "BusSchedule.Creator\BusSchedule.Creator.csproj", "{7913E5A5-AD91-4B88-A8D3-C24453058DF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Core.UI", "BusSchedule.Core.UI\BusSchedule.Core.UI.csproj", "{F6625FA8-4F7E-43EE-B01D-558B64A056A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

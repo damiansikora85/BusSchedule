@@ -122,7 +122,10 @@ namespace BusSchedule.Creator
             var dialog = new EditRouteDialog(((BusRoute)RoutesList.SelectedItem).Id, (BusService)BusServicesList.SelectedItem, _viewModel.BusStations, _viewModel.RouteDetailsForRoute, RouteVariants.SelectedIndex);
             dialog.ShowDialog();
             var result = dialog.GetResult();
-            _viewModel.AddRouteDetails(result);
+            if (result.Count > 0)
+            {
+                _viewModel.AddRouteDetails(result);
+            }
         }
 
         private void RouteChanged(object sender, SelectionChangedEventArgs e)

@@ -18,6 +18,7 @@ namespace BusSchedule
         {
             InitializeComponent();
             RegisterIoC();
+            UserAppTheme = OSAppTheme.Light;
             MainPage = new NavigationPage(new BusServicesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
         }
 

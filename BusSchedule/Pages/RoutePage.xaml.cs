@@ -1,11 +1,6 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
-using BusSchedule.Pages.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BusSchedule.UI.ViewModels;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,8 +27,11 @@ namespace BusSchedule.Pages
 
         private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if(e.SelectedItem is BusStation station)
-            await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route));
+            listView.SelectedItem = null;
+            if (e.SelectedItem is BusStation station)
+            {
+                await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route));
+            }
         }
     }
 }

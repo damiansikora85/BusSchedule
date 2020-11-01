@@ -1,10 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.Pages.RoutePage">
+             xmlns:local="clr-namespace:BusSchedule.Converters"
+             x:Class="BusSchedule.Pages.RoutePage" BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:NotBooleanConverter x:Key="NotBooleanConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Stations}" ItemSelected="OnStationSelected"/>
+            <ListView x:Name="listView" ItemsSource="{Binding Stations}" ItemSelected="OnStationSelected" RowHeight="75" SeparatorVisibility="None" Margin="6,4">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="30,*" RowDefinitions="Auto,*" ColumnSpacing="0" RowSpacing="0">
+                                <!--<BoxView CornerRadius="8" Color="DodgerBlue"/>-->
+                                <Ellipse Stroke="DodgerBlue" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
+                                <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
+                                <BoxView Grid.Row="1" WidthRequest="3" Color="DodgerBlue" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

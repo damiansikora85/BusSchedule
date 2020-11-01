@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusSchedule.Pages.ViewModels
+namespace BusSchedule.UI.ViewModels
 {
     public class RoutePageViewModel : INotifyPropertyChanged
     {
@@ -25,6 +25,7 @@ namespace BusSchedule.Pages.ViewModels
         public async Task RefreshDataAsync()
         {
             Stations = await _dataProvider.GetStationsForRoute(Route);
+            Stations[Stations.Count - 1].IsLast = true;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Stations)));
         }
     }

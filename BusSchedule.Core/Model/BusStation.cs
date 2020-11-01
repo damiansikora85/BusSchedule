@@ -8,6 +8,7 @@ namespace BusSchedule.Core.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsLast { get; set; }
 
         public override string ToString()
         {

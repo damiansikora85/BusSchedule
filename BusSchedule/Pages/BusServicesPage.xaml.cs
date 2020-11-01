@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Forms;
@@ -45,6 +46,7 @@ namespace BusSchedule.Pages
 
         private async void OnBusServiceSelected(Core.Model.BusService busService)
         {
+            //await Navigation.PushAsync(new ThreadsTestPage());
             var routes = await _viewModel.GetRoutesForServiceAsync(busService);
             var dialog = new RouteSelectionDialog(routes);
             await PopupNavigation.Instance.PushAsync(dialog);

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.Pages.BusServicesPage">
+             x:Class="BusSchedule.Pages.BusServicesPage" BackgroundColor="White">
     <ContentPage.Content>
-        <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120" ColumnDefinitions="90, 90, 90, 90" Margin="8,16" HorizontalOptions="Center"/>
+        <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
     </ContentPage.Content>
 </ContentPage>
