@@ -8,7 +8,7 @@
             <local:NotBooleanConverter x:Key="NotBooleanConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listView" ItemsSource="{Binding Stations}" ItemSelected="OnStationSelected" RowHeight="75" SeparatorVisibility="None" Margin="6,4">
@@ -16,10 +16,9 @@
                     <DataTemplate>
                         <ViewCell>
                             <Grid ColumnDefinitions="30,*" RowDefinitions="Auto,*" ColumnSpacing="0" RowSpacing="0">
-                                <!--<BoxView CornerRadius="8" Color="DodgerBlue"/>-->
-                                <Ellipse Stroke="DodgerBlue" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
+                                <Ellipse Stroke="#237194" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
                                 <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
-                                <BoxView Grid.Row="1" WidthRequest="3" Color="DodgerBlue" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
+                                <BoxView Grid.Row="1" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

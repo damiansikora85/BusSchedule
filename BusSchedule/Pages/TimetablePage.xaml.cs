@@ -1,10 +1,6 @@
-﻿using BusSchedule.Core.Utils;
-using BusSchedule.Pages.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.Utils;
+using BusSchedule.UI.ViewModels;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -27,6 +23,26 @@ namespace BusSchedule.Pages
         {
             await _viewModel.RefreshTimetableAsync();
             base.OnAppearing();
+        }
+
+        private void WorkingDaysClicked(object sender, System.EventArgs e)
+        {
+            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.WorkingDays);
+        }
+
+        private void SaturdaysClicked(object sender, System.EventArgs e)
+        {
+            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.Saturday);
+        }
+
+        private void HolidaysClicked(object sender, System.EventArgs e)
+        {
+            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.SundayAndHolidays);
+        }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            listView.SelectedItem = null;
         }
     }
 }

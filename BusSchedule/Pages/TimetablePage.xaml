@@ -4,34 +4,35 @@
              x:Class="BusSchedule.Pages.TimetablePage" BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <!--<ListView ItemsSource="{Binding Times}"/>-->
-            <Label Text="Dnie robocze:" Style="{StaticResource DefaultText}"/>
-            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableWorkingDays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding .}" Style="{StaticResource DefaultText}"/>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="48,2" RowSpacing="0">
+                <Button Text="Dni robocze" Clicked="WorkingDaysClicked" BackgroundColor="White" TextColor="Black"/>
+                <Button Grid.Column="1" Text="Soboty" Clicked="SaturdaysClicked" BackgroundColor="White" TextColor="Black"/>
+                <Button Grid.Column="2" Text="Niedziele i święta" Clicked="HolidaysClicked" BackgroundColor="White" TextColor="Black" Padding="0"/>
 
-            <Label Text="Soboty:" Style="{StaticResource DefaultText}"/>
-            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableSaturdays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding .}" Style="{StaticResource DefaultText}"/>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
+                <BoxView Grid.Row="1" Color="#237194" IsVisible="{Binding WorkingDaysVisible}"/>
+                <BoxView Grid.Row="1" Grid.Column="1" Color="#237194" IsVisible="{Binding SaturdaysVisible}"/>
+                <BoxView Grid.Row="1" Grid.Column="2" Color="#237194" IsVisible="{Binding HolidaysVisible}"/>
+            </Grid>
 
-            <Label Text="Niedziele i święta:" Style="{StaticResource DefaultText}"/>
-            <FlexLayout BindableLayout.ItemsSource="{Binding TimetableHolidays}" Wrap="Wrap" JustifyContent="SpaceEvenly">
-                <BindableLayout.ItemTemplate>
+            <ListView x:Name="listView" ItemsSource="{Binding CurrentTimetable}" SeparatorColor="#404040" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Label Text="{Binding .}" Style="{StaticResource DefaultText}"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Hour}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" Margin="4,0" TextColor="#404040"/>
+                                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Minutes}">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label Text="{Binding}" VerticalTextAlignment="Center" TextColor="#404040"/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </FlexLayout>
-            <ListView ItemsSource="{Binding RouteDetails}"/>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<ListView ItemsSource="{Binding RouteDetails}"/>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
