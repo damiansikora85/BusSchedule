@@ -3,10 +3,11 @@
             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Dialogs.RouteSelectionDialog">
-    <Frame Margin="12">
-        <StackLayout>
-            <Button Text="{Binding FirstRouteName}" Clicked="FirstRouteClicked"/>
-            <Button Text="{Binding SecondRouteName}" Clicked="SecondRouteClicked"/>
+    <Frame BackgroundColor="#80000000">
+        <StackLayout BackgroundColor="White" VerticalOptions="Center" Padding="16" Spacing="8">
+            <Label Text="Wybierz kierunek:" TextColor="Black" FontSize="Large"/>
+            <Button Text="{Binding FirstRouteName}" Clicked="FirstRouteClicked" BackgroundColor="White" TextColor="Black"/>
+            <Button Text="{Binding SecondRouteName}" Clicked="SecondRouteClicked" BackgroundColor="White" TextColor="Black"/>
         </StackLayout>
     </Frame>
 </pages:PopupPage>
