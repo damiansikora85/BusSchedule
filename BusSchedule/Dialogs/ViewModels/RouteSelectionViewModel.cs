@@ -8,21 +8,13 @@ namespace BusSchedule.Dialogs.ViewModels
 {
     public class RouteSelectionViewModel
     {
-        public List<BusRoute> Routes { get; }
-        public string FirstRouteName { get; }
-        public string SecondRouteName { get; }
-        public BusRoute FirstRoute => Routes[0];
-        public BusRoute SecondRoute => Routes[1];
+        public string FirstDirection { get; }
+        public string SecondDirection { get; }
 
-        public RouteSelectionViewModel(List<BusRoute> routes)
+        public RouteSelectionViewModel(Destination destination)
         {
-            if(routes.Count < 2)
-            {
-                return;
-            }
-            Routes = routes;
-            FirstRouteName = Routes[0].Name;
-            SecondRouteName = Routes[1].Name;
+            FirstDirection = destination.Outbound;
+            SecondDirection = destination.Inbound;
         }
     }
 }

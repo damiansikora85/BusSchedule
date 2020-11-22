@@ -5,11 +5,6 @@ using BusSchedule.Pages.ViewModels;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -17,13 +12,13 @@ using Xamarin.Forms.Xaml;
 namespace BusSchedule.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BusServicesPage : ContentPage
+    public partial class RoutesPage : ContentPage
     {
-        private BusServicesPageViewModel _viewModel;
-        public BusServicesPage()
+        private RoutesPageViewModel _viewModel;
+        public RoutesPage()
         {
             InitializeComponent();
-            _viewModel = new BusServicesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
+            _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
             BindingContext = _viewModel;
         }
 
@@ -32,9 +27,9 @@ namespace BusSchedule.Pages
             await _viewModel.RefreshBusServicesAsync();
             int row = 0, col = 0;
             int maxCol = grid.ColumnDefinitions.Count;
-            foreach (var busService in _viewModel.BusServices)
+            foreach (var busService in _viewModel.Routes)
             {
-                var item = new BusServiceView(busService);
+                var item = new RouteView(busService);
                 item.OnServiceClicked += OnBusServiceSelected;
                 grid.Children.Add(item, col, row);
                 col++;
@@ -44,14 +39,20 @@ namespace BusSchedule.Pages
             base.OnAppearing();
         }
 
-        private async void OnBusServiceSelected(Core.Model.BusService busService)
+        private async void OnBusServiceSelected(Core.Model.Routes route)
         {
+            //Task.Run(async () => await Task.Delay(500));
             //await Navigation.PushAsync(new ThreadsTestPage());
-            var routes = await _viewModel.GetRoutesForServiceAsync(busService);
-            var dialog = new RouteSelectionDialog(routes);
+            var destination = await _viewModel.GetDestinationsForRoute(route);//await _viewModel.GetRoutesForServiceAsync(busService);
+            var dialog = new RouteSelectionDialog(destination);
             await PopupNavigation.Instance.PushAsync(dialog);
-            var route = await dialog.WaitForResult();
-            await Navigation.PushAsync(new RoutePage(busService, route));
+            var selectedDirection = await dialog.WaitForResult();
+            await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
+        }
+
+        private IList<string> GetRoutesForService(Core.Model.Routes busService)
+        {
+            throw new NotImplementedException();
         }
     }
 }

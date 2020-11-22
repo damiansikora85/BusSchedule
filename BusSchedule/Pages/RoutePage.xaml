@@ -17,7 +17,7 @@
                         <ViewCell>
                             <Grid ColumnDefinitions="30,*" RowDefinitions="Auto,*" ColumnSpacing="0" RowSpacing="0">
                                 <Ellipse Stroke="#237194" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
-                                <Label Grid.Column="1" Text="{Binding Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
+                                <Label Grid.Column="1" Text="{Binding Stop_Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
                                 <BoxView Grid.Row="1" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
                             </Grid>
                         </ViewCell>

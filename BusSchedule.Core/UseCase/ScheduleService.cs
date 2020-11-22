@@ -26,21 +26,9 @@ namespace BusSchedule.Core.UseCase
 
         }
 
-        public Task<List<BusService>> GetBusServicesAsync()
+        public Task<List<Routes>> GetBusServicesAsync()
         {
-            return _dataProvider.GetBusServices();
-        }
-
-        public IList<BusRoute> GetBusRoutes(int busServiceId)
-        {
-            //return _dataProvider.GetBusRoutes(busServiceId);
-            throw new NotImplementedException();
-        }
-
-
-        public BusRouteDetails GetRouteDetails(int busRouteId)
-        {
-            throw new NotImplementedException();
+            return _dataProvider.GetRoutes();
         }
     }
 }

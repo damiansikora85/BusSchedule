@@ -6,8 +6,8 @@
     <Frame BackgroundColor="#80000000">
         <StackLayout BackgroundColor="White" VerticalOptions="Center" Padding="16" Spacing="8">
             <Label Text="Wybierz kierunek:" TextColor="Black" FontSize="Large"/>
-            <Button Text="{Binding FirstRouteName}" Clicked="FirstRouteClicked" BackgroundColor="White" TextColor="Black"/>
-            <Button Text="{Binding SecondRouteName}" Clicked="SecondRouteClicked" BackgroundColor="White" TextColor="Black"/>
+            <Button Text="{Binding FirstDirection}" Clicked="FirstRouteClicked" BackgroundColor="White" TextColor="Black"/>
+            <Button Text="{Binding SecondDirection}" Clicked="SecondRouteClicked" BackgroundColor="White" TextColor="Black"/>
         </StackLayout>
     </Frame>
 </pages:PopupPage>

@@ -11,12 +11,13 @@ namespace BusSchedule.Pages
     public partial class RoutePage : ContentPage
     {
         private RoutePageViewModel _viewModel;
-        public RoutePage(BusService busService, BusRoute route)
+
+        public RoutePage(Routes route, string destinationName, int direction)
         {
-            _viewModel = new RoutePageViewModel(route, TinyIoCContainer.Current.Resolve<IDataProvider>());
+            _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
             InitializeComponent();
             BindingContext = _viewModel;
-            Title = $"Linia: {busService.Name} - {route.Name}";
+            Title = $"Linia: {route.Route_Short_Name} - {destinationName}";
         }
 
         protected override async void OnAppearing()
@@ -28,9 +29,9 @@ namespace BusSchedule.Pages
         private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
         {
             listView.SelectedItem = null;
-            if (e.SelectedItem is BusStation station)
+            if (e.SelectedItem is Stops station)
             {
-                await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route));
+                await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route, _viewModel.Direction));
             }
         }
     }

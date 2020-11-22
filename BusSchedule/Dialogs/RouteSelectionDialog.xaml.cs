@@ -17,35 +17,43 @@ namespace BusSchedule.Dialogs
     public partial class RouteSelectionDialog : PopupPage
     {
         private RouteSelectionViewModel _viewModel;
-        private TaskCompletionSource<BusRoute> _taskCompletionSource;
+        private TaskCompletionSource<int> _taskCompletionSource;
 
-        public RouteSelectionDialog(List<Core.Model.BusRoute> routes)
+        //public RouteSelectionDialog(List<BusRoute> routes)
+        //{
+        //    _taskCompletionSource = new TaskCompletionSource<BusRoute>();
+        //    _viewModel = new RouteSelectionViewModel(routes);
+        //    InitializeComponent();
+        //    BindingContext = _viewModel;
+        //}
+
+        public RouteSelectionDialog(Destination destination)
         {
-            _taskCompletionSource = new TaskCompletionSource<BusRoute>();
-            _viewModel = new RouteSelectionViewModel(routes);
+            _taskCompletionSource = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
+            _viewModel = new RouteSelectionViewModel(destination);
             InitializeComponent();
             BindingContext = _viewModel;
         }
 
-        internal Task<BusRoute> WaitForResult()
+        internal Task<int> WaitForResult()
         {
             return _taskCompletionSource.Task;
         }
 
         private async void FirstRouteClicked(object sender, EventArgs e)
         {
-            await SetResult(_viewModel.FirstRoute);
+            await SetResult(0);
         }
 
         private async void SecondRouteClicked(object sender, EventArgs e)
         {
-            await SetResult(_viewModel.SecondRoute);
+            await SetResult(1);
         }
 
-        private async Task SetResult(BusRoute route)
+        private async Task SetResult(int selectedDest)
         {
             await PopupNavigation.Instance.RemovePageAsync(this);
-            _taskCompletionSource.SetResult(route);
+            _taskCompletionSource.SetResult(selectedDest);
         }
     }
 }

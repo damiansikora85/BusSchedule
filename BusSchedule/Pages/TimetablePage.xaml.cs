@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.Model;
+﻿using Acr.UserDialogs;
+using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
 using TinyIoC;
@@ -11,33 +12,43 @@ namespace BusSchedule.Pages
     public partial class TimetablePage : ContentPage
     {
         private TimetableViewModel _viewModel;
-        public TimetablePage(Core.Model.BusStation station, Core.Model.BusRoute route)
+        //public TimetablePage(Core.Model.BusStation station, Core.Model.BusRoute route)
+        //{
+        //    _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>());
+        //    InitializeComponent();
+        //    BindingContext = _viewModel;
+        //    Title = station.Name;
+        //}
+
+        public TimetablePage(Stops station, Routes route, int direction)
         {
-            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>());
+            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
             InitializeComponent();
             BindingContext = _viewModel;
-            Title = station.Name;
+            Title = station.Stop_Name;
         }
 
         protected override async void OnAppearing()
         {
+            UserDialogs.Instance.ShowLoading("");
             await _viewModel.RefreshTimetableAsync();
+            UserDialogs.Instance.HideLoading();
             base.OnAppearing();
         }
 
         private void WorkingDaysClicked(object sender, System.EventArgs e)
         {
-            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.WorkingDays);
+            _viewModel.ScheduleDaysChanged(Calendar.Service.WorkingDays);
         }
 
         private void SaturdaysClicked(object sender, System.EventArgs e)
         {
-            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.Saturday);
+            _viewModel.ScheduleDaysChanged(Calendar.Service.Saturdays);
         }
 
         private void HolidaysClicked(object sender, System.EventArgs e)
         {
-            _viewModel.ScheduleDaysChanged(RouteBeginTime.ScheduleDays.SundayAndHolidays);
+            _viewModel.ScheduleDaysChanged(Calendar.Service.SundayAndHolidays);
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

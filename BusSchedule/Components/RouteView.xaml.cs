@@ -14,21 +14,25 @@ using Xamarin.Forms.Xaml;
 namespace BusSchedule.Components
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BusServiceView : ContentView
+    public partial class RouteView : ContentView
     {
-        public Action<BusService> OnServiceClicked;
-        private BusServiceViewModel _viewModel;
-        public BusServiceView(BusService busService)
+        public Action<Routes> OnServiceClicked;
+        private RouteViewModel _viewModel;
+        public RouteView(Routes route)
         {
             InitializeComponent();
-            _viewModel = new BusServiceViewModel(busService);
-            _viewModel.OnClick += OnClick;
+            _viewModel = new RouteViewModel(route);
             BindingContext = _viewModel;
         }
 
-        private void OnClick(BusService busService)
+        private void OnClick(Routes busService)
         {
             OnServiceClicked?.Invoke(busService);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            OnServiceClicked?.Invoke(_viewModel.Route);
         }
     }
 }

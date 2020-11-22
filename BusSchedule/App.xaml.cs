@@ -8,7 +8,7 @@ using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-
+using BusSchedule.Interfaces;
 
 namespace BusSchedule
 {
@@ -19,13 +19,14 @@ namespace BusSchedule
             InitializeComponent();
             RegisterIoC();
             UserAppTheme = OSAppTheme.Light;
-            MainPage = new NavigationPage(new BusServicesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
+            MainPage = new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
         }
 
         private void RegisterIoC()
         {
             var container = TinyIoCContainer.Current;
-            container.Register<IDataProvider, SQLDataProvider>();
+            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath("sqlite.db");
+            container.Register<IDataProvider, SQLDataProvider>(new SQLDataProvider(databasePath));
         }
 
         protected override void OnStart()

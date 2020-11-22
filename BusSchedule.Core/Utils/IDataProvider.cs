@@ -8,14 +8,14 @@ namespace BusSchedule.Core.Utils
 {
     public interface IDataProvider
     {
-        Task<List<BusService>> GetBusServices();
-        Task<List<BusRoute>> GetBusRoutes(int busServiceId);
-        Task UpdateAsync(ScheduleData schedule);
-        Task<List<BusStation>> GetStationsForRoute(BusRoute route);
-        Task<List<BusRouteDetails>> GetStationsDetailsForRouteVariant(BusRoute route, int routeVariant);
-        Task<List<RouteBeginTime>> GetRouteBeginTimes(BusRoute route);
-        Task<List<BusStation>> GetBusRoutes(List<BusRouteDetails> stationsDetails);
-        Task<List<BusRouteDetails>> GetStationDetailsForRoute(BusRoute route, BusStation station);
-        Task<List<StationTimeAdjustment>> GetTimeAdjustmentForRoute(int id);
+        Task<List<Routes>> GetRoutes();
+        Task<Destination> GetRouteDestinations(Routes route);
+        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction);
+        Task<List<Stops>> GetStopsForRoute(Routes route, int direction);
+        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId);
+        Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(Trips trip);
+        Task<Stops> GetStopById(string stop_Id);
+        Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(string tripId, string stopId);
+        Task<IEnumerable<Calendar>> GetCalendar();
     }
 }

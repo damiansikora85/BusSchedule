@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.Model;
+﻿using BusSchedule.Core.GTFS;
+using BusSchedule.Core.Model;
 using BusSchedule.Core.UI;
 using BusSchedule.Core.UseCase;
 using BusSchedule.Core.Utils;
@@ -16,8 +17,9 @@ namespace BusSchedule.UI.ViewModels
     public class TimetableViewModel : INotifyPropertyChanged
     {
         private IDataProvider _dataProvider;
-        private BusRoute _route;
-        private BusStation _station;
+        private Routes _route;
+        private Stops _station;
+        private int _direction;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -27,39 +29,25 @@ namespace BusSchedule.UI.ViewModels
 
         public List<TimetableItem> CurrentTimetable { get; private set; }
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
-        private RouteBeginTime.ScheduleDays _currentScheduleDays;
-        public bool WorkingDaysVisible => _currentScheduleDays == RouteBeginTime.ScheduleDays.WorkingDays;
-        public bool SaturdaysVisible => _currentScheduleDays == RouteBeginTime.ScheduleDays.Saturday;
-        public bool HolidaysVisible => _currentScheduleDays == RouteBeginTime.ScheduleDays.SundayAndHolidays;
-
-        public void ScheduleDaysChanged(RouteBeginTime.ScheduleDays scheduleDays)
-        {
-            switch (scheduleDays)
-            {
-                case RouteBeginTime.ScheduleDays.WorkingDays:
-                    CurrentTimetable = TimetableWorkingDays;
-                    break;
-                case RouteBeginTime.ScheduleDays.Saturday:
-                    CurrentTimetable = TimetableSaturdays;
-                    break;
-                case RouteBeginTime.ScheduleDays.SundayAndHolidays:
-                    CurrentTimetable = TimetableHolidays;
-                    break;
-            }
-
-            _currentScheduleDays = scheduleDays;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
-        }
+        private Calendar.Service _currentCalendarService;
+        public bool WorkingDaysVisible => _currentCalendarService == Calendar.Service.WorkingDays;
+        public bool SaturdaysVisible => _currentCalendarService == Calendar.Service.Saturdays;
+        public bool HolidaysVisible => _currentCalendarService == Calendar.Service.SundayAndHolidays;
 
         public ICommand ScheduleDaysChangedCommand { get; private set; }
 
-        public TimetableViewModel(BusStation station, BusRoute route, IDataProvider dataProvider)
+        //public TimetableViewModel(BusStation station, BusRoute route, IDataProvider dataProvider)
+        //{
+        //    _station = station;
+        //    _route = route;
+        //    _dataProvider = dataProvider;
+        //}
+
+        public TimetableViewModel(Stops station, Routes route, int direction, IDataProvider dataProvider)
         {
             _station = station;
             _route = route;
+            _direction = direction;
             _dataProvider = dataProvider;
         }
 
@@ -69,12 +57,12 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays.Clear();
             TimetableHolidays.Clear();
 
-            var timetableAll = await TimetableGenerator.Generate(_station, _route, _dataProvider);
-            TimetableWorkingDays = Setup(timetableAll[RouteBeginTime.ScheduleDays.WorkingDays]);
-            TimetableSaturdays = Setup(timetableAll[RouteBeginTime.ScheduleDays.Saturday]);
-            TimetableHolidays = Setup(timetableAll[RouteBeginTime.ScheduleDays.SundayAndHolidays]);
+            var timetableAll = await GtfsUtils.GetSchedule(_dataProvider, _route, _station, _direction);
+            TimetableWorkingDays = Setup(timetableAll["24"]);
+            TimetableSaturdays = Setup(timetableAll["7"]);
+            TimetableHolidays = Setup(timetableAll["4"]);
 
-            _currentScheduleDays = RouteBeginTime.ScheduleDays.WorkingDays;
+            _currentCalendarService = Calendar.Service.WorkingDays;
             CurrentTimetable = TimetableWorkingDays;
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
@@ -83,8 +71,31 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
         }
 
+        public void ScheduleDaysChanged(Calendar.Service calendarService)
+        {
+            switch (calendarService)
+            {
+                case Calendar.Service.WorkingDays:
+                    CurrentTimetable = TimetableWorkingDays;
+                    break;
+                case Calendar.Service.Saturdays:
+                    CurrentTimetable = TimetableSaturdays;
+                    break;
+                case Calendar.Service.SundayAndHolidays:
+                    CurrentTimetable = TimetableHolidays;
+                    break;
+            }
+
+            _currentCalendarService = calendarService;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
+        }
+
         private List<TimetableItem> Setup(List<TimeSpan> timetable)
         {
+            timetable.Sort();
             var grouped = timetable.GroupBy(item => item.Hours);
             var list = new List<TimetableItem>();
             foreach(var group in grouped)

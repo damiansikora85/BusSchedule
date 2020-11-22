@@ -15,81 +15,70 @@ namespace BusSchedule.Providers
     {
         private readonly SQLiteAsyncConnection _connection;
 
-        public SQLDataProvider()
+        public SQLDataProvider(string databasePath)
         {
-            string dbPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "schedule.db3");
-            _connection = new SQLiteAsyncConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache);
+            _connection = new SQLiteAsyncConnection(databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache);
         }
 
-        public async Task<List<BusRoute>> GetBusRoutes(int busServiceId)
+        public async Task<List<Routes>> GetRoutes()
         {
-            var connection = await GetDatabaseConnectionAsync<BusRoute>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<BusRoute>().Where(route => route.BusServiceId == busServiceId).ToListAsync());
+            var connection = await GetDatabaseConnectionAsync<Routes>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<Routes>().ToListAsync()).ConfigureAwait(false);
         }
 
-        public async Task<List<BusService>> GetBusServices()
+        public async Task<List<Stops>> GetStopsForRoute(Routes route, int direction)
         {
-            var connection = await GetDatabaseConnectionAsync<BusService>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<BusService>().ToListAsync()).ConfigureAwait(false);
+            var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);
+            var routeStops = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction))).Select(rs => rs.Stop_Id).ToList();
+            var temp = await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).ToListAsync());
+            return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+            //return await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToListAsync());
+            //return await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops Where stop_id In (Select stop_id From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence)", route.Route_Id, direction));
+            //return stops.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
         }
 
-        public async Task<List<BusStation>> GetStationsForRoute(BusRoute route)
+        public async Task<Destination> GetRouteDestinations(Routes route)
         {
-            var connection = await GetDatabaseConnectionAsync<BusStation, BusRouteDetails>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<BusStation>("Select * From BusStation WHERE Id IN (SELECT BusStopId FROM BusRouteDetails WHERE BusRouteId = ?)", route.Id));
+            var connection = await GetDatabaseConnectionAsync<Destination>().ConfigureAwait(false);
+            var all = await AttemptAndRetry(() => connection.Table<Destination>().ToListAsync());
+            return await AttemptAndRetry(() => connection.Table<Destination>().Where(dest => dest.Route_Id == route.Route_Id).FirstAsync());
         }
 
-        public async Task<List<BusRouteDetails>> GetStationsDetailsForRouteVariant(BusRoute route, int routeVariant)
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction)
         {
-            var connection = await GetDatabaseConnectionAsync<BusRouteDetails>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<BusRouteDetails>().Where(station => station.BusRouteId == route.Id && station.RouteVariant == routeVariant).ToListAsync()).ConfigureAwait(false);
+            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ?", route.Route_Id, direction));
         }
 
-        public async Task<List<RouteBeginTime>> GetRouteBeginTimes(BusRoute route)
+        public async Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(Trips trip)
         {
-            var connection = await GetDatabaseConnectionAsync<RouteBeginTime>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<RouteBeginTime>().Where(time => time.RouteId == route.Id).ToListAsync()).ConfigureAwait(false);
+            var connection = await GetDatabaseConnectionAsync<Stop_Times>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Stop_Times>("Select * From Stop_Times Where trip_id = ?", trip.Trip_Id));
         }
 
-        public async Task<List<BusRouteDetails>> GetStationDetailsForRoute(BusRoute route, BusStation station)
+        public async Task<Stops> GetStopById(string stopId)
         {
-            var connection = await GetDatabaseConnectionAsync<BusRouteDetails>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<BusRouteDetails>("Select * From BusRouteDetails Where BusRouteId = ? And BusStopId = ?", route.Id, station.Id)).ConfigureAwait(false);
+            var connection = await GetDatabaseConnectionAsync<Stops>().ConfigureAwait(false);
+            var stops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops Where stop_id = ?", stopId));
+            return stops.FirstOrDefault();
         }
 
-        public async Task<List<StationTimeAdjustment>> GetTimeAdjustmentForRoute(int routeId)
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId)
         {
-            var connection = await GetDatabaseConnectionAsync<StationTimeAdjustment>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<StationTimeAdjustment>("Select * From StationTimeAdjustment Where RouteId = ?", routeId));
+            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ? And service_id = ?", route.Route_Id, direction, serviceId));
         }
 
-        public Task<List<BusStation>> GetBusRoutes(List<BusRouteDetails> stationsDetails)
+        public async Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(string tripId, string stopId)
         {
-            throw new NotImplementedException();
+            var connection = await GetDatabaseConnectionAsync<Stop_Times>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Stop_Times>("Select * From Stop_Times Where trip_id = ? And stop_id = ?", tripId, stopId));
         }
 
-        public async Task UpdateAsync(ScheduleData schedule)
+        public async Task<IEnumerable<Calendar>> GetCalendar()
         {
-            await UpdateTableAsync(schedule.BusServices);
-            await UpdateTableAsync(schedule.Routes);
-            await UpdateTableAsync(schedule.BusStations);
-            await UpdateTableAsync(schedule.RoutesBeginTimes);
-            await UpdateTableAsync(schedule.RoutesDetails);
-            await UpdateTableAsync(schedule.TimeAdjustments);
-        }
-
-        private async Task UpdateTableAsync<T>(IList<T> data)
-        {
-            try
-            {
-                var connection = await GetDatabaseConnectionAsync<T>().ConfigureAwait(false);
-                await AttemptAndRetry(() => connection.DeleteAllAsync<T>()).ConfigureAwait(false);
-                await AttemptAndRetry(() => connection.InsertAllAsync(data)).ConfigureAwait(false);
-            }
-            catch(SQLiteException exc)
-            {
-                var msg = exc.Message;
-            }
+            var connection = await GetDatabaseConnectionAsync<Calendar>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<Calendar>().ToListAsync());
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()

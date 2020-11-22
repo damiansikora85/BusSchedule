@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.Components.BusServiceView">
+             x:Class="BusSchedule.Components.RouteView">
   <ContentView.Content>
         <Frame Margin="4" Style="{StaticResource BgBlue}" CornerRadius="5" WidthRequest="60" HeightRequest="60" Padding="12">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding TapCommand}"/>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding TapCommand}"/>
             </Frame.GestureRecognizers>
             <Grid RowDefinitions="2*, *">
                 <StackLayout BackgroundColor="White">
