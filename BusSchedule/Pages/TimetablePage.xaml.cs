@@ -12,13 +12,14 @@ namespace BusSchedule.Pages
     public partial class TimetablePage : ContentPage
     {
         private TimetableViewModel _viewModel;
-        //public TimetablePage(Core.Model.BusStation station, Core.Model.BusRoute route)
-        //{
-        //    _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>());
-        //    InitializeComponent();
-        //    BindingContext = _viewModel;
-        //    Title = station.Name;
-        //}
+
+        public TimetablePage(Stops station, Routes route)
+        {
+            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>());
+            InitializeComponent();
+            BindingContext = _viewModel;
+            Title = station.Stop_Name;
+        }
 
         public TimetablePage(Stops station, Routes route, int direction)
         {

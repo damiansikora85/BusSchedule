@@ -36,6 +36,22 @@ namespace BusSchedule.Core.GTFS
             return stopsForRoute;
         }
 
+        public static async Task<Dictionary<string, List<TimeSpan>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station)
+        {
+            var schedule = new Dictionary<string, List<TimeSpan>>();
+            var calendar = await dataProvider.GetCalendar();
+            foreach (var day in calendar)
+            {
+                schedule.Add(day.Service_Id, new List<TimeSpan>());
+                var tripsForRoute = await dataProvider.GetTripsForRoute(route, day.Service_Id);
+                foreach (var trip in tripsForRoute)
+                {
+                    schedule[day.Service_Id].AddRange((await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
+                }
+            }
+            return schedule;
+        }
+
         public static async Task<Dictionary<string, List<TimeSpan>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)
         {
             var schedule = new Dictionary<string, List<TimeSpan>>();

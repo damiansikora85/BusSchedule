@@ -11,12 +11,14 @@ namespace BusSchedule.Pages
     public partial class RoutePage : ContentPage
     {
         private RoutePageViewModel _viewModel;
+        private bool _fakeDirection;
 
         public RoutePage(Routes route, string destinationName, int direction)
         {
             _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
             InitializeComponent();
             BindingContext = _viewModel;
+            _fakeDirection = route.Route_Id == "2";
             Title = $"Linia: {route.Route_Short_Name} - {destinationName}";
         }
 
@@ -31,7 +33,8 @@ namespace BusSchedule.Pages
             listView.SelectedItem = null;
             if (e.SelectedItem is Stops station)
             {
-                await Navigation.PushAsync(new TimetablePage(station, _viewModel.Route, _viewModel.Direction));
+                var page = _fakeDirection ? new TimetablePage(station, _viewModel.Route) : new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
+                await Navigation.PushAsync(page);
             }
         }
     }

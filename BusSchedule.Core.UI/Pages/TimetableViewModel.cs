@@ -19,7 +19,7 @@ namespace BusSchedule.UI.ViewModels
         private IDataProvider _dataProvider;
         private Routes _route;
         private Stops _station;
-        private int _direction;
+        private int? _direction;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -36,12 +36,12 @@ namespace BusSchedule.UI.ViewModels
 
         public ICommand ScheduleDaysChangedCommand { get; private set; }
 
-        //public TimetableViewModel(BusStation station, BusRoute route, IDataProvider dataProvider)
-        //{
-        //    _station = station;
-        //    _route = route;
-        //    _dataProvider = dataProvider;
-        //}
+        public TimetableViewModel(Stops station, Routes route, IDataProvider dataProvider)
+        {
+            _station = station;
+            _route = route;
+            _dataProvider = dataProvider;
+        }
 
         public TimetableViewModel(Stops station, Routes route, int direction, IDataProvider dataProvider)
         {
@@ -57,7 +57,8 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays.Clear();
             TimetableHolidays.Clear();
 
-            var timetableAll = await GtfsUtils.GetSchedule(_dataProvider, _route, _station, _direction);
+            var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, _route, _station, _direction.Value)
+                : await GtfsUtils.GetSchedule(_dataProvider, _route, _station);
             TimetableWorkingDays = Setup(timetableAll["24"]);
             TimetableSaturdays = Setup(timetableAll["7"]);
             TimetableHolidays = Setup(timetableAll["4"]);

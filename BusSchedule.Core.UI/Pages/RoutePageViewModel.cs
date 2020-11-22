@@ -1,11 +1,7 @@
-﻿using BusSchedule.Core.GTFS;
-using BusSchedule.Core.Model;
+﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BusSchedule.UI.ViewModels

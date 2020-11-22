@@ -41,9 +41,7 @@ namespace BusSchedule.Pages
 
         private async void OnBusServiceSelected(Core.Model.Routes route)
         {
-            //Task.Run(async () => await Task.Delay(500));
-            //await Navigation.PushAsync(new ThreadsTestPage());
-            var destination = await _viewModel.GetDestinationsForRoute(route);//await _viewModel.GetRoutesForServiceAsync(busService);
+            var destination = await _viewModel.GetDestinationsForRoute(route);
             var dialog = new RouteSelectionDialog(destination);
             await PopupNavigation.Instance.PushAsync(dialog);
             var selectedDirection = await dialog.WaitForResult();

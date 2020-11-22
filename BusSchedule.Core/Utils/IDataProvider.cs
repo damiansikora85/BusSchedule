@@ -13,6 +13,7 @@ namespace BusSchedule.Core.Utils
         Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction);
         Task<List<Stops>> GetStopsForRoute(Routes route, int direction);
         Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId);
+        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, string serviceId);
         Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(Trips trip);
         Task<Stops> GetStopById(string stop_Id);
         Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(string tripId, string stopId);

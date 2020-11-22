@@ -44,12 +44,6 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.Table<Destination>().Where(dest => dest.Route_Id == route.Route_Id).FirstAsync());
         }
 
-        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction)
-        {
-            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ?", route.Route_Id, direction));
-        }
-
         public async Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(Trips trip)
         {
             var connection = await GetDatabaseConnectionAsync<Stop_Times>().ConfigureAwait(false);
@@ -61,6 +55,18 @@ namespace BusSchedule.Providers
             var connection = await GetDatabaseConnectionAsync<Stops>().ConfigureAwait(false);
             var stops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops Where stop_id = ?", stopId));
             return stops.FirstOrDefault();
+        }
+
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, string serviceId)
+        {
+            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And service_id = ?", route.Route_Id, serviceId));
+        }
+
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction)
+        {
+            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ?", route.Route_Id, direction));
         }
 
         public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId)
