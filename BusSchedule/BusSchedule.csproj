@@ -11,18 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="data.json" />
-    <None Remove="test.json" />
-    <None Remove="test2.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="data.json" />
-    <EmbeddedResource Include="test.json" />
-    <EmbeddedResource Include="test2.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.1.0.466" />
     <PackageReference Include="Microsoft.AppCenter" Version="3.4.3" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="3.4.3" />

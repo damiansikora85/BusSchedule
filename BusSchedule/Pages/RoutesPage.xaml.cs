@@ -1,7 +1,10 @@
-﻿using BusSchedule.Components;
+﻿using Acr.UserDialogs;
+using BusSchedule.Components;
 using BusSchedule.Core.Utils;
 using BusSchedule.Dialogs;
+using BusSchedule.Interfaces;
 using BusSchedule.Pages.ViewModels;
+using BusSchedule.Tools;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
@@ -24,7 +27,11 @@ namespace BusSchedule.Pages
 
         protected override async void OnAppearing()
         {
+            UserDialogs.Instance.ShowLoading("");
+            await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), TinyIoCContainer.Current.Resolve<IPreferences>());
             await _viewModel.RefreshBusServicesAsync();
+            UserDialogs.Instance.HideLoading();
+
             int row = 0, col = 0;
             int maxCol = grid.ColumnDefinitions.Count;
             foreach (var busService in _viewModel.Routes)
@@ -46,11 +53,6 @@ namespace BusSchedule.Pages
             await PopupNavigation.Instance.PushAsync(dialog);
             var selectedDirection = await dialog.WaitForResult();
             await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
-        }
-
-        private IList<string> GetRoutesForService(Core.Model.Routes busService)
-        {
-            throw new NotImplementedException();
         }
     }
 }

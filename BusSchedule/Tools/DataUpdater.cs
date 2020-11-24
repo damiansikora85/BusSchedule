@@ -1,19 +1,27 @@
-﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.Utils;
-using BusSchedule.Pages.ViewModels;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using BusSchedule.Interfaces;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace BusSchedule.Tools
 {
     public class DataUpdater
     {
-        public static void SetupData(IDataProvider dataProvider)
+        public static async Task UpdateDataIfNeeded(IFileAccess fileAccess, IPreferences preferences)
         {
-
+            var dbVersion = await fileAccess.ReadAssetFile("DbVersion.txt");
+            if (!fileAccess.CheckLocalFileExist("sqlite.db"))
+            {
+                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+            }
+            else
+            {
+                var currentDbVersion = preferences.Get("dbVersion", "1");
+                if(currentDbVersion != dbVersion)
+                {
+                    _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+                }
+            }
+            preferences.Set("dbVersion", dbVersion);
         }
     }
 }

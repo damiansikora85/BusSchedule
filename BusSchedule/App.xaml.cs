@@ -9,6 +9,7 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using BusSchedule.Interfaces;
+using BusSchedule.Interfaces.Implementation;
 
 namespace BusSchedule
 {
@@ -27,6 +28,7 @@ namespace BusSchedule
             var container = TinyIoCContainer.Current;
             var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath("sqlite.db");
             container.Register<IDataProvider, SQLDataProvider>(new SQLDataProvider(databasePath));
+            container.Register<IPreferences, CustomPreferences>();
         }
 
         protected override void OnStart()

@@ -32,9 +32,6 @@ namespace BusSchedule.Providers
             var routeStops = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction))).Select(rs => rs.Stop_Id).ToList();
             var temp = await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).ToListAsync());
             return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
-            //return await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToListAsync());
-            //return await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops Where stop_id In (Select stop_id From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence)", route.Route_Id, direction));
-            //return stops.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
         }
 
         public async Task<Destination> GetRouteDestinations(Routes route)
