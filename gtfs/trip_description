@@ -1,0 +1,6 @@
+shape_id,route_id,direction_id,shortDescription,longDescription
+5221,1,1,B,kurs do: Bolszewo Leśna - Szkoła
+5222,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+5223,1,1,T,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)
+5224,1,1,s,kurs tylko w dni nauki szkolnej do: Wejherowo Broniewskiego - Dworzec PKP 01 nie kursuje przez: Kociewską i Pomorską
+5230,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
