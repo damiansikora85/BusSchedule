@@ -36,33 +36,52 @@ namespace BusSchedule.Core.GTFS
             return stopsForRoute;
         }
 
-        public static async Task<Dictionary<string, List<TimeSpan>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station)
+        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station)
         {
-            var schedule = new Dictionary<string, List<TimeSpan>>();
+            var schedule = new Dictionary<string, List<TimetableTuple>>();
             var calendar = await dataProvider.GetCalendar();
             foreach (var day in calendar)
             {
-                schedule.Add(day.Service_Id, new List<TimeSpan>());
+                schedule.Add(day.Service_Id, new List<TimetableTuple>());
                 var tripsForRoute = await dataProvider.GetTripsForRoute(route, day.Service_Id);
+
+                var desc = await dataProvider.GetRouteDestinationsForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
-                    schedule[day.Service_Id].AddRange((await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
+                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                    var item = stopTimes.Select(st => new TimetableTuple
+                    {
+                        Time = st,
+                        AdditionalDescription = desc.Where(d => d.Shape_Id == trip.Shape_Id).FirstOrDefault()
+                    });
+                    schedule[day.Service_Id].AddRange(item);
+                    //schedule[day.Service_Id].AddRange((await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
                 }
             }
             return schedule;
         }
 
-        public static async Task<Dictionary<string, List<TimeSpan>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)
+        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)
         {
-            var schedule = new Dictionary<string, List<TimeSpan>>();
+            var schedule = new Dictionary<string, List<TimetableTuple>>();
             var calendar = await dataProvider.GetCalendar();
             foreach (var day in calendar)
             {
-                schedule.Add(day.Service_Id, new List<TimeSpan>());
+                schedule.Add(day.Service_Id, new List<TimetableTuple>());
                 var tripsForRoute = await dataProvider.GetTripsForRoute(route, direction, day.Service_Id);
+
+                //get descriptions for trips
+                var desc = await dataProvider.GetRouteDestinationsForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
-                    schedule[day.Service_Id].AddRange((await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
+                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                    var item = stopTimes.Select(st => new TimetableTuple
+                    {
+                        Time = st,
+                        AdditionalDescription = desc.Where(d => d.Shape_Id == trip.Shape_Id).FirstOrDefault()
+                    });
+                    schedule[day.Service_Id].AddRange(item);
+                        //(await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
                 }
             }
             return schedule;

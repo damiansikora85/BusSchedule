@@ -26,8 +26,8 @@ namespace BusSchedule.UI.ViewModels
         public List<TimetableItem> TimetableWorkingDays { get; private set; } = new List<TimetableItem>();
         public List<TimetableItem> TimetableSaturdays { get; private set; } = new List<TimetableItem>();
         public List<TimetableItem> TimetableHolidays { get; private set; } = new List<TimetableItem>();
-
         public List<TimetableItem> CurrentTimetable { get; private set; }
+        public List<Trip_Description> TimetableLegend { get; private set; }
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
         private Calendar.Service _currentCalendarService;
         public bool WorkingDaysVisible => _currentCalendarService == Calendar.Service.WorkingDays;
@@ -57,6 +57,8 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays.Clear();
             TimetableHolidays.Clear();
 
+            TimetableLegend = (await _dataProvider.GetRouteLegend(_route.Route_Id, _direction)).ToList();
+
             var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, _route, _station, _direction.Value)
                 : await GtfsUtils.GetSchedule(_dataProvider, _route, _station);
             TimetableWorkingDays = Setup(timetableAll["24"]);
@@ -70,6 +72,7 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TimetableLegend)));
         }
 
         public void ScheduleDaysChanged(Calendar.Service calendarService)
@@ -94,17 +97,17 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
         }
 
-        private List<TimetableItem> Setup(List<TimeSpan> timetable)
+        private List<TimetableItem> Setup(List<TimetableTuple> timetable)
         {
-            timetable.Sort();
-            var grouped = timetable.GroupBy(item => item.Hours);
+            var sorted = timetable.OrderBy(t => t.Time);
+            var grouped = sorted.GroupBy(item => item.Time.Hours);
             var list = new List<TimetableItem>();
             foreach(var group in grouped)
             {
                 var timetableItem = new TimetableItem
                 {
                     Hour = group.Key,
-                    Minutes = group.Select(it => it.Minutes).ToList()
+                    Minutes = group.Select(it => new TimetableItem.TimetableItemMinutes { Minutes = it.Time.Minutes, AdditionalInfo = it.AdditionalDescription?.ShortDescription }).ToList()
                 };
                 list.Add(timetableItem);
             }

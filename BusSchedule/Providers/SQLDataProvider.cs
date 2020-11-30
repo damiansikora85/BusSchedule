@@ -13,11 +13,11 @@ namespace BusSchedule.Providers
 {
     public class SQLDataProvider : IDataProvider
     {
-        private readonly SQLiteAsyncConnection _connection;
+        private readonly Lazy<SQLiteAsyncConnection> _connection;
 
         public SQLDataProvider(string databasePath)
         {
-            _connection = new SQLiteAsyncConnection(databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache);
+            _connection = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache));
         }
 
         public async Task<List<Routes>> GetRoutes()
@@ -84,26 +84,40 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.Table<Calendar>().ToListAsync());
         }
 
+        public async Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction)
+        {
+            var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trip_Description>("Select * From trip_description Where route_id = ? And direction_id = ?", route_Id, direction.Value));
+        }
+
+        public async Task<IEnumerable<Trip_Description>> GetRouteDestinationsForTrips(IEnumerable<Trips> tripsForRoute)
+        {
+            var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
+            var shapesIds = tripsForRoute.Select(trip => trip.Shape_Id);
+            return await AttemptAndRetry(() => connection.Table<Trip_Description>().Where(desc => shapesIds.Contains(desc.Shape_Id)).ToListAsync());
+            //QueryAsync<Trip_Description>("Select * From trip_description Where shape_id = ?", route_Id, direction.Value));
+        }
+
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()
         {
-            if (!_connection.TableMappings.Any(x => x.MappedType == typeof(T)))
+            if (!_connection.Value.TableMappings.Any(x => x.MappedType == typeof(T)))
             {
-                await _connection.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
-                await _connection.CreateTablesAsync(CreateFlags.None, typeof(T)).ConfigureAwait(false);
+                await _connection.Value.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
+                await _connection.Value.CreateTablesAsync(CreateFlags.None, typeof(T)).ConfigureAwait(false);
             }
 
-            return _connection;
+            return _connection.Value;
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T,U>()
         {
-            if (!(_connection.TableMappings.Any(x => x.MappedType == typeof(T)) && _connection.TableMappings.Any(t => t.MappedType == typeof(U))))
+            if (!(_connection.Value.TableMappings.Any(x => x.MappedType == typeof(T)) && _connection.Value.TableMappings.Any(t => t.MappedType == typeof(U))))
             {
-                await _connection.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
-                await _connection.CreateTablesAsync(CreateFlags.None, new Type[] { typeof(T), typeof(U) }).ConfigureAwait(false);
+                await _connection.Value.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
+                await _connection.Value.CreateTablesAsync(CreateFlags.None, new Type[] { typeof(T), typeof(U) }).ConfigureAwait(false);
             }
 
-            return _connection;
+            return _connection.Value;
         }
 
         protected Task<T> AttemptAndRetry<T>(Func<Task<T>> action, int numRetries = 12)
