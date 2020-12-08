@@ -19,14 +19,6 @@ namespace BusSchedule.Dialogs
         private RouteSelectionViewModel _viewModel;
         private TaskCompletionSource<int> _taskCompletionSource;
 
-        //public RouteSelectionDialog(List<BusRoute> routes)
-        //{
-        //    _taskCompletionSource = new TaskCompletionSource<BusRoute>();
-        //    _viewModel = new RouteSelectionViewModel(routes);
-        //    InitializeComponent();
-        //    BindingContext = _viewModel;
-        //}
-
         public RouteSelectionDialog(Destination destination)
         {
             _taskCompletionSource = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
