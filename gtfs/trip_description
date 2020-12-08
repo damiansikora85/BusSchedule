@@ -15,3 +15,22 @@ shape_id,route_id,direction_id,shortDescription,longDescription
 5246,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
 5253,6,0,S,kurs przez: Wejherowo Szpital
 5252,6,1,S,kurs przez: Wejherowo Szpital
+5254,7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02
+5255,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
+5258,7,1,R,kurs do: Gościcino Robakowska
+5261,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
+5265,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+5262,8,1,A,kurs do: Reda Aquapark
+5267,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+5272,10,0,F,kurs do: Wejherowo os. Fenikowskiego (do przystanku Kochanowskiego SKM Nanice 02 po trasie)
+5274,10,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+5268,10,1,G,kurs skrócony do: Gościcino Równa
+5269,10,1,K,kurs do: Kębłowo Wiejska przez DK 6 (do przystanku Szeroka 01 po trasie)
+5270,10,1,Z,kurs do: Kębłowo Wiejska 02 dalej do: Bolszewo Zamostna 02 przez: DK 6
+5284,11,0,P,kurs tylko w dni nauki szkolnej do: Wejherowo Prusa - Szkoła 02
+5285,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+5280,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+5281,11,1,PK,kurs skrócony do: Wejherowo Pruszkowskiego 01 przez: Rybacką Prusa Pomorską Kochanowskiego
+5282,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+5277,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+5289,18,0,Z,kurs skrócony do: Reda Ciechocino 02
