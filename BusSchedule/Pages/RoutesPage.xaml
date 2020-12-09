@@ -5,7 +5,7 @@
              Title="MZK Wejherowo" BackgroundColor="White">
     <ContentPage.Content>
         <ScrollView>
-            <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+            <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

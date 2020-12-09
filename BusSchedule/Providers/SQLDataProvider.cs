@@ -87,7 +87,8 @@ namespace BusSchedule.Providers
         public async Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction)
         {
             var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<Trip_Description>("Select * From trip_description Where route_id = ? And direction_id = ?", route_Id, direction.Value));
+            var query = direction.HasValue ? "Select * From trip_description Where route_id = ? And direction_id = ?" : "Select * From trip_description Where route_id = ?";
+            return await AttemptAndRetry(() => connection.QueryAsync<Trip_Description>(query, route_Id, direction ?? 0));
         }
 
         public async Task<IEnumerable<Trip_Description>> GetRouteDestinationsForTrips(IEnumerable<Trips> tripsForRoute)
@@ -95,7 +96,6 @@ namespace BusSchedule.Providers
             var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
             var shapesIds = tripsForRoute.Select(trip => trip.Shape_Id);
             return await AttemptAndRetry(() => connection.Table<Trip_Description>().Where(desc => shapesIds.Contains(desc.Shape_Id)).ToListAsync());
-            //QueryAsync<Trip_Description>("Select * From trip_description Where shape_id = ?", route_Id, direction.Value));
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()
