@@ -15,10 +15,11 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnDefinitions="30,*" RowDefinitions="Auto,*" ColumnSpacing="0" RowSpacing="0">
-                                <Ellipse Stroke="#237194" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
-                                <Label Grid.Column="1" Text="{Binding Stop_Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
-                                <BoxView Grid.Row="1" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
+                            <Grid ColumnDefinitions="30,*" RowDefinitions="*,Auto,*" ColumnSpacing="0" RowSpacing="0">
+                                <BoxView Grid.Row="0" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsFirst, Converter={local:NotBooleanConverter}}"/>
+                                <Ellipse Grid.Row="1" Stroke="#237194" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Stop_Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
+                                <BoxView Grid.Row="2" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

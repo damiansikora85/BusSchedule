@@ -12,6 +12,6 @@ namespace BusSchedule.Core.Model
         public string Stop_Lat { get; set; }
         public bool IsLast { get; set; }
         public string Stop_Lon { get; set; }
-
+        public bool IsFirst { get; set; }
     }
 }

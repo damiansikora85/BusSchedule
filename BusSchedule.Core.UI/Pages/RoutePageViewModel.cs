@@ -26,6 +26,7 @@ namespace BusSchedule.UI.ViewModels
         {
             Stations = await _dataProvider.GetStopsForRoute(Route, Direction);
             Stations[^1].IsLast = true;
+            Stations[0].IsFirst = true;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Stations)));
         }
     }
