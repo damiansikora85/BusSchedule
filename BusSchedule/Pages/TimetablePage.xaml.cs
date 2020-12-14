@@ -2,6 +2,9 @@
 using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
+using Microsoft.AppCenter.Crashes;
+using System;
+using System.Collections.Generic;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,7 +35,18 @@ namespace BusSchedule.Pages
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-            await _viewModel.RefreshTimetableAsync();
+            try
+            {
+                await _viewModel.RefreshTimetableAsync();
+            }
+            catch (Exception exc)
+            {
+                Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    {"route", _viewModel.Route.Route_Short_Name },
+                    {"station", _viewModel.Station.Stop_Name }
+                });
+            }
             UserDialogs.Instance.HideLoading();
             base.OnAppearing();
         }

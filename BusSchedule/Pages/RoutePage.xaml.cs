@@ -1,6 +1,9 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
+using Microsoft.AppCenter.Crashes;
+using System;
+using System.Collections.Generic;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,17 +27,41 @@ namespace BusSchedule.Pages
 
         protected override async void OnAppearing()
         {
-            await _viewModel.RefreshDataAsync();
+            try
+            {
+                await _viewModel.RefreshDataAsync();
+            }
+            catch(Exception exc)
+            {
+                Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    {"route", _viewModel.Route.Route_Short_Name },
+                    {"direction", _viewModel.Direction.ToString()}
+                });
+            }
             base.OnAppearing();
         }
 
         private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
         {
             listView.SelectedItem = null;
+
             if (e.SelectedItem is Stops station)
             {
-                var page = _fakeDirection ? new TimetablePage(station, _viewModel.Route) : new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
-                await Navigation.PushAsync(page);
+                try
+                {
+                    var page = _fakeDirection ? new TimetablePage(station, _viewModel.Route) : new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
+                    await Navigation.PushAsync(page);
+                }
+                catch(Exception exc)
+                {
+                    Crashes.TrackError(exc, new Dictionary<string, string>
+                    {
+                        {"route", _viewModel.Route.Route_Short_Name },
+                        {"direction", _viewModel.Direction.ToString() },
+                        {"station", station.Stop_Name }
+                    });
+                }
             }
         }
     }

@@ -17,8 +17,8 @@ namespace BusSchedule.UI.ViewModels
     public class TimetableViewModel : INotifyPropertyChanged
     {
         private IDataProvider _dataProvider;
-        private Routes _route;
-        private Stops _station;
+        public Routes Route { get; private set; }
+        public Stops Station { get; private set; }
         private int? _direction;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -38,15 +38,15 @@ namespace BusSchedule.UI.ViewModels
 
         public TimetableViewModel(Stops station, Routes route, IDataProvider dataProvider)
         {
-            _station = station;
-            _route = route;
+            Station = station;
+            Route = route;
             _dataProvider = dataProvider;
         }
 
         public TimetableViewModel(Stops station, Routes route, int direction, IDataProvider dataProvider)
         {
-            _station = station;
-            _route = route;
+            Station = station;
+            Route = route;
             _direction = direction;
             _dataProvider = dataProvider;
         }
@@ -57,10 +57,10 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays.Clear();
             TimetableHolidays.Clear();
 
-            TimetableLegend = (await _dataProvider.GetRouteLegend(_route.Route_Id, _direction)).ToList();
+            TimetableLegend = (await _dataProvider.GetRouteLegend(Route.Route_Id, _direction)).ToList();
 
-            var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, _route, _station, _direction.Value)
-                : await GtfsUtils.GetSchedule(_dataProvider, _route, _station);
+            var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value)
+                : await GtfsUtils.GetSchedule(_dataProvider, Route, Station);
             TimetableWorkingDays = Setup(timetableAll["24"]);
             TimetableSaturdays = Setup(timetableAll["7"]);
             TimetableHolidays = Setup(timetableAll["4"]);
