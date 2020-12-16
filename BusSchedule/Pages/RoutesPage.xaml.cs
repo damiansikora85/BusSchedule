@@ -28,28 +28,21 @@ namespace BusSchedule.Pages
 
         protected override async void OnAppearing()
         {
-            try
-            {
-                UserDialogs.Instance.ShowLoading("");
-                await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), TinyIoCContainer.Current.Resolve<IPreferences>());
-                await _viewModel.RefreshBusServicesAsync();
-                UserDialogs.Instance.HideLoading();
+            UserDialogs.Instance.ShowLoading("");
+            await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+            await _viewModel.RefreshBusServicesAsync();
+            UserDialogs.Instance.HideLoading();
 
-                int row = 0, col = 0;
-                int maxCol = grid.ColumnDefinitions.Count;
-                foreach (var busService in _viewModel.Routes)
-                {
-                    var item = new RouteView(busService);
-                    item.OnServiceClicked += OnBusServiceSelected;
-                    grid.Children.Add(item, col, row);
-                    col++;
-                    row = col == maxCol ? row + 1 : row;
-                    col %= maxCol;
-                }
-            }
-            catch(Exception exc)
+            int row = 0, col = 0;
+            int maxCol = grid.ColumnDefinitions.Count;
+            foreach (var busService in _viewModel.Routes)
             {
-                Crashes.TrackError(exc);
+                var item = new RouteView(busService);
+                item.OnServiceClicked += OnBusServiceSelected;
+                grid.Children.Add(item, col, row);
+                col++;
+                row = col == maxCol ? row + 1 : row;
+                col %= maxCol;
             }
             base.OnAppearing();
         }
