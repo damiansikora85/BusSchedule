@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Interfaces;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 
@@ -22,6 +23,18 @@ namespace BusSchedule.Tools
                 }
             }
             preferences.Set("dbVersion", dbVersion);
+        }
+
+        public static async Task ForceCopy(IFileAccess fileAccess)
+        {
+            try
+            {
+                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+            }
+            catch(Exception exc)
+            {
+                var msg = exc.Message;
+            }
         }
     }
 }

@@ -12,6 +12,9 @@ using System.Collections.Generic;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SQLite;
+using System.Threading.Tasks;
+using Polly;
 
 namespace BusSchedule.Pages
 {
@@ -30,7 +33,7 @@ namespace BusSchedule.Pages
         {
             UserDialogs.Instance.ShowLoading("");
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), TinyIoCContainer.Current.Resolve<IPreferences>());
-            await _viewModel.RefreshBusServicesAsync();
+            await RefreshData();
             UserDialogs.Instance.HideLoading();
 
             int row = 0, col = 0;
@@ -45,6 +48,15 @@ namespace BusSchedule.Pages
                 col %= maxCol;
             }
             base.OnAppearing();
+        }
+
+        private Task RefreshData()
+        {
+            return Policy.Handle<SQLiteException>().RetryAsync(async (exc, retryNum) =>
+            {
+                Crashes.TrackError(exc);
+                await DataUpdater.ForceCopy(DependencyService.Get<IFileAccess>());
+            }).ExecuteAsync(async () => await _viewModel.RefreshBusServicesAsync());
         }
 
         private async void OnBusServiceSelected(Core.Model.Routes route)
