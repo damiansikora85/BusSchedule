@@ -52,7 +52,7 @@ namespace BusSchedule.Pages
 
         private Task RefreshData()
         {
-            return Policy.Handle<SQLiteException>().RetryAsync(async (exc, retryNum) =>
+            return Policy.Handle<Exception>().RetryAsync(async (exc, retryNum) =>
             {
                 Crashes.TrackError(exc);
                 await DataUpdater.ForceCopy(DependencyService.Get<IFileAccess>());

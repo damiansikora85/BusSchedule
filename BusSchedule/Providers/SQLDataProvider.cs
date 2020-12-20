@@ -113,7 +113,7 @@ namespace BusSchedule.Providers
         {
             if (!(_connection.Value.TableMappings.Any(x => x.MappedType == typeof(T)) && _connection.Value.TableMappings.Any(t => t.MappedType == typeof(U))))
             {
-                await _connection.Value.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
+                //await _connection.Value.EnableWriteAheadLoggingAsync().ConfigureAwait(false);
                 await _connection.Value.CreateTablesAsync(CreateFlags.None, new Type[] { typeof(T), typeof(U) }).ConfigureAwait(false);
             }
 
