@@ -44,7 +44,6 @@ namespace BusSchedule.Droid
                 tcs.SetResult(true);
             }).ConfigureAwait(false);
 
-            tcs.SetResult(true);
 			return tcs.Task;
 		}
 	}
