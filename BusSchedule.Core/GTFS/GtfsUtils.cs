@@ -45,7 +45,7 @@ namespace BusSchedule.Core.GTFS
                 schedule.Add(day.Service_Id, new List<TimetableTuple>());
                 var tripsForRoute = await dataProvider.GetTripsForRoute(route, day.Service_Id);
 
-                var desc = await dataProvider.GetRouteDestinationsForTrips(tripsForRoute);
+                var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
                     var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
@@ -71,7 +71,7 @@ namespace BusSchedule.Core.GTFS
                 var tripsForRoute = await dataProvider.GetTripsForRoute(route, direction, day.Service_Id);
 
                 //get descriptions for trips
-                var desc = await dataProvider.GetRouteDestinationsForTrips(tripsForRoute);
+                var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
                     var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
@@ -81,7 +81,6 @@ namespace BusSchedule.Core.GTFS
                         AdditionalDescription = desc.Where(d => d.Shape_Id == trip.Shape_Id).FirstOrDefault()
                     });
                     schedule[day.Service_Id].AddRange(item);
-                        //(await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time)));
                 }
             }
             return schedule;

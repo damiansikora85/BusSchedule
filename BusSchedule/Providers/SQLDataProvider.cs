@@ -91,7 +91,7 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.QueryAsync<Trip_Description>(query, route_Id, direction ?? 0));
         }
 
-        public async Task<IEnumerable<Trip_Description>> GetRouteDestinationsForTrips(IEnumerable<Trips> tripsForRoute)
+        public async Task<IEnumerable<Trip_Description>> GetRouteDescriptionForTrips(IEnumerable<Trips> tripsForRoute)
         {
             var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
             var shapesIds = tripsForRoute.Select(trip => trip.Shape_Id);
