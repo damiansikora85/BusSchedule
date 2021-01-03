@@ -8,6 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
 using Polly;
+using System.Globalization;
 
 namespace BusSchedule.Providers
 {
@@ -78,10 +79,10 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.QueryAsync<Stop_Times>("Select * From Stop_Times Where trip_id = ? And stop_id = ?", tripId, stopId));
         }
 
-        public async Task<IEnumerable<Calendar>> GetCalendar()
+        public async Task<IEnumerable<Core.Model.Calendar>> GetCalendar()
         {
-            var connection = await GetDatabaseConnectionAsync<Calendar>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<Calendar>().ToListAsync());
+            var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().ToListAsync());
         }
 
         public async Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction)
@@ -96,6 +97,13 @@ namespace BusSchedule.Providers
             var connection = await GetDatabaseConnectionAsync<Trip_Description>().ConfigureAwait(false);
             var shapesIds = tripsForRoute.Select(trip => trip.Shape_Id);
             return await AttemptAndRetry(() => connection.Table<Trip_Description>().Where(desc => shapesIds.Contains(desc.Shape_Id)).ToListAsync());
+        }
+
+        public async Task<(DateTime startDate, DateTime endDate)> GetFeedStartEndDates()
+        {
+            var connection = await GetDatabaseConnectionAsync<Feed_Info>().ConfigureAwait(false);
+            var feedInfo = await AttemptAndRetry(() => connection.Table<Feed_Info>().FirstAsync());
+            return (DateTime.ParseExact(feedInfo.Feed_Start_Date, "yyyyMMdd", CultureInfo.InvariantCulture), DateTime.ParseExact(feedInfo.Feed_End_Date, "yyyyMMdd", CultureInfo.InvariantCulture));
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()

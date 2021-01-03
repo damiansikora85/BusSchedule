@@ -8,7 +8,19 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+            <StackLayout>
+                <Label TextColor="#404040">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Rozkład ważny od "/>
+                            <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}"/>
+                            <Span Text=" do "/>
+                            <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
