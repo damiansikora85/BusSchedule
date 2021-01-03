@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Pages.RoutesPage"
              Title="MZK Wejherowo" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="baseline_email_white_24" Clicked="OnContactClicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>

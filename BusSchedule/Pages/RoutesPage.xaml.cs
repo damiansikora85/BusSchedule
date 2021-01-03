@@ -15,6 +15,7 @@ using Xamarin.Forms.Xaml;
 using SQLite;
 using System.Threading.Tasks;
 using Polly;
+using Xamarin.Essentials;
 
 namespace BusSchedule.Pages
 {
@@ -79,6 +80,29 @@ namespace BusSchedule.Pages
             catch(Exception exc)
             {
                 Crashes.TrackError(exc, new Dictionary<string, string> { { "route", route.Route_Short_Name } });
+            }
+        }
+
+        private async void OnContactClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var message = new EmailMessage
+                {
+                    Subject = "Rozkład jazdy MZK Wejherowo",
+                    To = new List<string> { "darktowerlab@gmail.com" },
+                };
+                await Email.ComposeAsync(message);
+            }
+            catch (FeatureNotSupportedException fbsEx)
+            {
+                // Email is not supported on this device
+                Crashes.TrackError(fbsEx);
+            }
+            catch (Exception exc)
+            {
+                // Some other exception occurred
+                Crashes.TrackError(exc);
             }
         }
     }
