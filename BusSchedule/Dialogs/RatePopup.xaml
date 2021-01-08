@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusSchedule.Dialogs.RatePopup">
+    <ContentPage.Content>
+        <Frame BackgroundColor="#80000000">
+            <StackLayout BackgroundColor="White" VerticalOptions="Center" Padding="16" Spacing="32">
+                <Label Text="Czy podoba Ci się aplikacja?" TextColor="#404040" FontSize="Large"/>
+                <Label Text="Dziękujemy za korzystanie z naszej aplikacji. Jeśli jest ona dla Ciebie przydatna to daj znać innym i wystaw ocenę w sklepie Google Play" TextColor="#404040"/>
+                <StackLayout Orientation="Horizontal" Margin="0,8" HorizontalOptions="End">
+                    <Button Text="Nie teraz " Clicked="OnRateLaterClicked" TextColor="#237194" BackgroundColor="Transparent"/>
+                    <Button Text="Oceń teraz" Clicked="OnRateClicked" BackgroundColor="#237194" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</pages:PopupPage>

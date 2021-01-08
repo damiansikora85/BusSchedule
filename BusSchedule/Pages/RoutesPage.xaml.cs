@@ -16,6 +16,7 @@ using SQLite;
 using System.Threading.Tasks;
 using Polly;
 using Xamarin.Essentials;
+using Rg.Plugins.Popup.Extensions;
 
 namespace BusSchedule.Pages
 {
@@ -33,7 +34,8 @@ namespace BusSchedule.Pages
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-            await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+            var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
+            await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
             await RefreshData();
             UserDialogs.Instance.HideLoading();
 
@@ -47,6 +49,11 @@ namespace BusSchedule.Pages
                 col++;
                 row = col == maxCol ? row + 1 : row;
                 col %= maxCol;
+            }
+            var ratePopupLastShown = DateTime.Parse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()));
+            if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+            {
+                await Navigation.PushPopupAsync(new RatePopup(preferences));
             }
             base.OnAppearing();
         }
