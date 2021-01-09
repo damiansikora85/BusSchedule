@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SQLite;
 using System.Threading.Tasks;
 using Polly;
 using Xamarin.Essentials;

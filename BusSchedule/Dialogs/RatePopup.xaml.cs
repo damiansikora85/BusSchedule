@@ -33,11 +33,13 @@ namespace BusSchedule.Dialogs
         {
             await Launcher.OpenAsync(new Uri("market://details?id=com.darktower.bus"));
             _preferences.Set("rated", "1");
+            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateNow");
             await Navigation.PopPopupAsync();
         }
 
         private async void OnRateLaterClicked(object sender, EventArgs e)
         {
+            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateLater");
             await Navigation.PopPopupAsync();
         }
     }
