@@ -1,4 +1,4 @@
-stop_id,stop_code,stop_name,stop_lat,stop_lon
+﻿stop_id,stop_code,stop_name,stop_lat,stop_lon
 1,2-457-02,"Gościcino Robakowska 02",54.5901950000,18.1674920000
 2,2-456-01,"Gościcino Okrężna 01",54.5937620000,18.1607620000
 3,2-456-02,"Gościcino Okrężna 02",54.5938270000,18.1609940000
@@ -144,9 +144,6 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon
 149,1-202-02,"Wejherowo Marynarki Wojennej 02",54.5896400000,18.2436950000
 152,1-204-02,"Wejherowo Starostwo Powiatowe 02",54.6011100000,18.2332320000
 153,1-204-01,"Wejherowo Starostwo Powiatowe 01",54.6010740000,18.2334680000
-154,2-511-02,"Gowino Zaciszne Zalesie 02 n/ż",54.5908210000,18.2052130000
-155,2-511-01,"Gowino Zaciszne Zalesie 01 n/ż",54.5910070000,18.2054250000
-156,2-512-02,"Gowino Pętkowice Grubby 02 n/ż",54.5867640000,18.2033700000
 157,2-512-01,"Gowino Pętkowice Grubby 01 n/ż",54.5859200000,18.2031220000
 158,2-444-01,"Bolszewo Paradyż 01 n/ż",54.6300860000,18.1496960000
 159,2-444-02,"Bolszewo Paradyż 02 n/ż",54.6289010000,18.1516980000
@@ -305,6 +302,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon
 326,2-474-02,"Gościcino Południowa 02",54.5961100000,18.1764320000
 327,2-475-02,"Gościcino Grubby 02",54.5958810000,18.1786630000
 328,2-470-01,"Gościcino PKP 01",54.6051500000,18.1613600000
+329,1-235-01,"Wejherowo Dworzec PKP 01",54.6052350000,18.2304790000
 330,5-730-01,"Rumia C.H. ""Port Rumia"" 01",54.5842960000,18.3745570000
 331,5-731-02,"Rumia Jeziorna 02 n/ż",54.5875300000,18.3738360000
 332,5-731-01,"Rumia Jeziorna 01 n/ż",54.5882370000,18.3721910000
@@ -342,6 +340,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon
 414,5-713-01,"Rumia C.H. ""Port Rumia"" - Grunwaldzka 01",54.5824480000,18.3670550000
 417,3-768-02,"Reda Brzozowa - Szkoła 02",54.6111830000,18.3536180000
 423,1-206-03,"Wejherowo Filharmonia Kaszubska 03",54.6035050000,18.2279580000
+424,1-206-04,"Wejherowo Filharmonia Kaszubska 04",54.6039830000,18.2284380000
 425,1-229-03,"Wejherowo Myśliwska 03 n/ż",54.6010110000,18.2569310000
 426,1-253-01,"Wejherowo Sędzickiego SKM Śmiechowo 01",54.6012810000,18.2729880000
 427,1-253-02,"Wejherowo Sędzickiego SKM Śmiechowo 02",54.6011960000,18.2745660000
@@ -351,3 +350,8 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon
 434,2-464-02,"Bolszewo Orzechowa 02",54.6181330000,18.1826420000
 435,1-162-03,"Wejherowo Graniczna 03",54.6108020000,18.2276960000
 436,2-462-01,"Bolszewo Wspólna 01 n/ż",54.6187630000,18.1875470000
+437,2-511-91,"Gowino Zaciszne Zalesie 91 n/ż",54.5909200000,18.1917940000
+438,2-511-92,"Gowino Zaciszne Zalesie 92 n/ż",54.5906710000,18.1920800000
+439,2-512-92,"Gowino Pętkowice Grubby 92 n/ż",54.5864610000,18.2021230000
+440,2-475-93,"Gościcino Grubby 93 n/ż",54.5962110000,18.1800960000
+441,2-475-94,"Gościcino Grubby 94 n/ż",54.5961600000,18.1803860000
