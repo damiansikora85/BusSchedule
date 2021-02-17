@@ -1,0 +1,1 @@
+sqlite3.exe sqlite.db < create.sql
