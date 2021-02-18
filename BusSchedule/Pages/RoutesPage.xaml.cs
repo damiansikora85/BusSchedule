@@ -70,6 +70,7 @@ namespace BusSchedule.Pages
         {
             try
             {
+                await TinyIoCContainer.Current.Resolve<IDataProvider>().Test();
                 var destination = await _viewModel.GetDestinationsForRoute(route);
                 if (!string.IsNullOrEmpty(destination.Outbound) && !string.IsNullOrEmpty(destination.Inbound))
                 {

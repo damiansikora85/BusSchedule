@@ -21,5 +21,6 @@ namespace BusSchedule.Core.Utils
         Task<IEnumerable<Calendar>> GetCalendar();
         Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction);
         Task<IEnumerable<Trip_Description>> GetRouteDescriptionForTrips(IEnumerable<Trips> tripsForRoute);
+        Task Test();
     }
 }
