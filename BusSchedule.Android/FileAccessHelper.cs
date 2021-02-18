@@ -33,6 +33,10 @@ namespace BusSchedule.Droid
             var tcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
             Task.Run(() =>
             {
+                if(File.Exists(destFilename))
+                {
+                    File.Delete(destFilename);
+                }
                 using var br = new BinaryReader(Android.App.Application.Context.Assets.Open(assetFilename));
                 using var bw = new BinaryWriter(new FileStream(destFilename, FileMode.Create));
                 byte[] buffer = new byte[2048];
