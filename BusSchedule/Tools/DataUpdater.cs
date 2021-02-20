@@ -10,16 +10,16 @@ namespace BusSchedule.Tools
         public static async Task UpdateDataIfNeeded(IFileAccess fileAccess, IPreferences preferences)
         {
             var dbVersion = await fileAccess.ReadAssetFile("DbVersion.txt");
-            if (!fileAccess.CheckLocalFileExist("sqlite.db"))
+            if (!fileAccess.CheckLocalFileExist(App.DB_FILENAME))
             {
-                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath(App.DB_FILENAME), App.DB_FILENAME);
             }
             else
             {
                 var currentDbVersion = preferences.Get("dbVersion", "1");
                 if(currentDbVersion != dbVersion)
                 {
-                    _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+                    _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath(App.DB_FILENAME), App.DB_FILENAME);
                 }
             }
             preferences.Set("dbVersion", dbVersion);
@@ -29,7 +29,7 @@ namespace BusSchedule.Tools
         {
             try
             {
-                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath("sqlite.db"), "sqlite.db");
+                _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath(App.DB_FILENAME), App.DB_FILENAME);
             }
             catch(Exception exc)
             {

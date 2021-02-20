@@ -15,6 +15,7 @@ namespace BusSchedule
 {
     public partial class App : Application
     {
+        public static string DB_FILENAME = "sqlite20210218.db";
         public App()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace BusSchedule
         private void RegisterIoC()
         {
             var container = TinyIoCContainer.Current;
-            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath("sqlite.db");
+            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(DB_FILENAME);
             container.Register<IDataProvider, SQLDataProvider>(new SQLDataProvider(databasePath));
             container.Register<IPreferences, CustomPreferences>();
         }
