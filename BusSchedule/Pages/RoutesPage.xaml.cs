@@ -96,7 +96,7 @@ namespace BusSchedule.Pages
                 var message = new EmailMessage
                 {
                     Subject = "Rozkład jazdy MZK Wejherowo",
-                    To = new List<string> { "darktowerlab@gmail.com" },
+                    To = new List<string> { "kontakt@darktowerlab.pl" },
                 };
                 await Email.ComposeAsync(message);
             }
@@ -104,11 +104,13 @@ namespace BusSchedule.Pages
             {
                 // Email is not supported on this device
                 Crashes.TrackError(fbsEx);
+                await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
             }
             catch (Exception exc)
             {
                 // Some other exception occurred
                 Crashes.TrackError(exc);
+                await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
             }
         }
     }

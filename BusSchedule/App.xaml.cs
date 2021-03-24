@@ -1,21 +1,19 @@
 ﻿using BusSchedule.Core.Utils;
+using BusSchedule.Interfaces;
+using BusSchedule.Interfaces.Implementation;
 using BusSchedule.Pages;
 using BusSchedule.Providers;
-using System;
-using TinyIoC;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using BusSchedule.Interfaces;
-using BusSchedule.Interfaces.Implementation;
+using TinyIoC;
+using Xamarin.Forms;
 
 namespace BusSchedule
 {
     public partial class App : Application
     {
-        public static string DB_FILENAME = "sqlite20210308.db";
+        public static string DB_FILENAME = "sqlite20210324.db";
         public App()
         {
             InitializeComponent();
