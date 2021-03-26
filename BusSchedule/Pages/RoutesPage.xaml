@@ -1,26 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="BusSchedule.Pages.RoutesPage"
              Title="MZK Wejherowo" BackgroundColor="White">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="baseline_email_white_24" Clicked="OnContactClicked"/>
     </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ControlTemplate
+		        x:Key="TabItemTemplate">
+                <Grid
+			        RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+				        Grid.Row="0"
+				        VerticalOptions="Center"
+				        HorizontalOptions="Center"
+				        WidthRequest="24"
+				        HeightRequest="24"
+                        Margin="3"
+				        Source="{TemplateBinding CurrentIcon}" />
+                    <Label
+				        Grid.Row="1"
+				        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+				        FontSize="{TemplateBinding CurrentFontSize}"
+				        Text="{TemplateBinding Text}"
+				        TextColor="{TemplateBinding CurrentTextColor}" />
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Label TextColor="#404040">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Rozkład ważny od "/>
-                            <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}"/>
-                            <Span Text=" do "/>
-                            <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
-            </StackLayout>
-        </ScrollView>
+        <xct:TabView TabStripPlacement="Bottom" TabStripHeight="60" TabStripBackgroundColor="#237194">
+            <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Linie" Icon="baseline_view_module_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
+                <ScrollView>
+                    <StackLayout>
+                        <Label TextColor="#404040">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Rozkład ważny od "/>
+                                    <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}"/>
+                                    <Span Text=" do "/>
+                                    <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Grid x:Name="grid" RowDefinitions="120, 120, 120, 120,120" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </ScrollView>
+            </xct:TabViewItem>
+            <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Ulubione" Icon="baseline_favorite_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
+                <StackLayout>
+                    <Label Text="Nie dodano nic do ulubionych"/>
+                </StackLayout>
+            </xct:TabViewItem>
+        </xct:TabView>
     </ContentPage.Content>
 </ContentPage>
