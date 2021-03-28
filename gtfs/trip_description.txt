@@ -1,37 +1,36 @@
 shape_id,route_id,direction_id,shortDescription,longDescription
-9127,1,1,B,kurs do: Bolszewo Leśna - Szkoła
-9159,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-9160,1,1,T,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)
-9161,1,1,s,kurs tylko w dni nauki szkolnej do: Wejherowo Broniewskiego - Dworzec PKP 01 nie kursuje przez: Kociewską i Pomorską
-9167,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
-9172,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
-9174,3,0,S,kurs przez: Gościcino Szkoła 04 nie kursuje przez: Gościcino Szkoła 02
-9175,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
-9171,3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie
-9179,4,0,Z,kurs skrócony do: Wejherowo Budowlanych 02
-9176,4,1,S,kurs do: Orle Szkoła w dni nauki w ferie do: Orle Łąkowa
-9185,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-9180,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-9181,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
-9189,6,0,S,kurs przez: Wejherowo Szpital
-9187,6,1,S,kurs przez: Wejherowo Szpital
+9492,1,1,B,kurs do: Bolszewo Leśna - Szkoła
+9524,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+9525,1,1,T,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)
+9531,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+9536,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
+9538,3,0,S,kurs przez: Gościcino Szkoła 04 nie kursuje przez: Gościcino Szkoła 02
+9539,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+9534,3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie
+9543,4,0,Z,kurs skrócony do: Wejherowo Budowlanych 02
+9540,4,1,S,kurs do: Orle Szkoła w dni nauki w ferie do: Orle Łąkowa
+9549,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+9544,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+9545,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
+9553,6,0,S,kurs przez: Wejherowo Szpital
+9551,6,1,S,kurs przez: Wejherowo Szpital
 9008,7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02
-9191,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
-9194,7,1,R,kurs do: Gościcino Robakowska
-9197,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
-9201,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-9198,8,1,A,kurs do: Reda Aquapark
-9199,8,1,A,kurs do: Reda Aquapark
-9203,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-9208,10,0,F,kurs do: Wejherowo os. Fenikowskiego (do przystanku Kochanowskiego SKM Nanice 02 po trasie)
-9210,10,0,Z,kurs skrócony do: Bolszewo Zamostna 02
-9204,10,1,G,kurs skrócony do: Gościcino Równa
-9205,10,1,K,kurs do: Kębłowo Wiejska przez DK 6 (do przystanku Szeroka 01 po trasie)
-9206,10,1,Z,kurs do: Kębłowo Wiejska 02 dalej do: Bolszewo Zamostna 02 przez: DK 6
-9219,11,0,P,kurs tylko w dni nauki szkolnej do: Wejherowo Prusa - Szkoła 02
-9220,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
-9215,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-9216,11,1,PK,kurs skrócony do: Wejherowo Pruszkowskiego 01 przez: Rybacką Prusa Pomorską Kochanowskiego
-9217,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-9212,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
-9224,18,0,Z,kurs skrócony do: Reda Ciechocino 02
+9555,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
+9375,7,1,R,kurs do: Gościcino Robakowska
+9561,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
+9382,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+9562,8,1,A,kurs do: Reda Aquapark
+9563,8,1,A,kurs do: Reda Aquapark
+9567,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+9572,10,0,F,kurs do: Wejherowo os. Fenikowskiego (do przystanku Kochanowskiego SKM Nanice 02 po trasie)
+9574,10,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+9385,10,1,G,kurs skrócony do: Gościcino Równa
+9570,10,1,W,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
+9569,10,1,K,kurs przez: DK 6 (do przystanku Gościcino Szeroka 01 po trasie)
+9583,11,0,P,kurs tylko w dni nauki szkolnej do: Wejherowo Prusa - Szkoła 02
+9584,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+9396,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+9397,11,1,PK,kurs skrócony do: Wejherowo Pruszkowskiego 01 przez: Rybacką Prusa Pomorską Kochanowskiego
+9398,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+9576,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+9588,18,0,Z,kurs skrócony do: Reda Ciechocino 02

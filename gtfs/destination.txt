@@ -4,7 +4,7 @@ route_id,outbound,inbound
 3,Wejherowo Odrębna,Gościcino Robakowska
 4,Wejherowo Starostwo Powiatowe,Orle Łąkowa
 5,Wejherowo Szpital,Orle Łąkowa
-6,Wejherowo Rogali - Energa,Wejherowo os. Fenikowskiego
+6,Wejherowo Karnowskiego,Wejherowo os. Fenikowskiego
 7,Wejherowo Cegielnia,Gościcino PKP
 8,Wejherowo Szpital,Rumia C.H. Port Rumia
 9,Rumia Dworzec PKP,Reda Rekowo Lipowa
