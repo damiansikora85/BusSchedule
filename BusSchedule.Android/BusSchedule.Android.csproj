@@ -87,6 +87,9 @@
     <PackageReference Include="Polly">
       <Version>7.2.1</Version>
     </PackageReference>
+    <PackageReference Include="Refractored.MvvmHelpers">
+      <Version>1.6.2</Version>
+    </PackageReference>
     <PackageReference Include="Rg.Plugins.Popup">
       <Version>2.0.0.6</Version>
     </PackageReference>

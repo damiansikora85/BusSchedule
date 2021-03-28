@@ -27,6 +27,12 @@ namespace BusSchedule.Providers
             return await AttemptAndRetry(() => connection.Table<Routes>().ToListAsync()).ConfigureAwait(false);
         }
 
+        public async Task<Routes> GetRoute(string routeId)
+        {
+            var connection = await GetDatabaseConnectionAsync<Routes>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.Table<Routes>().Where(route => route.Route_Id == routeId).FirstAsync());
+        }
+
         public async Task<List<Stops>> GetStopsForRoute(Routes route, int direction)
         {
             var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);

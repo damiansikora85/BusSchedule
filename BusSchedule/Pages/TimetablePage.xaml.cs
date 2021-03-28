@@ -70,5 +70,10 @@ namespace BusSchedule.Pages
         {
             //listView.SelectedItem = null;
         }
+
+        private void AddToFavoritesClicked(object sender, EventArgs e)
+        {
+            _viewModel.AddThisToFavorites();
+        }
     }
 }

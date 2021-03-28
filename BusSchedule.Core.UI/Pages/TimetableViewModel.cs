@@ -1,14 +1,13 @@
 ﻿using BusSchedule.Core.GTFS;
+using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.Model;
 using BusSchedule.Core.UI;
-using BusSchedule.Core.UseCase;
 using BusSchedule.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -20,6 +19,7 @@ namespace BusSchedule.UI.ViewModels
         public Routes Route { get; private set; }
         public Stops Station { get; private set; }
         private int? _direction;
+        private IFavoritesManager _favoritesManager;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -73,6 +73,11 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TimetableLegend)));
+        }
+
+        public void AddThisToFavorites()
+        {
+            _favoritesManager.Add(Route.Route_Id, Station, _direction);
         }
 
         public void ScheduleDaysChanged(Calendar.Service calendarService)

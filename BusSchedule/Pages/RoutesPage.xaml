@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:views="clr-namespace:BusSchedule.Pages.Views"
              x:Class="BusSchedule.Pages.RoutesPage"
              Title="MZK Wejherowo" BackgroundColor="White">
     <ContentPage.ToolbarItems>
@@ -56,9 +56,7 @@
                 </ScrollView>
             </xct:TabViewItem>
             <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Ulubione" Icon="baseline_favorite_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
-                <StackLayout>
-                    <Label Text="Nie dodano nic do ulubionych"/>
-                </StackLayout>
+                <views:FavoritesView x:Name="FavoritesView"/>
             </xct:TabViewItem>
         </xct:TabView>
     </ContentPage.Content>

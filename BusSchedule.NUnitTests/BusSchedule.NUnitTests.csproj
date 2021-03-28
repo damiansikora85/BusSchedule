@@ -19,4 +19,8 @@
     <ProjectReference Include="..\BusSchedule\BusSchedule.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CoreUITests\" />
+  </ItemGroup>
+
 </Project>

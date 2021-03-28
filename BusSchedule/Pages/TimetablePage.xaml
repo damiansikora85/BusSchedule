@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Pages.TimetablePage" BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="baseline_favorite_white_24" Clicked="AddToFavoritesClicked"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

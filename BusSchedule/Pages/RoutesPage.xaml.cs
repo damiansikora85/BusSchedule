@@ -54,6 +54,7 @@ namespace BusSchedule.Pages
             {
                 await Navigation.PushPopupAsync(new RatePopup(preferences));
             }
+            await FavoritesView.RefreshView();
             base.OnAppearing();
         }
 

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
+             x:DataType="views:FavoritesViewModel"
+             x:Class="BusSchedule.Pages.Views.FavoritesView">
+  <ContentView.Content>
+      <Grid VerticalOptions="FillAndExpand">
+            <ListView x:Name="ListView"/>
+            <Label x:Name="EmptyListLabel" Text="Nie dodano ulubionych" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+  </ContentView.Content>
+</ContentView>
