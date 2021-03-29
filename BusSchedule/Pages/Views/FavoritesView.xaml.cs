@@ -1,11 +1,8 @@
-﻿using BusSchedule.Core.UI.Pages.Views;
+﻿using BusSchedule.Core.UI.Components;
+using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces;
 using BusSchedule.Interfaces.Implementation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Forms;
@@ -30,6 +27,15 @@ namespace BusSchedule.Pages.Views
             await _viewModel.RefreshData();
             ListView.IsVisible = _viewModel.HasAnyFavorites;
             EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
+        }
+
+        private async void FavoriteItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (ListView.SelectedItem is FavoriteData favoriteData)
+            {
+                var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
+                await Navigation.PushAsync(page);
+            }
         }
     }
 }

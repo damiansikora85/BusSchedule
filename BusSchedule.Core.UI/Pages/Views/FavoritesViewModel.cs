@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Core.Interfaces;
+using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace BusSchedule.Core.UI.Pages.Views
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public List<string> Favorites { get; } = new List<string>();
+        public List<FavoriteData> Favorites { get; } = new List<FavoriteData>();
         public bool HasAnyFavorites => Favorites.Any();
         public bool HasNoFavorites => !Favorites.Any();
 
@@ -27,14 +28,12 @@ namespace BusSchedule.Core.UI.Pages.Views
         public async Task RefreshData()
         {
             var favoritesList = _favoritesManager.GetAll();
-            var resultList = new List<string>();
             foreach(var favoriteData in favoritesList)
             {
-                string result = await ParseData(favoriteData);
-                resultList.Add(result);
+                var result = await FavoriteData.Create(favoriteData, _dataProvider);
+                Favorites.Add(result);
             }
-            Favorites.AddRange(resultList);
-
+            //Favorites.AddRange(resultList);
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Favorites)));
         }

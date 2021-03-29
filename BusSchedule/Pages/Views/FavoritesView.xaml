@@ -6,7 +6,7 @@
              x:Class="BusSchedule.Pages.Views.FavoritesView">
   <ContentView.Content>
       <Grid VerticalOptions="FillAndExpand">
-            <ListView x:Name="ListView"/>
+            <ListView x:Name="ListView" ItemSelected="FavoriteItemSelected"/>
             <Label x:Name="EmptyListLabel" Text="Nie dodano ulubionych" HorizontalOptions="Center" VerticalOptions="Center" />
         </Grid>
   </ContentView.Content>

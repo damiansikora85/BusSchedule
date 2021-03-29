@@ -1,6 +1,8 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
+using BusSchedule.Interfaces;
+using BusSchedule.Interfaces.Implementation;
 using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using System;
@@ -18,7 +20,7 @@ namespace BusSchedule.Pages
 
         public TimetablePage(Stops station, Routes route)
         {
-            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>());
+            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager(TinyIoCContainer.Current.Resolve<IPreferences>()));
             InitializeComponent();
             BindingContext = _viewModel;
             Title = station.Stop_Name;
@@ -26,7 +28,7 @@ namespace BusSchedule.Pages
 
         public TimetablePage(Stops station, Routes route, int direction)
         {
-            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
+            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager(TinyIoCContainer.Current.Resolve<IPreferences>()));
             InitializeComponent();
             BindingContext = _viewModel;
             Title = station.Stop_Name;
