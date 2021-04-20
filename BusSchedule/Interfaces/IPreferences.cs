@@ -12,5 +12,6 @@ namespace BusSchedule.Interfaces
         void Set(string key, int value);
         string Get(string key, string defaultValue);
         int Get(string key, int defaultValue);
+        void Delete(string key);
     }
 }

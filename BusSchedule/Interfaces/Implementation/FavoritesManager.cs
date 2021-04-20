@@ -1,42 +1,73 @@
 ﻿using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using TinyIoC;
+using System.IO;
+using System.Linq;
 
 namespace BusSchedule.Interfaces.Implementation
 {
     public class FavoritesManager : IFavoritesManager
     {
-        private IPreferences _preferences;
-
-        public FavoritesManager(IPreferences preferences)
+        private const string FILENAME = "favorites.json";
+        public FavoritesManager()
         {
-            _preferences = preferences;
+
         }
 
-        public void Add(string route_Id, Stops station, int? direction)
+        public void Add(string routeId, string stopId, int? direction)
         {
-            var favoritesSavedCount = _preferences.Get("favorites_count", 0);
-            var favoriteData = $"{route_Id}|{direction}|{station.Stop_Id}";
-            _preferences.Set($"favorite_{favoritesSavedCount}", favoriteData);
-            _preferences.Set("favorites_count", ++favoritesSavedCount);
-        }
-
-        public IList<string> GetAll()
-        {
-            var favorites = new List<string>();
-            var favoritesSavedCount = _preferences.Get("favorites_count", 0);
-            for (int i = 0; i < favoritesSavedCount; i++)
+            var favoritesList = GetAll();
+            var favorite = new FavoriteDescription
             {
-                var data = _preferences.Get($"favorite_{i}", "");
-                if(!string.IsNullOrEmpty(data))
-                {
-                    favorites.Add(data);
-                }
+                RouteId = routeId,
+                StopId = stopId,
+                Direction = direction ?? -1
+            };
+            favoritesList.Add(favorite);
+            SaveFavoritesList(favoritesList);
+        }
+
+        private void SaveFavoritesList(IList<FavoriteDescription> favoritesList)
+        {
+            var jsonString = JsonConvert.SerializeObject(favoritesList);
+            File.WriteAllText(GetFilename(), jsonString);
+        }
+
+        public IList<FavoriteDescription> GetAll()
+        {
+            var fileName = GetFilename();
+            var favoritesList = new List<FavoriteDescription>();
+            if (File.Exists(fileName))
+            {
+                var favoritesJsonString = File.ReadAllText(fileName);
+                favoritesList = JsonConvert.DeserializeObject<List<FavoriteDescription>>(favoritesJsonString);
             }
-            return favorites;
+            return favoritesList;
+        }
+
+        public void Delete(string routeId, string stopId)
+        {
+            var favoritesList = GetAll();
+            var favoriteFound = favoritesList.FirstOrDefault(f => f.RouteId == routeId && f.StopId == stopId);
+            if(favoriteFound != null)
+            {
+                favoritesList.Remove(favoriteFound);
+            }
+            SaveFavoritesList(favoritesList);
+        }
+
+        private string GetFilename()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FILENAME); ;
+        }
+
+        public bool IsOnList(string routeId, string stopId)
+        {
+            var favoritesList = GetAll();
+            var favoriteFound = favoritesList.FirstOrDefault(f => f.RouteId == routeId && f.StopId == stopId);
+            return favoriteFound != null;
         }
     }
 }

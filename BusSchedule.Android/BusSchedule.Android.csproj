@@ -82,7 +82,7 @@
       <Version>16.7.56</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="Polly">
       <Version>7.2.1</Version>
@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\sqlite20210401.db" />
+    <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

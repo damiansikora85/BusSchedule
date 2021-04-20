@@ -1,19 +1,24 @@
-﻿using BusSchedule.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.Utils;
 using System.Threading.Tasks;
 
 namespace BusSchedule.Core.UI.Components
 {
     public class FavoriteData
     {
-        public Model.Routes Route { get; }
-        public Model.Stops Stop { get; }
-        public int Direction { get; }
+        public Routes Route { get; }
+        public Stops Stop { get; }
+        public int? Direction { get; }
         public string DestinationName { get; }
 
-        public FavoriteData(Model.Routes route, Model.Stops stop, int direction, string destinantionName)
+        public FavoriteData(Routes route, Stops stop, string destinantionName)
+        {
+            Route = route;
+            Stop = stop;
+            DestinationName = destinantionName;
+        }
+
+        public FavoriteData(Routes route, Stops stop, int direction, string destinantionName)
         {
             Route = route;
             Stop = stop;
@@ -21,19 +26,14 @@ namespace BusSchedule.Core.UI.Components
             DestinationName = destinantionName;
         }
 
-        public static async Task<FavoriteData> Create(string data, IDataProvider dataProvider)
+        public static async Task<FavoriteData> Create(FavoriteDescription data, IDataProvider dataProvider)
         {
-            var values = data.Split('|');
-            var routeId = values[0];
-            var direction = int.Parse(values[1]);
-            var stopId = values[2];
-
-            var route = await dataProvider.GetRoute(routeId);
+            var route = await dataProvider.GetRoute(data.RouteId);
             var destinations = await dataProvider.GetRouteDestinations(route);
-            var stop = await dataProvider.GetStopById(stopId);
+            var stop = await dataProvider.GetStopById(data.StopId);
 
-            var destination = direction == 0 ? destinations.Outbound : destinations.Inbound;
-            return new FavoriteData(route, stop, direction, destination);
+            var destination = data.Direction == 0 ? destinations.Outbound : destinations.Inbound;
+            return data.Direction < 0 ? new FavoriteData(route, stop, destination) : new FavoriteData(route, stop, data.Direction, destination);
         }
 
         public override string ToString()

@@ -1,12 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
-             x:DataType="views:FavoritesViewModel"
              x:Class="BusSchedule.Pages.Views.FavoritesView">
   <ContentView.Content>
       <Grid VerticalOptions="FillAndExpand">
-            <ListView x:Name="ListView" ItemSelected="FavoriteItemSelected"/>
+            <ListView x:Name="ListView" RowHeight="50" ItemSelected="FavoriteItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowDefinitions="*,*" ColumnDefinitions="38,*,50" Padding="4,2">
+                                <Label Text="{Binding Route.Route_Short_Name}" Grid.RowSpan="2" FontSize="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Stop.Stop_Name}" Grid.Column="1" FontSize="16"/>
+                                <Label Text="{Binding DestinationName, StringFormat='kierunek: {0}'}" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                                <Button Text="&#xe872;" Grid.Column="2" Grid.RowSpan="2" BackgroundColor="Transparent" FontSize="24" TextColor="#797979" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" >
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Button.FontFamily>
+                                </Button>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <Label x:Name="EmptyListLabel" Text="Nie dodano ulubionych" HorizontalOptions="Center" VerticalOptions="Center" />
         </Grid>
   </ContentView.Content>

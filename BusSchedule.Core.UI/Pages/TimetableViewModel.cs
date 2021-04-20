@@ -29,6 +29,12 @@ namespace BusSchedule.UI.ViewModels
         public List<TimetableItem> CurrentTimetable { get; private set; }
         public List<Trip_Description> TimetableLegend { get; private set; }
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
+
+        public bool IsOnFavoritesList()
+        {
+            return _favoritesManager.IsOnList(Route.Route_Id, Station.Stop_Id);
+        }
+
         private Calendar.Service _currentCalendarService;
         public bool WorkingDaysVisible => _currentCalendarService == Calendar.Service.WorkingDays;
         public bool SaturdaysVisible => _currentCalendarService == Calendar.Service.Saturdays;
@@ -79,7 +85,7 @@ namespace BusSchedule.UI.ViewModels
 
         public void AddThisToFavorites()
         {
-            _favoritesManager.Add(Route.Route_Id, Station, _direction);
+            _favoritesManager.Add(Route.Route_Id, Station.Stop_Id, _direction);
         }
 
         public void ScheduleDaysChanged(Calendar.Service calendarService)

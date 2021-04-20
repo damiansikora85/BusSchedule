@@ -20,18 +20,33 @@ namespace BusSchedule.Pages
 
         public TimetablePage(Stops station, Routes route)
         {
-            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager(TinyIoCContainer.Current.Resolve<IPreferences>()));
+            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             InitializeComponent();
             BindingContext = _viewModel;
             Title = station.Stop_Name;
+            SetupToolbar();
         }
 
         public TimetablePage(Stops station, Routes route, int direction)
         {
-            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager(TinyIoCContainer.Current.Resolve<IPreferences>()));
+            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             InitializeComponent();
             BindingContext = _viewModel;
             Title = station.Stop_Name;
+            SetupToolbar();
+        }
+
+        private void SetupToolbar()
+        {
+            if(!_viewModel.IsOnFavoritesList())
+            {
+                var toolbarItem = new ToolbarItem
+                {
+                    IconImageSource = "baseline_favorite_white_24",
+                };
+                toolbarItem.Clicked += AddToFavoritesClicked;
+                ToolbarItems.Add(toolbarItem);
+            }
         }
 
         protected override async void OnAppearing()
@@ -76,6 +91,7 @@ namespace BusSchedule.Pages
         private void AddToFavoritesClicked(object sender, EventArgs e)
         {
             _viewModel.AddThisToFavorites();
+            ToolbarItems.Clear();
         }
     }
 }
