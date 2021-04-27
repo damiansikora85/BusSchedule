@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusSchedule.Popups.FavoritesInfoPopup">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="16">
+            <Frame BackgroundColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout>
+                    <Label Text="Nowa funkcja - Ulubione" FontAttributes="Bold" TextColor="Black" FontSize="28" HorizontalTextAlignment="Center"/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Teraz możesz jeszcze szybciej sprawdzać rozkład jazdy - dodaj przystanek do Ulubionych "/>
+                                <Span Text="&#xe87d;" FontSize="18">
+                                    <Span.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Span.FontFamily>
+                                </Span>
+                                <Span Text=" i sprawdzaj czas odjazdu jednym kliknięciem."/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button Text="Rozumiem" Clicked="Button_Clicked" Margin="0,16,0,4"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</pages:PopupPage>

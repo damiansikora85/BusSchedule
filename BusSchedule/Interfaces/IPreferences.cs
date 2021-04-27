@@ -10,8 +10,10 @@ namespace BusSchedule.Interfaces
 
         void Set(string key, string value);
         void Set(string key, int value);
+        void Set(string key, bool value);
         string Get(string key, string defaultValue);
         int Get(string key, int defaultValue);
+        bool Get(string key, bool defaultValue);
         void Delete(string key);
     }
 }

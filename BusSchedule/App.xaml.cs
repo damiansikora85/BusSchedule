@@ -17,6 +17,7 @@ namespace BusSchedule
         public App()
         {
             InitializeComponent();
+            Xamarin.Essentials.VersionTracking.Track();
             RegisterIoC();
             UserAppTheme = OSAppTheme.Light;
             MainPage = new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };

@@ -16,13 +16,14 @@ using System.Threading.Tasks;
 using Polly;
 using Xamarin.Essentials;
 using Rg.Plugins.Popup.Extensions;
+using BusSchedule.Popups;
 
 namespace BusSchedule.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RoutesPage : ContentPage
     {
-        private RoutesPageViewModel _viewModel;
+        private readonly RoutesPageViewModel _viewModel;
         public RoutesPage()
         {
             InitializeComponent();
@@ -55,6 +56,12 @@ namespace BusSchedule.Pages
                 await Navigation.PushPopupAsync(new RatePopup(preferences));
             }
             await FavoritesView.RefreshView();
+
+            if(VersionTracking.IsFirstLaunchForVersion("1.2.0"))
+            {
+                await Navigation.PushPopupAsync(new FavoritesInfoPopup());
+            }
+
             base.OnAppearing();
         }
 

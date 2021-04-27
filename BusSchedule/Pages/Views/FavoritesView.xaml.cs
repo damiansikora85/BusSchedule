@@ -32,6 +32,7 @@ namespace BusSchedule.Pages.Views
         {
             if (ListView.SelectedItem is FavoriteData favoriteData)
             {
+                Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
                 var page = favoriteData.Direction.HasValue ? new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction.Value)
                     : new TimetablePage(favoriteData.Stop, favoriteData.Route);
                 await Navigation.PushAsync(page);

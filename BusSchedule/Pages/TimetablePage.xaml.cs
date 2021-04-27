@@ -90,8 +90,10 @@ namespace BusSchedule.Pages
 
         private void AddToFavoritesClicked(object sender, EventArgs e)
         {
+            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteAdd");
             _viewModel.AddThisToFavorites();
             ToolbarItems.Clear();
+            UserDialogs.Instance.Toast("Dodano do Ulubionych");
         }
     }
 }
