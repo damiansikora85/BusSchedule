@@ -51,16 +51,17 @@ namespace BusSchedule.Pages
                 col %= maxCol;
             }
             var ratePopupLastShown = DateTime.Parse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()));
-            if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+            if (!preferences.Get("favorites_info_shown", false) && VersionTracking.IsFirstLaunchForVersion("1.2.0"))
+            {
+                await Navigation.PushPopupAsync(new FavoritesInfoPopup());
+                preferences.Set("favorites_info_shown", true);
+            }
+            else if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
             {
                 await Navigation.PushPopupAsync(new RatePopup(preferences));
             }
-            await FavoritesView.RefreshView();
 
-            if(VersionTracking.IsFirstLaunchForVersion("1.2.0"))
-            {
-                await Navigation.PushPopupAsync(new FavoritesInfoPopup());
-            }
+            await FavoritesView.RefreshView();
 
             base.OnAppearing();
         }
