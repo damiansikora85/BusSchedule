@@ -16,10 +16,12 @@ namespace BusSchedule.Dialogs
     public partial class RatePopup : PopupPage
     {
         private IPreferences _preferences;
+        //private IReviewService _reviewService;
 
-        public RatePopup(IPreferences preferences)
+        public RatePopup(IPreferences preferences)//, IReviewService reviewService)
         {
             _preferences = preferences;
+            //_reviewService = reviewService;
             InitializeComponent();
         }
 
@@ -31,6 +33,7 @@ namespace BusSchedule.Dialogs
 
         private async void OnRateClicked(object sender, EventArgs e)
         {
+            //await _reviewService.ShowReviewPopup();
             await Launcher.OpenAsync(new Uri("market://details?id=com.darktower.bus"));
             _preferences.Set("rated", "1");
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateNow");

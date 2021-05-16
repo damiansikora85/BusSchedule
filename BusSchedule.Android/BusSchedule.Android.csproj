@@ -110,10 +110,11 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\sqlite20210401.db" />
     <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
+    <AndroidAsset Include="Assets\sqlite20210518.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
