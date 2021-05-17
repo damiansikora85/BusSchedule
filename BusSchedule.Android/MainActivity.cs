@@ -54,20 +54,20 @@ namespace BusSchedule.Droid
             }
         }
 
-        protected override void OnResume()
-        {
-            var sharedPref = GetPreferences(FileCreationMode.Private);
-            var defaultValue = DateTime.MinValue.Ticks;
-            var savedValue = sharedPref.GetLong("LAST_UPDATE_CHECK", defaultValue);
-            var lastUpdateCheckTime = new DateTime(savedValue);
+        //protected override void OnResume()
+        //{
+        //    var sharedPref = GetPreferences(FileCreationMode.Private);
+        //    var defaultValue = DateTime.MinValue.Ticks;
+        //    var savedValue = sharedPref.GetLong("LAST_UPDATE_CHECK", defaultValue);
+        //    var lastUpdateCheckTime = new DateTime(savedValue);
 
-            if ((DateTime.Now - lastUpdateCheckTime).TotalHours >= 24)
-            {
-                var appUpdateInfoTask = _appUpdateManager.AppUpdateInfo;
-                appUpdateInfoTask.AddOnSuccessListener(this);
-            }
-            base.OnResume();
-        }
+        //    if ((DateTime.Now - lastUpdateCheckTime).TotalHours >= 24)
+        //    {
+        //        var appUpdateInfoTask = _appUpdateManager.AppUpdateInfo;
+        //        appUpdateInfoTask.AddOnSuccessListener(this);
+        //    }
+        //    base.OnResume();
+        //}
 
         public void OnSuccess(Java.Lang.Object data)
         {
