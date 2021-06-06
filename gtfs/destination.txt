@@ -1,5 +1,5 @@
 route_id,outbound,inbound
-1,Wejherowo os. Fenikowskiego,Gościcino Robakowska (Góra Szkolna)
+1,Wejherowo os. Fenikowskiego,Bolszewo Leśna – Szkoła (Góra Szkolna)
 2,Wejherowo Szpital,Wejherowo Dworzec PKP
 3,Wejherowo Odrębna,Gościcino Robakowska
 4,Wejherowo Starostwo Powiatowe,Orle Łąkowa

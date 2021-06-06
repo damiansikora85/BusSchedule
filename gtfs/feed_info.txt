@@ -1,2 +1,2 @@
 feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date
-"MZK Wejherowo","","pl","20210518","20210630"
+"MZK Wejherowo","","pl","20210603","20210831"
