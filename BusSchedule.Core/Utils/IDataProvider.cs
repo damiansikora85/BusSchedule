@@ -22,6 +22,9 @@ namespace BusSchedule.Core.Utils
         Task<Routes> GetRoute(string routeId);
         Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction);
         Task<IEnumerable<Trip_Description>> GetRouteDescriptionForTrips(IEnumerable<Trips> tripsForRoute);
+        Task<string> GetWorkdaysServiceId();
+        Task<string> GetSaturdayServiceId();
+        Task<string> GetSundayServiceId();
         Task Test();
     }
 }

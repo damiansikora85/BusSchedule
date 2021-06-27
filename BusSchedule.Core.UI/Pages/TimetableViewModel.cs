@@ -69,9 +69,13 @@ namespace BusSchedule.UI.ViewModels
 
             var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value)
                 : await GtfsUtils.GetSchedule(_dataProvider, Route, Station);
-            TimetableWorkingDays = Setup(timetableAll["24"]);
-            TimetableSaturdays = Setup(timetableAll["7"]);
-            TimetableHolidays = Setup(timetableAll["4"]);
+
+            var workingDaysId = await _dataProvider.GetWorkdaysServiceId();
+            var saturdayaId = await _dataProvider.GetSaturdayServiceId();
+            var sundayId = await _dataProvider.GetSundayServiceId();
+            TimetableWorkingDays = Setup(timetableAll[workingDaysId]);
+            TimetableSaturdays = Setup(timetableAll[saturdayaId]);
+            TimetableHolidays = Setup(timetableAll[sundayId]);
 
             _currentCalendarService = Calendar.Service.WorkingDays;
             CurrentTimetable = TimetableWorkingDays;

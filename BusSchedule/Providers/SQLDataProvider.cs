@@ -120,6 +120,45 @@ namespace BusSchedule.Providers
             return (DateTime.ParseExact(feedInfo.Feed_Start_Date, "yyyyMMdd", CultureInfo.InvariantCulture), DateTime.ParseExact(feedInfo.Feed_End_Date, "yyyyMMdd", CultureInfo.InvariantCulture));
         }
 
+        public async Task<string> GetWorkdaysServiceId()
+        {
+            var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
+            var infos = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Saturday == "0" && cal.Sunday == "0").ToListAsync());
+            if(infos.Count == 1)
+            {
+                return infos.First().Service_Id;
+            }
+            else
+            {
+                int maxWorkingDays = 0;
+                string workingDayServiceId = string.Empty;
+                foreach(var info in infos)
+                {
+                    int currentWorkingDaysCount = info.GetWorkingDaysCount();
+                    if (currentWorkingDaysCount > maxWorkingDays)
+                    {
+                        maxWorkingDays = currentWorkingDaysCount;
+                        workingDayServiceId = info.Service_Id;
+                    }
+                }
+                return workingDayServiceId;
+            }
+        }
+
+        public async Task<string> GetSaturdayServiceId()
+        {
+            var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
+            var info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Saturday == "1").FirstOrDefaultAsync());
+            return info.Service_Id;
+        }
+
+        public async Task<string> GetSundayServiceId()
+        {
+            var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
+            var info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Sunday == "1").FirstOrDefaultAsync());
+            return info.Service_Id;
+        }
+
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()
         {
             if (!_connection.Value.TableMappings.Any(x => x.MappedType == typeof(T)))

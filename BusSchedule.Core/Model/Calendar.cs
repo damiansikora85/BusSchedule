@@ -23,5 +23,10 @@ namespace BusSchedule.Core.Model
             Saturdays,
             SundayAndHolidays
         }
+
+        public int GetWorkingDaysCount()
+        {
+            return int.Parse(Monday) + int.Parse(Tuesday) + int.Parse(Wednesday) + int.Parse(Thursday) + int.Parse(Friday);
+        }
     }
 }
