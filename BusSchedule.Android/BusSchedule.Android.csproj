@@ -114,7 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
-    <AndroidAsset Include="Assets\sqlite20210603.db" />
+    <AndroidAsset Include="Assets\sqlite20210701.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
