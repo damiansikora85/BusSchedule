@@ -29,7 +29,7 @@ namespace BusSchedule.Droid
             _appUpdateManager = AppUpdateManagerFactory.Create(this);
 
             UserDialogs.Init(this);
-            Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.SetFlags("Shapes_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

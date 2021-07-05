@@ -1,7 +1,10 @@
 ﻿using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
+using Microsoft.AppCenter.Crashes;
 using MvvmHelpers;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,8 +31,19 @@ namespace BusSchedule.Core.UI.Pages.Views
             var favoritesList = _favoritesManager.GetAll();
             foreach(var favoriteData in favoritesList)
             {
-                var result = await FavoriteData.Create(favoriteData, _dataProvider);
-                Favorites.Add(result);
+                try
+                {
+                    var result = await FavoriteData.Create(favoriteData, _dataProvider);
+                    Favorites.Add(result);
+                }
+                catch (Exception exc)
+                {
+                    Crashes.TrackError(exc, new Dictionary<string, string>
+                    {
+                        {"route", favoriteData.RouteId },
+                        {"station", favoriteData.StopId }
+                    });
+                }
             }
         }
 
