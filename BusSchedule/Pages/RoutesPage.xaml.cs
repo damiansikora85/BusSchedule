@@ -50,15 +50,17 @@ namespace BusSchedule.Pages
                 row = col == maxCol ? row + 1 : row;
                 col %= maxCol;
             }
-            var ratePopupLastShown = DateTime.Parse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()));
-            if (!preferences.Get("favorites_info_shown", false) && VersionTracking.IsFirstLaunchForVersion("1.2.0"))
+            
+            if (DateTime.TryParse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()), out var ratePopupLastShown))
             {
-                await Navigation.PushPopupAsync(new FavoritesInfoPopup());
-                preferences.Set("favorites_info_shown", true);
+                if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+                {
+                    await Navigation.PushPopupAsync(new RatePopup(preferences));
+                }
             }
-            else if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+            else
             {
-                await Navigation.PushPopupAsync(new RatePopup(preferences));
+                preferences.Set("rate_popup_last_shown", DateTime.Today.ToString());
             }
 
             await FavoritesView.RefreshView();
