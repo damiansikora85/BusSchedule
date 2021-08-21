@@ -65,7 +65,8 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays.Clear();
             TimetableHolidays.Clear();
 
-            TimetableLegend = (await _dataProvider.GetRouteLegend(Route.Route_Id, _direction)).ToList();
+            var legendData = await _dataProvider.GetRouteLegend(Route.Route_Id, _direction);
+            TimetableLegend = ParseLegend(legendData);//(await _dataProvider.GetRouteLegend(Route.Route_Id, _direction)).ToList();
 
             var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value)
                 : await GtfsUtils.GetSchedule(_dataProvider, Route, Station);
@@ -85,6 +86,21 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TimetableLegend)));
+        }
+
+        private List<Trip_Description> ParseLegend(IEnumerable<Trip_Description> legendData)
+        {
+            var result = new List<Trip_Description>();
+            var alreadyAddedDescription = new List<string>();
+            foreach(var legend in legendData)
+            {
+                if(!alreadyAddedDescription.Contains(legend.ShortDescription))
+                {
+                    alreadyAddedDescription.Add(legend.ShortDescription);
+                    result.Add(legend);
+                }
+            }
+            return result;
         }
 
         public void AddThisToFavorites()
