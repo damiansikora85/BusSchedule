@@ -29,6 +29,7 @@ namespace BusSchedule.UI.ViewModels
         public List<TimetableItem> CurrentTimetable { get; private set; }
         public List<Trip_Description> TimetableLegend { get; private set; }
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
+        public TimetableItem NextBus { get; private set; }
 
         public bool IsOnFavoritesList()
         {
@@ -66,7 +67,7 @@ namespace BusSchedule.UI.ViewModels
             TimetableHolidays.Clear();
 
             var legendData = await _dataProvider.GetRouteLegend(Route.Route_Id, _direction);
-            TimetableLegend = ParseLegend(legendData);//(await _dataProvider.GetRouteLegend(Route.Route_Id, _direction)).ToList();
+            TimetableLegend = ParseLegend(legendData);
 
             var timetableAll = _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value)
                 : await GtfsUtils.GetSchedule(_dataProvider, Route, Station);
@@ -80,14 +81,36 @@ namespace BusSchedule.UI.ViewModels
 
             _currentCalendarService = Calendar.Service.WorkingDays;
             CurrentTimetable = TimetableWorkingDays;
+            SetupNextBus();
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TimetableLegend)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus)));
         }
 
+        private void SetupNextBus()
+        {
+            if (NextBus != null)
+            {
+                NextBus.IsHighlighted = false;
+            }
+
+            var currentTime = DateTime.Now;
+            NextBus = CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour);
+            if ((NextBus == null || NextBus.Minutes.Last().Minutes < currentTime.Minute) && CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour+1) != null )
+            {
+                NextBus = CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour + 1);
+            }
+            if(NextBus != null)
+            {
+                NextBus.IsHighlighted = true;
+            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus.BackgroundColor)));
+        }
+            
         private List<Trip_Description> ParseLegend(IEnumerable<Trip_Description> legendData)
         {
             var result = new List<Trip_Description>();
@@ -123,11 +146,13 @@ namespace BusSchedule.UI.ViewModels
                     break;
             }
 
+            SetupNextBus();
             _currentCalendarService = calendarService;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus)));
         }
 
         private List<TimetableItem> Setup(List<TimetableTuple> timetable)

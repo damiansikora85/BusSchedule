@@ -7,6 +7,7 @@ using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -55,6 +56,7 @@ namespace BusSchedule.Pages
             try
             {
                 await _viewModel.RefreshTimetableAsync();
+                ScrollToCurrentTime(true);
             }
             catch (Exception exc)
             {
@@ -68,19 +70,30 @@ namespace BusSchedule.Pages
             base.OnAppearing();
         }
 
+        private void ScrollToCurrentTime(bool animated)
+        {
+            if (_viewModel.NextBus != null)
+            {
+                listView.ScrollTo(_viewModel.NextBus, ScrollToPosition.Center, animated);
+            }
+        }
+
         private void WorkingDaysClicked(object sender, System.EventArgs e)
         {
             _viewModel.ScheduleDaysChanged(Calendar.Service.WorkingDays);
+            ScrollToCurrentTime(true);
         }
 
         private void SaturdaysClicked(object sender, System.EventArgs e)
         {
             _viewModel.ScheduleDaysChanged(Calendar.Service.Saturdays);
+            ScrollToCurrentTime(true);
         }
 
         private void HolidaysClicked(object sender, System.EventArgs e)
         {
             _viewModel.ScheduleDaysChanged(Calendar.Service.SundayAndHolidays);
+            ScrollToCurrentTime(true);
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
