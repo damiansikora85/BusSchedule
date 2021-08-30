@@ -1,6 +1,6 @@
 import sqlite3
 
-db = sqlite3.connect('sqlite20210719.db')
+db = sqlite3.connect('sqlite.db')
 file = open("test.csv", "w", encoding="UTF-8")
 legend = [
     ["1","0","Bolszewo Łąkowa 02",",1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02"],
@@ -10,7 +10,7 @@ legend = [
     ["3","0","Wejherowo os. Sikorskiego 01",",3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego"],\
     ["3","0","Bolszewo Zamostna 02",",3,0,Z,kurs skrócony do: Bolszewo Zamostna 02"],
     ["4","1","Wejherowo Urząd Pracy 01 n/ż",",4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
-    ["4","1","Orle Szkoła 01",",4,1,S,kurs do: Orle Szkoła, w dni wolne od nauki do: Orle Łąkowa"],
+    ["4","1","Orle Szkoła 01",",4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa"],
     ["5","0","Wejherowo Chopina 02",",5,0,C,kurs skrócony do: Wejherowo Chopina 02"],
     ["5","1","Wejherowo Urząd Pracy 01 n/ż",",5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
     ["7","0","Wejherowo Sobieskiego - GS 02",",7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02"],
@@ -34,7 +34,8 @@ legend = [
 cursor = db.cursor()
 
 for data in legend:
-    cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 5 OR service_id = 3 OR service_id = 9)", (data[0], data[1]))
+    print (data)
+    cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 4 OR service_id = 24 OR service_id = 7)", (data[0], data[1]))
     db.commit()
     all_rows = cursor.fetchall()
     shapes_dict = {}
