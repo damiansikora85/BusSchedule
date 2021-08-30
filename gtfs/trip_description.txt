@@ -1,38 +1,43 @@
-shape_id,route_id,direction_id,shortDescription,longDescription
-11871,1,1,R,kurs do: Gościcino Robakowska
-11872,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-10588,1,1,Z,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)
-11877,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
-11885,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
-10601,3,0,S,kurs przez: Gościcino Szkoła 04 nie kursuje przez: Gościcino Szkoła 02
-11888,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
-11884,3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie
-10606,4,1,S,kurs do: Orle Szkoła, w dni wolne od nauki do: Orle Łąkowa
-11890,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-11899,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-11895,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-10607,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
-11903,6,0,S,kurs przez: Wejherowo Szpital
-11901,6,1,S,kurs przez: Wejherowo Szpital
-11906,7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02
-11905,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
-11986,7,1,R,kurs do: Gościcino Robakowska
-11911,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
-11910,7,1,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Sobieskiego - Sąd 01 po trasie)
-11917,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-11913,8,1,A,kurs do: Reda Aquapark
-11181,8,1,A,kurs do: Reda Aquapark
-11182,8,1,A,kurs do: Reda Aquapark
-11919,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-10635,10,0,F,kurs do: Wejherowo os. Fenikowskiego (do przystanku Kochanowskiego SKM Nanice 02 po trasie)
-11926,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
-11999,10,1,B,kurs skrócony do: Gościcino Równa 04
-11920,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
-11923,10,1,C,kurs przez: DK 6 (do przystanku Gościcino Szeroka 01 po trasie)
-11935,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
-11936,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
-11008,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-11009,11,1,PK,kurs skrócony do: Wejherowo Pruszkowskiego 01 przez: Rybacką Prusa Pomorską Kochanowskiego
-11010,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-11928,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
-11940,18,0,Z,kurs skrócony do: Reda Ciechocino 02
+12073,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+12261,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+12264,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+12064,1,1,R,kurs do: Gościcino Robakowska
+12255,1,1,R,kurs do: Gościcino Robakowska
+12065,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+12066,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+12067,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+12256,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+12257,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+12078,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
+12269,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
+12272,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+12274,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+12273,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
+12092,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+12283,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+12088,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+12279,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+12098,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
+12289,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
+12104,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
+12295,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
+12101,7,1,R,kurs do: Gościcino Robakowska
+12110,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+12301,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+12105,8,1,A,kurs do: Reda Aquapark
+12106,8,1,A,kurs do: Reda Aquapark
+12297,8,1,A,kurs do: Reda Aquapark
+12112,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+12303,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+12119,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
+12310,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
+12113,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
+12304,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
+12115,10,1,B,kurs skrócony do: Gościcino Równa 04
+12129,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+12320,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+12319,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
+12124,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+12125,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+12126,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+12324,18,0,Z,kurs skrócony do: Reda Ciechocino 02
