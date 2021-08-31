@@ -25,7 +25,7 @@ namespace BusSchedule.Core.UI
 
             public override string ToString()
             {
-                return string.IsNullOrEmpty(AdditionalInfo) ? Minutes.ToString("D2") : $"{Minutes}{AdditionalInfo}";
+                return string.IsNullOrEmpty(AdditionalInfo) ? Minutes.ToString("D2") : $"{Minutes:D2}{AdditionalInfo}";
             }
         }
     }
