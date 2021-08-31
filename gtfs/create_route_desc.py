@@ -13,6 +13,7 @@ legend = [
     ["4","1","Orle Szkoła 01",",4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa"],
     ["5","0","Wejherowo Chopina 02",",5,0,C,kurs skrócony do: Wejherowo Chopina 02"],
     ["5","1","Wejherowo Urząd Pracy 01 n/ż",",5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
+    ["5","1","Orle Szkoła 01",",5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej"],
     ["7","0","Wejherowo Sobieskiego - GS 02",",7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02"],
     ["7","0","Wejherowo Dworzec PKP 02",",7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)"],
     ["7","1","Wejherowo Sucharskiego 01",",7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)"],
@@ -51,3 +52,5 @@ for data in legend:
     
 db.close()
 file.close()
+
+# select shapeid from trips where route_id = (?) direction_id = (?) trip_id = (select trid_id from stop_times where stopid = (?))
