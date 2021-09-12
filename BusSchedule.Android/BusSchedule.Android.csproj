@@ -102,7 +102,7 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="XTrack.Android.PlayCore">
-      <Version>0.1.5</Version>
+      <Version>0.1.6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
