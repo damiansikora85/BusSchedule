@@ -132,7 +132,7 @@ CREATE TABLE "trip_description" (
 	"longDescription"	TEXT
 );
 .separator ,
-.import trip_description.txt trip_description
+.import trip_description.csv trip_description
 DELETE FROM trip_description
 WHERE shape_id = 'shape_id';
 
