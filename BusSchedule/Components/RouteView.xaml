@@ -3,15 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Components.RouteView">
   <ContentView.Content>
-        <Frame Margin="4" Style="{StaticResource BgBlue}" CornerRadius="5" WidthRequest="60" HeightRequest="60" Padding="12">
+        <Frame Margin="4" BackgroundColor="{Binding RouteColor}" CornerRadius="5" Padding="0">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding TapCommand}"/>
             </Frame.GestureRecognizers>
-            <Grid RowDefinitions="2*, *">
-                <StackLayout BackgroundColor="White">
-                    <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold"  TextColor="Black" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                </StackLayout>
-            </Grid>
+            <Label Text="{Binding Name}" FontSize="36" FontAttributes="Bold"  TextColor="{Binding RouteTextColor}" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
         </Frame>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>
