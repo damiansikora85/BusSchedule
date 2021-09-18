@@ -17,6 +17,7 @@ using Polly;
 using Xamarin.Essentials;
 using Rg.Plugins.Popup.Extensions;
 using BusSchedule.Popups;
+using BusSchedule.Core.CloudService;
 
 namespace BusSchedule.Pages
 {
@@ -34,6 +35,7 @@ namespace BusSchedule.Pages
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
+            await CheckScheduleUpdate();
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
             await RefreshData();
@@ -66,6 +68,12 @@ namespace BusSchedule.Pages
             await FavoritesView.RefreshView();
 
             base.OnAppearing();
+        }
+
+        private async Task CheckScheduleUpdate()
+        {
+            var cloudService = TinyIoCContainer.Current.Resolve<ICloudService>();
+            var result = await cloudService.GetLatestScheduleFilename();
         }
 
         private Task RefreshData()

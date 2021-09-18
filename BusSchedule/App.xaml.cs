@@ -1,4 +1,6 @@
-﻿using BusSchedule.Core.Utils;
+﻿using BusSchedule.Core.CloudService;
+using BusSchedule.Core.CloudService.Impl;
+using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces;
 using BusSchedule.Interfaces.Implementation;
 using BusSchedule.Pages;
@@ -29,6 +31,7 @@ namespace BusSchedule
             var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(DB_FILENAME);
             container.Register<IDataProvider, SQLDataProvider>(new SQLDataProvider(databasePath));
             container.Register<IPreferences, CustomPreferences>();
+            container.Register<ICloudService, FirebaseCloudService>();
         }
 
         protected override void OnStart()
