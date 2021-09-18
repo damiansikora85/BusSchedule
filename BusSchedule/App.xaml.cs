@@ -1,9 +1,9 @@
-﻿using BusSchedule.Core.CloudService;
+﻿using Acr.UserDialogs;
+using BusSchedule.Core.CloudService;
 using BusSchedule.Core.CloudService.Impl;
+using BusSchedule.Core.Messages;
 using BusSchedule.Core.Services;
-using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
-using BusSchedule.Interfaces;
 using BusSchedule.Interfaces.Implementation;
 using BusSchedule.Pages;
 using BusSchedule.Providers;
@@ -12,10 +12,12 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Plugin.Firebase;
 
 namespace BusSchedule
 {
@@ -25,30 +27,57 @@ namespace BusSchedule
         public App()
         {
             InitializeComponent();
-            Xamarin.Essentials.VersionTracking.Track();
+            VersionTracking.Track();
             RegisterIoC();
             UserAppTheme = OSAppTheme.Light;
+            TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
+           
             MainPage = new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
         }
 
         private void RegisterIoC()
         {
             var container = TinyIoCContainer.Current;
-            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(DB_FILENAME);
+            container.Register<IPreferences, CustomPreferences>();
+            
+            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(GetDatabaseFilename());
             var dataProvider = new SQLDataProvider(databasePath);
             container.Register<IDataProvider, SQLDataProvider>(dataProvider);
-            container.Register<IPreferences, CustomPreferences>();
             container.Register<ICloudService, FirebaseCloudService>();
             container.Register<INewsService, NewsService>(new NewsService(new FirebaseCloudService(), dataProvider));
+            container.Register<IFirebaseStorage, Storage>().AsSingleton();
+            container.Register<IScheduleUpdater, ScheduleUpdater>();
         }
 
-        protected override void OnStart()
+        private string GetDatabaseFilename()
+        {
+            var container = TinyIoCContainer.Current;
+            var preferences = container.Resolve<IPreferences>();
+            return preferences.Get("dbFilename", DB_FILENAME);
+        }
+
+        private void UnobservedTaskExceptionHandler(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            Crashes.TrackError(e.Exception);
+        }
+
+        protected override async void OnStart()
         {
             AppCenter.Start("android=fc2cc03c-f502-42d6-b5ed-8373e82d03c2;",
                   typeof(Analytics), typeof(Crashes));
             Task.Run(async () =>
             {
-                await TryUpdateNews(TinyIoCContainer.Current.Resolve<INewsService>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+                try
+                {
+                    var resolver = TinyIoCContainer.Current;
+                    var scheduleUpdater = resolver.Resolve<IScheduleUpdater>();
+                    await TryUpdateSchedule(scheduleUpdater);
+                    await TryUpdateNews(resolver.Resolve<INewsService>(), resolver.Resolve<IPreferences>());
+                }
+                catch(Exception ex)
+                {
+                    var message = ex.ToString();
+                }
             });
         }
 
@@ -56,11 +85,13 @@ namespace BusSchedule
         {
         }
 
-        protected override void OnResume()
+        protected override async void OnResume()
         {
             Task.Run(async () =>
             {
-                await TryUpdateNews(TinyIoCContainer.Current.Resolve<INewsService>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+                var resolver = TinyIoCContainer.Current;
+                await TryUpdateSchedule(resolver.Resolve<IScheduleUpdater>());
+                await TryUpdateNews(resolver.Resolve<INewsService>(), resolver.Resolve<IPreferences>());
             });
         }
 
@@ -68,19 +99,58 @@ namespace BusSchedule
         {
             try
             {
-                if (await newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
+                var current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet && await newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
                 {
                     preferences.Set("lastNewsUpdate", DateTime.Now);
                 }
             }
             catch (Exception exc)
             {
-                var current = Connectivity.NetworkAccess;
                 Crashes.TrackError(exc, new Dictionary<string, string>
                 {
-                    { "connectivity", current.ToString() }
+                    { "connectivity", Connectivity.NetworkAccess.ToString() }
                 });
             }
         }
+
+        private async Task TryUpdateSchedule(IScheduleUpdater scheduleUpdater)
+        {
+            try
+            {
+                var current = Connectivity.NetworkAccess;
+                if (current == NetworkAccess.Internet && await scheduleUpdater.TryUpdateSchedule(DependencyService.Get<IFileAccess>(), DB_FILENAME))
+                {
+                    await OnScheduleUpdated();
+                }
+            }
+            catch (Exception exc)
+            {
+                Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    { "connectivity", Connectivity.NetworkAccess.ToString() }
+                });
+            }
+        }
+
+        private async Task OnScheduleUpdated()
+        {
+            var fileAccess = DependencyService.Get<IFileAccess>();
+            var resolver = TinyIoCContainer.Current;
+            var dataProvider = resolver.Resolve<IDataProvider>();
+
+            var filename = GetDatabaseFilename();
+            var databasePath = fileAccess.GetLocalFilePath(filename);
+            dataProvider.SetDatabasePath(databasePath);
+            Analytics.TrackEvent("ScheduleUpdated");
+
+            await Xamarin.Forms.Device.InvokeOnMainThreadAsync(async () =>
+            {
+                await MainPage.Navigation.PopToRootAsync();
+                MessagingCenter.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
+                UserDialogs.Instance.Toast("Rozkład jazdy został zaktualizowany");
+            });
+        }
     }
 }
+

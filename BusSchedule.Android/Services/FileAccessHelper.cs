@@ -1,7 +1,6 @@
-﻿using BusSchedule.Interfaces;
+﻿using BusSchedule.Core.Services;
 using System;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

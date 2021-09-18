@@ -8,7 +8,6 @@ namespace BusSchedule.Core.CloudService
 {
     public interface ICloudService
     {
-        Task<string> TestGet();
         Task<string> GetLatestScheduleFilename();
         Task<List<News>> GetNews();
     }

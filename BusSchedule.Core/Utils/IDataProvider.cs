@@ -8,6 +8,7 @@ namespace BusSchedule.Core.Utils
 {
     public interface IDataProvider
     {
+        void SetDatabasePath(string databasePath);
         Task<List<Routes>> GetRoutes();
         Task<Destination> GetRouteDestinations(Routes route);
         Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction);

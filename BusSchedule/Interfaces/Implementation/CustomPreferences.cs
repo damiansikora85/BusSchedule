@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BusSchedule.Core.Services;
+using System;
 using Xamarin.Essentials;
 
 namespace BusSchedule.Interfaces.Implementation

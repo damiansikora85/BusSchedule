@@ -1,24 +1,35 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
+using Polly;
+using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using SQLite;
-using System.IO;
-using System.Threading.Tasks;
-using System.Linq;
-using Polly;
 using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BusSchedule.Providers
 {
     public class SQLDataProvider : IDataProvider
     {
-        private readonly Lazy<SQLiteAsyncConnection> _connection;
+        private Lazy<SQLiteAsyncConnection> _connection;
+        private string _databasePath;
+
+        public SQLDataProvider()
+        {
+            _connection = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(_databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache));
+        }
 
         public SQLDataProvider(string databasePath)
         {
-            _connection = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache));
+            _databasePath = databasePath;
+            _connection = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(_databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache));
+        }
+
+        public void SetDatabasePath(string databasePath)
+        {
+            _databasePath = databasePath;
+            _connection = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(_databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.SharedCache));
         }
 
         public async Task<List<Routes>> GetRoutes()

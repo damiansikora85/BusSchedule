@@ -4,7 +4,6 @@ using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BusSchedule.Core.CloudService.Impl
@@ -25,21 +24,10 @@ namespace BusSchedule.Core.CloudService.Impl
             if (response.IsSuccessStatusCode)
             {
                 result = await response.Content.ReadAsStringAsync();
+                var jsonObject = JObject.Parse(result);
+                return jsonObject["filename"] != null ? jsonObject["filename"].ToString() : string.Empty;
             }
-
-            return result;
-        }
-
-        public async Task<string> TestGet()
-        {
-            var response = await _client.GetAsync("https://us-central1-busschedule-4d81f.cloudfunctions.net/helloWorld");
-            var result = string.Empty;
-            if (response.IsSuccessStatusCode)
-            {
-                result = await response.Content.ReadAsStringAsync();
-            }
-
-            return result;
+            return "";
         }
 
         public async Task<List<News>> GetNews()

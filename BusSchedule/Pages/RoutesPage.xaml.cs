@@ -19,6 +19,7 @@ using Rg.Plugins.Popup.Extensions;
 using BusSchedule.Popups;
 using BusSchedule.Core.CloudService;
 using BusSchedule.Core.Services;
+using BusSchedule.Core.Messages;
 
 namespace BusSchedule.Pages
 {
@@ -34,17 +35,19 @@ namespace BusSchedule.Pages
             _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
             BindingContext = _viewModel;
             _newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            //_newsService.NewsUpdated += OnNewsUpdated;
+            MessagingCenter.Subscribe<ScheduleDataUpdatedMessage>(this, ScheduleDataUpdatedMessage.Name, OnScheduleUpdated);
+        }
+
+        private async void OnScheduleUpdated(ScheduleDataUpdatedMessage message)
+        {
+            await RefreshData();
         }
 
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-            
-            //UpdateNewsBadge();
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
-
             await RefreshData();
             UserDialogs.Instance.HideLoading();
 
@@ -82,7 +85,7 @@ namespace BusSchedule.Pages
             return Policy.Handle<Exception>().RetryAsync(async (exc, retryNum) =>
             {
                 Crashes.TrackError(exc);
-                await DataUpdater.ForceCopy(DependencyService.Get<IFileAccess>());
+                //await DataUpdater.ForceCopy(DependencyService.Get<IFileAccess>());
             }).ExecuteAsync(async () => await _viewModel.RefreshBusServicesAsync());
         }
 

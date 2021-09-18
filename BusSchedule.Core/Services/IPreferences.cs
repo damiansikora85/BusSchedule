@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BusSchedule.Interfaces
+namespace BusSchedule.Core.Services
 {
     public interface IPreferences
     {
