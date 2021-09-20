@@ -43,9 +43,9 @@ namespace BusSchedule.Dialogs
         }
 
         private async Task SetResult(int selectedDest)
-        {
+        { 
+            _taskCompletionSource.TrySetResult(selectedDest);        
             await PopupNavigation.Instance.RemovePageAsync(this);
-            _taskCompletionSource.SetResult(selectedDest);
         }
     }
 }
