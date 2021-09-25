@@ -115,7 +115,7 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
     <ProguardConfiguration Include="proguard.cfg" />
-    <AndroidAsset Include="Assets\sqlite20210921.db" />
+    <AndroidAsset Include="Assets\sqlite20210927.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
