@@ -16,3 +16,7 @@ route_id,outbound,inbound
 16,Wejherowo os. Sikorskiego,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
 18,Reda Dworzec PKP,Reda Pieleszewo Karłowicza
+A,Wejherowo Cmentarz,Wejherowo Dworzec PKP
+B,Wejherowo Cmentarz,Wejherowo os. Fenikowskiego
+C,Wejherowo Cmentarz,Wejherowo Pomorska
+D,Wejherowo Cmentarz,Wejherowo Karnowskiego

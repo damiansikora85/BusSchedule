@@ -1,34 +1,35 @@
-13016,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
-13013,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
-13007,1,1,R,kurs do: Gościcino Robakowska
-13008,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-13010,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-13009,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-13021,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
-13024,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
-13026,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-13025,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
-13036,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-13031,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-13030,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
-13041,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
-13047,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
-13053,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-13048,8,1,A,kurs do: Reda Aquapark
-13049,8,1,A,kurs do: Reda Aquapark
-13055,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-13063,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
-13056,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
-13058,10,1,B,kurs skrócony do: Gościcino Równa 04
-13072,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
-13071,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
-13067,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-13068,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-13069,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-13076,18,0,Z,kurs skrócony do: Reda Ciechocino 02
-13019,3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie
-13039,6,0,S,kurs przez: Wejherowo Szpital
-13037,6,1,S,kurs przez: Wejherowo Szpital
-13038,6,1,S,kurs przez: Wejherowo Szpital
-13064,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
-13068,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+14224,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+14221,1,0,Z,kurs skrócony do: Bolszewo Łąkowa 02
+14215,1,1,R,kurs do: Gościcino Robakowska
+14216,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+14217,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+14218,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+14229,3,0,W,kurs do: Wejherowo Odrębna 04 dalej do: Wejherowo os. Sikorskiego 01 przez: Sędzickiego Sikorskiego
+14232,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+14234,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+14233,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
+14244,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+14239,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+14238,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
+14249,7,0,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Filharmonia Kaszubska 02 po trasie)
+14255,7,1,Z,kurs do: Wejherowo Sucharskiego 01 (do przystanku Ogródki Działkowe 01 po trasie)
+14252,7,1,R,kurs do: Gościcino Robakowska
+14261,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+14256,8,1,A,kurs do: Reda Aquapark
+14257,8,1,A,kurs do: Reda Aquapark
+14263,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+14271,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
+14264,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
+14266,10,1,B,kurs skrócony do: Gościcino Równa 04
+14280,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+14279,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
+14275,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+14276,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+14277,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+14283,18,0,Z,kurs skrócony do: Reda Ciechocino 02
+14227,3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie
+14247,6,0,S,kurs przez: Wejherowo Szpital
+14245,6,1,S,kurs przez: Wejherowo Szpital
+14246,6,1,S,kurs przez: Wejherowo Szpital
+14272,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+14276,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
