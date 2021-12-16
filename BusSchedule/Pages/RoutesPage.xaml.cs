@@ -35,9 +35,12 @@ namespace BusSchedule.Pages
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-            await CheckScheduleUpdate();
+
+            //await DataUpdater.GetNews();
+            DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], "5", Color.Red, Color.White);
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
+
             await RefreshData();
             UserDialogs.Instance.HideLoading();
 
@@ -68,12 +71,6 @@ namespace BusSchedule.Pages
             await FavoritesView.RefreshView();
 
             base.OnAppearing();
-        }
-
-        private async Task CheckScheduleUpdate()
-        {
-            var cloudService = TinyIoCContainer.Current.Resolve<ICloudService>();
-            var result = await cloudService.GetLatestScheduleFilename();
         }
 
         private Task RefreshData()
@@ -131,6 +128,11 @@ namespace BusSchedule.Pages
                 Crashes.TrackError(exc);
                 await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
             }
+        }
+
+        private void OnNewsClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,6 +6,7 @@
              Title="MZK Wejherowo" BackgroundColor="White">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="baseline_email_white_24" Clicked="OnContactClicked"/>
+        <ToolbarItem IconImageSource="baseline_article_white_24" Clicked="OnNewsClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
