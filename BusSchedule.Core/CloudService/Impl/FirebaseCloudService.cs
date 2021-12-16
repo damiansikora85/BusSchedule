@@ -1,5 +1,8 @@
-﻿using System;
+﻿using BusSchedule.Core.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +40,17 @@ namespace BusSchedule.Core.CloudService.Impl
             }
 
             return result;
+        }
+
+        public async Task<List<News>> GetNews()
+        {
+            var response = await _client.GetAsync("https://us-central1-busschedule-4d81f.cloudfunctions.net/getNews");
+            if(response.IsSuccessStatusCode)
+            {
+                var newsJson = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<News>>(newsJson);
+            }
+            return Enumerable.Empty<News>().ToList();
         }
     }
 }
