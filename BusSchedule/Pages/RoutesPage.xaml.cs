@@ -18,6 +18,7 @@ using Xamarin.Essentials;
 using Rg.Plugins.Popup.Extensions;
 using BusSchedule.Popups;
 using BusSchedule.Core.CloudService;
+using BusSchedule.Core.Services;
 
 namespace BusSchedule.Pages
 {
@@ -25,19 +26,21 @@ namespace BusSchedule.Pages
     public partial class RoutesPage : ContentPage
     {
         private readonly RoutesPageViewModel _viewModel;
+        private INewsService _newsService;
+
         public RoutesPage()
         {
             InitializeComponent();
             _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
             BindingContext = _viewModel;
+            _newsService = TinyIoCContainer.Current.Resolve<INewsService>();
+            _newsService.NewsUpdated += OnNewsUpdated;
         }
 
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-
-            //await DataUpdater.GetNews();
-            DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], "5", Color.Red, Color.White);
+            UpdateNewsBadge();
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
 
@@ -55,7 +58,7 @@ namespace BusSchedule.Pages
                 row = col == maxCol ? row + 1 : row;
                 col %= maxCol;
             }
-            
+
             if (DateTime.TryParse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()), out var ratePopupLastShown))
             {
                 if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
@@ -71,6 +74,19 @@ namespace BusSchedule.Pages
             await FavoritesView.RefreshView();
 
             base.OnAppearing();
+        }
+
+        private void UpdateNewsBadge()
+        {
+            if (_newsService.NewsCount > 0)
+            {
+                DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], _newsService.NewsCount.ToString(), Color.Red, Color.White);
+            }
+        }
+
+        private void OnNewsUpdated(object sender, EventArgs e)
+        {
+            UpdateNewsBadge();
         }
 
         private Task RefreshData()
