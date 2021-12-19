@@ -28,7 +28,7 @@ namespace BusSchedule.Core.Services
 
         public IList<News> GetNews()
         {
-            return Enumerable.Empty<News>().ToList();
+            return _news;
         }
     }
 }

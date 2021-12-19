@@ -146,9 +146,9 @@ namespace BusSchedule.Pages
             }
         }
 
-        private void OnNewsClicked(object sender, EventArgs e)
+        private async void OnNewsClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new NewsPage(_newsService));
         }
     }
 }
