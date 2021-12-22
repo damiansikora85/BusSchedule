@@ -41,7 +41,7 @@
             <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Linie" Icon="baseline_view_module_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
                 <ScrollView>
                     <StackLayout>
-                        <Label TextColor="#404040">
+                        <Label TextColor="#404040" Margin="4">
                             <Label.FormattedText>
                                 <FormattedString>
                                     <Span Text="Rozkład ważny od "/>
@@ -51,7 +51,7 @@
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Grid x:Name="grid" RowDefinitions="60, 60, 60, 60, 60" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+                        <Grid x:Name="grid" RowDefinitions="80, 80, 80, 80, 80" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
                     </StackLayout>
                 </ScrollView>
             </xct:TabViewItem>
