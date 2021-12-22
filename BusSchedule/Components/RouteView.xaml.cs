@@ -25,11 +25,6 @@ namespace BusSchedule.Components
             BindingContext = _viewModel;
         }
 
-        private void OnClick(Routes busService)
-        {
-            OnServiceClicked?.Invoke(busService);
-        }
-
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             OnServiceClicked?.Invoke(_viewModel.Route);
