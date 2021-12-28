@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BusSchedule.Core.UI.Pages
 {
@@ -20,10 +21,10 @@ namespace BusSchedule.Core.UI.Pages
             _newsService = newsService;
         }
 
-        public void RefreshView()
+        public async Task RefreshView()
         {
-            News = _newsService.GetNews();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(News)));
+            //News = await _newsService.GetNews();
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(News)));
         }
     }
 }

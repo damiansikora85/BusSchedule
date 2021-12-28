@@ -16,9 +16,9 @@ namespace BusSchedule.Pages
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            _viewModel.RefreshView();
+            await _viewModel.RefreshView();
         }
     }
 }

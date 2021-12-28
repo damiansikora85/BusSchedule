@@ -34,14 +34,16 @@ namespace BusSchedule.Pages
             _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
             BindingContext = _viewModel;
             _newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            _newsService.NewsUpdated += OnNewsUpdated;
+            //_newsService.NewsUpdated += OnNewsUpdated;
         }
 
         protected override async void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
-            UpdateNewsBadge();
+            
+            //UpdateNewsBadge();
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
+            TryUpdateNews(preferences);
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
 
             await RefreshData();
@@ -76,18 +78,26 @@ namespace BusSchedule.Pages
             base.OnAppearing();
         }
 
-        private void UpdateNewsBadge()
+        private async void TryUpdateNews(IPreferences preferences)
         {
-            if (_newsService.NewsCount > 0)
+            if(await _newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
             {
-                DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], _newsService.NewsCount.ToString(), Color.Red, Color.White);
+                preferences.Set("lastNewsUpdate", DateTime.Now);
             }
         }
 
-        private void OnNewsUpdated(object sender, EventArgs e)
-        {
-            UpdateNewsBadge();
-        }
+        //private void UpdateNewsBadge()
+        //{
+        //    if (_newsService.NewsCount > 0)
+        //    {
+        //        DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], _newsService.NewsCount.ToString(), Color.Red, Color.White);
+        //    }
+        //}
+
+        //private void OnNewsUpdated(object sender, EventArgs e)
+        //{
+        //    UpdateNewsBadge();
+        //}
 
         private Task RefreshData()
         {

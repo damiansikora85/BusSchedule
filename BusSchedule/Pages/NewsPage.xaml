@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Pages.NewsPage" Title="Aktualności">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding News}">
+        <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
-                        <Label Text="{Binding Message}" TextType="Html"/>
-                    </StackLayout>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
+                            <Label Text="{Binding Message}" TextType="Html"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

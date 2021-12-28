@@ -8,10 +8,8 @@ namespace BusSchedule.Core.Services
     public interface INewsService
     {
         public event EventHandler NewsUpdated;
-        public int NewsCount { get; }
 
-        public Task UpdateNews();
-
-        public IList<News> GetNews();
+        public Task<IList<News>> GetNews();
+        Task<bool> TryUpdateNews(DateTime dateTime);
     }
 }

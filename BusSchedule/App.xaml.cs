@@ -31,10 +31,11 @@ namespace BusSchedule
         {
             var container = TinyIoCContainer.Current;
             var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(DB_FILENAME);
-            container.Register<IDataProvider, SQLDataProvider>(new SQLDataProvider(databasePath));
+            var dataProvider = new SQLDataProvider(databasePath);
+            container.Register<IDataProvider, SQLDataProvider>(dataProvider);
             container.Register<IPreferences, CustomPreferences>();
             container.Register<ICloudService, FirebaseCloudService>();
-            container.Register<INewsService, NewsService>(new NewsService(new FirebaseCloudService()));
+            container.Register<INewsService, NewsService>(new NewsService(new FirebaseCloudService(), dataProvider));
         }
 
         protected override void OnStart()
@@ -42,7 +43,7 @@ namespace BusSchedule
             AppCenter.Start("android=fc2cc03c-f502-42d6-b5ed-8373e82d03c2;",
                   typeof(Analytics), typeof(Crashes));
             var newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            Task.Run(async () => await newsService.UpdateNews());
+            //Task.Run(async () => await newsService.UpdateNews());
         }
 
         protected override void OnSleep()
@@ -52,7 +53,7 @@ namespace BusSchedule
         protected override void OnResume()
         {
             var newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            Task.Run(async () => await newsService.UpdateNews());
+            //Task.Run(async () => await newsService.UpdateNews());
         }
     }
 }
