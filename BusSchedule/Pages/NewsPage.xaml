@@ -1,19 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="BusSchedule.Pages.NewsPage" Title="Aktualności">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <extensions:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
-                            <Label Text="{Binding Message}" TextType="Html"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout>
+            <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" IsVisible="{Binding HasAnyNews}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
+                                <Label Text="{Binding Message}" TextType="Html"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Brak nowych wiadomości" FontSize="28" HorizontalTextAlignment="Center" IsVisible="{Binding HasAnyNews, Converter={StaticResource InvertedBoolConverter}}"/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

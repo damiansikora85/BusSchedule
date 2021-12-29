@@ -3,6 +3,7 @@ using BusSchedule.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,6 +14,7 @@ namespace BusSchedule.Core.UI.Pages
         public event PropertyChangedEventHandler PropertyChanged;
 
         public IList<News> News { get; private set; }
+        public bool HasAnyNews => News.Any();
         private readonly INewsService _newsService;
 
         public NewsPageViewModel(INewsService newsService)
@@ -23,8 +25,9 @@ namespace BusSchedule.Core.UI.Pages
 
         public async Task RefreshView()
         {
-            //News = await _newsService.GetNews();
-            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(News)));
+            News = await _newsService.GetNews();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(News)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasAnyNews)));
         }
     }
 }
