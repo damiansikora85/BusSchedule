@@ -43,7 +43,6 @@ namespace BusSchedule.Pages
             
             //UpdateNewsBadge();
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
-            TryUpdateNews(preferences);
             await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
 
             await RefreshData();
@@ -76,14 +75,6 @@ namespace BusSchedule.Pages
             await FavoritesView.RefreshView();
 
             base.OnAppearing();
-        }
-
-        private async void TryUpdateNews(IPreferences preferences)
-        {
-            if(await _newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
-            {
-                preferences.Set("lastNewsUpdate", DateTime.Now);
-            }
         }
 
         //private void UpdateNewsBadge()

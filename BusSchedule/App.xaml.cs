@@ -9,6 +9,7 @@ using BusSchedule.Providers;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using System;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Forms;
@@ -42,8 +43,10 @@ namespace BusSchedule
         {
             AppCenter.Start("android=fc2cc03c-f502-42d6-b5ed-8373e82d03c2;",
                   typeof(Analytics), typeof(Crashes));
-            var newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            //Task.Run(async () => await newsService.UpdateNews());
+            Task.Run(async () =>
+            {
+                await TryUpdateNews(TinyIoCContainer.Current.Resolve<INewsService>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+            });
         }
 
         protected override void OnSleep()
@@ -52,8 +55,18 @@ namespace BusSchedule
 
         protected override void OnResume()
         {
-            var newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-            //Task.Run(async () => await newsService.UpdateNews());
+            Task.Run(async () =>
+            {
+                await TryUpdateNews(TinyIoCContainer.Current.Resolve<INewsService>(), TinyIoCContainer.Current.Resolve<IPreferences>());
+            });
+        }
+
+        private async Task TryUpdateNews(INewsService newsService, IPreferences preferences)
+        {
+            if (await newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
+            {
+                preferences.Set("lastNewsUpdate", DateTime.Now);
+            }
         }
     }
 }
