@@ -48,7 +48,9 @@ namespace BusSchedule.Core.CloudService.Impl
             if(response.IsSuccessStatusCode)
             {
                 var newsJson = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<News>>(newsJson);
+                var news = JsonConvert.DeserializeObject<List<News>>(newsJson);
+                news.Reverse();
+                return news;
             }
             return Enumerable.Empty<News>().ToList();
         }

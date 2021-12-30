@@ -20,7 +20,7 @@ namespace BusSchedule.Core.Utils
         Task SaveNews(IList<News> news);
         Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(string tripId, string stopId);
         Task<IEnumerable<Calendar>> GetCalendar();
-        Task<IList<News>> GetNews();
+        Task<IList<News>> GetNews(bool showOnly);
         Task<Routes> GetRoute(string routeId);
         Task<IEnumerable<Trip_Description>> GetRouteLegend(string route_Id, int? direction);
         Task<IEnumerable<Trip_Description>> GetRouteDescriptionForTrips(IEnumerable<Trips> tripsForRoute);

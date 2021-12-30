@@ -20,5 +20,13 @@ namespace BusSchedule.Pages
         {
             await _viewModel.RefreshView();
         }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if(sender is ListView listView)
+            {
+                listView.SelectedItem = null;
+            }
+        }
     }
 }

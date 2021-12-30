@@ -25,7 +25,11 @@ namespace BusSchedule.Core.UI.Pages
 
         public async Task RefreshView()
         {
+#if DEBUG
+            News = await _newsService.GetNews(false);
+#else
             News = await _newsService.GetNews();
+#endif
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(News)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasAnyNews)));
         }

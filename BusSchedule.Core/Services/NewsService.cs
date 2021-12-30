@@ -21,9 +21,9 @@ namespace BusSchedule.Core.Services
             _dataProvider = dataProvider;
         }
 
-        public async Task<IList<News>> GetNews()
+        public async Task<IList<News>> GetNews(bool showOnly = true)
         {
-            return await _dataProvider.GetNews();
+            return await _dataProvider.GetNews(showOnly);
         }
 
         public async Task<bool> TryUpdateNews(DateTime lastNewsUpdateTime)

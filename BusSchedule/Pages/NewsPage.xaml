@@ -10,7 +10,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" IsVisible="{Binding HasAnyNews}" >
+            <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" IsVisible="{Binding HasAnyNews}" ItemSelected="ListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

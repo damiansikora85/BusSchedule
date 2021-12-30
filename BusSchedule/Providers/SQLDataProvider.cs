@@ -166,10 +166,15 @@ namespace BusSchedule.Providers
             await connection.InsertAllAsync(news);
         }
 
-        public async Task<IList<News>> GetNews()
+        public async Task<IList<News>> GetNews(bool showOnly)
         {
             var connection = await GetDatabaseConnectionAsync<News>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.Table<News>().ToListAsync());
+            var news = await AttemptAndRetry(() => connection.Table<News>().ToListAsync());
+            if(showOnly)
+            {
+                news = news.Where(item => item.Show == "true").ToList();
+            }
+            return news;
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()
