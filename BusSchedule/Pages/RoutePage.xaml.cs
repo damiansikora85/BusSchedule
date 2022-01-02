@@ -21,7 +21,7 @@ namespace BusSchedule.Pages
             _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
             InitializeComponent();
             BindingContext = _viewModel;
-            _fakeDirection = route.Route_Id == "2";
+            _fakeDirection = route.Route_Id == "2" || route.Route_Id == "18";
             Title = $"Linia: {route.Route_Short_Name} - {destinationName}";
         }
 
