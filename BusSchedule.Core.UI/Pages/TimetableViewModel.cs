@@ -2,6 +2,7 @@
 using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.Model;
 using BusSchedule.Core.UI;
+using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
 using System;
 using System.Collections.Generic;
@@ -79,9 +80,8 @@ namespace BusSchedule.UI.ViewModels
             TimetableSaturdays = Setup(timetableAll[saturdayaId]);
             TimetableHolidays = Setup(timetableAll[sundayId]);
 
-            _currentCalendarService = Calendar.Service.WorkingDays;
-            CurrentTimetable = TimetableWorkingDays;
-            SetupNextBus();
+            ShowScheduleForToday();
+            HighlightNextBus();
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
@@ -91,7 +91,27 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus)));
         }
 
-        private void SetupNextBus()
+        private void ShowScheduleForToday()
+        {
+            var today = DateTime.Today;
+            if(today.DayOfWeek == DayOfWeek.Saturday)
+            {
+                _currentCalendarService = Calendar.Service.Saturdays;
+                CurrentTimetable = TimetableSaturdays;
+            }
+            else if(today.DayOfWeek == DayOfWeek.Sunday || HolidaysHelper.IsTodayHoliday())
+            {
+                _currentCalendarService = Calendar.Service.SundayAndHolidays;
+                CurrentTimetable = TimetableHolidays;
+            }
+            else
+            {
+                _currentCalendarService = Calendar.Service.WorkingDays;
+                CurrentTimetable = TimetableWorkingDays;
+            }
+        }
+
+        private void HighlightNextBus()
         {
             if (NextBus != null)
             {
@@ -146,7 +166,7 @@ namespace BusSchedule.UI.ViewModels
                     break;
             }
 
-            SetupNextBus();
+            HighlightNextBus();
             _currentCalendarService = calendarService;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
