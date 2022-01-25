@@ -63,9 +63,16 @@ namespace BusSchedule
 
         private async Task TryUpdateNews(INewsService newsService, IPreferences preferences)
         {
-            if (await newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
+            try
             {
-                preferences.Set("lastNewsUpdate", DateTime.Now);
+                if (await newsService.TryUpdateNews(preferences.Get("lastNewsUpdate", DateTime.MinValue)))
+                {
+                    preferences.Set("lastNewsUpdate", DateTime.Now);
+                }
+            }
+            catch(Exception exc)
+            {
+                Crashes.TrackError(exc);
             }
         }
     }

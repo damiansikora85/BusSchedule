@@ -77,19 +77,6 @@ namespace BusSchedule.Pages
             base.OnAppearing();
         }
 
-        //private void UpdateNewsBadge()
-        //{
-        //    if (_newsService.NewsCount > 0)
-        //    {
-        //        DependencyService.Get<IToolbarItemBadgeService>().SetBadge(this, ToolbarItems[1], _newsService.NewsCount.ToString(), Color.Red, Color.White);
-        //    }
-        //}
-
-        //private void OnNewsUpdated(object sender, EventArgs e)
-        //{
-        //    UpdateNewsBadge();
-        //}
-
         private Task RefreshData()
         {
             return Policy.Handle<Exception>().RetryAsync(async (exc, retryNum) =>
@@ -149,6 +136,7 @@ namespace BusSchedule.Pages
 
         private async void OnNewsClicked(object sender, EventArgs e)
         {
+            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("NewsClicked");
             await Navigation.PushAsync(new NewsPage(_newsService));
         }
     }

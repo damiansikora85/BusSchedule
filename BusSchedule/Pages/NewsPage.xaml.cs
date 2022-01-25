@@ -1,5 +1,7 @@
 ﻿using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
+using Microsoft.AppCenter.Crashes;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +20,14 @@ namespace BusSchedule.Pages
 
         protected override async void OnAppearing()
         {
-            await _viewModel.RefreshView();
+            try
+            {
+                await _viewModel.RefreshView();
+            }
+            catch(Exception exc)
+            {
+                Crashes.TrackError(exc);
+            }
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

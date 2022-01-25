@@ -10,6 +10,6 @@ namespace BusSchedule.Core.Services
         public event EventHandler NewsUpdated;
 
         public Task<IList<News>> GetNews(bool showOnly = true);
-        Task<bool> TryUpdateNews(DateTime dateTime);
+        Task<bool> TryUpdateNews(DateTime lastNewsUpdateTime);
     }
 }
