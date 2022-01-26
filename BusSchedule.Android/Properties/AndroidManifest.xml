@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.4.0" package="com.darktower.bus" android:installLocation="preferExternal" android:versionCode="2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.5.0" package="com.darktower.bus" android:installLocation="preferExternal" android:versionCode="2">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
 	<application android:label="Rozkład jazdy MZK Wejherowo" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:roundIcon="@mipmap/icon_round" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <queries>
-    <intent>
-      <action android:name="android.intent.action.SENDTO" />
-      <data android:scheme="mailto" />
-    </intent>
-  </queries>
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.SENDTO" />
+			<data android:scheme="mailto" />
+		</intent>
+	</queries>
 </manifest>

@@ -159,6 +159,24 @@ namespace BusSchedule.Providers
             return info.Service_Id;
         }
 
+        public async Task SaveNews(IList<News> news)
+        {
+            var connection = await GetDatabaseConnectionAsync<News>().ConfigureAwait(false);
+            await connection.DeleteAllAsync<News>();
+            await connection.InsertAllAsync(news);
+        }
+
+        public async Task<IList<News>> GetNews(bool showOnly)
+        {
+            var connection = await GetDatabaseConnectionAsync<News>().ConfigureAwait(false);
+            var news = await AttemptAndRetry(() => connection.Table<News>().ToListAsync());
+            if(showOnly)
+            {
+                news = news.Where(item => item.Show == "true").ToList();
+            }
+            return news;
+        }
+
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()
         {
             if (!_connection.Value.TableMappings.Any(x => x.MappedType == typeof(T)))

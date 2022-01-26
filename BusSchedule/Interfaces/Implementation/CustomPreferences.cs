@@ -14,6 +14,7 @@ namespace BusSchedule.Interfaces.Implementation
         public string Get(string key, string defaultValue) => Preferences.Get(key, defaultValue);
 
         public int Get(string key, int defaultValue) => Preferences.Get(key, defaultValue);
+        public DateTime Get(string key, DateTime defaultValue) => Preferences.Get(key, defaultValue);
 
         public bool Get(string key, bool defaultValue) => Preferences.Get(key, defaultValue);
 
@@ -22,5 +23,7 @@ namespace BusSchedule.Interfaces.Implementation
         public void Set(string key, int value) => Preferences.Set(key, value);
 
         public void Set(string key, bool value) => Preferences.Set(key, value);
+
+        public void Set(string key, DateTime value) => Preferences.Set(key, value);
     }
 }
