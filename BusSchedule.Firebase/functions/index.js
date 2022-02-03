@@ -34,7 +34,7 @@ exports.getNews = functions.https.onRequest( async (request, response) => {
     let data = result.val();
     let resultArray = new Array();
     data.forEach(value => {
-        console.log(value);
+        //console.log(value);
         var obj = new Object();
         obj.show = value.show;
         obj.title = value.title;
