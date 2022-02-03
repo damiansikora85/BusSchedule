@@ -60,7 +60,7 @@ namespace BusSchedule.Interfaces.Implementation
 
         private string GetFilename()
         {
-            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FILENAME); ;
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FILENAME);
         }
 
         public bool IsOnList(string routeId, string stopId)

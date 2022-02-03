@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.Interfaces;
+﻿using BusSchedule.Core.Exceptions;
+using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
 using Microsoft.AppCenter.Crashes;
@@ -36,12 +37,20 @@ namespace BusSchedule.Core.UI.Pages.Views
                     var result = await FavoriteData.Create(favoriteData, _dataProvider);
                     Favorites.Add(result);
                 }
+                catch(FavoriteCreateException favoriteException)
+                {
+                    Crashes.TrackError(favoriteException, new Dictionary<string, string>
+                    {
+                        {"routeId", favoriteData.RouteId },
+                        {"stopId", favoriteData.StopId }
+                    });
+                }
                 catch (Exception exc)
                 {
                     Crashes.TrackError(exc, new Dictionary<string, string>
                     {
-                        {"route", favoriteData.RouteId },
-                        {"station", favoriteData.StopId }
+                        {"routeId", favoriteData.RouteId },
+                        {"stopId", favoriteData.StopId }
                     });
                 }
             }

@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.Model;
+﻿using BusSchedule.Core.Exceptions;
+using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
 using System.Threading.Tasks;
 
@@ -28,9 +29,14 @@ namespace BusSchedule.Core.UI.Components
 
         public static async Task<FavoriteData> Create(FavoriteDescription data, IDataProvider dataProvider)
         {
+            var stop = await dataProvider.GetStopById(data.StopId);
+            if(stop == null)
+            {
+                throw new FavoriteCreateException(data);
+            }
             var route = await dataProvider.GetRoute(data.RouteId);
             var destinations = await dataProvider.GetRouteDestinations(route);
-            var stop = await dataProvider.GetStopById(data.StopId);
+
 
             var destination = data.Direction == 0 ? destinations.Outbound : destinations.Inbound;
             return data.Direction < 0 ? new FavoriteData(route, stop, destination) : new FavoriteData(route, stop, data.Direction, destination);
