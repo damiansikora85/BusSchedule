@@ -44,6 +44,7 @@ namespace BusSchedule.Core.UI.Pages.Views
                         {"routeId", favoriteData.RouteId },
                         {"stopId", favoriteData.StopId }
                     });
+                    _favoritesManager.Delete(favoriteData.RouteId, favoriteData.StopId);
                 }
                 catch (Exception exc)
                 {
