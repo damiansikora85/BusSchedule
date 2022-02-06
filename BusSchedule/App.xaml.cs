@@ -1,6 +1,7 @@
 ﻿using BusSchedule.Core.CloudService;
 using BusSchedule.Core.CloudService.Impl;
 using BusSchedule.Core.Services;
+using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces;
 using BusSchedule.Interfaces.Implementation;
@@ -10,8 +11,10 @@ using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TinyIoC;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace BusSchedule
@@ -70,9 +73,13 @@ namespace BusSchedule
                     preferences.Set("lastNewsUpdate", DateTime.Now);
                 }
             }
-            catch(Exception exc)
+            catch (Exception exc)
             {
-                Crashes.TrackError(exc);
+                var current = Connectivity.NetworkAccess;
+                Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    { "connectivity", current.ToString() }
+                });
             }
         }
     }
