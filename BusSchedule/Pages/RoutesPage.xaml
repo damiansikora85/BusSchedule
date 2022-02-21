@@ -56,7 +56,6 @@
                             </Label.FormattedText>
                         </Label>
                         <Grid x:Name="grid" RowDefinitions="80, 80, 80, 80, 80" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
-                        <Button Text="Run test" IsVisible="{Binding IsDebug}" Command="{Binding TestScheduleCommand}"/>
                     </StackLayout>
                 </ScrollView>
             </xct:TabViewItem>
