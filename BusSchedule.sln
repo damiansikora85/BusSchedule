@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.Core.UI", "BusS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.NUnitTests", "BusSchedule.NUnitTests\BusSchedule.NUnitTests.csproj", "{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark.Droid.Android", "Benchmark.Droid\Benchmark.Droid.Android\Benchmark.Droid.Android.csproj", "{24EB1D86-2AC8-4FC3-A331-064759C595B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark.Droid", "Benchmark.Droid\Benchmark.Droid\Benchmark.Droid.csproj", "{80573E91-D14D-458C-9E19-AC1F75E8F1BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,16 @@ Global
 		{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EB1D86-2AC8-4FC3-A331-064759C595B9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{80573E91-D14D-458C-9E19-AC1F75E8F1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80573E91-D14D-458C-9E19-AC1F75E8F1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80573E91-D14D-458C-9E19-AC1F75E8F1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80573E91-D14D-458C-9E19-AC1F75E8F1BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
