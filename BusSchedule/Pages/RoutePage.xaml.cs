@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 namespace BusSchedule.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RoutePage : ContentPage
+    public partial class RoutePage : TabbedPage
     {
         private RoutePageViewModel _viewModel;
         private bool _fakeDirection;
@@ -44,7 +44,7 @@ namespace BusSchedule.Pages
 
         private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            listView.SelectedItem = null;
+            //listView.SelectedItem = null;
 
             if (e.SelectedItem is Stops station)
             {

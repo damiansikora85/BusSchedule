@@ -1,30 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:BusSchedule.Converters"
-             x:Class="BusSchedule.Pages.RoutePage" BackgroundColor="White">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:NotBooleanConverter x:Key="NotBooleanConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+            xmlns:pages="clr-namespace:BusSchedule.Pages"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="BusSchedule.Pages.RoutePage"
+            BarBackground="#237194" BarTextColor="White" BackgroundColor="White">
 
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="listView" ItemsSource="{Binding Stations}" ItemSelected="OnStationSelected" RowHeight="75" SeparatorVisibility="None" Margin="6,4">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnDefinitions="30,*" RowDefinitions="*,Auto,*" ColumnSpacing="0" RowSpacing="0">
-                                <BoxView Grid.Row="0" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsFirst, Converter={local:NotBooleanConverter}}"/>
-                                <Ellipse Grid.Row="1" Stroke="#237194" StrokeThickness="3" WidthRequest="22" HeightRequest="22" VerticalOptions="Start" HorizontalOptions="Center"/>
-                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Stop_Name}" TextColor="Black" Margin="20,0" FontSize="Body" LineBreakMode="NoWrap"/>
-                                <BoxView Grid.Row="2" WidthRequest="3" Color="#237194" HorizontalOptions="Center" VerticalOptions="Fill" IsVisible="{Binding IsLast, Converter={local:NotBooleanConverter}}"/>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <pages:RouteStopsList/>
+    <pages:RouteStopsMap/>
+    
+</TabbedPage>
