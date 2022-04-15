@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Android", "BusSchedule.Android\BusSchedule.Android.csproj", "{E1E97511-BC81-454E-BE09-58CB84B463F8}"
 EndProject
@@ -9,13 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule", "BusSchedule\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.Core", "BusSchedule.Core\BusSchedule.Core.csproj", "{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.UnitTests", "BusSchedule.UnitTests\BusSchedule.UnitTests.csproj", "{70DB3E14-166C-4500-8936-7CEA8601C3FF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.Creator", "BusSchedule.Creator\BusSchedule.Creator.csproj", "{7913E5A5-AD91-4B88-A8D3-C24453058DF6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.Core.UI", "BusSchedule.Core.UI\BusSchedule.Core.UI.csproj", "{F6625FA8-4F7E-43EE-B01D-558B64A056A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusSchedule.NUnitTests", "BusSchedule.NUnitTests\BusSchedule.NUnitTests.csproj", "{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusSchedule.NUnitTests", "BusSchedule.NUnitTests\BusSchedule.NUnitTests.csproj", "{5F0A5D6F-0749-4628-B6A3-3B8CBD5908DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,14 +35,6 @@ Global
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47C7D8E3-57D2-4971-BE61-EECB1BEF9975}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70DB3E14-166C-4500-8936-7CEA8601C3FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7913E5A5-AD91-4B88-A8D3-C24453058DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6625FA8-4F7E-43EE-B01D-558B64A056A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
