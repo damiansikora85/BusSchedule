@@ -19,7 +19,7 @@ namespace BusSchedule.Core.CloudService.Impl
 
         public async Task<string> GetLatestScheduleFilename()
         {
-            var response = await _client.GetAsync("https://us-central1-busschedule-4d81f.cloudfunctions.net/latestSchedule");
+            var response = await _client.GetAsync("https://us-central1-busschedule-4d81f.cloudfunctions.net/latestSchedule?app_version=300");
             var result = string.Empty;
             if (response.IsSuccessStatusCode)
             {

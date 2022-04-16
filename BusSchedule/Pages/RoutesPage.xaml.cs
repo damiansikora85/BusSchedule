@@ -53,6 +53,7 @@ namespace BusSchedule.Pages
 
             int row = 0, col = 0;
             int maxCol = grid.ColumnDefinitions.Count;
+            grid.Children.Clear();
             foreach (var busService in _viewModel.Routes)
             {
                 var item = new RouteView(busService);
@@ -103,7 +104,7 @@ namespace BusSchedule.Pages
                 }
                 else if (!string.IsNullOrEmpty(destination.Outbound) || !string.IsNullOrEmpty(destination.Inbound))
                 {
-                    await Navigation.PushAsync(new RoutePage(route, string.IsNullOrEmpty(destination.Outbound) ? destination.Inbound : destination.Outbound, string.IsNullOrEmpty(destination.Outbound) ? 1 : 0));
+                    await Navigation.PushAsync(new RoutePage(route, string.IsNullOrEmpty(destination.Outbound) ? destination.Inbound : destination.Outbound, null));
                 }
             }
             catch(Exception exc)

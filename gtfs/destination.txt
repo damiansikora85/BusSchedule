@@ -1,6 +1,6 @@
 route_id,outbound,inbound
 1,Wejherowo os. Fenikowskiego,Bolszewo Leśna – Szkoła (Góra Szkolna)
-2,Wejherowo Szpital,Wejherowo Dworzec PKP
+2,Wejherowo Szpital,
 3,Wejherowo Odrębna,Gościcino Robakowska
 4,Wejherowo Starostwo Powiatowe,Orle Łąkowa
 5,Wejherowo Szpital,Orle Łąkowa
@@ -15,7 +15,7 @@ route_id,outbound,inbound
 14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo os. Sikorskiego,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
-18,Reda Dworzec PKP,Reda Pieleszewo Karłowicza
+18,Reda Dworzec PKP,
 A,Wejherowo Cmentarz,Wejherowo Dworzec PKP
 B,Wejherowo Cmentarz,Wejherowo os. Fenikowskiego
 C,Wejherowo Cmentarz,Wejherowo Pomorska

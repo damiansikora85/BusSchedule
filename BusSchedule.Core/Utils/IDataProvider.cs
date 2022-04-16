@@ -1,7 +1,6 @@
 ﻿using BusSchedule.Core.Model;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BusSchedule.Core.Utils
@@ -11,10 +10,12 @@ namespace BusSchedule.Core.Utils
         void SetDatabasePath(string databasePath);
         Task<List<Routes>> GetRoutes();
         Task<Destination> GetRouteDestinations(Routes route);
-        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction);
+        Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, int direction);
         Task<List<Stops>> GetStopsForRoute(Routes route, int direction);
-        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId);
-        Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, string serviceId);
+        Task<List<Stops>> GetStopsForRoute(Routes route);
+        Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, int direction, string serviceId);
+        Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, string serviceId);
+        Task<IList<Trace>> GetRouteTrace(string routeId, int? direction);
         Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(Trips trip);
         Task<(DateTime startDate, DateTime endDate)> GetFeedStartEndDates();
         Task<Stops> GetStopById(string stop_Id);

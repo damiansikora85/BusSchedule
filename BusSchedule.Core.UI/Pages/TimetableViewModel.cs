@@ -44,15 +44,7 @@ namespace BusSchedule.UI.ViewModels
 
         public ICommand ScheduleDaysChangedCommand { get; private set; }
 
-        public TimetableViewModel(Stops station, Routes route, IDataProvider dataProvider, IFavoritesManager favoritesManager)
-        {
-            Station = station;
-            Route = route;
-            _dataProvider = dataProvider;
-            _favoritesManager = favoritesManager;
-        }
-
-        public TimetableViewModel(Stops station, Routes route, int direction, IDataProvider dataProvider, IFavoritesManager favoritesManager)
+        public TimetableViewModel(Stops station, Routes route, int? direction, IDataProvider dataProvider, IFavoritesManager favoritesManager)
         {
             Station = station;
             Route = route;

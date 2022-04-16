@@ -12,7 +12,6 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Essentials;
@@ -23,7 +22,7 @@ namespace BusSchedule
 {
     public partial class App : Application
     {
-        public static string DB_FILENAME = "sqlite20220508.db";
+        public static string DB_FILENAME = "sqlite20220513.db";
         public App()
         {
             InitializeComponent();

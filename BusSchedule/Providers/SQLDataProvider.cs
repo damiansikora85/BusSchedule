@@ -53,6 +53,15 @@ namespace BusSchedule.Providers
             return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
         }
 
+        public async Task<List<Stops>> GetStopsForRoute(Routes route)
+        {
+            var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);
+            var routeStops = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? Order by stop_sequence", route.Route_Id))).Select(rs => rs.Stop_Id).ToList();
+            //var allStops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops"));
+            var temp = await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).ToListAsync());
+            return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+        }
+
         public async Task Test()
         {
             var connection = await GetDatabaseConnectionAsync<Stops>().ConfigureAwait(false);
@@ -80,22 +89,28 @@ namespace BusSchedule.Providers
             return stops.FirstOrDefault();
         }
 
-        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, string serviceId)
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, string serviceId)
         {
             var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And service_id = ?", route.Route_Id, serviceId));
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And service_id = ?", routeId, serviceId));
         }
 
-        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction)
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, int direction)
         {
             var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ?", route.Route_Id, direction));
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ?", routeId, direction));
         }
 
-        public async Task<IEnumerable<Trips>> GetTripsForRoute(Routes route, int direction, string serviceId)
+        private async Task<IEnumerable<Trips>> GetTripsForRoute(string routeId)
         {
             var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
-            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ? And service_id = ?", route.Route_Id, direction, serviceId));
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ?", routeId));
+        }
+
+        public async Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, int direction, string serviceId)
+        {
+            var connection = await GetDatabaseConnectionAsync<Trips>().ConfigureAwait(false);
+            return await AttemptAndRetry(() => connection.QueryAsync<Trips>("Select * From Trips Where route_id = ? And direction_id = ? And service_id = ?", routeId, direction, serviceId));
         }
 
         public async Task<IEnumerable<Stop_Times>> GetStopTimesForTrip(string tripId, string stopId)
@@ -186,6 +201,32 @@ namespace BusSchedule.Providers
                 news = news.Where(item => item.Show == "true").ToList();
             }
             return news;
+        }
+
+        public async Task<IList<Trace>> GetRouteTrace(string routeId, int? direction)
+        {
+            var routes = direction.HasValue ? await GetTripsForRoute(routeId, direction.Value) : await GetTripsForRoute(routeId);
+            var shapes = routes.Select(r => r.Shape_Id).Distinct();
+
+            var connection = await GetDatabaseConnectionAsync<Shapes>().ConfigureAwait(false);
+            var traces = new List<Trace>();
+            foreach (var shapeId in shapes)
+            {
+                var shape_points = await AttemptAndRetry(() => connection.Table<Shapes>().Where(shape => shape.Shape_Id == shapeId).ToListAsync());
+                traces.Add(CreateTraceFromPoints(shape_points));
+            }
+
+            return traces;
+        }
+
+        private Trace CreateTraceFromPoints(List<Shapes> shape_points)
+        {
+            var trace = new Trace();
+            foreach(var point in shape_points)
+            {
+                trace.Points.Add(new Point(double.Parse(point.Shape_Pt_Lat, CultureInfo.InvariantCulture), double.Parse(point.Shape_Pt_Lon, CultureInfo.InvariantCulture)));
+            }
+            return trace;
         }
 
         protected async ValueTask<SQLiteAsyncConnection> GetDatabaseConnectionAsync<T>()

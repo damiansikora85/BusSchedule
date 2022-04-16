@@ -1,66 +1,88 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
-             xmlns:views="clr-namespace:BusSchedule.Pages.Views" 
-             xmlns:viewmodels="clr-namespace:BusSchedule.Pages.ViewModels;assembly=BusSchedule.Core.UI"
-             x:DataType="viewmodels:RoutesPageViewModel"
-             x:Class="BusSchedule.Pages.RoutesPage"
-             Title="MZK Wejherowo" BackgroundColor="White">
+<ContentPage
+    x:Class="BusSchedule.Pages.RoutesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:BusSchedule.Pages.ViewModels;assembly=BusSchedule.Core.UI"
+    xmlns:views="clr-namespace:BusSchedule.Pages.Views"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="MZK Wejherowo"
+    x:DataType="viewmodels:RoutesPageViewModel"
+    BackgroundColor="White">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="baseline_email_white_24" Clicked="OnContactClicked"/>
-        <ToolbarItem IconImageSource="baseline_article_white_24" Clicked="OnNewsClicked"/>
+        <ToolbarItem Clicked="OnContactClicked" IconImageSource="baseline_email_white_24" />
+        <ToolbarItem Clicked="OnNewsClicked" IconImageSource="baseline_article_white_24" />
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <ControlTemplate
-		        x:Key="TabItemTemplate">
-                <Grid
-			        RowSpacing="0">
+            <ControlTemplate x:Key="TabItemTemplate">
+                <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Image
-				        Grid.Row="0"
-				        VerticalOptions="Center"
-				        HorizontalOptions="Center"
-				        WidthRequest="24"
-				        HeightRequest="24"
+                        Grid.Row="0"
                         Margin="3"
-				        Source="{TemplateBinding CurrentIcon}" />
-                    <Label
-				        Grid.Row="1"
-				        HorizontalOptions="Center"
+                        HeightRequest="24"
+                        HorizontalOptions="Center"
+                        Source="{TemplateBinding CurrentIcon}"
                         VerticalOptions="Center"
-				        FontSize="{TemplateBinding CurrentFontSize}"
-				        Text="{TemplateBinding Text}"
-				        TextColor="{TemplateBinding CurrentTextColor}" />
+                        WidthRequest="24" />
+                    <Label
+                        Grid.Row="1"
+                        FontSize="{TemplateBinding CurrentFontSize}"
+                        HorizontalOptions="Center"
+                        Text="{TemplateBinding Text}"
+                        TextColor="{TemplateBinding CurrentTextColor}"
+                        VerticalOptions="Center" />
                 </Grid>
             </ControlTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <xct:TabView TabStripPlacement="Bottom" TabStripHeight="60" TabStripBackgroundColor="#237194">
-            <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Linie" Icon="baseline_view_module_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
+        <xct:TabView
+            TabStripBackgroundColor="#237194"
+            TabStripHeight="60"
+            TabStripPlacement="Bottom">
+            <xct:TabViewItem
+                ControlTemplate="{StaticResource TabItemTemplate}"
+                FontSize="12"
+                FontSizeSelected="16"
+                Icon="baseline_view_module_white_48"
+                Text="Linie"
+                TextColor="LightGray"
+                TextColorSelected="White">
                 <ScrollView>
                     <StackLayout>
-                        <Label TextColor="#404040" Margin="4">
+                        <Label Margin="4" TextColor="#404040">
                             <Label.FormattedText>
                                 <FormattedString>
-                                    <Span Text="Rozkład ważny od "/>
-                                    <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}"/>
-                                    <Span Text=" do "/>
-                                    <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}"/>
+                                    <Span Text="Rozkład ważny od " />
+                                    <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                                    <Span Text=" do " />
+                                    <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}" />
                                 </FormattedString>
                             </Label.FormattedText>
                         </Label>
-                        <Grid x:Name="grid" RowDefinitions="80, 80, 80, 80, 80" ColumnDefinitions="*, *, *, *" Margin="8,16" HorizontalOptions="Center"/>
+                        <Grid
+                            x:Name="grid"
+                            Margin="8,16"
+                            ColumnDefinitions="*, *, *, *"
+                            HorizontalOptions="Center"
+                            RowDefinitions="80, 80, 80, 80, 80" />
                     </StackLayout>
                 </ScrollView>
             </xct:TabViewItem>
-            <xct:TabViewItem ControlTemplate="{StaticResource TabItemTemplate}" Text="Ulubione" Icon="baseline_favorite_white_48" TextColor="LightGray" TextColorSelected="White" FontSizeSelected="16" FontSize="12">
-                <views:FavoritesView x:Name="FavoritesView"/>
+            <xct:TabViewItem
+                ControlTemplate="{StaticResource TabItemTemplate}"
+                FontSize="12"
+                FontSizeSelected="16"
+                Icon="baseline_favorite_white_48"
+                Text="Ulubione"
+                TextColor="LightGray"
+                TextColorSelected="White">
+                <views:FavoritesView x:Name="FavoritesView" />
             </xct:TabViewItem>
         </xct:TabView>
     </ContentPage.Content>

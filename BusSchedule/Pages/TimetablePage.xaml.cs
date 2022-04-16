@@ -19,16 +19,7 @@ namespace BusSchedule.Pages
     {
         private TimetableViewModel _viewModel;
 
-        public TimetablePage(Stops station, Routes route)
-        {
-            _viewModel = new TimetableViewModel(station, route, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
-            InitializeComponent();
-            BindingContext = _viewModel;
-            Title = station.Stop_Name;
-            SetupToolbar();
-        }
-
-        public TimetablePage(Stops station, Routes route, int direction)
+        public TimetablePage(Stops station, Routes route, int? direction)
         {
             _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             InitializeComponent();

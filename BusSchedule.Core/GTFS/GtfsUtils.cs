@@ -13,7 +13,7 @@ namespace BusSchedule.Core.GTFS
         public static async Task<IEnumerable<Stops>> GetStopsForRoute(IDataProvider dataProvider,  Routes route, int direction)
         {
             var stopsForRoute = new List<Stops>();
-            var trips = await dataProvider.GetTripsForRoute(route, direction);
+            var trips = await dataProvider.GetTripsForRoute(route.Route_Id, direction);
             var filteredTrips = trips.GroupBy(trip => trip.Shape_Id).Select(group => group.First());
             var stopTimesForRoute = new List<List<Stop_Times>>();
             foreach (var trip in filteredTrips)
@@ -43,7 +43,7 @@ namespace BusSchedule.Core.GTFS
             foreach (var day in calendar)
             {
                 schedule.Add(day.Service_Id, new List<TimetableTuple>());
-                var tripsForRoute = await dataProvider.GetTripsForRoute(route, day.Service_Id);
+                var tripsForRoute = await dataProvider.GetTripsForRoute(route.Route_Id, day.Service_Id);
 
                 var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
@@ -68,7 +68,7 @@ namespace BusSchedule.Core.GTFS
             foreach (var day in calendar)
             {
                 schedule.Add(day.Service_Id, new List<TimetableTuple>());
-                var tripsForRoute = await dataProvider.GetTripsForRoute(route, direction, day.Service_Id);
+                var tripsForRoute = await dataProvider.GetTripsForRoute(route.Route_Id, direction, day.Service_Id);
 
                 //get descriptions for trips
                 var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
