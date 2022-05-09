@@ -5,14 +5,14 @@ route_id,outbound,inbound
 4,Wejherowo Starostwo Powiatowe,Orle Łąkowa
 5,Wejherowo Szpital,Orle Łąkowa
 6,Wejherowo Karnowskiego,Wejherowo os. Fenikowskiego
-7,Wejherowo Cegielnia,Gościcino PKP
+7,Wejherowo Cegielnia,Bolszewo Leśna – Szkoła
 8,Wejherowo Szpital,Rumia C.H. Port Rumia
 9,Rumia Dworzec PKP,Reda Rekowo Lipowa
 10,Wejherowo Pomorska,Kębłowo Wiejska
 11,Gniewowo Spacerowa,Kąpino Kościół
 12,Wejherowo Dworzec PKP,Gowino Brzozowa
 13,Gościcino Szkoła,
-14,Orle Szkoła,Bolszewo Leszczynowa
+14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo os. Sikorskiego,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
 18,Reda Dworzec PKP,Reda Pieleszewo Karłowicza
