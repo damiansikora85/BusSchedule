@@ -140,7 +140,7 @@ namespace BusSchedule.Pages
         {
             try
             {
-                var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction.Value);
+                var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
                 await Navigation.PushAsync(page);
             }
             catch (Exception exc)
