@@ -87,16 +87,38 @@ namespace BusSchedule.Pages
 
         private async Task SetMapPosition(bool locationPermissionGranted)
         {
-            if(locationPermissionGranted)
+            var defaultPosition = new Position(54.605868, 18.235334);
+            try
             {
-                var location = await Geolocation.GetLastKnownLocationAsync();
-                var positionOnMap = new Position(location.Latitude, location.Longitude);
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
+                if (locationPermissionGranted)
+                {
+                    var location = await Geolocation.GetLastKnownLocationAsync();
+                    if (location != null)
+                    {
+                        var positionOnMap = new Position(location.Latitude, location.Longitude);
+                        map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
+                    }
+                }
+                else
+                {
+                    var centerPoint = _viewModel.CalculateCenterPosition();
+                    map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
+                }
             }
-            else
+            catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException) 
             {
-                var centerPoint = _viewModel.CalculateCenterPosition();
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
+            }
+            catch (Exception exc)
+            {
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
+
+                // Unable to get location
+                Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    {"route", _viewModel.Route.Route_Short_Name },
+                    {"direction", _viewModel.Direction.ToString()}
+                });
             }
         }
 
