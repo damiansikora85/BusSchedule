@@ -21,3 +21,15 @@ then
     #echo "File content:"
     #cat $KEYS_FILE
 fi
+
+touch $APPCENTER_SOURCE_DIRECTORY/BusSchedule.Android/Assets/google-services.json
+GOOGLE_SERVICES_FILE=$APPCENTER_SOURCE_DIRECTORY/BusSchedule.Android/Assets/google-services.json
+if [ -e "$GOOGLE_SERVICES_FILE" ]
+then
+    echo "Updating google-services.json"
+    echo "$GOOGLE_SERVICES_FILE_CONTENT" > $GOOGLE_SERVICES_FILE
+    sed -i -e 's/\\"/'\"'/g' $GOOGLE_SERVICES_FILE
+
+    #echo "File content:"
+    #cat $GOOGLE_SERVICES_FILE
+fi

@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 BusSchedule.Android/Resources/values/keys.xml
+BusSchedule.Android/Assets/google-services.json
