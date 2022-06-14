@@ -28,6 +28,7 @@ namespace BusSchedule.Pages
     {
         private readonly RoutesPageViewModel _viewModel;
         private INewsService _newsService;
+        private bool _selectionLock;
 
         public RoutesPage()
         {
@@ -92,8 +93,13 @@ namespace BusSchedule.Pages
 
         private async void OnBusServiceSelected(Core.Model.Routes route)
         {
+            if(_selectionLock)
+            {
+                return;
+            }
             try
             {
+                _selectionLock = true;
                 var destination = await _viewModel.GetDestinationsForRoute(route);
                 if (!string.IsNullOrEmpty(destination.Outbound) && !string.IsNullOrEmpty(destination.Inbound))
                 {
@@ -110,6 +116,10 @@ namespace BusSchedule.Pages
             catch(Exception exc)
             {
                 Crashes.TrackError(exc, new Dictionary<string, string> { { "route", route.Route_Short_Name } });
+            }
+            finally
+            {
+                _selectionLock = false;
             }
         }
 
