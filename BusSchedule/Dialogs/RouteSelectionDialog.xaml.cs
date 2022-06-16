@@ -27,6 +27,12 @@ namespace BusSchedule.Dialogs
             BindingContext = _viewModel;
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            _taskCompletionSource.TrySetCanceled();
+            return base.OnBackButtonPressed();
+        }
+
         internal Task<int> WaitForResult()
         {
             return _taskCompletionSource.Task;

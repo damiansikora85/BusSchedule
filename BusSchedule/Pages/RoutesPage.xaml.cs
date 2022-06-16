@@ -113,6 +113,10 @@ namespace BusSchedule.Pages
                     await Navigation.PushAsync(new RoutePage(route, string.IsNullOrEmpty(destination.Outbound) ? destination.Inbound : destination.Outbound, null));
                 }
             }
+            catch(TaskCanceledException)
+            {
+                //just catch this
+            }
             catch(Exception exc)
             {
                 Crashes.TrackError(exc, new Dictionary<string, string> { { "route", route.Route_Short_Name } });
