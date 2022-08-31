@@ -61,7 +61,8 @@ namespace BusSchedule.Core.UI.Pages
 
         public bool IsOnFavoritesList()
         {
-            return _favoritesManager.IsOnList(Route.Route_Id, Station.Stop_Id);
+            _currentCalendarService = Calendar.Service.Saturdays;
+            CurrentTimetable = TimetableSaturdays;
         }
 
         public void AddThisToFavorites()
@@ -137,5 +138,86 @@ namespace BusSchedule.Core.UI.Pages
             }
             OnPropertyChanged(nameof(NextBus.BackgroundColor));
         }
+    }
+
+    private void HighlightNextBus()
+    {
+        if (NextBus != null)
+        {
+            NextBus.IsHighlighted = false;
+        }
+
+        var currentTime = DateTime.Now;
+        NextBus = CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour);
+        if ((NextBus == null || NextBus.Minutes.Last().Minutes < currentTime.Minute) && CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour+1) != null )
+        {
+            NextBus = CurrentTimetable.FirstOrDefault(item => item.Hour == currentTime.Hour + 1);
+        }
+        if(NextBus != null)
+        {
+            NextBus.IsHighlighted = true;
+        }
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus.BackgroundColor)));
+    }
+        
+    private List<Trip_Description> ParseLegend(IEnumerable<Trip_Description> legendData)
+    {
+        var result = new List<Trip_Description>();
+        var alreadyAddedDescription = new List<string>();
+        foreach(var legend in legendData)
+        {
+            if(!alreadyAddedDescription.Contains(legend.ShortDescription))
+            {
+                alreadyAddedDescription.Add(legend.ShortDescription);
+                result.Add(legend);
+            }
+        }
+        return result;
+    }
+
+    public void AddThisToFavorites()
+    {
+        _favoritesManager.Add(Route.Route_Id, Station.Stop_Id, _direction);
+    }
+
+    public void ScheduleDaysChanged(Calendar.Service calendarService)
+    {
+        switch (calendarService)
+        {
+            case Calendar.Service.WorkingDays:
+                CurrentTimetable = TimetableWorkingDays;
+                break;
+            case Calendar.Service.Saturdays:
+                CurrentTimetable = TimetableSaturdays;
+                break;
+            case Calendar.Service.SundayAndHolidays:
+                CurrentTimetable = TimetableHolidays;
+                break;
+        }
+
+        HighlightNextBus();
+        _currentCalendarService = calendarService;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentTimetable)));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus)));
+    }
+
+    private List<TimetableItem> Setup(List<TimetableTuple> timetable)
+    {
+        var sorted = timetable.OrderBy(t => t.Time);
+        var grouped = sorted.GroupBy(item => item.Time.Hours);
+        var list = new List<TimetableItem>();
+        foreach(var group in grouped)
+        {
+            var timetableItem = new TimetableItem
+            {
+                Hour = group.Key,
+                Minutes = group.Select(it => new TimetableItem.TimetableItemMinutes { Minutes = it.Time.Minutes, AdditionalInfo = it.AdditionalDescription?.ShortDescription }).ToList()
+            };
+            list.Add(timetableItem);
+        }
+        return list;
     }
 }

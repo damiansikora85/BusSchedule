@@ -1,14 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <LangVersion>9.0</LangVersion>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <UseMaui>True</UseMaui>
+  <OutputType>Library</OutputType>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Xamarin.Plugin.Firebase" Version="2.0.0" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.7.56" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Xamarin.Plugin.Firebase" Version="1.0.1" />
-  </ItemGroup>
+  </ItemGroup>-->
 
 </Project>

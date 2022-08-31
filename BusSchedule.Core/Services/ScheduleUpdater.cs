@@ -21,22 +21,23 @@ namespace BusSchedule.Core.Services
 
         public async Task<bool> TryUpdateSchedule(IFileAccess fileAccess, string defaultDbFilename)
         {
-            var result = false;
-            var lastNewsUpdateTime = _preferences.Get("lastScheduleUpdate", DateTime.MinValue);
-            if ((DateTime.Now - lastNewsUpdateTime).TotalDays < SCHEDULE_UPDATE_DAYS)
-            {
-                return false;
-            }        
-            var filename = await _cloudService.GetLatestScheduleFilename();
-            if (_preferences.Get("dbFilename", defaultDbFilename) != filename)
-            {
-                var path = await _firebaseStorage.DownloadFileToLocalStorage("/" + filename);
-                await fileAccess.CopyToLocal(path, filename);
-                _preferences.Set("dbFilename", filename);
-                result = true;
-            }
-            _preferences.Set("lastScheduleUpdate", DateTime.Now);
-            return result;
+            return false;
+            //var result = false;
+            //var lastNewsUpdateTime = _preferences.Get("lastScheduleUpdate", DateTime.MinValue);
+            //if ((DateTime.Now - lastNewsUpdateTime).TotalDays < SCHEDULE_UPDATE_DAYS)
+            //{
+            //    return false;
+            //}        
+            //var filename = await _cloudService.GetLatestScheduleFilename();
+            //if (_preferences.Get("dbFilename", defaultDbFilename) != filename)
+            //{
+            //    var path = await _firebaseStorage.DownloadFileToLocalStorage("/" + filename);
+            //    await fileAccess.CopyToLocal(path, filename);
+            //    _preferences.Set("dbFilename", filename);
+            //    result = true;
+            //}
+            //_preferences.Set("lastScheduleUpdate", DateTime.Now);
+            //return result;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Input;
+using Color = Microsoft.Maui.Graphics.Color;
 
 namespace BusSchedule.Components.ViewModels
 {
@@ -25,7 +26,7 @@ namespace BusSchedule.Components.ViewModels
             var red = StringToHex(colorString.Substring(0, 2));
             var green = StringToHex(colorString.Substring(2, 2));
             var blue = StringToHex(colorString.Substring(4, 2));
-            return Color.FromArgb(red, green, blue);
+            return Color.FromRgba(red, green, blue, 255);
         }
 
         private int StringToHex(string hex)
