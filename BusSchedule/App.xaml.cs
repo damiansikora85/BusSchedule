@@ -22,7 +22,7 @@ namespace BusSchedule
 {
     public partial class App : Application
     {
-        public static string DB_FILENAME = "sqlite20220809.db";
+        public static string DB_FILENAME = "sqlite20220901.db";
         public App()
         {
             InitializeComponent();
