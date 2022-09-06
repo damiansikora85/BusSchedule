@@ -2,10 +2,7 @@
 using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
-using System.Threading.Tasks;
 using TinyIoC;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BusSchedule.Pages.Views
 {

@@ -1,9 +1,5 @@
 ﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.UI.Utils;
-using System;
 using System.Globalization;
-using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 
 namespace BusSchedule.Converters
 {
@@ -15,7 +11,7 @@ namespace BusSchedule.Converters
             {
                 try
                 {
-                    return new Position(double.Parse(stop.Stop_Lat, CultureInfo.InvariantCulture), double.Parse(stop.Stop_Lon, CultureInfo.InvariantCulture));
+                    return new Location(double.Parse(stop.Stop_Lat, CultureInfo.InvariantCulture), double.Parse(stop.Stop_Lon, CultureInfo.InvariantCulture));
                 }
                 catch (FormatException ex)
                 {
@@ -23,7 +19,7 @@ namespace BusSchedule.Converters
                 }
             }
 
-            return new Position();
+            return new Location();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

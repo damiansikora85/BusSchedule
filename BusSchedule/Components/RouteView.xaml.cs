@@ -1,15 +1,6 @@
 ﻿using BusSchedule.Components.ViewModels;
 using BusSchedule.Core.Model;
-using BusSchedule.Providers;
-using BusSchedule.Tools;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BusSchedule.Components
 {

@@ -1,6 +1,6 @@
 ﻿using BusSchedule.Core.Services;
 using System;
-using Xamarin.Essentials;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Interfaces.Implementation
 {

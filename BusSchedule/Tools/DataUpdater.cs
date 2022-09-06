@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Plugin.Firebase;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Tools
 {

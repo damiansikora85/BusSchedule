@@ -1,166 +1,168 @@
 ﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.Services;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 using TinyIoC;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Maps;
-using Xamarin.Forms.Xaml;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
-namespace BusSchedule.Pages
+namespace BusSchedule.Pages;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
+public partial class RoutePage : ContentPage
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RoutePage : ContentPage
+    private RoutePageViewModel _viewModel;
+    private bool _firstTimeAppearing = true;
+
+    public RoutePage(Routes route, string destinationName, int? direction)
     {
-        private RoutePageViewModel _viewModel;
-        private bool _firstTimeAppearing = true;
+        _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
+        InitializeComponent();
+        BindingContext = _viewModel;
+        Title = $"Linia: {route.Route_Short_Name} - {destinationName}";
+    }
 
-        public RoutePage(Routes route, string destinationName, int? direction)
+    protected override async void OnAppearing()
+    {
+        try
         {
-            _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
-            InitializeComponent();
-            BindingContext = _viewModel;
-            Title = $"Linia: {route.Route_Short_Name} - {destinationName}";
-        }
-
-        protected override async void OnAppearing()
-        {
-            try
+            if (_firstTimeAppearing)
             {
-                if (_firstTimeAppearing)
-                {
-                    _firstTimeAppearing = false;
-                    await CheckPermission();
-                }
-
-                await _viewModel.RefreshDataAsync();
-                CreateRoutePath();
-
-                await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
-            }
-            catch (Exception exc)
-            {
-                Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString()}
-                });
+                _firstTimeAppearing = false;
+                await CheckPermission();
             }
 
-            base.OnAppearing();
+            await _viewModel.RefreshDataAsync();
+            CreateRoutePath();
+
+            await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
+        }
+        catch (Exception exc)
+        {
+            Crashes.TrackError(exc, new Dictionary<string, string>
+            {
+                {"route", _viewModel.Route.Route_Short_Name },
+                {"direction", _viewModel.Direction.ToString()}
+            });
         }
 
-        private async Task CheckPermission()
+        base.OnAppearing();
+    }
+
+    private async Task CheckPermission()
+    {
+        var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+        if (status != PermissionStatus.Granted)
         {
-            var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
-            if (status != PermissionStatus.Granted)
+            var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
+            if (preferences.Get("wasAskingLocationPermission", false))   //was asking permission but not granted
             {
-                var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
-                if (preferences.Get("wasAskingLocationPermission", false))   //was asking permission but not granted
-                {
-                    var shouldShowRationale = Permissions.ShouldShowRationale<Permissions.LocationWhenInUse>();
-                    if (shouldShowRationale)
-                    {
-                        await RequestLocationPermissionWithExplanation();
-                    }
-                }
-                else //first time asking permission
+                var shouldShowRationale = Permissions.ShouldShowRationale<Permissions.LocationWhenInUse>();
+                if (shouldShowRationale)
                 {
                     await RequestLocationPermissionWithExplanation();
                 }
-                preferences.Set("wasAskingLocationPermission", true);
             }
-
-            async Task RequestLocationPermissionWithExplanation()
+            else //first time asking permission
             {
-                await DisplayAlert("Widok mapy", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
-                _ = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+                await RequestLocationPermissionWithExplanation();
             }
+            preferences.Set("wasAskingLocationPermission", true);
         }
 
-        
-
-        private async Task SetMapPosition(bool locationPermissionGranted)
+        async Task RequestLocationPermissionWithExplanation()
         {
-            var defaultPosition = new Position(54.605868, 18.235334);
-            try
+            await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
+            _ = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+        }
+    }
+
+    
+
+    private async Task SetMapPosition(bool locationPermissionGranted)
+    {
+        var defaultPosition = new Location(54.605868, 18.235334);
+        try
+        {
+            if (locationPermissionGranted)
             {
-                if (locationPermissionGranted)
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location != null)
                 {
-                    var location = await Geolocation.GetLastKnownLocationAsync();
-                    if (location != null)
-                    {
-                        var positionOnMap = new Position(location.Latitude, location.Longitude);
-                        map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
-                    }
+                    var positionOnMap = new Location(location.Latitude, location.Longitude);
+                    map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
                 }
-                else
-                {
-                    var centerPoint = _viewModel.CalculateCenterPosition();
-                    map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
-                }
             }
-            catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException) 
+            else
             {
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
-            }
-            catch (Exception exc)
-            {
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
-
-                // Unable to get location
-                Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString()}
-                });
+                var centerPoint = _viewModel.CalculateCenterPosition();
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
             }
         }
-
-        private void CreateRoutePath()
+        catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException) 
         {
-           
-            foreach (var trace in _viewModel.Traces)
-            {
-                Polyline polyline = new()
-                {
-                    StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
-                    StrokeWidth = 12
-                };
-                foreach (var point in trace.Points)
-                {
-                    polyline.Geopath.Add(new Position(point.Latitude, point.Longitude));
-                }
-                map.MapElements.Add(polyline);
-            }
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
         }
-
-        private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
+        catch (Exception exc)
         {
-            //listView.SelectedItem = null;
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
 
-            if (e.SelectedItem is Stops station)
+            // Unable to get location
+            Crashes.TrackError(exc, new Dictionary<string, string>
             {
-                await ShowScheduleForStop(station);
-            }
+                {"route", _viewModel.Route.Route_Short_Name },
+                {"direction", _viewModel.Direction.ToString()}
+            });
         }
+    }
 
-        private async void Pin_MarkerClicked(object sender, PinClickedEventArgs e)
+    private void CreateRoutePath()
+    {
+       
+        foreach (var trace in _viewModel.Traces)
         {
-            if(sender is Pin pin && pin.BindingContext is Stops stop)
+            Polyline polyline = new()
             {
-                await ShowScheduleForStop(stop);
+                StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
+                StrokeWidth = 12
+            };
+            foreach (var point in trace.Points)
+            {
+                polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
             }
+            map.MapElements.Add(polyline);
         }
+    }
 
-        private async Task ShowScheduleForStop(Stops station)
+    private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        //listView.SelectedItem = null;
+
+        if (e.SelectedItem is Stops station)
         {
-            try
+            await ShowScheduleForStop(station);
+        }
+    }
+
+    private async void Pin_MarkerClicked(object sender, PinClickedEventArgs e)
+    {
+        if(sender is Pin pin && pin.BindingContext is Stops stop)
+        {
+            await ShowScheduleForStop(stop);
+        }
+    }
+
+    private async Task ShowScheduleForStop(Stops station)
+    {
+        try
+        {
+            var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
+            await Navigation.PushAsync(page);
+        }
+        catch (Exception exc)
+        {
+            Crashes.TrackError(exc, new Dictionary<string, string>
             {
                 //var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
                 var page = new TodayTimetablePage(station, _viewModel.Route, _viewModel.Direction);

@@ -16,9 +16,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using TinyIoC;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 using Xamarin.Plugin.Firebase;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule
 {
@@ -31,7 +30,7 @@ namespace BusSchedule
             InitializeComponent();
             VersionTracking.Track();
             RegisterIoC();
-            UserAppTheme = OSAppTheme.Light;
+            //UserAppTheme = OSAppTheme.Light;
             TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
            
             MainPage = new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
@@ -152,7 +151,7 @@ namespace BusSchedule
             dataProvider.SetDatabasePath(databasePath);
             Analytics.TrackEvent("ScheduleUpdated");
 
-            await Xamarin.Forms.Device.InvokeOnMainThreadAsync(async () =>
+            await MainThread.InvokeOnMainThreadAsync(async () =>
             {
                 await MainPage.Navigation.PopToRootAsync();
                 MessagingCenter.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
