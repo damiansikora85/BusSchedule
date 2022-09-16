@@ -40,8 +40,9 @@ namespace BusSchedule
         {
             var container = TinyIoCContainer.Current;
             container.Register<IPreferences, CustomPreferences>();
-            
-            var databasePath = DependencyService.Get<IFileAccess>().GetLocalFilePath(GetDatabaseFilename());
+
+            var fileAccess = new FileAccessService();//Handler.MauiContext.Services.GetService<IFileAccess>();
+            var databasePath = fileAccess.GetLocalFilePath(GetDatabaseFilename());
             var dataProvider = new SQLDataProvider(databasePath);
             container.Register<IDataProvider, SQLDataProvider>(dataProvider);
             container.Register<ICloudService, FirebaseCloudService>();
