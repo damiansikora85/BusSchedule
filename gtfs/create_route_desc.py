@@ -20,7 +20,6 @@ def create_legend_by_destination(db,file):
         ["7","1","Gościcino Robakowska 02",",7,1,R,kurs do: Gościcino Robakowska"],
         ["7","1","Wejherowo Dworzec PKP 02",",7,1,D,kurs do: Wejherowo Dworzec PKP 02 (do przystanku Sobieskiego - Sąd 01 po trasie)"],
         ["8","0","Wejherowo Kochanowskiego SKM Nanice 01",",8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01"],
-        ["8","1","Reda Aquapark 01",",8,1,A,kurs do: Reda Aquapark"],
         ["9","0","Reda Ciechocino 02",",9,0,Z,kurs skrócony do: Reda Ciechocino 02"],
         ["10","0","Bolszewo Zamostna 04",",10,0,Z,kurs skrócony do: Bolszewo Zamostna 04"],
         ["10","1","Kębłowo Wiejska 02",",10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)"],
@@ -29,7 +28,7 @@ def create_legend_by_destination(db,file):
         ["11","0","Wejherowo Prusa - Szkoła 02",",11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02"],
         ["11","1","Wejherowo Pruszkowskiego 01",",11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01"],
         ["11","1","Wejherowo Kochanowskiego SKM Nanice 01",",11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01"],
-        ["18","1","Reda Ciechocino 02",",18,0,C,kurs skrócony do: Reda Ciechocino 02"]
+        ["18","1","Rumia C.H. \"Port Rumia\" 01",",18,1,R,kurs do: C.H. Port Rumia"]
     ]
 
     #create dictionary [shape_id] = trip_headsign for each route
@@ -41,7 +40,7 @@ def create_legend_by_destination(db,file):
 
     for data in legend:
         #print (data)
-        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 25 OR service_id = 24 OR service_id = 27)", (data[0], data[1]))
+        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 25 OR service_id = 24 OR service_id = 28)", (data[0], data[1]))
         db.commit()
         all_rows = cursor.fetchall()
         shapes_dict = {}
@@ -60,6 +59,8 @@ def create_legend_by_stop(db,file):
         ["3", "1", "53", ",3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie"],
         ["6", "0", "318",",6,0,S,kurs z podjazdem do Szpitala"],
         ["6", "1", "318",",6,1,A,kurs z podjazdem do Szpitala"],
+        ["8", "0", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
+        ["8", "1", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
         ["11", "1", "115",",11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego"]
     ]
 
