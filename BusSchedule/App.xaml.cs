@@ -32,8 +32,15 @@ namespace BusSchedule
             RegisterIoC();
             //UserAppTheme = OSAppTheme.Light;
             TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
-           
-            MainPage = new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
+
+            try
+            {
+                MainPage = new AppShell();//new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
+            }
+            catch(Exception exc)
+            {
+                var msg = exc.Message;
+            }
         }
 
         private void RegisterIoC()
@@ -45,6 +52,7 @@ namespace BusSchedule
             var databasePath = fileAccess.GetLocalFilePath(GetDatabaseFilename());
             var dataProvider = new SQLDataProvider(databasePath);
             container.Register<IDataProvider, SQLDataProvider>(dataProvider);
+            container.Register<IFileAccess, FileAccessService>();
             container.Register<ICloudService, FirebaseCloudService>();
             container.Register<INewsService, NewsService>(new NewsService(new FirebaseCloudService(), dataProvider));
             container.Register<IFirebaseStorage, Storage>().AsSingleton();
@@ -127,7 +135,7 @@ namespace BusSchedule
             try
             {
                 var current = Connectivity.NetworkAccess;
-                if (current == NetworkAccess.Internet && await scheduleUpdater.TryUpdateSchedule(DependencyService.Get<IFileAccess>(), DB_FILENAME))
+                if (current == NetworkAccess.Internet && await scheduleUpdater.TryUpdateSchedule(TinyIoCContainer.Current.Resolve<IFileAccess>(), DB_FILENAME))
                 {
                     await OnScheduleUpdated();
                 }
@@ -143,9 +151,10 @@ namespace BusSchedule
 
         private async Task OnScheduleUpdated()
         {
-            var fileAccess = DependencyService.Get<IFileAccess>();
+            
             var resolver = TinyIoCContainer.Current;
             var dataProvider = resolver.Resolve<IDataProvider>();
+            var fileAccess = resolver.Resolve<IFileAccess>();
 
             var filename = GetDatabaseFilename();
             var databasePath = fileAccess.GetLocalFilePath(filename);

@@ -34,9 +34,9 @@ public partial class RoutePage : ContentPage
             }
 
             await _viewModel.RefreshDataAsync();
-            CreateRoutePath();
+            //CreateRoutePath();
 
-            await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
+            //await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
         }
         catch (Exception exc)
         {
@@ -80,60 +80,60 @@ public partial class RoutePage : ContentPage
 
     
 
-    private async Task SetMapPosition(bool locationPermissionGranted)
-    {
-        var defaultPosition = new Location(54.605868, 18.235334);
-        try
-        {
-            if (locationPermissionGranted)
-            {
-                var location = await Geolocation.GetLastKnownLocationAsync();
-                if (location != null)
-                {
-                    var positionOnMap = new Location(location.Latitude, location.Longitude);
-                    map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
-                }
-            }
-            else
-            {
-                var centerPoint = _viewModel.CalculateCenterPosition();
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
-            }
-        }
-        catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException) 
-        {
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
-        }
-        catch (Exception exc)
-        {
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
+    //private async Task SetMapPosition(bool locationPermissionGranted)
+    //{
+    //    var defaultPosition = new Location(54.605868, 18.235334);
+    //    try
+    //    {
+    //        if (locationPermissionGranted)
+    //        {
+    //            var location = await Geolocation.GetLastKnownLocationAsync();
+    //            if (location != null)
+    //            {
+    //                var positionOnMap = new Location(location.Latitude, location.Longitude);
+    //                map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
+    //            }
+    //        }
+    //        else
+    //        {
+    //            var centerPoint = _viewModel.CalculateCenterPosition();
+    //            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
+    //        }
+    //    }
+    //    catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException) 
+    //    {
+    //        map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
+    //    }
+    //    catch (Exception exc)
+    //    {
+    //        map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
 
-            // Unable to get location
-            Crashes.TrackError(exc, new Dictionary<string, string>
-            {
-                {"route", _viewModel.Route.Route_Short_Name },
-                {"direction", _viewModel.Direction.ToString()}
-            });
-        }
-    }
+    //        // Unable to get location
+    //        Crashes.TrackError(exc, new Dictionary<string, string>
+    //        {
+    //            {"route", _viewModel.Route.Route_Short_Name },
+    //            {"direction", _viewModel.Direction.ToString()}
+    //        });
+    //    }
+    //}
 
-    private void CreateRoutePath()
-    {
+    //private void CreateRoutePath()
+    //{
        
-        foreach (var trace in _viewModel.Traces)
-        {
-            Polyline polyline = new()
-            {
-                StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
-                StrokeWidth = 12
-            };
-            foreach (var point in trace.Points)
-            {
-                polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
-            }
-            map.MapElements.Add(polyline);
-        }
-    }
+    //    foreach (var trace in _viewModel.Traces)
+    //    {
+    //        Polyline polyline = new()
+    //        {
+    //            StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
+    //            StrokeWidth = 12
+    //        };
+    //        foreach (var point in trace.Points)
+    //        {
+    //            polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
+    //        }
+    //        map.MapElements.Add(polyline);
+    //    }
+    //}
 
     private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
     {

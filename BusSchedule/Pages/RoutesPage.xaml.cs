@@ -37,38 +37,48 @@ public partial class RoutesPage : ContentPage
 
     protected override async void OnAppearing()
     {
-        UserDialogs.Instance.ShowLoading("");
-        var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
-        await DataUpdater.UpdateDataIfNeeded(DependencyService.Get<IFileAccess>(), preferences);
-        await RefreshData();
-        UserDialogs.Instance.HideLoading();
-
-        int row = 0, col = 0;
-        int maxCol = grid.ColumnDefinitions.Count;
-        grid.Children.Clear();
-        foreach (var busService in _viewModel.Routes)
+        try
         {
-            var item = new RouteView(busService);
-            item.OnServiceClicked += OnBusServiceSelected;
-            grid.Add(item, col, row);
-            col++;
-            row = col == maxCol ? row + 1 : row;
-            col %= maxCol;
-        }
+            UserDialogs.Instance.ShowLoading("");
+            var resolver = TinyIoCContainer.Current;
+            var preferences = resolver.Resolve<IPreferences>();
+            var fileAccess = resolver.Resolve<IFileAccess>();
+            await DataUpdater.UpdateDataIfNeeded(fileAccess, preferences);
+            await RefreshData();
+            UserDialogs.Instance.HideLoading();
 
-        if (DateTime.TryParse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()), out var ratePopupLastShown))
-        {
-            if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+
+            int row = 0, col = 0;
+            int maxCol = grid.ColumnDefinitions.Count;
+            grid.Children.Clear();
+            foreach (var busService in _viewModel.Routes)
             {
-                await this.ShowPopupAsync(new RatePopup(preferences));
+                var item = new RouteView(busService);
+                item.OnServiceClicked += OnBusServiceSelected;
+                grid.Add(item, col, row);
+                col++;
+                row = col == maxCol ? row + 1 : row;
+                col %= maxCol;
+            }
+
+            if (DateTime.TryParse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()), out var ratePopupLastShown))
+            {
+                if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
+                {
+                    await this.ShowPopupAsync(new RatePopup(preferences));
+                }
+            }
+            else
+            {
+                preferences.Set("rate_popup_last_shown", DateTime.Today.ToString());
             }
         }
-        else
+        catch (Exception exc)
         {
-            preferences.Set("rate_popup_last_shown", DateTime.Today.ToString());
+            var msg = exc.Message;
         }
 
-        await FavoritesView.RefreshView();
+        //await FavoritesView.RefreshView();
 
         base.OnAppearing();
     }
@@ -97,7 +107,8 @@ public partial class RoutesPage : ContentPage
                 var dialog = new RouteSelectionDialog(destination);
                 await this.ShowPopupAsync(dialog);
                 var selectedDirection = await dialog.WaitForResult();
-                await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
+                //await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
+                await Shell.Current.Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
             }
             else if (!string.IsNullOrEmpty(destination.Outbound) || !string.IsNullOrEmpty(destination.Inbound))
             {

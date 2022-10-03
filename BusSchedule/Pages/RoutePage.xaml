@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BusSchedule.Converters"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
     BackgroundColor="White">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -113,19 +114,19 @@
                 TextColor="LightGray"
                 TextColorSelected="White">
 
-                <Map
+                <!--<maps:Map
                     x:Name="map"
                     IsShowingUser="True"
                     ItemsSource="{Binding Stops}">
-                    <Map.ItemTemplate>
+                    <maps:Map.ItemTemplate>
                         <DataTemplate>
                             <Pin
                                 Label="{Binding Stop_Name}"
                                 MarkerClicked="Pin_MarkerClicked"
                                 Location="{Binding ., Converter={StaticResource StopLocationConverter}}" />
                         </DataTemplate>
-                    </Map.ItemTemplate>
-                </Map>
+                    </maps:Map.ItemTemplate>
+                </maps:Map>-->
             </xct:TabViewItem>
         </xct:TabView>
     </ContentPage.Content>
