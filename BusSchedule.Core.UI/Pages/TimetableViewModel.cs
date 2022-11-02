@@ -32,6 +32,8 @@ namespace BusSchedule.UI.ViewModels
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
         public TimetableItem NextBus { get; private set; }
 
+        public string TodayTitle => $"Dzisiaj ({DateTime.Now.ToString("d")})";
+
         public bool IsOnFavoritesList()
         {
             return _favoritesManager.IsOnList(Route.Route_Id, Station.Stop_Id);

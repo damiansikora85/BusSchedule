@@ -1,28 +1,86 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:components="clr-namespace:BusSchedule.Components"
-             x:Class="BusSchedule.Pages.TimetablePage" BackgroundColor="White">
+<ContentPage
+    x:Class="BusSchedule.Pages.TimetablePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
     <ContentPage.Content>
         <StackLayout>
-            <Grid ColumnDefinitions="*,*,*" RowDefinitions="48,2" RowSpacing="0">
-                <Button Text="Dni robocze" Clicked="WorkingDaysClicked" BackgroundColor="White" TextColor="Black"/>
-                <Button Grid.Column="1" Text="Soboty" Clicked="SaturdaysClicked" BackgroundColor="White" TextColor="Black"/>
-                <Button Grid.Column="2" Text="Niedziele i święta" Clicked="HolidaysClicked" BackgroundColor="White" TextColor="Black" Padding="0"/>
+            <Grid
+                ColumnDefinitions="*,*,*,*"
+                RowDefinitions="48,2"
+                RowSpacing="0">
+                <Button
+                    BackgroundColor="White"
+                    Clicked="WorkingDaysClicked"
+                    Text="{Binding TodayTitle}"
+                    TextColor="Black" />
+                <Button
+                    Grid.Column="1"
+                    Padding="0"
+                    BackgroundColor="White"
+                    Clicked="WorkingDaysClicked"
+                    Text="Dni robocze"
+                    TextColor="Black" />
+                <Button
+                    Grid.Column="2"
+                    BackgroundColor="White"
+                    Clicked="SaturdaysClicked"
+                    Text="Soboty"
+                    TextColor="Black" />
+                <Button
+                    Grid.Column="3"
+                    Padding="0"
+                    BackgroundColor="White"
+                    Clicked="HolidaysClicked"
+                    Text="Niedziele i święta"
+                    TextColor="Black" />
 
-                <BoxView Grid.Row="1" Color="#237194" IsVisible="{Binding WorkingDaysVisible}"/>
-                <BoxView Grid.Row="1" Grid.Column="1" Color="#237194" IsVisible="{Binding SaturdaysVisible}"/>
-                <BoxView Grid.Row="1" Grid.Column="2" Color="#237194" IsVisible="{Binding HolidaysVisible}"/>
+                <BoxView
+                    Grid.Row="1"
+                    IsVisible="{Binding WorkingDaysVisible}"
+                    Color="#237194" />
+                <BoxView
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    IsVisible="{Binding WorkingDaysVisible}"
+                    Color="#237194" />
+                <BoxView
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    IsVisible="{Binding SaturdaysVisible}"
+                    Color="#237194" />
+                <BoxView
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    IsVisible="{Binding HolidaysVisible}"
+                    Color="#237194" />
             </Grid>
-            <ListView x:Name="listView" SelectionMode="None" SelectedItem="{Binding NextBus, Mode=TwoWay}" ItemsSource="{Binding CurrentTimetable}" SeparatorVisibility="Default" SeparatorColor="#404040">
+            <ListView
+                x:Name="listView"
+                ItemsSource="{Binding CurrentTimetable}"
+                SelectedItem="{Binding NextBus, Mode=TwoWay}"
+                SelectionMode="None"
+                SeparatorColor="#404040"
+                SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" BackgroundColor="{Binding BackgroundColor}">
-                                <Label Text="{Binding Hour}" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" Margin="4,0" TextColor="#404040"/>
-                                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Minutes}">
+                            <StackLayout BackgroundColor="{Binding BackgroundColor}" Orientation="Horizontal">
+                                <Label
+                                    Margin="4,0"
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding Hour}"
+                                    TextColor="#404040"
+                                    VerticalTextAlignment="Center" />
+                                <StackLayout BindableLayout.ItemsSource="{Binding Minutes}" Orientation="Horizontal">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
-                                            <Label Text="{Binding}" VerticalTextAlignment="Center" TextColor="#404040"/>
+                                            <Label
+                                                Text="{Binding}"
+                                                TextColor="#404040"
+                                                VerticalTextAlignment="Center" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </StackLayout>
@@ -31,10 +89,10 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.Footer>
-                    <StackLayout BindableLayout.ItemsSource="{Binding TimetableLegend}" Margin="4,4">
+                    <StackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="{Binding .}" TextColor="#404040"/>
+                                <Label Text="{Binding .}" TextColor="#404040" />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
