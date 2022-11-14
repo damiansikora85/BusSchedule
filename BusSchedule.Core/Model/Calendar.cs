@@ -21,7 +21,8 @@ namespace BusSchedule.Core.Model
         {
             WorkingDays,
             Saturdays,
-            SundayAndHolidays
+            SundayAndHolidays,
+            Today
         }
 
         public int GetWorkingDaysCount()

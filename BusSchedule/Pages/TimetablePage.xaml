@@ -12,7 +12,8 @@
                 RowSpacing="0">
                 <Button
                     BackgroundColor="White"
-                    Clicked="WorkingDaysClicked"
+                    Clicked="TodayClicked"
+                    Padding="0"
                     Text="{Binding TodayTitle}"
                     TextColor="Black" />
                 <Button
@@ -25,6 +26,7 @@
                 <Button
                     Grid.Column="2"
                     BackgroundColor="White"
+                    Padding="0"
                     Clicked="SaturdaysClicked"
                     Text="Soboty"
                     TextColor="Black" />
@@ -38,7 +40,7 @@
 
                 <BoxView
                     Grid.Row="1"
-                    IsVisible="{Binding WorkingDaysVisible}"
+                    IsVisible="{Binding TodayVisible}"
                     Color="#237194" />
                 <BoxView
                     Grid.Row="1"

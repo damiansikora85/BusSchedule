@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
 using Polly;
 using SQLite;
@@ -183,6 +184,33 @@ namespace BusSchedule.Providers
             var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
             var info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Sunday == "1").FirstOrDefaultAsync());
             return info.Service_Id;
+        }
+
+        public async Task<string> GetTodayServiceId()
+        {
+            var connection = await GetDatabaseConnectionAsync<Calendar_Dates>().ConfigureAwait(false);
+            var todayDate = DateTime.Today;
+            var today = todayDate.ToString("yyyymmdd");
+            var dates = await AttemptAndRetry(() => connection.Table<Calendar_Dates>().Where(cal => cal.Date == today).ToListAsync());
+            if(dates.Count == 2)
+            {
+                return dates.First(date => date.Exception_Type == Calendar_Dates.ServiceAdded).Service_Id;
+            }
+            else
+            {
+                if(todayDate.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    return await GetSaturdayServiceId();
+                }
+                else if(todayDate.DayOfWeek == DayOfWeek.Sunday || HolidaysHelper.IsTodayHoliday())
+                {
+                    return await GetSundayServiceId();
+                }
+                else
+                {
+                    return await GetWorkdaysServiceId();
+                }
+            }
         }
 
         public async Task SaveNews(IList<News> news)

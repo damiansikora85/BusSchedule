@@ -27,6 +27,7 @@ namespace BusSchedule.UI.ViewModels
         public List<TimetableItem> TimetableWorkingDays { get; private set; } = new List<TimetableItem>();
         public List<TimetableItem> TimetableSaturdays { get; private set; } = new List<TimetableItem>();
         public List<TimetableItem> TimetableHolidays { get; private set; } = new List<TimetableItem>();
+        public List<TimetableItem> TimetableToday { get; private set; } = new List<TimetableItem>();
         public List<TimetableItem> CurrentTimetable { get; private set; }
         public List<Trip_Description> TimetableLegend { get; private set; }
         public ObservableCollection<string> RouteDetails { get; private set; } = new ObservableCollection<string>();
@@ -43,6 +44,7 @@ namespace BusSchedule.UI.ViewModels
         public bool WorkingDaysVisible => _currentCalendarService == Calendar.Service.WorkingDays;
         public bool SaturdaysVisible => _currentCalendarService == Calendar.Service.Saturdays;
         public bool HolidaysVisible => _currentCalendarService == Calendar.Service.SundayAndHolidays;
+        public bool TodayVisible => _currentCalendarService == Calendar.Service.Today;
 
         public ICommand ScheduleDaysChangedCommand { get; private set; }
 
@@ -70,6 +72,7 @@ namespace BusSchedule.UI.ViewModels
             var workingDaysId = await _dataProvider.GetWorkdaysServiceId();
             var saturdayaId = await _dataProvider.GetSaturdayServiceId();
             var sundayId = await _dataProvider.GetSundayServiceId();
+            var todayId = await _dataProvider.GetTodayServiceId();
             TimetableWorkingDays = Setup(timetableAll[workingDaysId]);
             TimetableSaturdays = Setup(timetableAll[saturdayaId]);
             TimetableHolidays = Setup(timetableAll[sundayId]);
@@ -166,6 +169,7 @@ namespace BusSchedule.UI.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(WorkingDaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SaturdaysVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HolidaysVisible)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TodayVisible)));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(NextBus)));
         }
 

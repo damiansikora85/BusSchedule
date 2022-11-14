@@ -9,5 +9,8 @@ namespace BusSchedule.Core.Model
         public string Service_Id { get; set; }
         public string Date { get; set; }
         public string Exception_Type { get; set; }
+
+        public const string ServiceAdded = "1";
+        public const string ServiceRemoved = "2";
     }
 }

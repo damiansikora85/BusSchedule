@@ -69,6 +69,12 @@ namespace BusSchedule.Pages
             }
         }
 
+        private void TodayClicked(object sender, System.EventArgs e)
+        {
+            _viewModel.ScheduleDaysChanged(Calendar.Service.Today);
+            ScrollToCurrentTime(true);
+        }
+
         private void WorkingDaysClicked(object sender, System.EventArgs e)
         {
             _viewModel.ScheduleDaysChanged(Calendar.Service.WorkingDays);
