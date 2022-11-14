@@ -22,6 +22,7 @@ def create_legend_by_destination(db,file):
         ["8","0","Wejherowo Kochanowskiego SKM Nanice 01",",8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01"],
         ["9","0","Reda Ciechocino 02",",9,0,Z,kurs skrócony do: Reda Ciechocino 02"],
         ["10","0","Bolszewo Zamostna 04",",10,0,Z,kurs skrócony do: Bolszewo Zamostna 04"],
+        ["10","0","Wejherowo Dworzec PKP 04",",10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)"],
         ["10","1","Kębłowo Wiejska 02",",10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)"],
         ["10","1","Gościcino Równa 04",",10,1,B,kurs skrócony do: Gościcino Równa 04"],
         ["11","0","Wejherowo Kusocińskiego 02",",11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02"],

@@ -1,33 +1,32 @@
-19319,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-19320,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-19329,3,0,W,kurs do: Wejherowo os. Sikorskiego
-19330,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
-19333,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-19332,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
-19343,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-19338,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-19337,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
-19345,6,1,B,kurs tylko do Szpitala
-19349,7,1,R,kurs do: Gościcino Robakowska
-19357,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-19361,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-19368,10,0,Z,kurs skrócony do: Bolszewo Zamostna 04
-19362,10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)
-19363,10,1,B,kurs skrócony do: Gościcino Równa 04
-19377,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
-19376,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
-19372,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-19373,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
-19374,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-19379,18,1,R,kurs do: C.H. Port Rumia
-19382,18,1,R,kurs do: C.H. Port Rumia
-19383,18,1,R,kurs do: C.H. Port Rumia
-19347,6,0,S,kurs z podjazdem do Szpitala
-19344,6,1,A,kurs z podjazdem do Szpitala
-19345,6,1,A,kurs z podjazdem do Szpitala
-19346,6,1,A,kurs z podjazdem do Szpitala
-19356,8,0,C,kurs z podjazdem do Ciechocina
-19353,8,0,C,kurs z podjazdem do Ciechocina
-19355,8,0,C,kurs z podjazdem do Ciechocina
-19369,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
-19373,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+20206,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+20207,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+20216,3,0,W,kurs do: Wejherowo os. Sikorskiego
+20217,3,0,Z,kurs skrócony do: Bolszewo Zamostna 02
+20220,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+20219,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
+20230,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+20225,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+20224,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
+20232,6,1,B,kurs tylko do Szpitala
+20236,7,1,R,kurs do: Gościcino Robakowska
+20244,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+20248,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+20251,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
+20249,10,1,B,kurs skrócony do: Gościcino Równa 04
+20262,11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02
+20261,11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02
+20257,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+20258,11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01
+20259,11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+20264,18,1,R,kurs do: C.H. Port Rumia
+20267,18,1,R,kurs do: C.H. Port Rumia
+20268,18,1,R,kurs do: C.H. Port Rumia
+20234,6,0,S,kurs z podjazdem do Szpitala
+20231,6,1,A,kurs z podjazdem do Szpitala
+20232,6,1,A,kurs z podjazdem do Szpitala
+20233,6,1,A,kurs z podjazdem do Szpitala
+20243,8,0,C,kurs z podjazdem do Ciechocina
+20240,8,0,C,kurs z podjazdem do Ciechocina
+20242,8,0,C,kurs z podjazdem do Ciechocina
+20254,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
+20258,11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego
