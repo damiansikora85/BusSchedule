@@ -57,8 +57,11 @@ namespace BusSchedule.Pages
                     {"station", _viewModel.Station.Stop_Name }
                 });
             }
-            UserDialogs.Instance.HideLoading();
-            base.OnAppearing();
+            finally
+            {
+                UserDialogs.Instance.HideLoading();
+                base.OnAppearing();
+            }
         }
 
         private void ScrollToCurrentTime(bool animated)

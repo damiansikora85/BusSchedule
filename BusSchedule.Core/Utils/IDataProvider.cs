@@ -31,5 +31,6 @@ namespace BusSchedule.Core.Utils
         Task<string> GetSundayServiceId();
         Task Test();
         Task<string> GetTodayServiceId();
+        Task<string> GetServiceIdByDate(DateTime dateTime);
     }
 }

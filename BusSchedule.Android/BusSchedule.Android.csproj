@@ -120,6 +120,9 @@
     <PackageReference Include="Xamarin.Forms.Maps">
       <Version>5.0.0.2401</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.759</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Plugin.Firebase">
       <Version>1.0.1</Version>
     </PackageReference>

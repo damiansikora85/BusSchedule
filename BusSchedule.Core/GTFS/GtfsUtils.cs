@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusSchedule.Core.Model.Calendar;
 
 namespace BusSchedule.Core.GTFS
 {
@@ -61,6 +62,67 @@ namespace BusSchedule.Core.GTFS
             return schedule;
         }
 
+        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, DateTime date)
+        {
+            var schedule = new List<TimetableTuple>();
+            var serviceId = await GetServiceIdForDate(date, dataProvider);
+
+            var tripsForRoute = await dataProvider.GetTripsForRoute(route.Route_Id, serviceId);
+            var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
+            foreach (var trip in tripsForRoute)
+            {
+                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                var item = stopTimes.Select(st => new TimetableTuple
+                {
+                    Time = st,
+                    AdditionalDescription = desc.FirstOrDefault(d => d.Shape_Id == trip.Shape_Id)
+                });
+                schedule.AddRange(item);
+            }
+            return schedule;
+        }
+
+        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction, DateTime date)
+        {
+            var schedule = new List<TimetableTuple>();
+            var serviceId = await GetServiceIdForDate(date, dataProvider);
+
+            var tripsForRoute = await dataProvider.GetTripsForRoute(route.Route_Id, direction, serviceId);
+            var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
+            foreach (var trip in tripsForRoute)
+            {
+                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                var item = stopTimes.Select(st => new TimetableTuple
+                {
+                    Time = st,
+                    AdditionalDescription = desc.FirstOrDefault(d => d.Shape_Id == trip.Shape_Id)
+                });
+                schedule.AddRange(item);
+            }
+            return schedule;
+        }
+
+        private static async Task<string> GetServiceIdForDate(DateTime date, IDataProvider dataProvider)
+        {
+            var serviceId = await dataProvider.GetServiceIdByDate(date);
+            if(!string.IsNullOrEmpty(serviceId))
+            {
+                return serviceId;
+            }
+            if (date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                return await dataProvider.GetSaturdayServiceId();
+            }
+            else if (date.DayOfWeek == DayOfWeek.Sunday || HolidaysHelper.IsTodayHoliday())
+            {
+                return await dataProvider.GetSundayServiceId();
+            }
+            else
+            {
+                return await dataProvider.GetWorkdaysServiceId();
+            }
+        }
+
         public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)
         {
             var schedule = new Dictionary<string, List<TimetableTuple>>();
@@ -78,7 +140,7 @@ namespace BusSchedule.Core.GTFS
                     var item = stopTimes.Select(st => new TimetableTuple
                     {
                         Time = st,
-                        AdditionalDescription = desc.Where(d => d.Shape_Id == trip.Shape_Id).FirstOrDefault()
+                        AdditionalDescription = desc.FirstOrDefault(d => d.Shape_Id == trip.Shape_Id)
                     });
                     schedule[day.Service_Id].AddRange(item);
                 }

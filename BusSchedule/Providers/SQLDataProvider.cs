@@ -213,6 +213,18 @@ namespace BusSchedule.Providers
             }
         }
 
+        public async Task<string> GetServiceIdByDate(DateTime dateTime)
+        {
+            var connection = await GetDatabaseConnectionAsync<Calendar_Dates>().ConfigureAwait(false);
+            var formattedDate = dateTime.ToString("yyyyMMdd");
+            var dates = await AttemptAndRetry(() => connection.Table<Calendar_Dates>().Where(cal => cal.Date == formattedDate).ToListAsync());
+            if (dates.Count == 2)
+            {
+                return dates.First(date => date.Exception_Type == Calendar_Dates.ServiceAdded).Service_Id;
+            }
+            return string.Empty;
+        }
+
         public async Task SaveNews(IList<News> news)
         {
             var connection = await GetDatabaseConnectionAsync<News>().ConfigureAwait(false);
