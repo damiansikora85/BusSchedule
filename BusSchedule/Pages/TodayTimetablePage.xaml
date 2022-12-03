@@ -27,7 +27,7 @@
     <ContentPage.Content>
         <StackLayout>
             <CollectionView
-                Margin="4"
+                Margin="0,8,0,0"
                 HeightRequest="100"
                 ItemsSource="{Binding Dates}"
                 SelectedItem="{Binding SelectedDay}"
@@ -35,31 +35,31 @@
                 SelectionMode="Single"
                 VerticalOptions="Start">
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="12" Orientation="Horizontal" />
+                    <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
+                        <StackLayout Padding="4,0">
                             <pancakeview:PancakeView
                                 Padding="8"
                                 BackgroundColor="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
-                                CornerRadius="32"
+                                CornerRadius="8"
                                 WidthRequest="60">
-                                <!--<pancakeview:PancakeView.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding }"
-                            </pancakeview:PancakeView.GestureRecognizers>-->
-                                <pancakeview:PancakeView.Border>
+
+                                <!--<pancakeview:PancakeView.Border>
                                     <pancakeview:Border Thickness="4" Color="#237194" />
-                                </pancakeview:PancakeView.Border>
+                                </pancakeview:PancakeView.Border>-->
                                 <StackLayout>
                                     <Label
                                         FontSize="20"
                                         HorizontalTextAlignment="Center"
-                                        Text="{Binding DayOfWeek}" />
+                                        Text="{Binding DayOfWeek}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
                                     <Label
                                         FontSize="20"
                                         HorizontalTextAlignment="Center"
-                                        Text="{Binding DayNum}" />
+                                        Text="{Binding DayNum}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
                                 </StackLayout>
 
                             </pancakeview:PancakeView>

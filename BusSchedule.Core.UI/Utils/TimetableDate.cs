@@ -10,7 +10,8 @@ namespace BusSchedule.Core.UI.Utils
         public string DayOfWeek => Date.ToString("ddd");
         public string DayNum => Date.ToString("dd.MM");
         public bool IsSelected { get; set; }
-        public Color BackgroundColor => IsSelected ? Color.FromArgb(23, 71, 94) : Color.White;
+        public Color BackgroundColor => IsSelected ? Color.FromArgb(35, 113, 148) : Color.FromArgb(240, 240, 240);
+        public Color TextColor => IsSelected ? Color.White : Color.FromArgb(128, 128, 128);
 
         public TimetableDate(DateTime date)
         {
@@ -23,12 +24,14 @@ namespace BusSchedule.Core.UI.Utils
         {
             IsSelected = true;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundColor)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextColor)));
         }
 
         public void Deselect()
         {
             IsSelected = false;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BackgroundColor)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextColor)));
         }
     }
 }
