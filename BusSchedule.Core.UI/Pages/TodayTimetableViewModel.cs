@@ -49,6 +49,7 @@ namespace BusSchedule.Core.UI.Pages
             TimetableLegend = ParseLegend(legendData);
             var schedule = await GetScheduleForDay();
             Timetable = Setup(schedule);
+            HighlightNextBus();
 
             OnPropertyChanged(nameof(Timetable));
             OnPropertyChanged(nameof(TimetableLegend));
@@ -95,8 +96,32 @@ namespace BusSchedule.Core.UI.Pages
         {
             var schedule = await GetScheduleForDay();
             Timetable = Setup(schedule);
+            if(SelectedDay.Date.Date == DateTime.Now.Date)
+            {
+                HighlightNextBus();
+            }
 
             OnPropertyChanged(nameof(Timetable));
+        }
+
+        private void HighlightNextBus()
+        {
+            if (NextBus != null)
+            {
+                NextBus.IsHighlighted = false;
+            }
+
+            var currentTime = DateTime.Now;
+            NextBus = Timetable.FirstOrDefault(item => item.Hour == currentTime.Hour);
+            if ((NextBus == null || NextBus.Minutes.Last().Minutes < currentTime.Minute) && Timetable.FirstOrDefault(item => item.Hour == currentTime.Hour + 1) != null)
+            {
+                NextBus = Timetable.FirstOrDefault(item => item.Hour == currentTime.Hour + 1);
+            }
+            if (NextBus != null)
+            {
+                NextBus.IsHighlighted = true;
+            }
+            OnPropertyChanged(nameof(NextBus.BackgroundColor));
         }
     }
 }

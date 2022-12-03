@@ -52,6 +52,7 @@ namespace BusSchedule.Pages
 
         private async void SelectedDayChanged(object sender, SelectionChangedEventArgs e)
         {
+            UserDialogs.Instance.ShowLoading();
             if(e.PreviousSelection.Any() && e.PreviousSelection.First() is TimetableDate previous)
             {
                 previous.Deselect();
@@ -61,6 +62,7 @@ namespace BusSchedule.Pages
                 current.Select();
             }
             await _viewModel.OnNewDaySelected();
+            UserDialogs.Instance.HideLoading();
         }
     }
 }
