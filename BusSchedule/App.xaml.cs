@@ -12,6 +12,7 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Essentials;
@@ -23,6 +24,7 @@ namespace BusSchedule
     public partial class App : Application
     {
         public static string DB_FILENAME = "sqlite20221203.db";
+        private SemaphoreSlim _updateSemafor = new SemaphoreSlim(1);
         public App()
         {
             InitializeComponent();
@@ -96,6 +98,7 @@ namespace BusSchedule
 
         private async Task TryUpdateNews(INewsService newsService, IPreferences preferences)
         {
+            await _updateSemafor.WaitAsync();
             try
             {
                 var current = Connectivity.NetworkAccess;
@@ -110,6 +113,10 @@ namespace BusSchedule
                 {
                     { "connectivity", Connectivity.NetworkAccess.ToString() }
                 });
+            }
+            finally
+            {
+                _updateSemafor.Release();
             }
         }
 
