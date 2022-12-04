@@ -157,26 +157,17 @@ public partial class RoutePage : ContentPage
     {
         try
         {
-            var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
+            var page = new TodayTimetablePage(station, _viewModel.Route, _viewModel.Direction);
             await Navigation.PushAsync(page);
         }
         catch (Exception exc)
         {
             Crashes.TrackError(exc, new Dictionary<string, string>
             {
-                //var page = new TimetablePage(station, _viewModel.Route, _viewModel.Direction);
-                var page = new TodayTimetablePage(station, _viewModel.Route, _viewModel.Direction);
-                await Navigation.PushAsync(page);
-            }
-            catch (Exception exc)
-            {
-                Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString() },
-                    {"station", station.Stop_Name }
-                });
-            }
+                {"route", _viewModel.Route.Route_Short_Name },
+                {"direction", _viewModel.Direction.ToString() },
+                {"station", station.Stop_Name }
+            });
         }
     }
 }

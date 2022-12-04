@@ -10,8 +10,8 @@ namespace BusSchedule.Core.UI.Utils
         public string DayOfWeek => Date.ToString("ddd");
         public string DayNum => Date.ToString("dd.MM");
         public bool IsSelected { get; set; }
-        public Color BackgroundColor => IsSelected ? Color.FromArgb(35, 113, 148) : Color.FromArgb(240, 240, 240);
-        public Color TextColor => IsSelected ? Color.White : Color.FromArgb(128, 128, 128);
+        public System.Drawing.Color BackgroundColor => IsSelected ? System.Drawing.Color.FromArgb(35, 113, 148) : System.Drawing.Color.FromArgb(240, 240, 240);
+        public System.Drawing.Color TextColor => IsSelected ? System.Drawing.Color.White : System.Drawing.Color.FromArgb(128, 128, 128);
 
         public TimetableDate(DateTime date)
         {
