@@ -43,6 +43,9 @@
     <Compile Update="Pages\RoutesPage.xaml.cs">
       <DependentUpon>RoutesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\TimetablePage.xaml.cs">
+      <DependentUpon>TimetablePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -64,13 +67,10 @@
     <EmbeddedResource Update="Pages\ThreadsTestPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\TimetablePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Dialogs\RatePopup.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\TodayTimetablePage.xaml">
+    <EmbeddedResource Update="Pages\TimetablePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Views\FavoritesView.xaml">

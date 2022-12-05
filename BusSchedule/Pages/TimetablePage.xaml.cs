@@ -1,13 +1,15 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Model;
+using BusSchedule.Core.UI.Pages;
+using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
-using BusSchedule.Interfaces;
 using BusSchedule.Interfaces.Implementation;
-using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,39 +17,25 @@ using Xamarin.Forms.Xaml;
 namespace BusSchedule.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TimetablePage : ContentPage
+    public partial class TodayTimetablePage : ContentPage
     {
         private TimetableViewModel _viewModel;
 
-        public TimetablePage(Stops station, Routes route, int? direction)
+        public TodayTimetablePage(Stops station, Routes route, int? direction)
         {
-            _viewModel = new TimetableViewModel(station, route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             InitializeComponent();
+            _viewModel = new TimetableViewModel(route, station, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             BindingContext = _viewModel;
             Title = station.Stop_Name;
             SetupToolbar();
         }
 
-        private void SetupToolbar()
-        {
-            if(!_viewModel.IsOnFavoritesList())
-            {
-                var toolbarItem = new ToolbarItem
-                {
-                    IconImageSource = "baseline_favorite_white_24",
-                };
-                toolbarItem.Clicked += AddToFavoritesClicked;
-                ToolbarItems.Add(toolbarItem);
-            }
-        }
-
-        protected override async void OnAppearing()
+        protected async override void OnAppearing()
         {
             UserDialogs.Instance.ShowLoading("");
             try
             {
                 await _viewModel.RefreshTimetableAsync();
-                ScrollToCurrentTime(true);
             }
             catch (Exception exc)
             {
@@ -64,41 +52,17 @@ namespace BusSchedule.Pages
             }
         }
 
-        private void ScrollToCurrentTime(bool animated)
+        private void SetupToolbar()
         {
-            if (_viewModel.NextBus != null)
+            if (!_viewModel.IsOnFavoritesList())
             {
-                listView.ScrollTo(_viewModel.NextBus, ScrollToPosition.Center, animated);
+                var toolbarItem = new ToolbarItem
+                {
+                    IconImageSource = "baseline_favorite_white_24",
+                };
+                toolbarItem.Clicked += AddToFavoritesClicked;
+                ToolbarItems.Add(toolbarItem);
             }
-        }
-
-        private void TodayClicked(object sender, System.EventArgs e)
-        {
-            _viewModel.ScheduleDaysChanged(Calendar.Service.Today);
-            ScrollToCurrentTime(true);
-        }
-
-        private void WorkingDaysClicked(object sender, System.EventArgs e)
-        {
-            _viewModel.ScheduleDaysChanged(Calendar.Service.WorkingDays);
-            ScrollToCurrentTime(true);
-        }
-
-        private void SaturdaysClicked(object sender, System.EventArgs e)
-        {
-            _viewModel.ScheduleDaysChanged(Calendar.Service.Saturdays);
-            ScrollToCurrentTime(true);
-        }
-
-        private void HolidaysClicked(object sender, System.EventArgs e)
-        {
-            _viewModel.ScheduleDaysChanged(Calendar.Service.SundayAndHolidays);
-            ScrollToCurrentTime(true);
-        }
-
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            //listView.SelectedItem = null;
         }
 
         private void AddToFavoritesClicked(object sender, EventArgs e)
@@ -107,6 +71,21 @@ namespace BusSchedule.Pages
             _viewModel.AddThisToFavorites();
             ToolbarItems.Clear();
             UserDialogs.Instance.Toast("Dodano do Ulubionych");
+        }
+
+        private async void SelectedDayChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserDialogs.Instance.ShowLoading();
+            if(e.PreviousSelection.Any() && e.PreviousSelection.First() is TimetableDate previous)
+            {
+                previous.Deselect();
+            }
+            if(e.CurrentSelection.Any() && e.CurrentSelection.First() is TimetableDate current)
+            {
+                current.Select();
+            }
+            await _viewModel.OnNewDaySelected();
+            UserDialogs.Instance.HideLoading();
         }
     }
 }

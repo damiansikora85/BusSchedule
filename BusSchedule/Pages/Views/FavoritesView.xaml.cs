@@ -33,7 +33,7 @@ namespace BusSchedule.Pages.Views
             if (ListView.SelectedItem is FavoriteData favoriteData)
             {
                 Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
-                var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
+                var page = new TodayTimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
                 await Navigation.PushAsync(page);
                 ListView.SelectedItem = null;
             }

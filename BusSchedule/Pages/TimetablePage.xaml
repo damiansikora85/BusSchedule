@@ -1,66 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="BusSchedule.Pages.TimetablePage"
+    x:Class="BusSchedule.Pages.TodayTimetablePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    xmlns:converters="clr-namespace:BusSchedule.Converters"
+    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ColorConverter x:Key="ColorConverter" />
+            <Style x:Key="CustomStyle" TargetType="CollectionView">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Grid
-                ColumnDefinitions="*,*,*,*"
-                RowDefinitions="48,2"
-                RowSpacing="0">
-                <Button
-                    BackgroundColor="White"
-                    Clicked="TodayClicked"
-                    Padding="0"
-                    Text="{Binding TodayTitle}"
-                    TextColor="Black" />
-                <Button
-                    Grid.Column="1"
-                    Padding="0"
-                    BackgroundColor="White"
-                    Clicked="WorkingDaysClicked"
-                    Text="Dni robocze"
-                    TextColor="Black" />
-                <Button
-                    Grid.Column="2"
-                    BackgroundColor="White"
-                    Padding="0"
-                    Clicked="SaturdaysClicked"
-                    Text="Soboty"
-                    TextColor="Black" />
-                <Button
-                    Grid.Column="3"
-                    Padding="0"
-                    BackgroundColor="White"
-                    Clicked="HolidaysClicked"
-                    Text="Niedziele i święta"
-                    TextColor="Black" />
+            <CollectionView
+                Margin="0,8,0,0"
+                HeightRequest="100"
+                ItemsSource="{Binding Dates}"
+                SelectedItem="{Binding SelectedDay}"
+                SelectionChanged="SelectedDayChanged"
+                SelectionMode="Single"
+                VerticalOptions="Start">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="4,0">
+                            <pancakeview:PancakeView
+                                Padding="8"
+                                BackgroundColor="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
+                                CornerRadius="8"
+                                WidthRequest="60">
 
-                <BoxView
-                    Grid.Row="1"
-                    IsVisible="{Binding TodayVisible}"
-                    Color="#237194" />
-                <BoxView
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    IsVisible="{Binding WorkingDaysVisible}"
-                    Color="#237194" />
-                <BoxView
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    IsVisible="{Binding SaturdaysVisible}"
-                    Color="#237194" />
-                <BoxView
-                    Grid.Row="1"
-                    Grid.Column="3"
-                    IsVisible="{Binding HolidaysVisible}"
-                    Color="#237194" />
-            </Grid>
+                                <!--<pancakeview:PancakeView.Border>
+                                    <pancakeview:Border Thickness="4" Color="#237194" />
+                                </pancakeview:PancakeView.Border>-->
+                                <StackLayout>
+                                    <Label
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding DayOfWeek}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
+                                    <Label
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding DayNum}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
+                                </StackLayout>
+
+                            </pancakeview:PancakeView>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
             <ListView
                 x:Name="listView"
-                ItemsSource="{Binding CurrentTimetable}"
+                ItemsSource="{Binding Timetable}"
                 SelectedItem="{Binding NextBus, Mode=TwoWay}"
                 SelectionMode="None"
                 SeparatorColor="#404040"
@@ -90,7 +114,26 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <!--<ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        FontSize="18"
+                        TextColor="Black"
+                        VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rozkład jazdy na dzień: " />
+                                <Span Text="{Binding TodayDate}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Button
+                        BackgroundColor="Transparent"
+                        Text="Zmień date"/>
+                </StackLayout>
+            </ListView.Header>-->
                 <ListView.Footer>
+
                     <StackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
@@ -98,6 +141,8 @@
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
+
+
                 </ListView.Footer>
             </ListView>
         </StackLayout>
