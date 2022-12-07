@@ -75,7 +75,7 @@ namespace BusSchedule.Pages
 
         private async void SelectedDayChanged(object sender, SelectionChangedEventArgs e)
         {
-            UserDialogs.Instance.ShowLoading();
+            UserDialogs.Instance.ShowLoading("");
             if(e.PreviousSelection.Any() && e.PreviousSelection.First() is TimetableDate previous)
             {
                 previous.Deselect();
