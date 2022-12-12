@@ -11,7 +11,7 @@ namespace BusSchedule.Converters
             {
                 return Color.FromRgb(color.R, color.G, color.B);
             }
-            return Color.White;
+            return Colors.White;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

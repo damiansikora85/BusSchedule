@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusSchedule.Components.RouteView">
   <ContentView.Content>
-        <Frame Margin="4" BackgroundColor="{Binding RouteColor}" CornerRadius="5" Padding="0">
+        <Frame Margin="4" BackgroundColor="{Binding RouteColor}" CornerRadius="5" Padding="8,2">
             <Frame.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" Command="{Binding TapCommand}"/>
             </Frame.GestureRecognizers>

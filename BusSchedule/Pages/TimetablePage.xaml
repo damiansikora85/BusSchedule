@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="BusSchedule.Pages.TodayTimetablePage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:BusSchedule.Converters"
-    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    BackgroundColor="White">
+    xmlns:converters="clr-namespace:BusSchedule.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ColorConverter x:Key="ColorConverter" />
@@ -41,10 +39,9 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="4,0">
-                            <pancakeview:PancakeView
+                            <Border
                                 Padding="8"
                                 BackgroundColor="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
-                                CornerRadius="8"
                                 WidthRequest="60">
 
                                 <!--<pancakeview:PancakeView.Border>
@@ -63,7 +60,7 @@
                                         TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
                                 </StackLayout>
 
-                            </pancakeview:PancakeView>
+                            </Border>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">

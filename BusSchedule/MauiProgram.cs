@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusSchedule.Core.Services;
+using Sharpnado.Tabs;
 
 namespace BusSchedule;
 
@@ -15,11 +16,9 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().UseMauiCommunityToolkit().UseMauiCompatibility()
+        builder.UseMauiApp<App>().UseMauiCommunityToolkit().UseMauiCompatibility().UseSharpnadoTabs(false)
         .ConfigureMauiHandlers(handlers =>
          {
-             // Register ALL handlers in the Xamarin Community Toolkit assembly
-             handlers.AddCompatibilityRenderers(typeof(Xamarin.CommunityToolkit.UI.Views.MediaElementRenderer).Assembly);
 
             // Register just one handler for the control you need
             //handlers.AddCompatibilityRenderer(typeof(Xamarin.CommunityToolkit.UI.Views.MediaElement), typeof(Xamarin.CommunityToolkit.UI.Views.MediaElementRenderer));

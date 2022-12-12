@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.FavoritesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Ulubione">
+    <Grid VerticalOptions="FillAndExpand">
+        <ListView
+            x:Name="ListView"
+            ItemSelected="FavoriteItemSelected"
+            RowHeight="50">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            Padding="4,2"
+                            ColumnDefinitions="38,*,50"
+                            RowDefinitions="*,*">
+                            <Label
+                                Grid.RowSpan="2"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Route.Route_Short_Name}"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Column="1"
+                                FontSize="16"
+                                Text="{Binding Stop.Stop_Name}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="14"
+                                Text="{Binding DestinationName, StringFormat='kierunek: {0}'}" />
+                            <Button
+                                Grid.RowSpan="2"
+                                Grid.Column="2"
+                                BackgroundColor="Transparent"
+                                Clicked="OnDeleteClicked"
+                                CommandParameter="{Binding .}"
+                                FontSize="24"
+                                Text="&#xe872;"
+                                TextColor="#797979">
+                                <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                            </Button>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label
+            x:Name="EmptyListLabel"
+            HorizontalOptions="Center"
+            Text="Nie dodano ulubionych"
+            VerticalOptions="Center" />
+    </Grid>
+</ContentPage>
