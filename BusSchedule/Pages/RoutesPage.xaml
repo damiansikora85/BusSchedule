@@ -7,15 +7,15 @@
     xmlns:views="clr-namespace:BusSchedule.Pages.Views"
     Title="MZK Wejherowo"
     x:DataType="viewmodels:RoutesPageViewModel"
-    BackgroundColor="White">
+    BackgroundColor="White" >
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnContactClicked" IconImageSource="baseline_email_white_24" />
         <ToolbarItem Clicked="OnNewsClicked" IconImageSource="baseline_article_white_24" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <ScrollView BackgroundColor="Aquamarine">
-            <StackLayout BackgroundColor="Beige">
+        <ScrollView>
+            <StackLayout>
                 <Label Margin="4" TextColor="#404040">
                     <Label.FormattedText>
                         <FormattedString>
@@ -29,9 +29,7 @@
                 <Grid
                     x:Name="grid"
                     Margin="8,16"
-                    BackgroundColor="BlueViolet"
                     ColumnDefinitions="*, *, *, *"
-                    HorizontalOptions="Center"
                     RowDefinitions="80, 80, 80, 80, 80" />
             </StackLayout>
         </ScrollView>

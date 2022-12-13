@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusSchedule.Core.Services;
-using Sharpnado.Tabs;
 
 namespace BusSchedule;
 
@@ -16,7 +15,7 @@ public static class MauiProgram
     public static MauiApp CreateMauiApp()
     {
         var builder = MauiApp.CreateBuilder();
-        builder.UseMauiApp<App>().UseMauiCommunityToolkit().UseMauiCompatibility().UseSharpnadoTabs(false)
+        builder.UseMauiApp<App>().UseMauiCommunityToolkit().UseMauiCompatibility()
         .ConfigureMauiHandlers(handlers =>
          {
 

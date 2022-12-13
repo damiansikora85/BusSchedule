@@ -4,26 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
-    <Frame BackgroundColor="#80000000">
-        <StackLayout
+    <StackLayout
             Padding="16"
+        Margin="32,2"
             BackgroundColor="White"
             Spacing="8"
-            VerticalOptions="Center">
-            <Label
+            VerticalOptions="CenterAndExpand">
+        <Label
                 FontSize="Large"
                 Text="Wybierz kierunek:"
                 TextColor="Black" />
-            <Button
+        <Button
                 BackgroundColor="White"
                 Clicked="FirstRouteClicked"
                 Text="{Binding FirstDirection}"
                 TextColor="Black" />
-            <Button
+        <Button
                 BackgroundColor="White"
                 Clicked="SecondRouteClicked"
                 Text="{Binding SecondDirection}"
                 TextColor="Black" />
-        </StackLayout>
-    </Frame>
+    </StackLayout>
 </mct:Popup>
