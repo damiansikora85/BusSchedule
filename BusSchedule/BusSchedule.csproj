@@ -22,6 +22,7 @@
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup.MauiCompat" Version="1.3.2" />
   </ItemGroup>
 
   <!--<ItemGroup>
@@ -50,10 +51,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\RouteStopsListPage.xaml.cs">
+      <DependentUpon>RouteStopsListPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <MauiXaml Update="AppShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\FavoritesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Pages\RouteMapPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Pages\RoutePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\TestPage.xaml">

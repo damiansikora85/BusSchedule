@@ -1,16 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.Dialogs.RatePopup">
-    <Frame BackgroundColor="#80000000">
-        <StackLayout BackgroundColor="White" VerticalOptions="Center" Padding="16" Spacing="32">
-            <Label Text="Czy podoba Ci się aplikacja?" TextColor="#404040" FontSize="Large"/>
-            <Label Text="Dziękujemy za korzystanie z naszej aplikacji. Jeśli jest ona dla Ciebie przydatna to daj znać innym i wystaw ocenę w sklepie Google Play" TextColor="#404040"/>
-            <StackLayout Orientation="Horizontal" Margin="0,8" HorizontalOptions="End">
-                <Button Text="Nie teraz " Clicked="OnRateLaterClicked" TextColor="#237194" BackgroundColor="Transparent"/>
-                <Button Text="Oceń teraz" Clicked="OnRateClicked" BackgroundColor="#237194" TextColor="White"/>
-            </StackLayout>
-        </StackLayout>
-    </Frame>
+<mct:Popup
+    x:Class="BusSchedule.Dialogs.RatePopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <VerticalStackLayout
+        Padding="16"
+        BackgroundColor="White"
+        Spacing="32"
+        VerticalOptions="Center">
+        <Label
+            FontSize="Large"
+            Text="Czy podoba Ci się aplikacja?"
+            TextColor="#404040" />
+        <Label HorizontalTextAlignment="Center" TextColor="#404040">
+            <Label.Text>
+                Dziękujemy za korzystanie z naszej aplikacji.
+                Jeśli jest ona dla Ciebie przydatna to daj znać innym
+                i wystaw ocenę w sklepie Google Play.
+            </Label.Text>
+        </Label>
+        <HorizontalStackLayout Margin="0,8" HorizontalOptions="End">
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="OnRateLaterClicked"
+                Text="Nie teraz "
+                TextColor="#237194" />
+            <Button
+                BackgroundColor="#237194"
+                Clicked="OnRateClicked"
+                Text="Oceń teraz"
+                TextColor="White" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+
 </mct:Popup>

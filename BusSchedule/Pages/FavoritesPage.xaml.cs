@@ -17,6 +17,12 @@ public partial class FavoritesPage : ContentPage
         ListView.ItemsSource = _viewModel.Favorites;
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await RefreshView();
+    }
+
     public async Task RefreshView()
     {
         await _viewModel.RefreshData();

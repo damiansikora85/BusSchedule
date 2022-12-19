@@ -6,7 +6,6 @@
     xmlns:views="clr-namespace:BusSchedule.Pages"
     Shell.BackgroundColor="#237194"
     Shell.FlyoutBehavior="Disabled">
-    <!--<ShellContent ContentTemplate="{DataTemplate views:RoutesPage}"  />-->
     <TabBar Shell.TabBarBackgroundColor="#237194" Shell.TabBarTitleColor="White" Shell.TabBarForegroundColor="White">
         <Tab Title="Linie"
             Icon="baseline_view_module_white_48">
