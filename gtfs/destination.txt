@@ -9,9 +9,9 @@ route_id,outbound,inbound
 8,Wejherowo Szpital,Rumia C.H. Port Rumia
 9,Rumia Dworzec PKP,Reda Rekowo Lipowa
 10,Wejherowo Pomorska,Kębłowo Wiejska
-11,Gniewowo Spacerowa,Kąpino Kościół
+11,Wejherowo Dworzec PKP,Gniewowo Spacerowa
 12,Wejherowo Dworzec PKP,Gowino Brzozowa
-13,Gościcino Szkoła,
+13,Wejherowo Dworzec PKP,Kąpino Parkowa
 14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo os. Sikorskiego,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz

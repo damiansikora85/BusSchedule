@@ -25,10 +25,8 @@ def create_legend_by_destination(db,file):
         ["10","0","Wejherowo Dworzec PKP 04",",10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)"],
         ["10","1","Kębłowo Wiejska 02",",10,1,A,kurs do: Kębłowo Wiejska 02 (przystanek przy DK 6)"],
         ["10","1","Gościcino Równa 04",",10,1,B,kurs skrócony do: Gościcino Równa 04"],
-        ["11","0","Wejherowo Kusocińskiego 02",",11,0,Z,kurs skrócony do: Wejherowo Kusocińskiego 02"],
-        ["11","0","Wejherowo Prusa - Szkoła 02",",11,0,P,kurs skrócony do: Wejherowo Prusa - Szkoła 02"],
-        ["11","1","Wejherowo Pruszkowskiego 01",",11,1,P,kurs skrócony do: Wejherowo Pruszkowskiego 01"],
-        ["11","1","Wejherowo Kochanowskiego SKM Nanice 01",",11,1,Z,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01"],
+        ["11","0","Wejherowo Broniewskiego - Dworzec PKP 01",",11,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP"],
+        ["13","0","Wejherowo Broniewskiego - Dworzec PKP 01",",13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP"],
         ["18","1","Rumia C.H. \"Port Rumia\" 01",",18,1,R,kurs do: C.H. Port Rumia"]
     ]
 
@@ -41,7 +39,7 @@ def create_legend_by_destination(db,file):
 
     for data in legend:
         #print (data)
-        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 25 OR service_id = 24 OR service_id = 28)", (data[0], data[1]))
+        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 2 OR service_id = 24 OR service_id = 27  OR service_id = 28)", (data[0], data[1]))
         db.commit()
         all_rows = cursor.fetchall()
         shapes_dict = {}
