@@ -15,12 +15,13 @@ using TinyIoC;
 namespace BusSchedule.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TodayTimetablePage : ContentPage
+    public partial class TimetablePage : ContentPage
     {
         private TimetableViewModel _viewModel;
 
-        public TodayTimetablePage(Stops station, Routes route, int? direction)
+        public TimetablePage(Stops station, Routes route, int? direction)
         {
+            Shell.SetTabBarIsVisible(this, false);
             InitializeComponent();
             _viewModel = new TimetableViewModel(route, station, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             BindingContext = _viewModel;

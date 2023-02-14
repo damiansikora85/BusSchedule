@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:page="clr-namespace:BusSchedule.Pages"
-             x:Class="BusSchedule.Pages.RoutePage"
-             Title="RoutePage">
-    <page:RouteStopsListPage/>
-    <page:RouteMapPage/>
-</TabbedPage>
+<ContentPage
+    x:Class="BusSchedule.Pages.RoutePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:page="clr-namespace:BusSchedule.Pages"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="RoutePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <ListView
+            x:Name="listView"
+            Margin="6,4"
+            ItemSelected="OnStationSelected"
+            ItemsSource="{Binding Stops}"
+            RowHeight="75"
+            SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid
+                            ColumnDefinitions="30,*"
+                            ColumnSpacing="0"
+                            RowDefinitions="*,Auto,*"
+                            RowSpacing="0">
+                            <BoxView
+                                Grid.Row="0"
+                                HorizontalOptions="Center"
+                                IsVisible="{Binding IsFirst, Converter={StaticResource InvertedBoolConverter}}"
+                                VerticalOptions="Fill"
+                                WidthRequest="3"
+                                Color="#237194" />
+                            <Ellipse
+                                Grid.Row="1"
+                                HeightRequest="22"
+                                HorizontalOptions="Center"
+                                Stroke="#237194"
+                                StrokeThickness="3"
+                                VerticalOptions="Start"
+                                WidthRequest="22" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="20,0"
+                                FontSize="Body"
+                                LineBreakMode="NoWrap"
+                                Text="{Binding Stop_Name}"
+                                TextColor="Black" />
+                            <BoxView
+                                Grid.Row="2"
+                                HorizontalOptions="Center"
+                                IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
+                                VerticalOptions="Fill"
+                                WidthRequest="3"
+                                Color="#237194" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <HorizontalStackLayout BackgroundColor="#237194" VerticalOptions="End">
+            <Button HorizontalOptions="Center" ImageSource="baseline_format_list_bulleted_white_24" />
+            <Button HorizontalOptions="Center" ImageSource="baseline_map_white_24" />
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>
