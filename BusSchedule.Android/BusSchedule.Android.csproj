@@ -1,10 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <UseMaui>true</UseMaui>
-    <TargetFramework>net6.0-android</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <OutputType>Exe</OutputType>
     	<ImplicitUsings>enable</ImplicitUsings>
-	  <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">31.0</SupportedOSPlatformVersion>
+	  	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+	  	<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
