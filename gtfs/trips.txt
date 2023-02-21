@@ -1,2182 +1,1512 @@
 ﻿route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
-1,2,2_272481,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272485,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272489,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272493,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272499,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272501,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272503,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272536,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272540,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272544,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272548,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272625,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272647,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272651,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272835,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272843,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272847,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272926,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272939,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272943,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_273194,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_273199,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_273207,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_273230,"Bolszewo Leśna - Szkoła 02",1,22053
-1,2,2_272482,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272486,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272492,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272496,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272500,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272502,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272533,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272539,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272543,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272547,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272549,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272628,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272648,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272834,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272840,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272844,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272927,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272936,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272940,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273095,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273200,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273206,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273208,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273229,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_273233,"Wejherowo os. Fenikowskiego 01",0,22054
-1,2,2_272483,"Góra Szkolna 02",1,22083
-1,2,2_272487,"Góra Szkolna 02",1,22083
-1,2,2_272497,"Góra Szkolna 02",1,22083
-1,2,2_272534,"Góra Szkolna 02",1,22083
-1,2,2_272550,"Góra Szkolna 02",1,22083
-1,2,2_272649,"Góra Szkolna 02",1,22083
-1,2,2_272841,"Góra Szkolna 02",1,22083
-1,2,2_272845,"Góra Szkolna 02",1,22083
-1,2,2_272924,"Góra Szkolna 02",1,22083
-1,2,2_272937,"Góra Szkolna 02",1,22083
-1,2,2_272941,"Góra Szkolna 02",1,22083
-1,2,2_273197,"Góra Szkolna 02",1,22083
-1,2,2_273201,"Góra Szkolna 02",1,22083
-1,2,2_273209,"Góra Szkolna 02",1,22083
-1,2,2_272623,"Góra Szkolna 02",1,22084
-1,2,2_272484,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272488,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272498,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272535,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272624,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272650,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272842,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272846,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272925,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272938,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272942,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_273198,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_273202,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_273210,"Wejherowo os. Fenikowskiego 01",0,22086
-1,2,2_272551,"Wejherowo Tartaczna 04 n/ż",0,22087
-1,2,2_272480,"Wejherowo os. Fenikowskiego 01",0,22088
-1,2,2_272504,"Wejherowo Tartaczna 04 n/ż",0,22089
-1,2,2_272652,"Wejherowo Tartaczna 04 n/ż",0,22089
-1,24,24_270019,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270023,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270041,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270045,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270049,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270053,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270059,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270061,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270063,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270096,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270100,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270104,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270108,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270185,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270207,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270211,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270437,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270445,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270449,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270631,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270718,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270746,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270752,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270774,"Bolszewo Leśna - Szkoła 02",1,21888
-1,24,24_270016,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270020,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270042,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270046,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270052,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270056,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270060,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270062,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270093,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270099,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270103,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270107,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270109,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270188,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270208,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270436,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270442,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270446,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270568,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270632,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270719,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270751,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270755,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270773,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270775,"Wejherowo os. Fenikowskiego 01",0,21889
-1,24,24_270017,"Góra Szkolna 02",1,21920
-1,24,24_270021,"Góra Szkolna 02",1,21920
-1,24,24_270043,"Góra Szkolna 02",1,21920
-1,24,24_270047,"Góra Szkolna 02",1,21920
-1,24,24_270057,"Góra Szkolna 02",1,21920
-1,24,24_270094,"Góra Szkolna 02",1,21920
-1,24,24_270110,"Góra Szkolna 02",1,21920
-1,24,24_270209,"Góra Szkolna 02",1,21920
-1,24,24_270443,"Góra Szkolna 02",1,21920
-1,24,24_270447,"Góra Szkolna 02",1,21920
-1,24,24_270629,"Góra Szkolna 02",1,21920
-1,24,24_270633,"Góra Szkolna 02",1,21920
-1,24,24_270716,"Góra Szkolna 02",1,21920
-1,24,24_270776,"Góra Szkolna 02",1,21920
-1,24,24_270183,"Góra Szkolna 02",1,21921
-1,24,24_270018,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270022,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270044,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270048,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270058,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270095,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270184,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270210,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270444,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270448,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270630,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270634,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270717,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270777,"Wejherowo os. Fenikowskiego 01",0,21923
-1,24,24_270111,"Wejherowo Tartaczna 04 n/ż",0,21924
-1,24,24_270040,"Wejherowo os. Fenikowskiego 01",0,21925
-1,24,24_270064,"Wejherowo Tartaczna 04 n/ż",0,21926
-1,24,24_270212,"Wejherowo Tartaczna 04 n/ż",0,21926
-1,27,27_272082,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272227,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272231,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272292,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272294,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272300,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272302,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272395,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272397,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272403,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272425,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272427,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272431,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272433,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272435,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272437,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272439,"Bolszewo Leśna - Szkoła 02",1,21888
-1,27,27_272025,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272083,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272228,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272293,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272299,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272301,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272394,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272396,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272402,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272424,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272426,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272430,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272432,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272434,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272436,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272438,"Wejherowo os. Fenikowskiego 01",0,21889
-1,27,27_272080,"Góra Szkolna 02",1,21920
-1,27,27_272217,"Góra Szkolna 02",1,21920
-1,27,27_272219,"Góra Szkolna 02",1,21920
-1,27,27_272221,"Góra Szkolna 02",1,21920
-1,27,27_272223,"Góra Szkolna 02",1,21920
-1,27,27_272225,"Góra Szkolna 02",1,21920
-1,27,27_272229,"Góra Szkolna 02",1,21920
-1,27,27_272215,"Góra Szkolna 02",1,21922
-1,27,27_272081,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272216,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272218,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272220,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272222,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272224,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272226,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272230,"Wejherowo os. Fenikowskiego 01",0,21923
-1,27,27_272291,"Wejherowo os. Fenikowskiego 01",0,21925
-1,27,27_272232,"Wejherowo Tartaczna 04 n/ż",0,21926
-1,27,27_272440,"Wejherowo Tartaczna 04 n/ż",0,21926
-1,28,28_271597,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271738,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271740,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271742,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271744,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271746,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271748,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271750,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271752,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271783,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271785,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271787,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271789,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271791,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271793,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271797,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271887,"Bolszewo Leśna - Szkoła 02",1,21888
-1,28,28_271548,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271598,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271739,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271741,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271743,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271745,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271747,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271749,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271751,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271782,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271784,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271786,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271788,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271790,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271792,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271794,"Wejherowo os. Fenikowskiego 01",0,21889
-1,28,28_271595,"Góra Szkolna 02",1,21920
-1,28,28_271736,"Góra Szkolna 02",1,21920
-1,28,28_271795,"Góra Szkolna 02",1,21920
-1,28,28_271879,"Góra Szkolna 02",1,21920
-1,28,28_271881,"Góra Szkolna 02",1,21920
-1,28,28_271883,"Góra Szkolna 02",1,21920
-1,28,28_271885,"Góra Szkolna 02",1,21920
-1,28,28_271877,"Góra Szkolna 02",1,21921
-1,28,28_271596,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271737,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271796,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271878,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271880,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271882,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271884,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271886,"Wejherowo os. Fenikowskiego 01",0,21923
-1,28,28_271735,"Wejherowo os. Fenikowskiego 01",0,21925
-1,28,28_271753,"Wejherowo Tartaczna 04 n/ż",0,21926
-1,28,28_271798,"Wejherowo Tartaczna 04 n/ż",0,21926
-2,2,2_272960,"Wejherowo Szpital 02",1,22055
-2,2,2_272961,"Wejherowo Szpital 02",1,22055
-2,2,2_272962,"Wejherowo Szpital 02",1,22055
-2,2,2_272963,"Wejherowo Szpital 02",1,22055
-2,2,2_272964,"Wejherowo Szpital 02",1,22055
-2,2,2_272965,"Wejherowo Szpital 02",1,22055
-2,2,2_272966,"Wejherowo Szpital 02",1,22055
-2,2,2_272967,"Wejherowo Szpital 02",1,22055
-2,2,2_272974,"Wejherowo Szpital 02",1,22055
-2,2,2_272975,"Wejherowo Szpital 02",1,22055
-2,2,2_272976,"Wejherowo Szpital 02",1,22055
-2,2,2_272977,"Wejherowo Szpital 02",1,22055
-2,2,2_272978,"Wejherowo Szpital 02",1,22055
-2,2,2_272979,"Wejherowo Szpital 02",1,22055
-2,2,2_272985,"Wejherowo Szpital 02",1,22055
-2,2,2_272986,"Wejherowo Szpital 02",1,22055
-2,2,2_272987,"Wejherowo Szpital 02",1,22055
-2,2,2_272988,"Wejherowo Szpital 02",1,22055
-2,2,2_272989,"Wejherowo Szpital 02",1,22055
-2,2,2_272990,"Wejherowo Szpital 02",1,22055
-2,2,2_272991,"Wejherowo Szpital 02",1,22055
-2,2,2_272992,"Wejherowo Szpital 02",1,22055
-2,2,2_273005,"Wejherowo Szpital 02",1,22055
-2,2,2_273006,"Wejherowo Szpital 02",1,22055
-2,2,2_273010,"Wejherowo Szpital 02",1,22055
-2,2,2_273011,"Wejherowo Szpital 02",1,22055
-2,2,2_273012,"Wejherowo Szpital 02",1,22055
-2,2,2_273013,"Wejherowo Szpital 02",1,22055
-2,2,2_273014,"Wejherowo Szpital 02",1,22055
-2,2,2_273015,"Wejherowo Szpital 02",1,22055
-2,2,2_273016,"Wejherowo Szpital 02",1,22055
-2,2,2_273017,"Wejherowo Szpital 02",1,22055
-2,2,2_273018,"Wejherowo Szpital 02",1,22055
-2,2,2_273019,"Wejherowo Szpital 02",1,22055
-2,2,2_273020,"Wejherowo Szpital 02",1,22055
-2,2,2_273021,"Wejherowo Szpital 02",1,22055
-2,2,2_273022,"Wejherowo Szpital 02",1,22055
-2,2,2_273023,"Wejherowo Szpital 02",1,22055
-2,2,2_273024,"Wejherowo Szpital 02",1,22055
-2,2,2_273025,"Wejherowo Szpital 02",1,22055
-2,2,2_273104,"Wejherowo Szpital 02",1,22055
-2,2,2_273105,"Wejherowo Szpital 02",1,22055
-2,2,2_273106,"Wejherowo Szpital 02",1,22055
-2,2,2_273107,"Wejherowo Szpital 02",1,22055
-2,2,2_273108,"Wejherowo Szpital 02",1,22055
-2,2,2_273109,"Wejherowo Szpital 02",1,22055
-2,2,2_273110,"Wejherowo Szpital 02",1,22055
-2,2,2_273111,"Wejherowo Szpital 02",1,22055
-2,2,2_273112,"Wejherowo Szpital 02",1,22055
-2,2,2_273156,"Wejherowo Szpital 02",1,22055
-2,2,2_273159,"Wejherowo Szpital 02",1,22055
-2,2,2_273160,"Wejherowo Szpital 02",1,22055
-2,2,2_273161,"Wejherowo Szpital 02",1,22055
-2,2,2_273162,"Wejherowo Szpital 02",1,22055
-2,2,2_273214,"Wejherowo Szpital 02",1,22055
-2,2,2_273215,"Wejherowo Szpital 02",1,22055
-2,2,2_273216,"Wejherowo Szpital 02",1,22055
-2,2,2_273217,"Wejherowo Szpital 02",1,22055
-2,2,2_273223,"Wejherowo Szpital 02",1,22055
-2,2,2_273224,"Wejherowo Szpital 02",1,22055
-2,2,2_273009,"Wejherowo Szpital 02",1,22090
-2,24,24_270276,"Wejherowo Szpital 02",1,21890
-2,24,24_270277,"Wejherowo Szpital 02",1,21890
-2,24,24_270278,"Wejherowo Szpital 02",1,21890
-2,24,24_270279,"Wejherowo Szpital 02",1,21890
-2,24,24_270280,"Wejherowo Szpital 02",1,21890
-2,24,24_270281,"Wejherowo Szpital 02",1,21890
-2,24,24_270282,"Wejherowo Szpital 02",1,21890
-2,24,24_270283,"Wejherowo Szpital 02",1,21890
-2,24,24_270290,"Wejherowo Szpital 02",1,21890
-2,24,24_270291,"Wejherowo Szpital 02",1,21890
-2,24,24_270292,"Wejherowo Szpital 02",1,21890
-2,24,24_270293,"Wejherowo Szpital 02",1,21890
-2,24,24_270294,"Wejherowo Szpital 02",1,21890
-2,24,24_270295,"Wejherowo Szpital 02",1,21890
-2,24,24_270378,"Wejherowo Szpital 02",1,21890
-2,24,24_270379,"Wejherowo Szpital 02",1,21890
-2,24,24_270380,"Wejherowo Szpital 02",1,21890
-2,24,24_270381,"Wejherowo Szpital 02",1,21890
-2,24,24_270382,"Wejherowo Szpital 02",1,21890
-2,24,24_270383,"Wejherowo Szpital 02",1,21890
-2,24,24_270384,"Wejherowo Szpital 02",1,21890
-2,24,24_270385,"Wejherowo Szpital 02",1,21890
-2,24,24_270386,"Wejherowo Szpital 02",1,21890
-2,24,24_270387,"Wejherowo Szpital 02",1,21890
-2,24,24_270475,"Wejherowo Szpital 02",1,21890
-2,24,24_270476,"Wejherowo Szpital 02",1,21890
-2,24,24_270477,"Wejherowo Szpital 02",1,21890
-2,24,24_270478,"Wejherowo Szpital 02",1,21890
-2,24,24_270479,"Wejherowo Szpital 02",1,21890
-2,24,24_270480,"Wejherowo Szpital 02",1,21890
-2,24,24_270481,"Wejherowo Szpital 02",1,21890
-2,24,24_270482,"Wejherowo Szpital 02",1,21890
-2,24,24_270483,"Wejherowo Szpital 02",1,21890
-2,24,24_270484,"Wejherowo Szpital 02",1,21890
-2,24,24_270485,"Wejherowo Szpital 02",1,21890
-2,24,24_270486,"Wejherowo Szpital 02",1,21890
-2,24,24_270487,"Wejherowo Szpital 02",1,21890
-2,24,24_270488,"Wejherowo Szpital 02",1,21890
-2,24,24_270489,"Wejherowo Szpital 02",1,21890
-2,24,24_270490,"Wejherowo Szpital 02",1,21890
-2,24,24_270577,"Wejherowo Szpital 02",1,21890
-2,24,24_270578,"Wejherowo Szpital 02",1,21890
-2,24,24_270579,"Wejherowo Szpital 02",1,21890
-2,24,24_270580,"Wejherowo Szpital 02",1,21890
-2,24,24_270581,"Wejherowo Szpital 02",1,21890
-2,24,24_270582,"Wejherowo Szpital 02",1,21890
-2,24,24_270583,"Wejherowo Szpital 02",1,21890
-2,24,24_270584,"Wejherowo Szpital 02",1,21890
-2,24,24_270585,"Wejherowo Szpital 02",1,21890
-2,24,24_270641,"Wejherowo Szpital 02",1,21890
-2,24,24_270642,"Wejherowo Szpital 02",1,21890
-2,24,24_270643,"Wejherowo Szpital 02",1,21890
-2,24,24_270646,"Wejherowo Szpital 02",1,21890
-2,24,24_270647,"Wejherowo Szpital 02",1,21890
-2,24,24_270660,"Wejherowo Szpital 02",1,21890
-2,24,24_270661,"Wejherowo Szpital 02",1,21890
-2,24,24_270767,"Wejherowo Szpital 02",1,21890
-2,24,24_270768,"Wejherowo Szpital 02",1,21890
-2,24,24_270769,"Wejherowo Szpital 02",1,21890
-2,24,24_270770,"Wejherowo Szpital 02",1,21890
-2,24,24_270474,"Wejherowo Szpital 02",1,21927
-2,27,27_272056,"Wejherowo Szpital 02",1,21890
-2,27,27_272057,"Wejherowo Szpital 02",1,21890
-2,27,27_272058,"Wejherowo Szpital 02",1,21890
-2,27,27_272059,"Wejherowo Szpital 02",1,21890
-2,27,27_272070,"Wejherowo Szpital 02",1,21890
-2,27,27_272071,"Wejherowo Szpital 02",1,21890
-2,27,27_272072,"Wejherowo Szpital 02",1,21890
-2,27,27_272073,"Wejherowo Szpital 02",1,21890
-2,27,27_272074,"Wejherowo Szpital 02",1,21890
-2,27,27_272075,"Wejherowo Szpital 02",1,21890
-2,27,27_272076,"Wejherowo Szpital 02",1,21890
-2,27,27_272077,"Wejherowo Szpital 02",1,21890
-2,27,27_272186,"Wejherowo Szpital 02",1,21890
-2,27,27_272191,"Wejherowo Szpital 02",1,21890
-2,27,27_272192,"Wejherowo Szpital 02",1,21890
-2,27,27_272193,"Wejherowo Szpital 02",1,21890
-2,27,27_272196,"Wejherowo Szpital 02",1,21890
-2,27,27_272197,"Wejherowo Szpital 02",1,21890
-2,27,27_272200,"Wejherowo Szpital 02",1,21890
-2,27,27_272201,"Wejherowo Szpital 02",1,21890
-2,27,27_272259,"Wejherowo Szpital 02",1,21890
-2,27,27_272262,"Wejherowo Szpital 02",1,21890
-2,27,27_272263,"Wejherowo Szpital 02",1,21890
-2,27,27_272381,"Wejherowo Szpital 02",1,21890
-2,27,27_272384,"Wejherowo Szpital 02",1,21890
-2,27,27_272385,"Wejherowo Szpital 02",1,21890
-2,27,27_272386,"Wejherowo Szpital 02",1,21890
-2,27,27_272443,"Wejherowo Szpital 02",1,21890
-2,27,27_272444,"Wejherowo Szpital 02",1,21890
-2,27,27_272445,"Wejherowo Szpital 02",1,21890
-2,27,27_272446,"Wejherowo Szpital 02",1,21890
-2,27,27_272447,"Wejherowo Szpital 02",1,21890
-2,27,27_272450,"Wejherowo Szpital 02",1,21890
-2,27,27_272457,"Wejherowo Szpital 02",1,21890
-2,27,27_272460,"Wejherowo Szpital 02",1,21890
-2,27,27_272461,"Wejherowo Szpital 02",1,21890
-2,27,27_272464,"Wejherowo Szpital 02",1,21890
-2,27,27_272465,"Wejherowo Szpital 02",1,21890
-2,27,27_272185,"Wejherowo Szpital 02",1,21927
-2,27,27_272258,"Wejherowo Szpital 02",1,21927
-2,28,28_271572,"Wejherowo Szpital 02",1,21890
-2,28,28_271573,"Wejherowo Szpital 02",1,21890
-2,28,28_271574,"Wejherowo Szpital 02",1,21890
-2,28,28_271575,"Wejherowo Szpital 02",1,21890
-2,28,28_271586,"Wejherowo Szpital 02",1,21890
-2,28,28_271587,"Wejherowo Szpital 02",1,21890
-2,28,28_271588,"Wejherowo Szpital 02",1,21890
-2,28,28_271589,"Wejherowo Szpital 02",1,21890
-2,28,28_271590,"Wejherowo Szpital 02",1,21890
-2,28,28_271591,"Wejherowo Szpital 02",1,21890
-2,28,28_271592,"Wejherowo Szpital 02",1,21890
-2,28,28_271681,"Wejherowo Szpital 02",1,21890
-2,28,28_271686,"Wejherowo Szpital 02",1,21890
-2,28,28_271687,"Wejherowo Szpital 02",1,21890
-2,28,28_271688,"Wejherowo Szpital 02",1,21890
-2,28,28_271691,"Wejherowo Szpital 02",1,21890
-2,28,28_271692,"Wejherowo Szpital 02",1,21890
-2,28,28_271695,"Wejherowo Szpital 02",1,21890
-2,28,28_271696,"Wejherowo Szpital 02",1,21890
-2,28,28_271861,"Wejherowo Szpital 02",1,21890
-2,28,28_271864,"Wejherowo Szpital 02",1,21890
-2,28,28_271865,"Wejherowo Szpital 02",1,21890
-2,28,28_271866,"Wejherowo Szpital 02",1,21890
-2,28,28_271893,"Wejherowo Szpital 02",1,21890
-2,28,28_271896,"Wejherowo Szpital 02",1,21890
-2,28,28_271897,"Wejherowo Szpital 02",1,21890
-2,28,28_271946,"Wejherowo Szpital 02",1,21890
-2,28,28_271947,"Wejherowo Szpital 02",1,21890
-2,28,28_271948,"Wejherowo Szpital 02",1,21890
-2,28,28_271949,"Wejherowo Szpital 02",1,21890
-2,28,28_271950,"Wejherowo Szpital 02",1,21890
-2,28,28_271953,"Wejherowo Szpital 02",1,21890
-2,28,28_271970,"Wejherowo Szpital 02",1,21890
-2,28,28_271973,"Wejherowo Szpital 02",1,21890
-2,28,28_271974,"Wejherowo Szpital 02",1,21890
-2,28,28_271977,"Wejherowo Szpital 02",1,21890
-2,28,28_271978,"Wejherowo Szpital 02",1,21890
-2,28,28_271680,"Wejherowo Szpital 02",1,21927
-2,28,28_271892,"Wejherowo Szpital 02",1,21927
-3,2,2_272509,"Gościcino Robakowska 02",1,22056
-3,2,2_272511,"Gościcino Robakowska 02",1,22056
-3,2,2_272513,"Gościcino Robakowska 02",1,22056
-3,2,2_272515,"Gościcino Robakowska 02",1,22056
-3,2,2_272517,"Gościcino Robakowska 02",1,22056
-3,2,2_272519,"Gościcino Robakowska 02",1,22056
-3,2,2_272521,"Gościcino Robakowska 02",1,22056
-3,2,2_272523,"Gościcino Robakowska 02",1,22056
-3,2,2_272525,"Gościcino Robakowska 02",1,22056
-3,2,2_272527,"Gościcino Robakowska 02",1,22056
-3,2,2_272529,"Gościcino Robakowska 02",1,22056
-3,2,2_272657,"Gościcino Robakowska 02",1,22056
-3,2,2_272731,"Gościcino Robakowska 02",1,22056
-3,2,2_272733,"Gościcino Robakowska 02",1,22056
-3,2,2_272735,"Gościcino Robakowska 02",1,22056
-3,2,2_272737,"Gościcino Robakowska 02",1,22056
-3,2,2_272739,"Gościcino Robakowska 02",1,22056
-3,2,2_272766,"Gościcino Robakowska 02",1,22056
-3,2,2_272768,"Gościcino Robakowska 02",1,22056
-3,2,2_272770,"Gościcino Robakowska 02",1,22056
-3,2,2_272772,"Gościcino Robakowska 02",1,22056
-3,2,2_272774,"Gościcino Robakowska 02",1,22056
-3,2,2_272776,"Gościcino Robakowska 02",1,22056
-3,2,2_272778,"Gościcino Robakowska 02",1,22056
-3,2,2_272780,"Gościcino Robakowska 02",1,22056
-3,2,2_272782,"Gościcino Robakowska 02",1,22056
-3,2,2_272784,"Gościcino Robakowska 02",1,22056
-3,2,2_272786,"Gościcino Robakowska 02",1,22056
-3,2,2_272788,"Gościcino Robakowska 02",1,22056
-3,2,2_273145,"Gościcino Robakowska 02",1,22056
-3,2,2_273147,"Gościcino Robakowska 02",1,22056
-3,2,2_273149,"Gościcino Robakowska 02",1,22056
-3,2,2_272508,"Wejherowo Odrębna 04",0,22057
-3,2,2_272510,"Wejherowo Odrębna 04",0,22057
-3,2,2_272512,"Wejherowo Odrębna 04",0,22057
-3,2,2_272518,"Wejherowo Odrębna 04",0,22057
-3,2,2_272520,"Wejherowo Odrębna 04",0,22057
-3,2,2_272522,"Wejherowo Odrębna 04",0,22057
-3,2,2_272524,"Wejherowo Odrębna 04",0,22057
-3,2,2_272526,"Wejherowo Odrębna 04",0,22057
-3,2,2_272528,"Wejherowo Odrębna 04",0,22057
-3,2,2_272656,"Wejherowo Odrębna 04",0,22057
-3,2,2_272730,"Wejherowo Odrębna 04",0,22057
-3,2,2_272732,"Wejherowo Odrębna 04",0,22057
-3,2,2_272734,"Wejherowo Odrębna 04",0,22057
-3,2,2_272736,"Wejherowo Odrębna 04",0,22057
-3,2,2_272738,"Wejherowo Odrębna 04",0,22057
-3,2,2_272765,"Wejherowo Odrębna 04",0,22057
-3,2,2_272767,"Wejherowo Odrębna 04",0,22057
-3,2,2_272769,"Wejherowo Odrębna 04",0,22057
-3,2,2_272771,"Wejherowo Odrębna 04",0,22057
-3,2,2_272773,"Wejherowo Odrębna 04",0,22057
-3,2,2_272775,"Wejherowo Odrębna 04",0,22057
-3,2,2_272777,"Wejherowo Odrębna 04",0,22057
-3,2,2_272779,"Wejherowo Odrębna 04",0,22057
-3,2,2_272781,"Wejherowo Odrębna 04",0,22057
-3,2,2_272783,"Wejherowo Odrębna 04",0,22057
-3,2,2_272785,"Wejherowo Odrębna 04",0,22057
-3,2,2_272787,"Wejherowo Odrębna 04",0,22057
-3,2,2_273144,"Wejherowo Odrębna 04",0,22057
-3,2,2_273148,"Wejherowo Odrębna 04",0,22057
-3,2,2_272507,"Gościcino Robakowska 02",1,22091
-3,2,2_272655,"Gościcino Robakowska 02",1,22091
-3,2,2_272729,"Gościcino Robakowska 02",1,22091
-3,2,2_272764,"Gościcino Robakowska 02",1,22091
-3,2,2_272658,"Wejherowo os. Sikorskiego 01",0,22093
-3,2,2_272740,"Wejherowo os. Sikorskiego 01",0,22093
-3,2,2_272789,"Wejherowo os. Sikorskiego 01",0,22093
-3,2,2_272530,"Bolszewo Zamostna 04",0,22094
-3,2,2_273150,"Bolszewo Zamostna 04",0,22094
-3,2,2_272514,"Wejherowo Odrębna 04",0,22095
-3,2,2_272516,"Wejherowo Odrębna 04",0,22095
-3,2,2_273146,"Wejherowo Odrębna 04",0,22095
-3,24,24_270069,"Gościcino Robakowska 02",1,21891
-3,24,24_270071,"Gościcino Robakowska 02",1,21891
-3,24,24_270073,"Gościcino Robakowska 02",1,21891
-3,24,24_270075,"Gościcino Robakowska 02",1,21891
-3,24,24_270077,"Gościcino Robakowska 02",1,21891
-3,24,24_270079,"Gościcino Robakowska 02",1,21891
-3,24,24_270081,"Gościcino Robakowska 02",1,21891
-3,24,24_270083,"Gościcino Robakowska 02",1,21891
-3,24,24_270085,"Gościcino Robakowska 02",1,21891
-3,24,24_270087,"Gościcino Robakowska 02",1,21891
-3,24,24_270089,"Gościcino Robakowska 02",1,21891
-3,24,24_270217,"Gościcino Robakowska 02",1,21891
-3,24,24_270313,"Gościcino Robakowska 02",1,21891
-3,24,24_270315,"Gościcino Robakowska 02",1,21891
-3,24,24_270317,"Gościcino Robakowska 02",1,21891
-3,24,24_270319,"Gościcino Robakowska 02",1,21891
-3,24,24_270321,"Gościcino Robakowska 02",1,21891
-3,24,24_270348,"Gościcino Robakowska 02",1,21891
-3,24,24_270350,"Gościcino Robakowska 02",1,21891
-3,24,24_270352,"Gościcino Robakowska 02",1,21891
-3,24,24_270354,"Gościcino Robakowska 02",1,21891
-3,24,24_270356,"Gościcino Robakowska 02",1,21891
-3,24,24_270358,"Gościcino Robakowska 02",1,21891
-3,24,24_270360,"Gościcino Robakowska 02",1,21891
-3,24,24_270362,"Gościcino Robakowska 02",1,21891
-3,24,24_270364,"Gościcino Robakowska 02",1,21891
-3,24,24_270366,"Gościcino Robakowska 02",1,21891
-3,24,24_270368,"Gościcino Robakowska 02",1,21891
-3,24,24_270370,"Gościcino Robakowska 02",1,21891
-3,24,24_270618,"Gościcino Robakowska 02",1,21891
-3,24,24_270620,"Gościcino Robakowska 02",1,21891
-3,24,24_270622,"Gościcino Robakowska 02",1,21891
-3,24,24_270068,"Wejherowo Odrębna 04",0,21892
-3,24,24_270070,"Wejherowo Odrębna 04",0,21892
-3,24,24_270072,"Wejherowo Odrębna 04",0,21892
-3,24,24_270078,"Wejherowo Odrębna 04",0,21892
-3,24,24_270080,"Wejherowo Odrębna 04",0,21892
-3,24,24_270082,"Wejherowo Odrębna 04",0,21892
-3,24,24_270084,"Wejherowo Odrębna 04",0,21892
-3,24,24_270086,"Wejherowo Odrębna 04",0,21892
-3,24,24_270088,"Wejherowo Odrębna 04",0,21892
-3,24,24_270216,"Wejherowo Odrębna 04",0,21892
-3,24,24_270312,"Wejherowo Odrębna 04",0,21892
-3,24,24_270314,"Wejherowo Odrębna 04",0,21892
-3,24,24_270316,"Wejherowo Odrębna 04",0,21892
-3,24,24_270318,"Wejherowo Odrębna 04",0,21892
-3,24,24_270320,"Wejherowo Odrębna 04",0,21892
-3,24,24_270347,"Wejherowo Odrębna 04",0,21892
-3,24,24_270349,"Wejherowo Odrębna 04",0,21892
-3,24,24_270351,"Wejherowo Odrębna 04",0,21892
-3,24,24_270353,"Wejherowo Odrębna 04",0,21892
-3,24,24_270355,"Wejherowo Odrębna 04",0,21892
-3,24,24_270357,"Wejherowo Odrębna 04",0,21892
-3,24,24_270359,"Wejherowo Odrębna 04",0,21892
-3,24,24_270361,"Wejherowo Odrębna 04",0,21892
-3,24,24_270363,"Wejherowo Odrębna 04",0,21892
-3,24,24_270365,"Wejherowo Odrębna 04",0,21892
-3,24,24_270367,"Wejherowo Odrębna 04",0,21892
-3,24,24_270369,"Wejherowo Odrębna 04",0,21892
-3,24,24_270617,"Wejherowo Odrębna 04",0,21892
-3,24,24_270621,"Wejherowo Odrębna 04",0,21892
-3,24,24_270067,"Gościcino Robakowska 02",1,21928
-3,24,24_270215,"Gościcino Robakowska 02",1,21928
-3,24,24_270311,"Gościcino Robakowska 02",1,21928
-3,24,24_270346,"Gościcino Robakowska 02",1,21928
-3,24,24_270218,"Wejherowo os. Sikorskiego 01",0,21930
-3,24,24_270322,"Wejherowo os. Sikorskiego 01",0,21930
-3,24,24_270371,"Wejherowo os. Sikorskiego 01",0,21930
-3,24,24_270090,"Bolszewo Zamostna 04",0,21931
-3,24,24_270623,"Bolszewo Zamostna 04",0,21931
-3,24,24_270074,"Wejherowo Odrębna 04",0,21932
-3,24,24_270076,"Wejherowo Odrębna 04",0,21932
-3,24,24_270619,"Wejherowo Odrębna 04",0,21932
-3,27,27_272085,"Gościcino Robakowska 02",1,21891
-3,27,27_272087,"Gościcino Robakowska 02",1,21891
-3,27,27_272089,"Gościcino Robakowska 02",1,21891
-3,27,27_272091,"Gościcino Robakowska 02",1,21891
-3,27,27_272093,"Gościcino Robakowska 02",1,21891
-3,27,27_272095,"Gościcino Robakowska 02",1,21891
-3,27,27_272097,"Gościcino Robakowska 02",1,21891
-3,27,27_272099,"Gościcino Robakowska 02",1,21891
-3,27,27_272101,"Gościcino Robakowska 02",1,21891
-3,27,27_272103,"Gościcino Robakowska 02",1,21891
-3,27,27_272105,"Gościcino Robakowska 02",1,21891
-3,27,27_272107,"Gościcino Robakowska 02",1,21891
-3,27,27_272109,"Gościcino Robakowska 02",1,21891
-3,27,27_272116,"Gościcino Robakowska 02",1,21891
-3,27,27_272118,"Gościcino Robakowska 02",1,21891
-3,27,27_272120,"Gościcino Robakowska 02",1,21891
-3,27,27_272122,"Gościcino Robakowska 02",1,21891
-3,27,27_272124,"Gościcino Robakowska 02",1,21891
-3,27,27_272126,"Gościcino Robakowska 02",1,21891
-3,27,27_272128,"Gościcino Robakowska 02",1,21891
-3,27,27_272130,"Gościcino Robakowska 02",1,21891
-3,27,27_272132,"Gościcino Robakowska 02",1,21891
-3,27,27_272134,"Gościcino Robakowska 02",1,21891
-3,27,27_272136,"Gościcino Robakowska 02",1,21891
-3,27,27_272086,"Wejherowo Odrębna 04",0,21892
-3,27,27_272088,"Wejherowo Odrębna 04",0,21892
-3,27,27_272090,"Wejherowo Odrębna 04",0,21892
-3,27,27_272092,"Wejherowo Odrębna 04",0,21892
-3,27,27_272094,"Wejherowo Odrębna 04",0,21892
-3,27,27_272096,"Wejherowo Odrębna 04",0,21892
-3,27,27_272098,"Wejherowo Odrębna 04",0,21892
-3,27,27_272100,"Wejherowo Odrębna 04",0,21892
-3,27,27_272102,"Wejherowo Odrębna 04",0,21892
-3,27,27_272104,"Wejherowo Odrębna 04",0,21892
-3,27,27_272106,"Wejherowo Odrębna 04",0,21892
-3,27,27_272108,"Wejherowo Odrębna 04",0,21892
-3,27,27_272115,"Wejherowo Odrębna 04",0,21892
-3,27,27_272117,"Wejherowo Odrębna 04",0,21892
-3,27,27_272119,"Wejherowo Odrębna 04",0,21892
-3,27,27_272121,"Wejherowo Odrębna 04",0,21892
-3,27,27_272123,"Wejherowo Odrębna 04",0,21892
-3,27,27_272125,"Wejherowo Odrębna 04",0,21892
-3,27,27_272127,"Wejherowo Odrębna 04",0,21892
-3,27,27_272129,"Wejherowo Odrębna 04",0,21892
-3,27,27_272131,"Wejherowo Odrębna 04",0,21892
-3,27,27_272133,"Wejherowo Odrębna 04",0,21892
-3,27,27_272135,"Wejherowo Odrębna 04",0,21892
-3,27,27_272114,"Gościcino Robakowska 02",1,21928
-3,27,27_272110,"Wejherowo os. Sikorskiego 01",0,21930
-3,27,27_272137,"Wejherowo os. Sikorskiego 01",0,21930
-3,28,28_271600,"Gościcino Robakowska 02",1,21891
-3,28,28_271602,"Gościcino Robakowska 02",1,21891
-3,28,28_271604,"Gościcino Robakowska 02",1,21891
-3,28,28_271606,"Gościcino Robakowska 02",1,21891
-3,28,28_271608,"Gościcino Robakowska 02",1,21891
-3,28,28_271610,"Gościcino Robakowska 02",1,21891
-3,28,28_271612,"Gościcino Robakowska 02",1,21891
-3,28,28_271614,"Gościcino Robakowska 02",1,21891
-3,28,28_271616,"Gościcino Robakowska 02",1,21891
-3,28,28_271618,"Gościcino Robakowska 02",1,21891
-3,28,28_271620,"Gościcino Robakowska 02",1,21891
-3,28,28_271622,"Gościcino Robakowska 02",1,21891
-3,28,28_271624,"Gościcino Robakowska 02",1,21891
-3,28,28_271631,"Gościcino Robakowska 02",1,21891
-3,28,28_271633,"Gościcino Robakowska 02",1,21891
-3,28,28_271635,"Gościcino Robakowska 02",1,21891
-3,28,28_271637,"Gościcino Robakowska 02",1,21891
-3,28,28_271639,"Gościcino Robakowska 02",1,21891
-3,28,28_271641,"Gościcino Robakowska 02",1,21891
-3,28,28_271643,"Gościcino Robakowska 02",1,21891
-3,28,28_271645,"Gościcino Robakowska 02",1,21891
-3,28,28_271647,"Gościcino Robakowska 02",1,21891
-3,28,28_271649,"Gościcino Robakowska 02",1,21891
-3,28,28_271651,"Gościcino Robakowska 02",1,21891
-3,28,28_271601,"Wejherowo Odrębna 04",0,21892
-3,28,28_271603,"Wejherowo Odrębna 04",0,21892
-3,28,28_271605,"Wejherowo Odrębna 04",0,21892
-3,28,28_271607,"Wejherowo Odrębna 04",0,21892
-3,28,28_271609,"Wejherowo Odrębna 04",0,21892
-3,28,28_271611,"Wejherowo Odrębna 04",0,21892
-3,28,28_271613,"Wejherowo Odrębna 04",0,21892
-3,28,28_271615,"Wejherowo Odrębna 04",0,21892
-3,28,28_271617,"Wejherowo Odrębna 04",0,21892
-3,28,28_271619,"Wejherowo Odrębna 04",0,21892
-3,28,28_271621,"Wejherowo Odrębna 04",0,21892
-3,28,28_271623,"Wejherowo Odrębna 04",0,21892
-3,28,28_271630,"Wejherowo Odrębna 04",0,21892
-3,28,28_271632,"Wejherowo Odrębna 04",0,21892
-3,28,28_271634,"Wejherowo Odrębna 04",0,21892
-3,28,28_271636,"Wejherowo Odrębna 04",0,21892
-3,28,28_271638,"Wejherowo Odrębna 04",0,21892
-3,28,28_271640,"Wejherowo Odrębna 04",0,21892
-3,28,28_271642,"Wejherowo Odrębna 04",0,21892
-3,28,28_271644,"Wejherowo Odrębna 04",0,21892
-3,28,28_271646,"Wejherowo Odrębna 04",0,21892
-3,28,28_271648,"Wejherowo Odrębna 04",0,21892
-3,28,28_271650,"Wejherowo Odrębna 04",0,21892
-3,28,28_271629,"Gościcino Robakowska 02",1,21928
-3,28,28_271625,"Wejherowo os. Sikorskiego 01",0,21930
-3,28,28_271652,"Wejherowo os. Sikorskiego 01",0,21930
-4,2,2_273117,"Orle Łąkowa 02",1,22058
-4,2,2_273119,"Orle Łąkowa 02",1,22058
-4,2,2_273121,"Orle Łąkowa 02",1,22058
-4,2,2_273123,"Orle Łąkowa 02",1,22058
-4,2,2_273125,"Orle Łąkowa 02",1,22058
-4,2,2_273127,"Orle Łąkowa 02",1,22058
-4,2,2_273129,"Orle Łąkowa 02",1,22058
-4,2,2_273131,"Orle Łąkowa 02",1,22058
-4,2,2_273133,"Orle Łąkowa 02",1,22058
-4,2,2_273135,"Orle Łąkowa 02",1,22058
-4,2,2_273137,"Orle Łąkowa 02",1,22058
-4,2,2_273139,"Orle Łąkowa 02",1,22058
-4,2,2_273116,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273118,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273120,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273122,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273124,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273126,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273128,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273130,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273132,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273134,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273136,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273138,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273140,"Wejherowo Starostwo Powiatowe 02",0,22059
-4,2,2_273141,"Wejherowo Urząd Pracy 01 n/ż",1,22097
-4,2,2_273115,"Orle Łąkowa 02",1,22098
-4,24,24_270590,"Orle Łąkowa 02",1,21893
-4,24,24_270592,"Orle Łąkowa 02",1,21893
-4,24,24_270596,"Orle Łąkowa 02",1,21893
-4,24,24_270598,"Orle Łąkowa 02",1,21893
-4,24,24_270604,"Orle Łąkowa 02",1,21893
-4,24,24_270608,"Orle Łąkowa 02",1,21893
-4,24,24_270610,"Orle Łąkowa 02",1,21893
-4,24,24_270612,"Orle Łąkowa 02",1,21893
-4,24,24_270589,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270591,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270593,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270597,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270599,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270605,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270609,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270611,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270613,"Wejherowo Starostwo Powiatowe 02",0,21894
-4,24,24_270594,"Orle Szkoła 01",1,21933
-4,24,24_270600,"Orle Szkoła 01",1,21933
-4,24,24_270602,"Orle Szkoła 01",1,21933
-4,24,24_270606,"Orle Szkoła 01",1,21933
-4,24,24_270614,"Wejherowo Urząd Pracy 01 n/ż",1,21934
-4,24,24_270588,"Orle Łąkowa 02",1,21935
-4,24,24_270595,"Wejherowo Starostwo Powiatowe 02",0,21936
-4,24,24_270601,"Wejherowo Starostwo Powiatowe 02",0,21936
-4,24,24_270603,"Wejherowo Starostwo Powiatowe 02",0,21936
-4,24,24_270607,"Wejherowo Starostwo Powiatowe 02",0,21936
-5,2,2_272932,"Orle Łąkowa 02",1,22060
-5,2,2_272934,"Orle Łąkowa 02",1,22060
-5,2,2_272968,"Orle Łąkowa 02",1,22060
-5,2,2_272970,"Orle Łąkowa 02",1,22060
-5,2,2_272972,"Orle Łąkowa 02",1,22060
-5,2,2_272993,"Orle Łąkowa 02",1,22060
-5,2,2_272995,"Orle Łąkowa 02",1,22060
-5,2,2_272997,"Orle Łąkowa 02",1,22060
-5,2,2_272999,"Orle Łąkowa 02",1,22060
-5,2,2_273001,"Orle Łąkowa 02",1,22060
-5,2,2_273003,"Orle Łąkowa 02",1,22060
-5,2,2_273026,"Orle Łąkowa 02",1,22060
-5,2,2_273028,"Orle Łąkowa 02",1,22060
-5,2,2_273100,"Orle Łąkowa 02",1,22060
-5,2,2_273102,"Orle Łąkowa 02",1,22060
-5,2,2_273157,"Orle Łąkowa 02",1,22060
-5,2,2_273163,"Orle Łąkowa 02",1,22060
-5,2,2_273165,"Orle Łąkowa 02",1,22060
-5,2,2_273172,"Orle Łąkowa 02",1,22060
-5,2,2_273174,"Orle Łąkowa 02",1,22060
-5,2,2_273176,"Orle Łąkowa 02",1,22060
-5,2,2_273221,"Orle Łąkowa 02",1,22060
-5,2,2_272931,"Wejherowo Szpital 02",0,22061
-5,2,2_272933,"Wejherowo Szpital 02",0,22061
-5,2,2_272969,"Wejherowo Szpital 02",0,22061
-5,2,2_272971,"Wejherowo Szpital 02",0,22061
-5,2,2_272973,"Wejherowo Szpital 02",0,22061
-5,2,2_272994,"Wejherowo Szpital 02",0,22061
-5,2,2_272996,"Wejherowo Szpital 02",0,22061
-5,2,2_272998,"Wejherowo Szpital 02",0,22061
-5,2,2_273000,"Wejherowo Szpital 02",0,22061
-5,2,2_273002,"Wejherowo Szpital 02",0,22061
-5,2,2_273004,"Wejherowo Szpital 02",0,22061
-5,2,2_273027,"Wejherowo Szpital 02",0,22061
-5,2,2_273101,"Wejherowo Szpital 02",0,22061
-5,2,2_273103,"Wejherowo Szpital 02",0,22061
-5,2,2_273158,"Wejherowo Szpital 02",0,22061
-5,2,2_273164,"Wejherowo Szpital 02",0,22061
-5,2,2_273166,"Wejherowo Szpital 02",0,22061
-5,2,2_273171,"Wejherowo Szpital 02",0,22061
-5,2,2_273173,"Wejherowo Szpital 02",0,22061
-5,2,2_273175,"Wejherowo Szpital 02",0,22061
-5,2,2_273222,"Wejherowo Szpital 02",0,22061
-5,2,2_273167,"Wejherowo Urząd Pracy 01 n/ż",1,22102
-5,2,2_272930,"Orle Łąkowa 02",1,22103
-5,2,2_273170,"Orle Łąkowa 02",1,22104
-5,2,2_273029,"Wejherowo Chopina 02",0,22106
-5,2,2_273213,"Wejherowo Szpital 02",0,22107
-5,2,2_273220,"Wejherowo Szpital 02",0,22107
-5,24,24_270012,"Orle Łąkowa 02",1,21895
-5,24,24_270014,"Orle Łąkowa 02",1,21895
-5,24,24_270286,"Orle Łąkowa 02",1,21895
-5,24,24_270388,"Orle Łąkowa 02",1,21895
-5,24,24_270390,"Orle Łąkowa 02",1,21895
-5,24,24_270491,"Orle Łąkowa 02",1,21895
-5,24,24_270493,"Orle Łąkowa 02",1,21895
-5,24,24_270575,"Orle Łąkowa 02",1,21895
-5,24,24_270639,"Orle Łąkowa 02",1,21895
-5,24,24_270648,"Orle Łąkowa 02",1,21895
-5,24,24_270652,"Orle Łąkowa 02",1,21895
-5,24,24_270654,"Orle Łąkowa 02",1,21895
-5,24,24_270656,"Orle Łąkowa 02",1,21895
-5,24,24_270658,"Orle Łąkowa 02",1,21895
-5,24,24_270726,"Orle Łąkowa 02",1,21895
-5,24,24_270011,"Wejherowo Szpital 02",0,21896
-5,24,24_270013,"Wejherowo Szpital 02",0,21896
-5,24,24_270287,"Wejherowo Szpital 02",0,21896
-5,24,24_270389,"Wejherowo Szpital 02",0,21896
-5,24,24_270391,"Wejherowo Szpital 02",0,21896
-5,24,24_270492,"Wejherowo Szpital 02",0,21896
-5,24,24_270576,"Wejherowo Szpital 02",0,21896
-5,24,24_270640,"Wejherowo Szpital 02",0,21896
-5,24,24_270649,"Wejherowo Szpital 02",0,21896
-5,24,24_270653,"Wejherowo Szpital 02",0,21896
-5,24,24_270655,"Wejherowo Szpital 02",0,21896
-5,24,24_270657,"Wejherowo Szpital 02",0,21896
-5,24,24_270659,"Wejherowo Szpital 02",0,21896
-5,24,24_270723,"Wejherowo Szpital 02",0,21896
-5,24,24_270727,"Wejherowo Szpital 02",0,21896
-5,24,24_270284,"Orle Szkoła 01",1,21938
-5,24,24_270288,"Orle Szkoła 01",1,21938
-5,24,24_270573,"Orle Szkoła 01",1,21938
-5,24,24_270644,"Orle Szkoła 01",1,21938
-5,24,24_270650,"Orle Szkoła 01",1,21938
-5,24,24_270724,"Orle Szkoła 01",1,21938
-5,24,24_270728,"Orle Szkoła 01",1,21938
-5,24,24_270392,"Wejherowo Urząd Pracy 01 n/ż",1,21939
-5,24,24_270010,"Orle Łąkowa 02",1,21940
-5,24,24_270722,"Orle Łąkowa 02",1,21941
-5,24,24_270285,"Wejherowo Szpital 02",0,21942
-5,24,24_270289,"Wejherowo Szpital 02",0,21942
-5,24,24_270574,"Wejherowo Szpital 02",0,21942
-5,24,24_270645,"Wejherowo Szpital 02",0,21942
-5,24,24_270651,"Wejherowo Szpital 02",0,21942
-5,24,24_270725,"Wejherowo Szpital 02",0,21942
-5,24,24_270494,"Wejherowo Chopina 02",0,21943
-5,24,24_270638,"Wejherowo Szpital 02",0,21944
-5,24,24_270766,"Wejherowo Szpital 02",0,21944
-5,27,27_272054,"Orle Łąkowa 02",1,21895
-5,27,27_272060,"Orle Łąkowa 02",1,21895
-5,27,27_272187,"Orle Łąkowa 02",1,21895
-5,27,27_272189,"Orle Łąkowa 02",1,21895
-5,27,27_272194,"Orle Łąkowa 02",1,21895
-5,27,27_272198,"Orle Łąkowa 02",1,21895
-5,27,27_272202,"Orle Łąkowa 02",1,21895
-5,27,27_272204,"Orle Łąkowa 02",1,21895
-5,27,27_272206,"Orle Łąkowa 02",1,21895
-5,27,27_272208,"Orle Łąkowa 02",1,21895
-5,27,27_272260,"Orle Łąkowa 02",1,21895
-5,27,27_272264,"Orle Łąkowa 02",1,21895
-5,27,27_272377,"Orle Łąkowa 02",1,21895
-5,27,27_272379,"Orle Łąkowa 02",1,21895
-5,27,27_272382,"Orle Łąkowa 02",1,21895
-5,27,27_272387,"Orle Łąkowa 02",1,21895
-5,27,27_272448,"Orle Łąkowa 02",1,21895
-5,27,27_272451,"Orle Łąkowa 02",1,21895
-5,27,27_272453,"Orle Łąkowa 02",1,21895
-5,27,27_272458,"Orle Łąkowa 02",1,21895
-5,27,27_272462,"Orle Łąkowa 02",1,21895
-5,27,27_272053,"Wejherowo Szpital 02",0,21896
-5,27,27_272055,"Wejherowo Szpital 02",0,21896
-5,27,27_272061,"Wejherowo Szpital 02",0,21896
-5,27,27_272188,"Wejherowo Szpital 02",0,21896
-5,27,27_272190,"Wejherowo Szpital 02",0,21896
-5,27,27_272195,"Wejherowo Szpital 02",0,21896
-5,27,27_272199,"Wejherowo Szpital 02",0,21896
-5,27,27_272203,"Wejherowo Szpital 02",0,21896
-5,27,27_272205,"Wejherowo Szpital 02",0,21896
-5,27,27_272207,"Wejherowo Szpital 02",0,21896
-5,27,27_272261,"Wejherowo Szpital 02",0,21896
-5,27,27_272265,"Wejherowo Szpital 02",0,21896
-5,27,27_272378,"Wejherowo Szpital 02",0,21896
-5,27,27_272380,"Wejherowo Szpital 02",0,21896
-5,27,27_272383,"Wejherowo Szpital 02",0,21896
-5,27,27_272388,"Wejherowo Szpital 02",0,21896
-5,27,27_272449,"Wejherowo Szpital 02",0,21896
-5,27,27_272452,"Wejherowo Szpital 02",0,21896
-5,27,27_272454,"Wejherowo Szpital 02",0,21896
-5,27,27_272459,"Wejherowo Szpital 02",0,21896
-5,27,27_272463,"Wejherowo Szpital 02",0,21896
-5,27,27_272477,"Wejherowo Urząd Pracy 01 n/ż",1,21939
-5,27,27_272052,"Orle Łąkowa 02",1,21940
-5,27,27_272209,"Wejherowo Chopina 02",0,21943
-5,27,27_272376,"Wejherowo Szpital 02",0,21944
-5,27,27_272468,"Wejherowo Szpital 02",0,21944
-5,28,28_271570,"Orle Łąkowa 02",1,21895
-5,28,28_271576,"Orle Łąkowa 02",1,21895
-5,28,28_271682,"Orle Łąkowa 02",1,21895
-5,28,28_271684,"Orle Łąkowa 02",1,21895
-5,28,28_271689,"Orle Łąkowa 02",1,21895
-5,28,28_271693,"Orle Łąkowa 02",1,21895
-5,28,28_271697,"Orle Łąkowa 02",1,21895
-5,28,28_271699,"Orle Łąkowa 02",1,21895
-5,28,28_271701,"Orle Łąkowa 02",1,21895
-5,28,28_271703,"Orle Łąkowa 02",1,21895
-5,28,28_271857,"Orle Łąkowa 02",1,21895
-5,28,28_271859,"Orle Łąkowa 02",1,21895
-5,28,28_271862,"Orle Łąkowa 02",1,21895
-5,28,28_271867,"Orle Łąkowa 02",1,21895
-5,28,28_271894,"Orle Łąkowa 02",1,21895
-5,28,28_271898,"Orle Łąkowa 02",1,21895
-5,28,28_271951,"Orle Łąkowa 02",1,21895
-5,28,28_271954,"Orle Łąkowa 02",1,21895
-5,28,28_271956,"Orle Łąkowa 02",1,21895
-5,28,28_271971,"Orle Łąkowa 02",1,21895
-5,28,28_271975,"Orle Łąkowa 02",1,21895
-5,28,28_271569,"Wejherowo Szpital 02",0,21896
-5,28,28_271571,"Wejherowo Szpital 02",0,21896
-5,28,28_271577,"Wejherowo Szpital 02",0,21896
-5,28,28_271683,"Wejherowo Szpital 02",0,21896
-5,28,28_271685,"Wejherowo Szpital 02",0,21896
-5,28,28_271690,"Wejherowo Szpital 02",0,21896
-5,28,28_271694,"Wejherowo Szpital 02",0,21896
-5,28,28_271698,"Wejherowo Szpital 02",0,21896
-5,28,28_271700,"Wejherowo Szpital 02",0,21896
-5,28,28_271702,"Wejherowo Szpital 02",0,21896
-5,28,28_271858,"Wejherowo Szpital 02",0,21896
-5,28,28_271860,"Wejherowo Szpital 02",0,21896
-5,28,28_271863,"Wejherowo Szpital 02",0,21896
-5,28,28_271868,"Wejherowo Szpital 02",0,21896
-5,28,28_271895,"Wejherowo Szpital 02",0,21896
-5,28,28_271899,"Wejherowo Szpital 02",0,21896
-5,28,28_271952,"Wejherowo Szpital 02",0,21896
-5,28,28_271955,"Wejherowo Szpital 02",0,21896
-5,28,28_271957,"Wejherowo Szpital 02",0,21896
-5,28,28_271972,"Wejherowo Szpital 02",0,21896
-5,28,28_271976,"Wejherowo Szpital 02",0,21896
-5,28,28_271992,"Wejherowo Urząd Pracy 01 n/ż",1,21939
-5,28,28_271568,"Orle Łąkowa 02",1,21940
-5,28,28_271704,"Wejherowo Chopina 02",0,21943
-5,28,28_271856,"Wejherowo Szpital 02",0,21944
-5,28,28_271983,"Wejherowo Szpital 02",0,21944
-6,2,2_272632,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272634,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272638,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272642,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272644,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272646,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_273191,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_273193,"Wejherowo os. Fenikowskiego 01",1,22062
-6,2,2_272629,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272633,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272635,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272639,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272643,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272645,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_273098,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_273192,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_273203,"Wejherowo Karnowskiego 02",0,22063
-6,2,2_272630,"Wejherowo os. Fenikowskiego 01",1,22108
-6,2,2_272636,"Wejherowo os. Fenikowskiego 01",1,22108
-6,2,2_272640,"Wejherowo os. Fenikowskiego 01",1,22108
-6,2,2_273189,"Wejherowo os. Fenikowskiego 01",1,22108
-6,2,2_273099,"Wejherowo Szpital 02",1,22109
-6,2,2_273097,"Wejherowo os. Fenikowskiego 01",1,22110
-6,2,2_272631,"Wejherowo Karnowskiego 02",0,22111
-6,2,2_272637,"Wejherowo Karnowskiego 02",0,22111
-6,2,2_272641,"Wejherowo Karnowskiego 02",0,22111
-6,2,2_273190,"Wejherowo Karnowskiego 02",0,22111
-6,24,24_270192,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270194,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270198,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270202,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270204,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270206,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270743,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270745,"Wejherowo os. Fenikowskiego 01",1,21897
-6,24,24_270189,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270193,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270195,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270199,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270203,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270205,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270571,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270635,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270744,"Wejherowo Karnowskiego 02",0,21898
-6,24,24_270190,"Wejherowo os. Fenikowskiego 01",1,21945
-6,24,24_270196,"Wejherowo os. Fenikowskiego 01",1,21945
-6,24,24_270200,"Wejherowo os. Fenikowskiego 01",1,21945
-6,24,24_270741,"Wejherowo os. Fenikowskiego 01",1,21945
-6,24,24_270572,"Wejherowo Szpital 02",1,21946
-6,24,24_270570,"Wejherowo os. Fenikowskiego 01",1,21947
-6,24,24_270191,"Wejherowo Karnowskiego 02",0,21948
-6,24,24_270197,"Wejherowo Karnowskiego 02",0,21948
-6,24,24_270201,"Wejherowo Karnowskiego 02",0,21948
-6,24,24_270742,"Wejherowo Karnowskiego 02",0,21948
-6,27,27_272406,"Wejherowo os. Fenikowskiego 01",1,21897
-6,27,27_272408,"Wejherowo os. Fenikowskiego 01",1,21897
-6,27,27_272412,"Wejherowo os. Fenikowskiego 01",1,21897
-6,27,27_272414,"Wejherowo os. Fenikowskiego 01",1,21897
-6,27,27_272418,"Wejherowo os. Fenikowskiego 01",1,21897
-6,27,27_272407,"Wejherowo Karnowskiego 02",0,21898
-6,27,27_272409,"Wejherowo Karnowskiego 02",0,21898
-6,27,27_272413,"Wejherowo Karnowskiego 02",0,21898
-6,27,27_272415,"Wejherowo Karnowskiego 02",0,21898
-6,27,27_272419,"Wejherowo Karnowskiego 02",0,21898
-6,27,27_272410,"Wejherowo os. Fenikowskiego 01",1,21945
-6,27,27_272416,"Wejherowo os. Fenikowskiego 01",1,21945
-6,27,27_272411,"Wejherowo Karnowskiego 02",0,21948
-6,27,27_272417,"Wejherowo Karnowskiego 02",0,21948
-6,28,28_271902,"Wejherowo os. Fenikowskiego 01",1,21897
-6,28,28_271904,"Wejherowo os. Fenikowskiego 01",1,21897
-6,28,28_271908,"Wejherowo os. Fenikowskiego 01",1,21897
-6,28,28_271910,"Wejherowo os. Fenikowskiego 01",1,21897
-6,28,28_271914,"Wejherowo os. Fenikowskiego 01",1,21897
-6,28,28_271903,"Wejherowo Karnowskiego 02",0,21898
-6,28,28_271905,"Wejherowo Karnowskiego 02",0,21898
-6,28,28_271909,"Wejherowo Karnowskiego 02",0,21898
-6,28,28_271911,"Wejherowo Karnowskiego 02",0,21898
-6,28,28_271915,"Wejherowo Karnowskiego 02",0,21898
-6,28,28_271906,"Wejherowo os. Fenikowskiego 01",1,21945
-6,28,28_271912,"Wejherowo os. Fenikowskiego 01",1,21945
-6,28,28_271907,"Wejherowo Karnowskiego 02",0,21948
-6,28,28_271913,"Wejherowo Karnowskiego 02",0,21948
-7,2,2_272491,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272495,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272538,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272542,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272546,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272593,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272627,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272833,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272837,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272839,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272849,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_273228,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_273232,"Bolszewo Leśna - Szkoła 02",1,22064
-7,2,2_272490,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272494,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272537,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272541,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272545,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272592,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272626,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272832,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272836,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272838,"Wejherowo Cegielnia 01",0,22065
-7,2,2_272848,"Wejherowo Cegielnia 01",0,22065
-7,2,2_273227,"Wejherowo Cegielnia 01",0,22065
-7,2,2_273231,"Wejherowo Cegielnia 01",0,22065
-7,24,24_270051,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270055,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270098,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270102,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270106,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270153,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270187,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270435,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270439,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270441,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270451,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270750,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270754,"Bolszewo Leśna - Szkoła 02",1,21899
-7,24,24_270050,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270054,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270097,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270101,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270105,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270152,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270186,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270434,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270438,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270440,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270450,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270749,"Wejherowo Cegielnia 01",0,21900
-7,24,24_270753,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272254,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272296,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272298,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272393,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272399,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272401,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272429,"Bolszewo Leśna - Szkoła 02",1,21899
-7,27,27_272253,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272295,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272297,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272392,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272398,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272400,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272428,"Wejherowo Cegielnia 01",0,21900
-7,27,27_272391,"Bolszewo Leśna - Szkoła 02",1,21949
-7,27,27_272255,"Wejherowo Dworzec PKP 01",0,21951
-7,28,28_271923,"Bolszewo Leśna - Szkoła 02",1,21899
-7,28,28_271925,"Bolszewo Leśna - Szkoła 02",1,21899
-7,28,28_271927,"Bolszewo Leśna - Szkoła 02",1,21899
-7,28,28_271924,"Wejherowo Cegielnia 01",0,21900
-7,28,28_271926,"Wejherowo Cegielnia 01",0,21900
-7,28,28_271919,"Gościcino Robakowska 02",1,21950
-7,28,28_271921,"Gościcino Robakowska 02",1,21950
-7,28,28_271920,"Wejherowo Cegielnia 01",0,21952
-7,28,28_271922,"Wejherowo Cegielnia 01",0,21952
-7,28,28_271918,"Wejherowo Cegielnia 01",0,21953
-8,2,2_272578,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272582,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272586,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272746,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272750,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272754,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272758,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272760,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272856,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272860,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272864,"Rumia C.H. ""Port Rumia"" 01",1,22066
-8,2,2_272577,"Wejherowo Szpital 02",0,22067
-8,2,2_272581,"Wejherowo Szpital 02",0,22067
-8,2,2_272585,"Wejherowo Szpital 02",0,22067
-8,2,2_272589,"Wejherowo Szpital 02",0,22067
-8,2,2_272745,"Wejherowo Szpital 02",0,22067
-8,2,2_272749,"Wejherowo Szpital 02",0,22067
-8,2,2_272753,"Wejherowo Szpital 02",0,22067
-8,2,2_272757,"Wejherowo Szpital 02",0,22067
-8,2,2_272855,"Wejherowo Szpital 02",0,22067
-8,2,2_272859,"Wejherowo Szpital 02",0,22067
-8,2,2_272863,"Wejherowo Szpital 02",0,22067
-8,2,2_272867,"Wejherowo Szpital 02",0,22067
-8,2,2_272576,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272580,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272584,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272588,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272748,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272752,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272756,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272854,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272858,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272862,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272866,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272868,"Rumia C.H. ""Port Rumia"" 01",1,22117
-8,2,2_272574,"Rumia C.H. ""Port Rumia"" 01",1,22118
-8,2,2_272852,"Rumia C.H. ""Port Rumia"" 01",1,22118
-8,2,2_272744,"Rumia C.H. ""Port Rumia"" 01",1,22119
-8,2,2_272575,"Wejherowo Szpital 02",0,22120
-8,2,2_272579,"Wejherowo Szpital 02",0,22120
-8,2,2_272583,"Wejherowo Szpital 02",0,22120
-8,2,2_272587,"Wejherowo Szpital 02",0,22120
-8,2,2_272747,"Wejherowo Szpital 02",0,22120
-8,2,2_272751,"Wejherowo Szpital 02",0,22120
-8,2,2_272755,"Wejherowo Szpital 02",0,22120
-8,2,2_272759,"Wejherowo Szpital 02",0,22120
-8,2,2_272761,"Wejherowo Szpital 02",0,22120
-8,2,2_272853,"Wejherowo Szpital 02",0,22120
-8,2,2_272857,"Wejherowo Szpital 02",0,22120
-8,2,2_272861,"Wejherowo Szpital 02",0,22120
-8,2,2_272865,"Wejherowo Szpital 02",0,22120
-8,2,2_272869,"Wejherowo Kochanowskiego SKM Nanice 01",0,22121
-8,2,2_273096,"Wejherowo Szpital 02",0,22122
-8,24,24_270138,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270142,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270146,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270328,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270332,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270336,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270340,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270342,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270458,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270462,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270466,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,24,24_270137,"Wejherowo Szpital 02",0,21902
-8,24,24_270141,"Wejherowo Szpital 02",0,21902
-8,24,24_270145,"Wejherowo Szpital 02",0,21902
-8,24,24_270149,"Wejherowo Szpital 02",0,21902
-8,24,24_270327,"Wejherowo Szpital 02",0,21902
-8,24,24_270331,"Wejherowo Szpital 02",0,21902
-8,24,24_270335,"Wejherowo Szpital 02",0,21902
-8,24,24_270339,"Wejherowo Szpital 02",0,21902
-8,24,24_270457,"Wejherowo Szpital 02",0,21902
-8,24,24_270461,"Wejherowo Szpital 02",0,21902
-8,24,24_270465,"Wejherowo Szpital 02",0,21902
-8,24,24_270469,"Wejherowo Szpital 02",0,21902
-8,24,24_270136,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270140,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270144,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270148,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270330,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270334,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270338,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270456,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270460,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270464,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270468,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270470,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,24,24_270134,"Rumia C.H. ""Port Rumia"" 01",1,21955
-8,24,24_270454,"Rumia C.H. ""Port Rumia"" 01",1,21955
-8,24,24_270326,"Rumia C.H. ""Port Rumia"" 01",1,21956
-8,24,24_270135,"Wejherowo Szpital 02",0,21957
-8,24,24_270139,"Wejherowo Szpital 02",0,21957
-8,24,24_270143,"Wejherowo Szpital 02",0,21957
-8,24,24_270147,"Wejherowo Szpital 02",0,21957
-8,24,24_270329,"Wejherowo Szpital 02",0,21957
-8,24,24_270333,"Wejherowo Szpital 02",0,21957
-8,24,24_270337,"Wejherowo Szpital 02",0,21957
-8,24,24_270341,"Wejherowo Szpital 02",0,21957
-8,24,24_270343,"Wejherowo Szpital 02",0,21957
-8,24,24_270455,"Wejherowo Szpital 02",0,21957
-8,24,24_270459,"Wejherowo Szpital 02",0,21957
-8,24,24_270463,"Wejherowo Szpital 02",0,21957
-8,24,24_270467,"Wejherowo Szpital 02",0,21957
-8,24,24_270471,"Wejherowo Kochanowskiego SKM Nanice 01",0,21958
-8,24,24_270569,"Wejherowo Szpital 02",0,21959
-8,27,27_272173,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272177,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272237,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272239,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272243,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272247,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272249,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272469,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272473,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,27,27_272168,"Wejherowo Szpital 02",0,21902
-8,27,27_272170,"Wejherowo Szpital 02",0,21902
-8,27,27_272172,"Wejherowo Szpital 02",0,21902
-8,27,27_272176,"Wejherowo Szpital 02",0,21902
-8,27,27_272180,"Wejherowo Szpital 02",0,21902
-8,27,27_272242,"Wejherowo Szpital 02",0,21902
-8,27,27_272246,"Wejherowo Szpital 02",0,21902
-8,27,27_272472,"Wejherowo Szpital 02",0,21902
-8,27,27_272476,"Wejherowo Szpital 02",0,21902
-8,27,27_272167,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272169,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272171,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272175,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272179,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272181,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272241,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272245,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272471,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272475,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,27,27_272165,"Rumia C.H. ""Port Rumia"" 01",1,21955
-8,27,27_272235,"Rumia C.H. ""Port Rumia"" 01",1,21956
-8,27,27_272166,"Wejherowo Szpital 02",0,21957
-8,27,27_272174,"Wejherowo Szpital 02",0,21957
-8,27,27_272178,"Wejherowo Szpital 02",0,21957
-8,27,27_272236,"Wejherowo Szpital 02",0,21957
-8,27,27_272238,"Wejherowo Szpital 02",0,21957
-8,27,27_272240,"Wejherowo Szpital 02",0,21957
-8,27,27_272244,"Wejherowo Szpital 02",0,21957
-8,27,27_272248,"Wejherowo Szpital 02",0,21957
-8,27,27_272250,"Wejherowo Szpital 02",0,21957
-8,27,27_272470,"Wejherowo Szpital 02",0,21957
-8,27,27_272474,"Wejherowo Szpital 02",0,21957
-8,27,27_272182,"Wejherowo Kochanowskiego SKM Nanice 01",0,21958
-8,27,27_272026,"Wejherowo Szpital 02",0,21959
-8,28,28_271550,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271558,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271562,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271873,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271960,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271964,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271979,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271984,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271988,"Rumia C.H. ""Port Rumia"" 01",1,21901
-8,28,28_271555,"Wejherowo Szpital 02",0,21902
-8,28,28_271557,"Wejherowo Szpital 02",0,21902
-8,28,28_271561,"Wejherowo Szpital 02",0,21902
-8,28,28_271565,"Wejherowo Szpital 02",0,21902
-8,28,28_271963,"Wejherowo Szpital 02",0,21902
-8,28,28_271967,"Wejherowo Szpital 02",0,21902
-8,28,28_271987,"Wejherowo Szpital 02",0,21902
-8,28,28_271991,"Wejherowo Szpital 02",0,21902
-8,28,28_271552,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271554,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271556,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271560,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271564,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271962,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271966,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271986,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271990,"Rumia C.H. ""Port Rumia"" 01",1,21954
-8,28,28_271551,"Wejherowo Szpital 02",0,21957
-8,28,28_271553,"Wejherowo Szpital 02",0,21957
-8,28,28_271559,"Wejherowo Szpital 02",0,21957
-8,28,28_271563,"Wejherowo Szpital 02",0,21957
-8,28,28_271874,"Wejherowo Szpital 02",0,21957
-8,28,28_271961,"Wejherowo Szpital 02",0,21957
-8,28,28_271965,"Wejherowo Szpital 02",0,21957
-8,28,28_271980,"Wejherowo Szpital 02",0,21957
-8,28,28_271985,"Wejherowo Szpital 02",0,21957
-8,28,28_271989,"Wejherowo Szpital 02",0,21957
-8,28,28_271549,"Wejherowo Szpital 02",0,21959
-9,2,2_272556,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272558,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272560,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272562,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272564,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272566,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272568,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272570,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272690,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272692,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272694,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272696,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272698,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272700,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272702,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272704,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272706,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272708,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272710,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272712,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272795,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272797,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272799,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272801,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272803,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272805,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272807,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272809,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272811,"Reda Rekowo Lipowa 04",1,22068
-9,2,2_272555,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272557,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272559,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272561,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272563,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272565,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272567,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272569,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272689,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272691,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272693,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272695,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272697,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272699,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272701,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272703,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272705,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272707,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272709,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272711,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272794,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272796,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272798,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272800,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272802,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272804,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272806,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272808,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272810,"Rumia Dworzec PKP 90",0,22069
-9,2,2_272554,"Reda Rekowo Lipowa 04",1,22124
-9,2,2_272688,"Reda Rekowo Lipowa 04",1,22124
-9,2,2_272793,"Reda Rekowo Lipowa 04",1,22124
-9,2,2_272571,"Reda Ciechocino 02",0,22125
-9,2,2_272713,"Reda Ciechocino 02",0,22125
-9,2,2_272812,"Reda Ciechocino 02",0,22125
-9,24,24_270116,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270118,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270120,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270122,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270124,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270126,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270128,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270130,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270250,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270252,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270254,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270256,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270258,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270260,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270262,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270264,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270266,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270268,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270270,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270272,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270397,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270399,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270401,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270403,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270405,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270407,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270409,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270411,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270413,"Reda Rekowo Lipowa 04",1,21903
-9,24,24_270115,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270117,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270119,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270121,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270123,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270125,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270127,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270129,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270249,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270251,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270253,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270255,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270257,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270259,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270261,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270263,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270265,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270267,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270269,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270271,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270396,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270398,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270400,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270402,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270404,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270406,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270408,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270410,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270412,"Rumia Dworzec PKP 90",0,21904
-9,24,24_270114,"Reda Rekowo Lipowa 04",1,21961
-9,24,24_270248,"Reda Rekowo Lipowa 04",1,21961
-9,24,24_270395,"Reda Rekowo Lipowa 04",1,21961
-9,24,24_270131,"Reda Ciechocino 02",0,21962
-9,24,24_270273,"Reda Ciechocino 02",0,21962
-9,24,24_270414,"Reda Ciechocino 02",0,21962
-9,27,27_271997,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_271999,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272001,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272003,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272005,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272007,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272009,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272011,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272013,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272015,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272017,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272019,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272021,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272143,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272145,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272147,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272149,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272151,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272153,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272155,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272157,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272159,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_272161,"Reda Rekowo Lipowa 04",1,21903
-9,27,27_271996,"Rumia Dworzec PKP 90",0,21904
-9,27,27_271998,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272000,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272002,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272004,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272006,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272008,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272010,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272012,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272014,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272016,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272018,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272020,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272142,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272144,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272146,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272148,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272150,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272152,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272154,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272156,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272158,"Rumia Dworzec PKP 90",0,21904
-9,27,27_272160,"Rumia Dworzec PKP 90",0,21904
-9,27,27_271995,"Reda Rekowo Lipowa 04",1,21961
-9,27,27_272141,"Reda Rekowo Lipowa 04",1,21961
-9,27,27_272022,"Reda Ciechocino 02",0,21962
-9,27,27_272162,"Reda Ciechocino 02",0,21962
-9,28,28_271658,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271660,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271662,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271664,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271666,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271668,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271670,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271672,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271674,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271676,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271709,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271711,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271713,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271715,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271717,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271719,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271721,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271723,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271725,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271727,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271729,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271731,"Reda Rekowo Lipowa 04",1,21903
-9,28,28_271657,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271659,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271661,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271663,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271665,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271667,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271669,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271671,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271673,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271675,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271708,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271710,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271712,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271714,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271716,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271718,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271720,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271722,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271724,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271726,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271728,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271730,"Rumia Dworzec PKP 90",0,21904
-9,28,28_271656,"Reda Rekowo Lipowa 04",1,21961
-9,28,28_271707,"Reda Rekowo Lipowa 04",1,21961
-9,28,28_271677,"Reda Ciechocino 02",0,21962
-9,28,28_271732,"Reda Ciechocino 02",0,21962
-10,2,2_272717,"Kębłowo Wiejska 01",1,22070
-10,2,2_272719,"Kębłowo Wiejska 01",1,22070
-10,2,2_272721,"Kębłowo Wiejska 01",1,22070
-10,2,2_272723,"Kębłowo Wiejska 01",1,22070
-10,2,2_272725,"Kębłowo Wiejska 01",1,22070
-10,2,2_272901,"Kębłowo Wiejska 01",1,22070
-10,2,2_272903,"Kębłowo Wiejska 01",1,22070
-10,2,2_272907,"Kębłowo Wiejska 01",1,22070
-10,2,2_272909,"Kębłowo Wiejska 01",1,22070
-10,2,2_272946,"Kębłowo Wiejska 01",1,22070
-10,2,2_272948,"Kębłowo Wiejska 01",1,22070
-10,2,2_272950,"Kębłowo Wiejska 01",1,22070
-10,2,2_272952,"Kębłowo Wiejska 01",1,22070
-10,2,2_272954,"Kębłowo Wiejska 01",1,22070
-10,2,2_272956,"Kębłowo Wiejska 01",1,22070
-10,2,2_272716,"Wejherowo Pomorska 02",0,22071
-10,2,2_272718,"Wejherowo Pomorska 02",0,22071
-10,2,2_272720,"Wejherowo Pomorska 02",0,22071
-10,2,2_272722,"Wejherowo Pomorska 02",0,22071
-10,2,2_272724,"Wejherowo Pomorska 02",0,22071
-10,2,2_272726,"Wejherowo Pomorska 02",0,22071
-10,2,2_272900,"Wejherowo Pomorska 02",0,22071
-10,2,2_272902,"Wejherowo Pomorska 02",0,22071
-10,2,2_272904,"Wejherowo Pomorska 02",0,22071
-10,2,2_272908,"Wejherowo Pomorska 02",0,22071
-10,2,2_272910,"Wejherowo Pomorska 02",0,22071
-10,2,2_272947,"Wejherowo Pomorska 02",0,22071
-10,2,2_272949,"Wejherowo Pomorska 02",0,22071
-10,2,2_272951,"Wejherowo Pomorska 02",0,22071
-10,2,2_272953,"Wejherowo Pomorska 02",0,22071
-10,2,2_272955,"Wejherowo Pomorska 02",0,22071
-10,2,2_272983,"Wejherowo Pomorska 02",0,22071
-10,2,2_272899,"Kębłowo Wiejska 01",1,22127
-10,2,2_272982,"Kębłowo Wiejska 01",1,22127
-10,2,2_272957,"Wejherowo Dworzec PKP 04",0,22128
-10,2,2_272945,"Wejherowo Pomorska 02",0,22129
-10,24,24_270026,"Kębłowo Wiejska 01",1,21905
-10,24,24_270028,"Kębłowo Wiejska 01",1,21905
-10,24,24_270030,"Kębłowo Wiejska 01",1,21905
-10,24,24_270032,"Kębłowo Wiejska 01",1,21905
-10,24,24_270034,"Kębłowo Wiejska 01",1,21905
-10,24,24_270036,"Kębłowo Wiejska 01",1,21905
-10,24,24_270299,"Kębłowo Wiejska 01",1,21905
-10,24,24_270301,"Kębłowo Wiejska 01",1,21905
-10,24,24_270303,"Kębłowo Wiejska 01",1,21905
-10,24,24_270305,"Kębłowo Wiejska 01",1,21905
-10,24,24_270307,"Kębłowo Wiejska 01",1,21905
-10,24,24_270693,"Kębłowo Wiejska 01",1,21905
-10,24,24_270695,"Kębłowo Wiejska 01",1,21905
-10,24,24_270699,"Kębłowo Wiejska 01",1,21905
-10,24,24_270701,"Kębłowo Wiejska 01",1,21905
-10,24,24_270027,"Wejherowo Pomorska 02",0,21906
-10,24,24_270029,"Wejherowo Pomorska 02",0,21906
-10,24,24_270031,"Wejherowo Pomorska 02",0,21906
-10,24,24_270033,"Wejherowo Pomorska 02",0,21906
-10,24,24_270035,"Wejherowo Pomorska 02",0,21906
-10,24,24_270298,"Wejherowo Pomorska 02",0,21906
-10,24,24_270300,"Wejherowo Pomorska 02",0,21906
-10,24,24_270302,"Wejherowo Pomorska 02",0,21906
-10,24,24_270304,"Wejherowo Pomorska 02",0,21906
-10,24,24_270306,"Wejherowo Pomorska 02",0,21906
-10,24,24_270308,"Wejherowo Pomorska 02",0,21906
-10,24,24_270376,"Wejherowo Pomorska 02",0,21906
-10,24,24_270692,"Wejherowo Pomorska 02",0,21906
-10,24,24_270694,"Wejherowo Pomorska 02",0,21906
-10,24,24_270696,"Wejherowo Pomorska 02",0,21906
-10,24,24_270700,"Wejherowo Pomorska 02",0,21906
-10,24,24_270702,"Wejherowo Pomorska 02",0,21906
-10,24,24_270375,"Kębłowo Wiejska 01",1,21964
-10,24,24_270691,"Kębłowo Wiejska 01",1,21964
-10,24,24_270037,"Wejherowo Dworzec PKP 04",0,21965
-10,24,24_270025,"Wejherowo Pomorska 02",0,21966
-10,27,27_272309,"Kębłowo Wiejska 01",1,21905
-10,27,27_272313,"Kębłowo Wiejska 01",1,21905
-10,27,27_272317,"Kębłowo Wiejska 01",1,21905
-10,27,27_272321,"Kębłowo Wiejska 01",1,21905
-10,27,27_272325,"Kębłowo Wiejska 01",1,21905
-10,27,27_272327,"Kębłowo Wiejska 01",1,21905
-10,27,27_272306,"Wejherowo Pomorska 02",0,21906
-10,27,27_272310,"Wejherowo Pomorska 02",0,21906
-10,27,27_272314,"Wejherowo Pomorska 02",0,21906
-10,27,27_272318,"Wejherowo Pomorska 02",0,21906
-10,27,27_272322,"Wejherowo Pomorska 02",0,21906
-10,27,27_272326,"Wejherowo Pomorska 02",0,21906
-10,27,27_272307,"Gościcino Równa 04",1,21963
-10,27,27_272311,"Gościcino Równa 04",1,21963
-10,27,27_272315,"Gościcino Równa 04",1,21963
-10,27,27_272319,"Gościcino Równa 04",1,21963
-10,27,27_272323,"Gościcino Równa 04",1,21963
-10,27,27_272305,"Kębłowo Wiejska 01",1,21964
-10,27,27_272328,"Wejherowo Dworzec PKP 04",0,21965
-10,27,27_272308,"Wejherowo Pomorska 02",0,21967
-10,27,27_272312,"Wejherowo Pomorska 02",0,21967
-10,27,27_272316,"Wejherowo Pomorska 02",0,21967
-10,27,27_272320,"Wejherowo Pomorska 02",0,21967
-10,27,27_272324,"Wejherowo Pomorska 02",0,21967
-10,28,28_271760,"Kębłowo Wiejska 01",1,21905
-10,28,28_271764,"Kębłowo Wiejska 01",1,21905
-10,28,28_271768,"Kębłowo Wiejska 01",1,21905
-10,28,28_271772,"Kębłowo Wiejska 01",1,21905
-10,28,28_271776,"Kębłowo Wiejska 01",1,21905
-10,28,28_271778,"Kębłowo Wiejska 01",1,21905
-10,28,28_271757,"Wejherowo Pomorska 02",0,21906
-10,28,28_271761,"Wejherowo Pomorska 02",0,21906
-10,28,28_271765,"Wejherowo Pomorska 02",0,21906
-10,28,28_271769,"Wejherowo Pomorska 02",0,21906
-10,28,28_271773,"Wejherowo Pomorska 02",0,21906
-10,28,28_271777,"Wejherowo Pomorska 02",0,21906
-10,28,28_271758,"Gościcino Równa 04",1,21963
-10,28,28_271762,"Gościcino Równa 04",1,21963
-10,28,28_271766,"Gościcino Równa 04",1,21963
-10,28,28_271770,"Gościcino Równa 04",1,21963
-10,28,28_271774,"Gościcino Równa 04",1,21963
-10,28,28_271756,"Kębłowo Wiejska 01",1,21964
-10,28,28_271779,"Wejherowo Dworzec PKP 04",0,21965
-10,28,28_271759,"Wejherowo Pomorska 02",0,21967
-10,28,28_271763,"Wejherowo Pomorska 02",0,21967
-10,28,28_271767,"Wejherowo Pomorska 02",0,21967
-10,28,28_271771,"Wejherowo Pomorska 02",0,21967
-10,28,28_271775,"Wejherowo Pomorska 02",0,21967
-11,2,2_272916,"Gniewowo Spacerowa 01",1,22072
-11,2,2_272920,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273032,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273036,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273048,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273052,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273091,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273152,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273181,"Gniewowo Spacerowa 01",1,22072
-11,2,2_273185,"Gniewowo Spacerowa 01",1,22072
-11,2,2_272917,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_273033,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_273037,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_273049,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_273053,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_273182,"Wejherowo Dworzec PKP 03",0,22073
-11,2,2_272921,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22131
-11,2,2_273092,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22131
-11,2,2_273153,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22131
-11,2,2_273186,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22131
-11,24,24_270497,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270529,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270540,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270552,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270556,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270625,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270708,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270712,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270733,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270737,"Gniewowo Spacerowa 01",1,21907
-11,24,24_270498,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270541,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270553,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270557,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270709,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270734,"Wejherowo Dworzec PKP 03",0,21908
-11,24,24_270530,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21968
-11,24,24_270626,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21968
-11,24,24_270713,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21968
-11,24,24_270738,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21968
-11,27,27_272331,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272335,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272339,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272343,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272347,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272351,"Gniewowo Spacerowa 01",1,21907
-11,27,27_272332,"Wejherowo Dworzec PKP 03",0,21908
-11,27,27_272336,"Wejherowo Dworzec PKP 03",0,21908
-11,27,27_272340,"Wejherowo Dworzec PKP 03",0,21908
-11,27,27_272344,"Wejherowo Dworzec PKP 03",0,21908
-11,27,27_272348,"Wejherowo Dworzec PKP 03",0,21908
-11,27,27_272352,"Wejherowo Dworzec PKP 03",0,21908
-11,28,28_271803,"Gniewowo Spacerowa 01",1,21907
-11,28,28_271807,"Gniewowo Spacerowa 01",1,21907
-11,28,28_271811,"Gniewowo Spacerowa 01",1,21907
-11,28,28_271815,"Gniewowo Spacerowa 01",1,21907
-11,28,28_271819,"Gniewowo Spacerowa 01",1,21907
-11,28,28_271804,"Wejherowo Dworzec PKP 03",0,21908
-11,28,28_271808,"Wejherowo Dworzec PKP 03",0,21908
-11,28,28_271812,"Wejherowo Dworzec PKP 03",0,21908
-11,28,28_271816,"Wejherowo Dworzec PKP 03",0,21908
-11,28,28_271820,"Wejherowo Dworzec PKP 03",0,21908
-12,2,2_273064,"Gowino Brzozowa 01",1,22074
-12,2,2_273066,"Gowino Brzozowa 01",1,22074
-12,2,2_273068,"Gowino Brzozowa 01",1,22074
-12,2,2_273070,"Gowino Brzozowa 01",1,22074
-12,2,2_273072,"Gowino Brzozowa 01",1,22074
-12,2,2_273074,"Gowino Brzozowa 01",1,22074
-12,2,2_273076,"Gowino Brzozowa 01",1,22074
-12,2,2_273078,"Gowino Brzozowa 01",1,22074
-12,2,2_273080,"Gowino Brzozowa 01",1,22074
-12,2,2_273082,"Gowino Brzozowa 01",1,22074
-12,2,2_273084,"Gowino Brzozowa 01",1,22074
-12,2,2_273086,"Gowino Brzozowa 01",1,22074
-12,2,2_273088,"Gowino Brzozowa 01",1,22074
-12,2,2_273065,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273067,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273069,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273071,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273073,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273075,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273077,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273079,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273081,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273083,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273085,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273087,"Wejherowo Dworzec PKP 01",0,22075
-12,2,2_273089,"Wejherowo Dworzec PKP 01",0,22075
-12,24,24_270502,"Gowino Brzozowa 01",1,21909
-12,24,24_270504,"Gowino Brzozowa 01",1,21909
-12,24,24_270506,"Gowino Brzozowa 01",1,21909
-12,24,24_270508,"Gowino Brzozowa 01",1,21909
-12,24,24_270510,"Gowino Brzozowa 01",1,21909
-12,24,24_270512,"Gowino Brzozowa 01",1,21909
-12,24,24_270514,"Gowino Brzozowa 01",1,21909
-12,24,24_270516,"Gowino Brzozowa 01",1,21909
-12,24,24_270518,"Gowino Brzozowa 01",1,21909
-12,24,24_270520,"Gowino Brzozowa 01",1,21909
-12,24,24_270522,"Gowino Brzozowa 01",1,21909
-12,24,24_270524,"Gowino Brzozowa 01",1,21909
-12,24,24_270526,"Gowino Brzozowa 01",1,21909
-12,24,24_270533,"Gowino Brzozowa 01",1,21909
-12,24,24_270535,"Gowino Brzozowa 01",1,21909
-12,24,24_270503,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270505,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270507,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270509,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270511,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270513,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270515,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270517,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270519,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270521,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270523,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270525,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270527,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270534,"Wejherowo Dworzec PKP 01",0,21910
-12,24,24_270536,"Wejherowo Dworzec PKP 01",0,21910
-12,27,27_272063,"Gowino Brzozowa 01",1,21909
-12,27,27_272067,"Gowino Brzozowa 01",1,21909
-12,27,27_272212,"Gowino Brzozowa 01",1,21909
-12,27,27_272256,"Gowino Brzozowa 01",1,21909
-12,27,27_272287,"Gowino Brzozowa 01",1,21909
-12,27,27_272064,"Wejherowo Dworzec PKP 01",0,21910
-12,27,27_272068,"Wejherowo Dworzec PKP 01",0,21910
-12,27,27_272213,"Wejherowo Dworzec PKP 01",0,21910
-12,27,27_272257,"Wejherowo Dworzec PKP 01",0,21910
-12,27,27_272288,"Wejherowo Dworzec PKP 01",0,21910
-12,28,28_271579,"Gowino Brzozowa 01",1,21909
-12,28,28_271583,"Gowino Brzozowa 01",1,21909
-12,28,28_271870,"Gowino Brzozowa 01",1,21909
-12,28,28_271890,"Gowino Brzozowa 01",1,21909
-12,28,28_271580,"Wejherowo Dworzec PKP 01",0,21910
-12,28,28_271584,"Wejherowo Dworzec PKP 01",0,21910
-12,28,28_271871,"Wejherowo Dworzec PKP 01",0,21910
-12,28,28_271891,"Wejherowo Dworzec PKP 01",0,21910
-13,2,2_272914,"Kąpino Parkowa 01",1,22076
-13,2,2_272918,"Kąpino Parkowa 01",1,22076
-13,2,2_273034,"Kąpino Parkowa 01",1,22076
-13,2,2_273038,"Kąpino Parkowa 01",1,22076
-13,2,2_273040,"Kąpino Parkowa 01",1,22076
-13,2,2_273042,"Kąpino Parkowa 01",1,22076
-13,2,2_273044,"Kąpino Parkowa 01",1,22076
-13,2,2_273046,"Kąpino Parkowa 01",1,22076
-13,2,2_273050,"Kąpino Parkowa 01",1,22076
-13,2,2_273054,"Kąpino Parkowa 01",1,22076
-13,2,2_273056,"Kąpino Parkowa 01",1,22076
-13,2,2_273058,"Kąpino Parkowa 01",1,22076
-13,2,2_273060,"Kąpino Parkowa 01",1,22076
-13,2,2_273179,"Kąpino Parkowa 01",1,22076
-13,2,2_273183,"Kąpino Parkowa 01",1,22076
-13,2,2_272913,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_272915,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_272919,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273035,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273039,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273041,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273043,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273045,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273047,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273051,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273055,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273057,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273059,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273180,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273184,"Wejherowo Dworzec PKP 03",0,22077
-13,2,2_273061,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22132
-13,24,24_270499,"Kąpino Parkowa 01",1,21911
-13,24,24_270538,"Kąpino Parkowa 01",1,21911
-13,24,24_270542,"Kąpino Parkowa 01",1,21911
-13,24,24_270544,"Kąpino Parkowa 01",1,21911
-13,24,24_270546,"Kąpino Parkowa 01",1,21911
-13,24,24_270548,"Kąpino Parkowa 01",1,21911
-13,24,24_270550,"Kąpino Parkowa 01",1,21911
-13,24,24_270554,"Kąpino Parkowa 01",1,21911
-13,24,24_270558,"Kąpino Parkowa 01",1,21911
-13,24,24_270560,"Kąpino Parkowa 01",1,21911
-13,24,24_270562,"Kąpino Parkowa 01",1,21911
-13,24,24_270564,"Kąpino Parkowa 01",1,21911
-13,24,24_270706,"Kąpino Parkowa 01",1,21911
-13,24,24_270710,"Kąpino Parkowa 01",1,21911
-13,24,24_270731,"Kąpino Parkowa 01",1,21911
-13,24,24_270735,"Kąpino Parkowa 01",1,21911
-13,24,24_270539,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270543,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270545,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270547,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270549,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270551,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270555,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270559,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270561,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270563,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270705,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270707,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270711,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270732,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270736,"Wejherowo Dworzec PKP 03",0,21912
-13,24,24_270500,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21969
-13,24,24_270565,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21969
-13,27,27_272029,"Kąpino Parkowa 01",1,21911
-13,27,27_272333,"Kąpino Parkowa 01",1,21911
-13,27,27_272337,"Kąpino Parkowa 01",1,21911
-13,27,27_272341,"Kąpino Parkowa 01",1,21911
-13,27,27_272345,"Kąpino Parkowa 01",1,21911
-13,27,27_272349,"Kąpino Parkowa 01",1,21911
-13,27,27_272353,"Kąpino Parkowa 01",1,21911
-13,27,27_272355,"Kąpino Parkowa 01",1,21911
-13,27,27_272028,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272334,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272338,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272342,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272346,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272350,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272354,"Wejherowo Dworzec PKP 03",0,21912
-13,27,27_272030,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21969
-13,27,27_272356,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21969
-13,28,28_271801,"Kąpino Parkowa 01",1,21911
-13,28,28_271805,"Kąpino Parkowa 01",1,21911
-13,28,28_271809,"Kąpino Parkowa 01",1,21911
-13,28,28_271813,"Kąpino Parkowa 01",1,21911
-13,28,28_271817,"Kąpino Parkowa 01",1,21911
-13,28,28_271821,"Kąpino Parkowa 01",1,21911
-13,28,28_271802,"Wejherowo Dworzec PKP 03",0,21912
-13,28,28_271806,"Wejherowo Dworzec PKP 03",0,21912
-13,28,28_271810,"Wejherowo Dworzec PKP 03",0,21912
-13,28,28_271814,"Wejherowo Dworzec PKP 03",0,21912
-13,28,28_271818,"Wejherowo Dworzec PKP 03",0,21912
-13,28,28_271822,"Wejherowo Broniewskiego - Dworzec PKP 01",0,21969
-14,24,24_270759,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270761,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270763,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270781,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270783,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270785,"Wejherowo Dworzec PKP 04",1,21913
-14,24,24_270758,"Orle Szkoła 01",0,21914
-14,24,24_270760,"Orle Szkoła 01",0,21914
-14,24,24_270762,"Orle Szkoła 01",0,21914
-14,24,24_270780,"Orle Szkoła 01",0,21914
-14,24,24_270782,"Orle Szkoła 01",0,21914
-14,24,24_270784,"Orle Szkoła 01",0,21914
-16,2,2_272596,"Wejherowo Krofeya 01",1,22078
-16,2,2_272598,"Wejherowo Krofeya 01",1,22078
-16,2,2_272600,"Wejherowo Krofeya 01",1,22078
-16,2,2_272602,"Wejherowo Krofeya 01",1,22078
-16,2,2_272604,"Wejherowo Krofeya 01",1,22078
-16,2,2_272606,"Wejherowo Krofeya 01",1,22078
-16,2,2_272608,"Wejherowo Krofeya 01",1,22078
-16,2,2_272610,"Wejherowo Krofeya 01",1,22078
-16,2,2_272612,"Wejherowo Krofeya 01",1,22078
-16,2,2_272614,"Wejherowo Krofeya 01",1,22078
-16,2,2_272616,"Wejherowo Krofeya 01",1,22078
-16,2,2_272618,"Wejherowo Krofeya 01",1,22078
-16,2,2_272620,"Wejherowo Krofeya 01",1,22078
-16,2,2_272659,"Wejherowo Krofeya 01",1,22078
-16,2,2_272661,"Wejherowo Krofeya 01",1,22078
-16,2,2_272663,"Wejherowo Krofeya 01",1,22078
-16,2,2_272665,"Wejherowo Krofeya 01",1,22078
-16,2,2_272667,"Wejherowo Krofeya 01",1,22078
-16,2,2_272669,"Wejherowo Krofeya 01",1,22078
-16,2,2_272671,"Wejherowo Krofeya 01",1,22078
-16,2,2_272673,"Wejherowo Krofeya 01",1,22078
-16,2,2_272675,"Wejherowo Krofeya 01",1,22078
-16,2,2_272677,"Wejherowo Krofeya 01",1,22078
-16,2,2_272679,"Wejherowo Krofeya 01",1,22078
-16,2,2_272681,"Wejherowo Krofeya 01",1,22078
-16,2,2_272683,"Wejherowo Krofeya 01",1,22078
-16,2,2_272685,"Wejherowo Krofeya 01",1,22078
-16,2,2_272741,"Wejherowo Krofeya 01",1,22078
-16,2,2_272790,"Wejherowo Krofeya 01",1,22078
-16,2,2_272595,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272597,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272599,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272601,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272603,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272605,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272607,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272609,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272611,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272613,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272615,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272617,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272619,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272660,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272662,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272664,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272666,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272668,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272670,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272672,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272674,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272676,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272678,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272680,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272682,"Wejherowo os. Sikorskiego 01",0,22079
-16,2,2_272684,"Wejherowo os. Sikorskiego 01",0,22079
-16,24,24_270156,"Wejherowo Krofeya 01",1,21915
-16,24,24_270158,"Wejherowo Krofeya 01",1,21915
-16,24,24_270160,"Wejherowo Krofeya 01",1,21915
-16,24,24_270162,"Wejherowo Krofeya 01",1,21915
-16,24,24_270164,"Wejherowo Krofeya 01",1,21915
-16,24,24_270166,"Wejherowo Krofeya 01",1,21915
-16,24,24_270168,"Wejherowo Krofeya 01",1,21915
-16,24,24_270170,"Wejherowo Krofeya 01",1,21915
-16,24,24_270172,"Wejherowo Krofeya 01",1,21915
-16,24,24_270174,"Wejherowo Krofeya 01",1,21915
-16,24,24_270176,"Wejherowo Krofeya 01",1,21915
-16,24,24_270178,"Wejherowo Krofeya 01",1,21915
-16,24,24_270180,"Wejherowo Krofeya 01",1,21915
-16,24,24_270219,"Wejherowo Krofeya 01",1,21915
-16,24,24_270221,"Wejherowo Krofeya 01",1,21915
-16,24,24_270223,"Wejherowo Krofeya 01",1,21915
-16,24,24_270225,"Wejherowo Krofeya 01",1,21915
-16,24,24_270227,"Wejherowo Krofeya 01",1,21915
-16,24,24_270229,"Wejherowo Krofeya 01",1,21915
-16,24,24_270231,"Wejherowo Krofeya 01",1,21915
-16,24,24_270233,"Wejherowo Krofeya 01",1,21915
-16,24,24_270235,"Wejherowo Krofeya 01",1,21915
-16,24,24_270237,"Wejherowo Krofeya 01",1,21915
-16,24,24_270239,"Wejherowo Krofeya 01",1,21915
-16,24,24_270241,"Wejherowo Krofeya 01",1,21915
-16,24,24_270243,"Wejherowo Krofeya 01",1,21915
-16,24,24_270245,"Wejherowo Krofeya 01",1,21915
-16,24,24_270323,"Wejherowo Krofeya 01",1,21915
-16,24,24_270372,"Wejherowo Krofeya 01",1,21915
-16,24,24_270155,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270157,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270159,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270161,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270163,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270165,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270167,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270169,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270171,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270173,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270175,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270177,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270179,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270220,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270222,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270224,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270226,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270228,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270230,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270232,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270234,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270236,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270238,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270240,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270242,"Wejherowo os. Sikorskiego 01",0,21916
-16,24,24_270244,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272033,"Wejherowo Krofeya 01",1,21915
-16,27,27_272035,"Wejherowo Krofeya 01",1,21915
-16,27,27_272037,"Wejherowo Krofeya 01",1,21915
-16,27,27_272039,"Wejherowo Krofeya 01",1,21915
-16,27,27_272041,"Wejherowo Krofeya 01",1,21915
-16,27,27_272043,"Wejherowo Krofeya 01",1,21915
-16,27,27_272045,"Wejherowo Krofeya 01",1,21915
-16,27,27_272047,"Wejherowo Krofeya 01",1,21915
-16,27,27_272049,"Wejherowo Krofeya 01",1,21915
-16,27,27_272111,"Wejherowo Krofeya 01",1,21915
-16,27,27_272138,"Wejherowo Krofeya 01",1,21915
-16,27,27_272269,"Wejherowo Krofeya 01",1,21915
-16,27,27_272271,"Wejherowo Krofeya 01",1,21915
-16,27,27_272273,"Wejherowo Krofeya 01",1,21915
-16,27,27_272275,"Wejherowo Krofeya 01",1,21915
-16,27,27_272277,"Wejherowo Krofeya 01",1,21915
-16,27,27_272279,"Wejherowo Krofeya 01",1,21915
-16,27,27_272281,"Wejherowo Krofeya 01",1,21915
-16,27,27_272283,"Wejherowo Krofeya 01",1,21915
-16,27,27_272285,"Wejherowo Krofeya 01",1,21915
-16,27,27_272032,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272034,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272036,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272038,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272040,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272042,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272044,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272046,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272048,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272268,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272270,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272272,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272274,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272276,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272278,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272280,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272282,"Wejherowo os. Sikorskiego 01",0,21916
-16,27,27_272284,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271626,"Wejherowo Krofeya 01",1,21915
-16,28,28_271653,"Wejherowo Krofeya 01",1,21915
-16,28,28_271841,"Wejherowo Krofeya 01",1,21915
-16,28,28_271843,"Wejherowo Krofeya 01",1,21915
-16,28,28_271845,"Wejherowo Krofeya 01",1,21915
-16,28,28_271847,"Wejherowo Krofeya 01",1,21915
-16,28,28_271849,"Wejherowo Krofeya 01",1,21915
-16,28,28_271851,"Wejherowo Krofeya 01",1,21915
-16,28,28_271853,"Wejherowo Krofeya 01",1,21915
-16,28,28_271931,"Wejherowo Krofeya 01",1,21915
-16,28,28_271933,"Wejherowo Krofeya 01",1,21915
-16,28,28_271935,"Wejherowo Krofeya 01",1,21915
-16,28,28_271937,"Wejherowo Krofeya 01",1,21915
-16,28,28_271939,"Wejherowo Krofeya 01",1,21915
-16,28,28_271941,"Wejherowo Krofeya 01",1,21915
-16,28,28_271943,"Wejherowo Krofeya 01",1,21915
-16,28,28_271840,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271842,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271844,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271846,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271848,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271850,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271852,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271930,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271932,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271934,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271936,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271938,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271940,"Wejherowo os. Sikorskiego 01",0,21916
-16,28,28_271942,"Wejherowo os. Sikorskiego 01",0,21916
-17,2,2_272873,"Reda Cmentarz 01",1,22080
-17,2,2_272875,"Reda Cmentarz 01",1,22080
-17,2,2_272877,"Reda Cmentarz 01",1,22080
-17,2,2_272879,"Reda Cmentarz 01",1,22080
-17,2,2_272881,"Reda Cmentarz 01",1,22080
-17,2,2_272883,"Reda Cmentarz 01",1,22080
-17,2,2_272885,"Reda Cmentarz 01",1,22080
-17,2,2_272887,"Reda Cmentarz 01",1,22080
-17,2,2_272889,"Reda Cmentarz 01",1,22080
-17,2,2_272891,"Reda Cmentarz 01",1,22080
-17,2,2_272893,"Reda Cmentarz 01",1,22080
-17,2,2_272895,"Reda Cmentarz 01",1,22080
-17,2,2_272872,"Reda Dworzec PKP 04",0,22081
-17,2,2_272874,"Reda Dworzec PKP 04",0,22081
-17,2,2_272876,"Reda Dworzec PKP 04",0,22081
-17,2,2_272878,"Reda Dworzec PKP 04",0,22081
-17,2,2_272880,"Reda Dworzec PKP 04",0,22081
-17,2,2_272882,"Reda Dworzec PKP 04",0,22081
-17,2,2_272884,"Reda Dworzec PKP 04",0,22081
-17,2,2_272886,"Reda Dworzec PKP 04",0,22081
-17,2,2_272888,"Reda Dworzec PKP 04",0,22081
-17,2,2_272890,"Reda Dworzec PKP 04",0,22081
-17,2,2_272892,"Reda Dworzec PKP 04",0,22081
-17,2,2_272894,"Reda Dworzec PKP 04",0,22081
-17,2,2_272896,"Reda Dworzec PKP 04",0,22081
-17,24,24_270665,"Reda Cmentarz 01",1,21917
-17,24,24_270667,"Reda Cmentarz 01",1,21917
-17,24,24_270669,"Reda Cmentarz 01",1,21917
-17,24,24_270671,"Reda Cmentarz 01",1,21917
-17,24,24_270673,"Reda Cmentarz 01",1,21917
-17,24,24_270675,"Reda Cmentarz 01",1,21917
-17,24,24_270677,"Reda Cmentarz 01",1,21917
-17,24,24_270679,"Reda Cmentarz 01",1,21917
-17,24,24_270681,"Reda Cmentarz 01",1,21917
-17,24,24_270683,"Reda Cmentarz 01",1,21917
-17,24,24_270685,"Reda Cmentarz 01",1,21917
-17,24,24_270687,"Reda Cmentarz 01",1,21917
-17,24,24_270664,"Reda Dworzec PKP 04",0,21918
-17,24,24_270666,"Reda Dworzec PKP 04",0,21918
-17,24,24_270668,"Reda Dworzec PKP 04",0,21918
-17,24,24_270670,"Reda Dworzec PKP 04",0,21918
-17,24,24_270672,"Reda Dworzec PKP 04",0,21918
-17,24,24_270674,"Reda Dworzec PKP 04",0,21918
-17,24,24_270676,"Reda Dworzec PKP 04",0,21918
-17,24,24_270678,"Reda Dworzec PKP 04",0,21918
-17,24,24_270680,"Reda Dworzec PKP 04",0,21918
-17,24,24_270682,"Reda Dworzec PKP 04",0,21918
-17,24,24_270684,"Reda Dworzec PKP 04",0,21918
-17,24,24_270686,"Reda Dworzec PKP 04",0,21918
-17,24,24_270688,"Reda Dworzec PKP 04",0,21918
-17,27,27_272360,"Reda Cmentarz 01",1,21917
-17,27,27_272363,"Reda Cmentarz 01",1,21917
-17,27,27_272366,"Reda Cmentarz 01",1,21917
-17,27,27_272369,"Reda Cmentarz 01",1,21917
-17,27,27_272372,"Reda Cmentarz 01",1,21917
-17,27,27_272361,"Reda Dworzec PKP 04",0,21918
-17,27,27_272364,"Reda Dworzec PKP 04",0,21918
-17,27,27_272367,"Reda Dworzec PKP 04",0,21918
-17,27,27_272370,"Reda Dworzec PKP 04",0,21918
-17,27,27_272373,"Reda Dworzec PKP 04",0,21918
-17,28,28_271827,"Reda Cmentarz 01",1,21917
-17,28,28_271830,"Reda Cmentarz 01",1,21917
-17,28,28_271833,"Reda Cmentarz 01",1,21917
-17,28,28_271836,"Reda Cmentarz 01",1,21917
-17,28,28_271825,"Reda Dworzec PKP 04",0,21918
-17,28,28_271828,"Reda Dworzec PKP 04",0,21918
-17,28,28_271831,"Reda Dworzec PKP 04",0,21918
-17,28,28_271834,"Reda Dworzec PKP 04",0,21918
-17,28,28_271837,"Reda Dworzec PKP 04",0,21918
-18,2,2_272818,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272820,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272822,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272824,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272826,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272828,"Rumia C.H. ""Port Rumia"" 01",1,22133
-18,2,2_272829,"Reda Ciechocino 02",1,22134
-18,2,2_272817,"Reda Dworzec PKP 04",1,22135
-18,2,2_272819,"Reda Dworzec PKP 04",1,22135
-18,2,2_272821,"Reda Dworzec PKP 04",1,22135
-18,2,2_272823,"Reda Dworzec PKP 04",1,22135
-18,2,2_272825,"Reda Dworzec PKP 04",1,22135
-18,2,2_272827,"Reda Dworzec PKP 04",1,22135
-18,2,2_272816,"Rumia C.H. ""Port Rumia"" 01",1,22136
-18,2,2_272815,"Rumia C.H. ""Port Rumia"" 01",1,22137
-18,24,24_270420,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270422,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270424,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270426,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270428,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270430,"Rumia C.H. ""Port Rumia"" 01",1,21970
-18,24,24_270431,"Reda Ciechocino 02",1,21971
-18,24,24_270419,"Reda Dworzec PKP 04",1,21972
-18,24,24_270421,"Reda Dworzec PKP 04",1,21972
-18,24,24_270423,"Reda Dworzec PKP 04",1,21972
-18,24,24_270425,"Reda Dworzec PKP 04",1,21972
-18,24,24_270427,"Reda Dworzec PKP 04",1,21972
-18,24,24_270429,"Reda Dworzec PKP 04",1,21972
-18,24,24_270418,"Rumia C.H. ""Port Rumia"" 01",1,21973
-18,24,24_270417,"Rumia C.H. ""Port Rumia"" 01",1,21974
-18,27,27_272359,"Reda Dworzec PKP 04",1,21919
-18,27,27_272362,"Reda Dworzec PKP 04",1,21919
-18,27,27_272365,"Reda Dworzec PKP 04",1,21919
-18,27,27_272368,"Reda Dworzec PKP 04",1,21919
-18,27,27_272371,"Reda Dworzec PKP 04",1,21919
-18,27,27_272421,"Reda Dworzec PKP 04",1,21919
-18,28,28_271826,"Reda Dworzec PKP 04",1,21919
-18,28,28_271829,"Reda Dworzec PKP 04",1,21919
-18,28,28_271832,"Reda Dworzec PKP 04",1,21919
-18,28,28_271835,"Reda Dworzec PKP 04",1,21919
+1,24,24_275713,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275717,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275735,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275739,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275743,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275747,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275753,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275755,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275757,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275790,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275794,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275798,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275802,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275879,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275901,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275905,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276131,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276139,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276143,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276326,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276413,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276441,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276447,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_276469,"Bolszewo Leśna - Szkoła 02",1,22690
+1,24,24_275710,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275714,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275736,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275740,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275746,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275750,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275754,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275756,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275787,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275793,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275797,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275801,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275803,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275882,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275902,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276130,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276136,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276140,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276262,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276327,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276414,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276446,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276450,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276468,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_276470,"Wejherowo os. Fenikowskiego 01",0,22691
+1,24,24_275711,"Góra Szkolna 02",1,22722
+1,24,24_275715,"Góra Szkolna 02",1,22722
+1,24,24_275737,"Góra Szkolna 02",1,22722
+1,24,24_275741,"Góra Szkolna 02",1,22722
+1,24,24_275751,"Góra Szkolna 02",1,22722
+1,24,24_275788,"Góra Szkolna 02",1,22722
+1,24,24_275804,"Góra Szkolna 02",1,22722
+1,24,24_275903,"Góra Szkolna 02",1,22722
+1,24,24_276137,"Góra Szkolna 02",1,22722
+1,24,24_276141,"Góra Szkolna 02",1,22722
+1,24,24_276324,"Góra Szkolna 02",1,22722
+1,24,24_276328,"Góra Szkolna 02",1,22722
+1,24,24_276411,"Góra Szkolna 02",1,22722
+1,24,24_276471,"Góra Szkolna 02",1,22722
+1,24,24_275877,"Góra Szkolna 02",1,22723
+1,24,24_275712,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275716,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275738,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275742,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275752,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275789,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275878,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275904,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276138,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276142,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276325,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276329,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276412,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_276472,"Wejherowo os. Fenikowskiego 01",0,22725
+1,24,24_275805,"Wejherowo Tartaczna 04 n/ż",0,22726
+1,24,24_275734,"Wejherowo os. Fenikowskiego 01",0,22727
+1,24,24_275758,"Wejherowo Tartaczna 04 n/ż",0,22728
+1,24,24_275906,"Wejherowo Tartaczna 04 n/ż",0,22728
+1,27,27_278530,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278675,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278679,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278740,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278742,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278748,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278750,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278843,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278845,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278851,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278873,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278875,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278879,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278881,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278883,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278885,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278887,"Bolszewo Leśna - Szkoła 02",1,22690
+1,27,27_278473,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278531,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278676,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278741,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278747,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278749,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278842,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278844,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278850,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278872,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278874,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278878,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278880,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278882,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278884,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278886,"Wejherowo os. Fenikowskiego 01",0,22691
+1,27,27_278528,"Góra Szkolna 02",1,22722
+1,27,27_278665,"Góra Szkolna 02",1,22722
+1,27,27_278667,"Góra Szkolna 02",1,22722
+1,27,27_278669,"Góra Szkolna 02",1,22722
+1,27,27_278671,"Góra Szkolna 02",1,22722
+1,27,27_278673,"Góra Szkolna 02",1,22722
+1,27,27_278677,"Góra Szkolna 02",1,22722
+1,27,27_278663,"Góra Szkolna 02",1,22724
+1,27,27_278529,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278664,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278666,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278668,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278670,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278672,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278674,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278678,"Wejherowo os. Fenikowskiego 01",0,22725
+1,27,27_278739,"Wejherowo os. Fenikowskiego 01",0,22727
+1,27,27_278680,"Wejherowo Tartaczna 04 n/ż",0,22728
+1,27,27_278888,"Wejherowo Tartaczna 04 n/ż",0,22728
+1,28,28_277289,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277430,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277432,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277434,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277436,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277438,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277440,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277442,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277444,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277475,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277477,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277479,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277481,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277483,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277485,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277489,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277579,"Bolszewo Leśna - Szkoła 02",1,22690
+1,28,28_277240,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277290,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277431,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277433,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277435,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277437,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277439,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277441,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277443,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277474,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277476,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277478,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277480,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277482,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277484,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277486,"Wejherowo os. Fenikowskiego 01",0,22691
+1,28,28_277287,"Góra Szkolna 02",1,22722
+1,28,28_277428,"Góra Szkolna 02",1,22722
+1,28,28_277487,"Góra Szkolna 02",1,22722
+1,28,28_277571,"Góra Szkolna 02",1,22722
+1,28,28_277573,"Góra Szkolna 02",1,22722
+1,28,28_277575,"Góra Szkolna 02",1,22722
+1,28,28_277577,"Góra Szkolna 02",1,22722
+1,28,28_277569,"Góra Szkolna 02",1,22723
+1,28,28_277288,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277429,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277488,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277570,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277572,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277574,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277576,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277578,"Wejherowo os. Fenikowskiego 01",0,22725
+1,28,28_277427,"Wejherowo os. Fenikowskiego 01",0,22727
+1,28,28_277445,"Wejherowo Tartaczna 04 n/ż",0,22728
+1,28,28_277490,"Wejherowo Tartaczna 04 n/ż",0,22728
+2,24,24_275970,"Wejherowo Szpital 02",1,22692
+2,24,24_275971,"Wejherowo Szpital 02",1,22692
+2,24,24_275972,"Wejherowo Szpital 02",1,22692
+2,24,24_275973,"Wejherowo Szpital 02",1,22692
+2,24,24_275974,"Wejherowo Szpital 02",1,22692
+2,24,24_275975,"Wejherowo Szpital 02",1,22692
+2,24,24_275976,"Wejherowo Szpital 02",1,22692
+2,24,24_275977,"Wejherowo Szpital 02",1,22692
+2,24,24_275984,"Wejherowo Szpital 02",1,22692
+2,24,24_275985,"Wejherowo Szpital 02",1,22692
+2,24,24_275986,"Wejherowo Szpital 02",1,22692
+2,24,24_275987,"Wejherowo Szpital 02",1,22692
+2,24,24_275988,"Wejherowo Szpital 02",1,22692
+2,24,24_275989,"Wejherowo Szpital 02",1,22692
+2,24,24_276072,"Wejherowo Szpital 02",1,22692
+2,24,24_276073,"Wejherowo Szpital 02",1,22692
+2,24,24_276074,"Wejherowo Szpital 02",1,22692
+2,24,24_276075,"Wejherowo Szpital 02",1,22692
+2,24,24_276076,"Wejherowo Szpital 02",1,22692
+2,24,24_276077,"Wejherowo Szpital 02",1,22692
+2,24,24_276078,"Wejherowo Szpital 02",1,22692
+2,24,24_276079,"Wejherowo Szpital 02",1,22692
+2,24,24_276080,"Wejherowo Szpital 02",1,22692
+2,24,24_276081,"Wejherowo Szpital 02",1,22692
+2,24,24_276169,"Wejherowo Szpital 02",1,22692
+2,24,24_276170,"Wejherowo Szpital 02",1,22692
+2,24,24_276171,"Wejherowo Szpital 02",1,22692
+2,24,24_276172,"Wejherowo Szpital 02",1,22692
+2,24,24_276173,"Wejherowo Szpital 02",1,22692
+2,24,24_276174,"Wejherowo Szpital 02",1,22692
+2,24,24_276175,"Wejherowo Szpital 02",1,22692
+2,24,24_276176,"Wejherowo Szpital 02",1,22692
+2,24,24_276177,"Wejherowo Szpital 02",1,22692
+2,24,24_276178,"Wejherowo Szpital 02",1,22692
+2,24,24_276179,"Wejherowo Szpital 02",1,22692
+2,24,24_276180,"Wejherowo Szpital 02",1,22692
+2,24,24_276181,"Wejherowo Szpital 02",1,22692
+2,24,24_276182,"Wejherowo Szpital 02",1,22692
+2,24,24_276183,"Wejherowo Szpital 02",1,22692
+2,24,24_276184,"Wejherowo Szpital 02",1,22692
+2,24,24_276271,"Wejherowo Szpital 02",1,22692
+2,24,24_276272,"Wejherowo Szpital 02",1,22692
+2,24,24_276273,"Wejherowo Szpital 02",1,22692
+2,24,24_276274,"Wejherowo Szpital 02",1,22692
+2,24,24_276275,"Wejherowo Szpital 02",1,22692
+2,24,24_276276,"Wejherowo Szpital 02",1,22692
+2,24,24_276277,"Wejherowo Szpital 02",1,22692
+2,24,24_276278,"Wejherowo Szpital 02",1,22692
+2,24,24_276279,"Wejherowo Szpital 02",1,22692
+2,24,24_276336,"Wejherowo Szpital 02",1,22692
+2,24,24_276337,"Wejherowo Szpital 02",1,22692
+2,24,24_276338,"Wejherowo Szpital 02",1,22692
+2,24,24_276341,"Wejherowo Szpital 02",1,22692
+2,24,24_276342,"Wejherowo Szpital 02",1,22692
+2,24,24_276355,"Wejherowo Szpital 02",1,22692
+2,24,24_276356,"Wejherowo Szpital 02",1,22692
+2,24,24_276462,"Wejherowo Szpital 02",1,22692
+2,24,24_276463,"Wejherowo Szpital 02",1,22692
+2,24,24_276464,"Wejherowo Szpital 02",1,22692
+2,24,24_276465,"Wejherowo Szpital 02",1,22692
+2,24,24_276168,"Wejherowo Szpital 02",1,22729
+2,27,27_278504,"Wejherowo Szpital 02",1,22692
+2,27,27_278505,"Wejherowo Szpital 02",1,22692
+2,27,27_278506,"Wejherowo Szpital 02",1,22692
+2,27,27_278507,"Wejherowo Szpital 02",1,22692
+2,27,27_278518,"Wejherowo Szpital 02",1,22692
+2,27,27_278519,"Wejherowo Szpital 02",1,22692
+2,27,27_278520,"Wejherowo Szpital 02",1,22692
+2,27,27_278521,"Wejherowo Szpital 02",1,22692
+2,27,27_278522,"Wejherowo Szpital 02",1,22692
+2,27,27_278523,"Wejherowo Szpital 02",1,22692
+2,27,27_278524,"Wejherowo Szpital 02",1,22692
+2,27,27_278525,"Wejherowo Szpital 02",1,22692
+2,27,27_278634,"Wejherowo Szpital 02",1,22692
+2,27,27_278639,"Wejherowo Szpital 02",1,22692
+2,27,27_278640,"Wejherowo Szpital 02",1,22692
+2,27,27_278641,"Wejherowo Szpital 02",1,22692
+2,27,27_278644,"Wejherowo Szpital 02",1,22692
+2,27,27_278645,"Wejherowo Szpital 02",1,22692
+2,27,27_278648,"Wejherowo Szpital 02",1,22692
+2,27,27_278649,"Wejherowo Szpital 02",1,22692
+2,27,27_278707,"Wejherowo Szpital 02",1,22692
+2,27,27_278710,"Wejherowo Szpital 02",1,22692
+2,27,27_278711,"Wejherowo Szpital 02",1,22692
+2,27,27_278829,"Wejherowo Szpital 02",1,22692
+2,27,27_278832,"Wejherowo Szpital 02",1,22692
+2,27,27_278833,"Wejherowo Szpital 02",1,22692
+2,27,27_278834,"Wejherowo Szpital 02",1,22692
+2,27,27_278891,"Wejherowo Szpital 02",1,22692
+2,27,27_278892,"Wejherowo Szpital 02",1,22692
+2,27,27_278893,"Wejherowo Szpital 02",1,22692
+2,27,27_278894,"Wejherowo Szpital 02",1,22692
+2,27,27_278895,"Wejherowo Szpital 02",1,22692
+2,27,27_278898,"Wejherowo Szpital 02",1,22692
+2,27,27_278905,"Wejherowo Szpital 02",1,22692
+2,27,27_278908,"Wejherowo Szpital 02",1,22692
+2,27,27_278909,"Wejherowo Szpital 02",1,22692
+2,27,27_278912,"Wejherowo Szpital 02",1,22692
+2,27,27_278913,"Wejherowo Szpital 02",1,22692
+2,27,27_278633,"Wejherowo Szpital 02",1,22729
+2,27,27_278706,"Wejherowo Szpital 02",1,22729
+2,28,28_277264,"Wejherowo Szpital 02",1,22692
+2,28,28_277265,"Wejherowo Szpital 02",1,22692
+2,28,28_277266,"Wejherowo Szpital 02",1,22692
+2,28,28_277267,"Wejherowo Szpital 02",1,22692
+2,28,28_277278,"Wejherowo Szpital 02",1,22692
+2,28,28_277279,"Wejherowo Szpital 02",1,22692
+2,28,28_277280,"Wejherowo Szpital 02",1,22692
+2,28,28_277281,"Wejherowo Szpital 02",1,22692
+2,28,28_277282,"Wejherowo Szpital 02",1,22692
+2,28,28_277283,"Wejherowo Szpital 02",1,22692
+2,28,28_277284,"Wejherowo Szpital 02",1,22692
+2,28,28_277373,"Wejherowo Szpital 02",1,22692
+2,28,28_277378,"Wejherowo Szpital 02",1,22692
+2,28,28_277379,"Wejherowo Szpital 02",1,22692
+2,28,28_277380,"Wejherowo Szpital 02",1,22692
+2,28,28_277383,"Wejherowo Szpital 02",1,22692
+2,28,28_277384,"Wejherowo Szpital 02",1,22692
+2,28,28_277387,"Wejherowo Szpital 02",1,22692
+2,28,28_277388,"Wejherowo Szpital 02",1,22692
+2,28,28_277553,"Wejherowo Szpital 02",1,22692
+2,28,28_277556,"Wejherowo Szpital 02",1,22692
+2,28,28_277557,"Wejherowo Szpital 02",1,22692
+2,28,28_277558,"Wejherowo Szpital 02",1,22692
+2,28,28_277585,"Wejherowo Szpital 02",1,22692
+2,28,28_277588,"Wejherowo Szpital 02",1,22692
+2,28,28_277589,"Wejherowo Szpital 02",1,22692
+2,28,28_277638,"Wejherowo Szpital 02",1,22692
+2,28,28_277639,"Wejherowo Szpital 02",1,22692
+2,28,28_277640,"Wejherowo Szpital 02",1,22692
+2,28,28_277641,"Wejherowo Szpital 02",1,22692
+2,28,28_277642,"Wejherowo Szpital 02",1,22692
+2,28,28_277645,"Wejherowo Szpital 02",1,22692
+2,28,28_277662,"Wejherowo Szpital 02",1,22692
+2,28,28_277665,"Wejherowo Szpital 02",1,22692
+2,28,28_277666,"Wejherowo Szpital 02",1,22692
+2,28,28_277669,"Wejherowo Szpital 02",1,22692
+2,28,28_277670,"Wejherowo Szpital 02",1,22692
+2,28,28_277372,"Wejherowo Szpital 02",1,22729
+2,28,28_277584,"Wejherowo Szpital 02",1,22729
+3,24,24_275763,"Gościcino Robakowska 02",1,22693
+3,24,24_275765,"Gościcino Robakowska 02",1,22693
+3,24,24_275767,"Gościcino Robakowska 02",1,22693
+3,24,24_275769,"Gościcino Robakowska 02",1,22693
+3,24,24_275771,"Gościcino Robakowska 02",1,22693
+3,24,24_275773,"Gościcino Robakowska 02",1,22693
+3,24,24_275775,"Gościcino Robakowska 02",1,22693
+3,24,24_275777,"Gościcino Robakowska 02",1,22693
+3,24,24_275779,"Gościcino Robakowska 02",1,22693
+3,24,24_275781,"Gościcino Robakowska 02",1,22693
+3,24,24_275783,"Gościcino Robakowska 02",1,22693
+3,24,24_275911,"Gościcino Robakowska 02",1,22693
+3,24,24_276007,"Gościcino Robakowska 02",1,22693
+3,24,24_276009,"Gościcino Robakowska 02",1,22693
+3,24,24_276011,"Gościcino Robakowska 02",1,22693
+3,24,24_276013,"Gościcino Robakowska 02",1,22693
+3,24,24_276015,"Gościcino Robakowska 02",1,22693
+3,24,24_276042,"Gościcino Robakowska 02",1,22693
+3,24,24_276044,"Gościcino Robakowska 02",1,22693
+3,24,24_276046,"Gościcino Robakowska 02",1,22693
+3,24,24_276048,"Gościcino Robakowska 02",1,22693
+3,24,24_276050,"Gościcino Robakowska 02",1,22693
+3,24,24_276052,"Gościcino Robakowska 02",1,22693
+3,24,24_276054,"Gościcino Robakowska 02",1,22693
+3,24,24_276056,"Gościcino Robakowska 02",1,22693
+3,24,24_276058,"Gościcino Robakowska 02",1,22693
+3,24,24_276060,"Gościcino Robakowska 02",1,22693
+3,24,24_276062,"Gościcino Robakowska 02",1,22693
+3,24,24_276064,"Gościcino Robakowska 02",1,22693
+3,24,24_276312,"Gościcino Robakowska 02",1,22693
+3,24,24_276314,"Gościcino Robakowska 02",1,22693
+3,24,24_276316,"Gościcino Robakowska 02",1,22693
+3,24,24_275762,"Wejherowo Odrębna 04",0,22694
+3,24,24_275764,"Wejherowo Odrębna 04",0,22694
+3,24,24_275766,"Wejherowo Odrębna 04",0,22694
+3,24,24_275772,"Wejherowo Odrębna 04",0,22694
+3,24,24_275774,"Wejherowo Odrębna 04",0,22694
+3,24,24_275776,"Wejherowo Odrębna 04",0,22694
+3,24,24_275778,"Wejherowo Odrębna 04",0,22694
+3,24,24_275780,"Wejherowo Odrębna 04",0,22694
+3,24,24_275782,"Wejherowo Odrębna 04",0,22694
+3,24,24_275910,"Wejherowo Odrębna 04",0,22694
+3,24,24_276006,"Wejherowo Odrębna 04",0,22694
+3,24,24_276008,"Wejherowo Odrębna 04",0,22694
+3,24,24_276010,"Wejherowo Odrębna 04",0,22694
+3,24,24_276012,"Wejherowo Odrębna 04",0,22694
+3,24,24_276014,"Wejherowo Odrębna 04",0,22694
+3,24,24_276041,"Wejherowo Odrębna 04",0,22694
+3,24,24_276043,"Wejherowo Odrębna 04",0,22694
+3,24,24_276045,"Wejherowo Odrębna 04",0,22694
+3,24,24_276047,"Wejherowo Odrębna 04",0,22694
+3,24,24_276049,"Wejherowo Odrębna 04",0,22694
+3,24,24_276051,"Wejherowo Odrębna 04",0,22694
+3,24,24_276053,"Wejherowo Odrębna 04",0,22694
+3,24,24_276055,"Wejherowo Odrębna 04",0,22694
+3,24,24_276057,"Wejherowo Odrębna 04",0,22694
+3,24,24_276059,"Wejherowo Odrębna 04",0,22694
+3,24,24_276061,"Wejherowo Odrębna 04",0,22694
+3,24,24_276063,"Wejherowo Odrębna 04",0,22694
+3,24,24_276311,"Wejherowo Odrębna 04",0,22694
+3,24,24_276315,"Wejherowo Odrębna 04",0,22694
+3,24,24_275761,"Gościcino Robakowska 02",1,22730
+3,24,24_275909,"Gościcino Robakowska 02",1,22730
+3,24,24_276005,"Gościcino Robakowska 02",1,22730
+3,24,24_276040,"Gościcino Robakowska 02",1,22730
+3,24,24_275912,"Wejherowo os. Sikorskiego 01",0,22731
+3,24,24_276016,"Wejherowo os. Sikorskiego 01",0,22731
+3,24,24_276065,"Wejherowo os. Sikorskiego 01",0,22731
+3,24,24_275784,"Bolszewo Zamostna 04",0,22732
+3,24,24_276317,"Bolszewo Zamostna 04",0,22732
+3,24,24_275768,"Wejherowo Odrębna 04",0,22733
+3,24,24_275770,"Wejherowo Odrębna 04",0,22733
+3,24,24_276313,"Wejherowo Odrębna 04",0,22733
+3,27,27_278533,"Gościcino Robakowska 02",1,22693
+3,27,27_278535,"Gościcino Robakowska 02",1,22693
+3,27,27_278537,"Gościcino Robakowska 02",1,22693
+3,27,27_278539,"Gościcino Robakowska 02",1,22693
+3,27,27_278541,"Gościcino Robakowska 02",1,22693
+3,27,27_278543,"Gościcino Robakowska 02",1,22693
+3,27,27_278545,"Gościcino Robakowska 02",1,22693
+3,27,27_278547,"Gościcino Robakowska 02",1,22693
+3,27,27_278549,"Gościcino Robakowska 02",1,22693
+3,27,27_278551,"Gościcino Robakowska 02",1,22693
+3,27,27_278553,"Gościcino Robakowska 02",1,22693
+3,27,27_278555,"Gościcino Robakowska 02",1,22693
+3,27,27_278557,"Gościcino Robakowska 02",1,22693
+3,27,27_278564,"Gościcino Robakowska 02",1,22693
+3,27,27_278566,"Gościcino Robakowska 02",1,22693
+3,27,27_278568,"Gościcino Robakowska 02",1,22693
+3,27,27_278570,"Gościcino Robakowska 02",1,22693
+3,27,27_278572,"Gościcino Robakowska 02",1,22693
+3,27,27_278574,"Gościcino Robakowska 02",1,22693
+3,27,27_278576,"Gościcino Robakowska 02",1,22693
+3,27,27_278578,"Gościcino Robakowska 02",1,22693
+3,27,27_278580,"Gościcino Robakowska 02",1,22693
+3,27,27_278582,"Gościcino Robakowska 02",1,22693
+3,27,27_278584,"Gościcino Robakowska 02",1,22693
+3,27,27_278534,"Wejherowo Odrębna 04",0,22694
+3,27,27_278536,"Wejherowo Odrębna 04",0,22694
+3,27,27_278538,"Wejherowo Odrębna 04",0,22694
+3,27,27_278540,"Wejherowo Odrębna 04",0,22694
+3,27,27_278542,"Wejherowo Odrębna 04",0,22694
+3,27,27_278544,"Wejherowo Odrębna 04",0,22694
+3,27,27_278546,"Wejherowo Odrębna 04",0,22694
+3,27,27_278548,"Wejherowo Odrębna 04",0,22694
+3,27,27_278550,"Wejherowo Odrębna 04",0,22694
+3,27,27_278552,"Wejherowo Odrębna 04",0,22694
+3,27,27_278554,"Wejherowo Odrębna 04",0,22694
+3,27,27_278556,"Wejherowo Odrębna 04",0,22694
+3,27,27_278563,"Wejherowo Odrębna 04",0,22694
+3,27,27_278565,"Wejherowo Odrębna 04",0,22694
+3,27,27_278567,"Wejherowo Odrębna 04",0,22694
+3,27,27_278569,"Wejherowo Odrębna 04",0,22694
+3,27,27_278571,"Wejherowo Odrębna 04",0,22694
+3,27,27_278573,"Wejherowo Odrębna 04",0,22694
+3,27,27_278575,"Wejherowo Odrębna 04",0,22694
+3,27,27_278577,"Wejherowo Odrębna 04",0,22694
+3,27,27_278579,"Wejherowo Odrębna 04",0,22694
+3,27,27_278581,"Wejherowo Odrębna 04",0,22694
+3,27,27_278583,"Wejherowo Odrębna 04",0,22694
+3,27,27_278562,"Gościcino Robakowska 02",1,22730
+3,27,27_278558,"Wejherowo os. Sikorskiego 01",0,22731
+3,27,27_278585,"Wejherowo os. Sikorskiego 01",0,22731
+3,28,28_277292,"Gościcino Robakowska 02",1,22693
+3,28,28_277294,"Gościcino Robakowska 02",1,22693
+3,28,28_277296,"Gościcino Robakowska 02",1,22693
+3,28,28_277298,"Gościcino Robakowska 02",1,22693
+3,28,28_277300,"Gościcino Robakowska 02",1,22693
+3,28,28_277302,"Gościcino Robakowska 02",1,22693
+3,28,28_277304,"Gościcino Robakowska 02",1,22693
+3,28,28_277306,"Gościcino Robakowska 02",1,22693
+3,28,28_277308,"Gościcino Robakowska 02",1,22693
+3,28,28_277310,"Gościcino Robakowska 02",1,22693
+3,28,28_277312,"Gościcino Robakowska 02",1,22693
+3,28,28_277314,"Gościcino Robakowska 02",1,22693
+3,28,28_277316,"Gościcino Robakowska 02",1,22693
+3,28,28_277323,"Gościcino Robakowska 02",1,22693
+3,28,28_277325,"Gościcino Robakowska 02",1,22693
+3,28,28_277327,"Gościcino Robakowska 02",1,22693
+3,28,28_277329,"Gościcino Robakowska 02",1,22693
+3,28,28_277331,"Gościcino Robakowska 02",1,22693
+3,28,28_277333,"Gościcino Robakowska 02",1,22693
+3,28,28_277335,"Gościcino Robakowska 02",1,22693
+3,28,28_277337,"Gościcino Robakowska 02",1,22693
+3,28,28_277339,"Gościcino Robakowska 02",1,22693
+3,28,28_277341,"Gościcino Robakowska 02",1,22693
+3,28,28_277343,"Gościcino Robakowska 02",1,22693
+3,28,28_277293,"Wejherowo Odrębna 04",0,22694
+3,28,28_277295,"Wejherowo Odrębna 04",0,22694
+3,28,28_277297,"Wejherowo Odrębna 04",0,22694
+3,28,28_277299,"Wejherowo Odrębna 04",0,22694
+3,28,28_277301,"Wejherowo Odrębna 04",0,22694
+3,28,28_277303,"Wejherowo Odrębna 04",0,22694
+3,28,28_277305,"Wejherowo Odrębna 04",0,22694
+3,28,28_277307,"Wejherowo Odrębna 04",0,22694
+3,28,28_277309,"Wejherowo Odrębna 04",0,22694
+3,28,28_277311,"Wejherowo Odrębna 04",0,22694
+3,28,28_277313,"Wejherowo Odrębna 04",0,22694
+3,28,28_277315,"Wejherowo Odrębna 04",0,22694
+3,28,28_277322,"Wejherowo Odrębna 04",0,22694
+3,28,28_277324,"Wejherowo Odrębna 04",0,22694
+3,28,28_277326,"Wejherowo Odrębna 04",0,22694
+3,28,28_277328,"Wejherowo Odrębna 04",0,22694
+3,28,28_277330,"Wejherowo Odrębna 04",0,22694
+3,28,28_277332,"Wejherowo Odrębna 04",0,22694
+3,28,28_277334,"Wejherowo Odrębna 04",0,22694
+3,28,28_277336,"Wejherowo Odrębna 04",0,22694
+3,28,28_277338,"Wejherowo Odrębna 04",0,22694
+3,28,28_277340,"Wejherowo Odrębna 04",0,22694
+3,28,28_277342,"Wejherowo Odrębna 04",0,22694
+3,28,28_277321,"Gościcino Robakowska 02",1,22730
+3,28,28_277317,"Wejherowo os. Sikorskiego 01",0,22731
+3,28,28_277344,"Wejherowo os. Sikorskiego 01",0,22731
+4,24,24_276284,"Orle Łąkowa 02",1,22695
+4,24,24_276286,"Orle Łąkowa 02",1,22695
+4,24,24_276290,"Orle Łąkowa 02",1,22695
+4,24,24_276292,"Orle Łąkowa 02",1,22695
+4,24,24_276298,"Orle Łąkowa 02",1,22695
+4,24,24_276302,"Orle Łąkowa 02",1,22695
+4,24,24_276304,"Orle Łąkowa 02",1,22695
+4,24,24_276306,"Orle Łąkowa 02",1,22695
+4,24,24_276283,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276285,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276287,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276291,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276293,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276299,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276303,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276305,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276307,"Wejherowo Starostwo Powiatowe 02",0,22696
+4,24,24_276288,"Orle Szkoła 01",1,22734
+4,24,24_276294,"Orle Szkoła 01",1,22734
+4,24,24_276296,"Orle Szkoła 01",1,22734
+4,24,24_276300,"Orle Szkoła 01",1,22734
+4,24,24_276308,"Wejherowo Urząd Pracy 01 n/ż",1,22735
+4,24,24_276282,"Orle Łąkowa 02",1,22736
+4,24,24_276289,"Wejherowo Starostwo Powiatowe 02",0,22737
+4,24,24_276295,"Wejherowo Starostwo Powiatowe 02",0,22737
+4,24,24_276297,"Wejherowo Starostwo Powiatowe 02",0,22737
+4,24,24_276301,"Wejherowo Starostwo Powiatowe 02",0,22737
+5,24,24_275706,"Orle Łąkowa 02",1,22697
+5,24,24_275708,"Orle Łąkowa 02",1,22697
+5,24,24_275980,"Orle Łąkowa 02",1,22697
+5,24,24_276082,"Orle Łąkowa 02",1,22697
+5,24,24_276084,"Orle Łąkowa 02",1,22697
+5,24,24_276185,"Orle Łąkowa 02",1,22697
+5,24,24_276187,"Orle Łąkowa 02",1,22697
+5,24,24_276269,"Orle Łąkowa 02",1,22697
+5,24,24_276334,"Orle Łąkowa 02",1,22697
+5,24,24_276343,"Orle Łąkowa 02",1,22697
+5,24,24_276347,"Orle Łąkowa 02",1,22697
+5,24,24_276349,"Orle Łąkowa 02",1,22697
+5,24,24_276351,"Orle Łąkowa 02",1,22697
+5,24,24_276353,"Orle Łąkowa 02",1,22697
+5,24,24_276421,"Orle Łąkowa 02",1,22697
+5,24,24_275705,"Wejherowo Szpital 02",0,22698
+5,24,24_275707,"Wejherowo Szpital 02",0,22698
+5,24,24_275981,"Wejherowo Szpital 02",0,22698
+5,24,24_276083,"Wejherowo Szpital 02",0,22698
+5,24,24_276085,"Wejherowo Szpital 02",0,22698
+5,24,24_276186,"Wejherowo Szpital 02",0,22698
+5,24,24_276270,"Wejherowo Szpital 02",0,22698
+5,24,24_276335,"Wejherowo Szpital 02",0,22698
+5,24,24_276344,"Wejherowo Szpital 02",0,22698
+5,24,24_276348,"Wejherowo Szpital 02",0,22698
+5,24,24_276350,"Wejherowo Szpital 02",0,22698
+5,24,24_276352,"Wejherowo Szpital 02",0,22698
+5,24,24_276354,"Wejherowo Szpital 02",0,22698
+5,24,24_276418,"Wejherowo Szpital 02",0,22698
+5,24,24_276422,"Wejherowo Szpital 02",0,22698
+5,24,24_275978,"Orle Szkoła 01",1,22738
+5,24,24_275982,"Orle Szkoła 01",1,22738
+5,24,24_276267,"Orle Szkoła 01",1,22738
+5,24,24_276339,"Orle Szkoła 01",1,22738
+5,24,24_276345,"Orle Szkoła 01",1,22738
+5,24,24_276419,"Orle Szkoła 01",1,22738
+5,24,24_276423,"Orle Szkoła 01",1,22738
+5,24,24_276086,"Wejherowo Urząd Pracy 01 n/ż",1,22739
+5,24,24_275704,"Orle Łąkowa 02",1,22740
+5,24,24_276417,"Orle Łąkowa 02",1,22741
+5,24,24_275979,"Wejherowo Szpital 02",0,22742
+5,24,24_275983,"Wejherowo Szpital 02",0,22742
+5,24,24_276268,"Wejherowo Szpital 02",0,22742
+5,24,24_276340,"Wejherowo Szpital 02",0,22742
+5,24,24_276346,"Wejherowo Szpital 02",0,22742
+5,24,24_276420,"Wejherowo Szpital 02",0,22742
+5,24,24_276188,"Wejherowo Chopina 02",0,22743
+5,24,24_276333,"Wejherowo Szpital 02",0,22744
+5,24,24_276461,"Wejherowo Szpital 02",0,22744
+5,27,27_278502,"Orle Łąkowa 02",1,22697
+5,27,27_278508,"Orle Łąkowa 02",1,22697
+5,27,27_278635,"Orle Łąkowa 02",1,22697
+5,27,27_278637,"Orle Łąkowa 02",1,22697
+5,27,27_278642,"Orle Łąkowa 02",1,22697
+5,27,27_278646,"Orle Łąkowa 02",1,22697
+5,27,27_278650,"Orle Łąkowa 02",1,22697
+5,27,27_278652,"Orle Łąkowa 02",1,22697
+5,27,27_278654,"Orle Łąkowa 02",1,22697
+5,27,27_278656,"Orle Łąkowa 02",1,22697
+5,27,27_278708,"Orle Łąkowa 02",1,22697
+5,27,27_278712,"Orle Łąkowa 02",1,22697
+5,27,27_278825,"Orle Łąkowa 02",1,22697
+5,27,27_278827,"Orle Łąkowa 02",1,22697
+5,27,27_278830,"Orle Łąkowa 02",1,22697
+5,27,27_278835,"Orle Łąkowa 02",1,22697
+5,27,27_278896,"Orle Łąkowa 02",1,22697
+5,27,27_278899,"Orle Łąkowa 02",1,22697
+5,27,27_278901,"Orle Łąkowa 02",1,22697
+5,27,27_278906,"Orle Łąkowa 02",1,22697
+5,27,27_278910,"Orle Łąkowa 02",1,22697
+5,27,27_278501,"Wejherowo Szpital 02",0,22698
+5,27,27_278503,"Wejherowo Szpital 02",0,22698
+5,27,27_278509,"Wejherowo Szpital 02",0,22698
+5,27,27_278636,"Wejherowo Szpital 02",0,22698
+5,27,27_278638,"Wejherowo Szpital 02",0,22698
+5,27,27_278643,"Wejherowo Szpital 02",0,22698
+5,27,27_278647,"Wejherowo Szpital 02",0,22698
+5,27,27_278651,"Wejherowo Szpital 02",0,22698
+5,27,27_278653,"Wejherowo Szpital 02",0,22698
+5,27,27_278655,"Wejherowo Szpital 02",0,22698
+5,27,27_278709,"Wejherowo Szpital 02",0,22698
+5,27,27_278713,"Wejherowo Szpital 02",0,22698
+5,27,27_278826,"Wejherowo Szpital 02",0,22698
+5,27,27_278828,"Wejherowo Szpital 02",0,22698
+5,27,27_278831,"Wejherowo Szpital 02",0,22698
+5,27,27_278836,"Wejherowo Szpital 02",0,22698
+5,27,27_278897,"Wejherowo Szpital 02",0,22698
+5,27,27_278900,"Wejherowo Szpital 02",0,22698
+5,27,27_278902,"Wejherowo Szpital 02",0,22698
+5,27,27_278907,"Wejherowo Szpital 02",0,22698
+5,27,27_278911,"Wejherowo Szpital 02",0,22698
+5,27,27_278925,"Wejherowo Urząd Pracy 01 n/ż",1,22739
+5,27,27_278500,"Orle Łąkowa 02",1,22740
+5,27,27_278657,"Wejherowo Chopina 02",0,22743
+5,27,27_278824,"Wejherowo Szpital 02",0,22744
+5,27,27_278916,"Wejherowo Szpital 02",0,22744
+5,28,28_277262,"Orle Łąkowa 02",1,22697
+5,28,28_277268,"Orle Łąkowa 02",1,22697
+5,28,28_277374,"Orle Łąkowa 02",1,22697
+5,28,28_277376,"Orle Łąkowa 02",1,22697
+5,28,28_277381,"Orle Łąkowa 02",1,22697
+5,28,28_277385,"Orle Łąkowa 02",1,22697
+5,28,28_277389,"Orle Łąkowa 02",1,22697
+5,28,28_277391,"Orle Łąkowa 02",1,22697
+5,28,28_277393,"Orle Łąkowa 02",1,22697
+5,28,28_277395,"Orle Łąkowa 02",1,22697
+5,28,28_277549,"Orle Łąkowa 02",1,22697
+5,28,28_277551,"Orle Łąkowa 02",1,22697
+5,28,28_277554,"Orle Łąkowa 02",1,22697
+5,28,28_277559,"Orle Łąkowa 02",1,22697
+5,28,28_277586,"Orle Łąkowa 02",1,22697
+5,28,28_277590,"Orle Łąkowa 02",1,22697
+5,28,28_277643,"Orle Łąkowa 02",1,22697
+5,28,28_277646,"Orle Łąkowa 02",1,22697
+5,28,28_277648,"Orle Łąkowa 02",1,22697
+5,28,28_277663,"Orle Łąkowa 02",1,22697
+5,28,28_277667,"Orle Łąkowa 02",1,22697
+5,28,28_277261,"Wejherowo Szpital 02",0,22698
+5,28,28_277263,"Wejherowo Szpital 02",0,22698
+5,28,28_277269,"Wejherowo Szpital 02",0,22698
+5,28,28_277375,"Wejherowo Szpital 02",0,22698
+5,28,28_277377,"Wejherowo Szpital 02",0,22698
+5,28,28_277382,"Wejherowo Szpital 02",0,22698
+5,28,28_277386,"Wejherowo Szpital 02",0,22698
+5,28,28_277390,"Wejherowo Szpital 02",0,22698
+5,28,28_277392,"Wejherowo Szpital 02",0,22698
+5,28,28_277394,"Wejherowo Szpital 02",0,22698
+5,28,28_277550,"Wejherowo Szpital 02",0,22698
+5,28,28_277552,"Wejherowo Szpital 02",0,22698
+5,28,28_277555,"Wejherowo Szpital 02",0,22698
+5,28,28_277560,"Wejherowo Szpital 02",0,22698
+5,28,28_277587,"Wejherowo Szpital 02",0,22698
+5,28,28_277591,"Wejherowo Szpital 02",0,22698
+5,28,28_277644,"Wejherowo Szpital 02",0,22698
+5,28,28_277647,"Wejherowo Szpital 02",0,22698
+5,28,28_277649,"Wejherowo Szpital 02",0,22698
+5,28,28_277664,"Wejherowo Szpital 02",0,22698
+5,28,28_277668,"Wejherowo Szpital 02",0,22698
+5,28,28_277684,"Wejherowo Urząd Pracy 01 n/ż",1,22739
+5,28,28_277260,"Orle Łąkowa 02",1,22740
+5,28,28_277396,"Wejherowo Chopina 02",0,22743
+5,28,28_277548,"Wejherowo Szpital 02",0,22744
+5,28,28_277675,"Wejherowo Szpital 02",0,22744
+6,24,24_275886,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275888,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275892,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275896,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275898,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275900,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_276438,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_276440,"Wejherowo os. Fenikowskiego 01",1,22699
+6,24,24_275883,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275887,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275889,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275893,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275897,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275899,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_276265,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_276330,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_276439,"Wejherowo Karnowskiego 02",0,22700
+6,24,24_275884,"Wejherowo os. Fenikowskiego 01",1,22745
+6,24,24_275890,"Wejherowo os. Fenikowskiego 01",1,22745
+6,24,24_275894,"Wejherowo os. Fenikowskiego 01",1,22745
+6,24,24_276436,"Wejherowo os. Fenikowskiego 01",1,22745
+6,24,24_276266,"Wejherowo Szpital 02",1,22746
+6,24,24_276264,"Wejherowo os. Fenikowskiego 01",1,22747
+6,24,24_275885,"Wejherowo Karnowskiego 02",0,22748
+6,24,24_275891,"Wejherowo Karnowskiego 02",0,22748
+6,24,24_275895,"Wejherowo Karnowskiego 02",0,22748
+6,24,24_276437,"Wejherowo Karnowskiego 02",0,22748
+6,27,27_278854,"Wejherowo os. Fenikowskiego 01",1,22699
+6,27,27_278856,"Wejherowo os. Fenikowskiego 01",1,22699
+6,27,27_278860,"Wejherowo os. Fenikowskiego 01",1,22699
+6,27,27_278862,"Wejherowo os. Fenikowskiego 01",1,22699
+6,27,27_278866,"Wejherowo os. Fenikowskiego 01",1,22699
+6,27,27_278855,"Wejherowo Karnowskiego 02",0,22700
+6,27,27_278857,"Wejherowo Karnowskiego 02",0,22700
+6,27,27_278861,"Wejherowo Karnowskiego 02",0,22700
+6,27,27_278863,"Wejherowo Karnowskiego 02",0,22700
+6,27,27_278867,"Wejherowo Karnowskiego 02",0,22700
+6,27,27_278858,"Wejherowo os. Fenikowskiego 01",1,22745
+6,27,27_278864,"Wejherowo os. Fenikowskiego 01",1,22745
+6,27,27_278859,"Wejherowo Karnowskiego 02",0,22748
+6,27,27_278865,"Wejherowo Karnowskiego 02",0,22748
+6,28,28_277594,"Wejherowo os. Fenikowskiego 01",1,22699
+6,28,28_277596,"Wejherowo os. Fenikowskiego 01",1,22699
+6,28,28_277600,"Wejherowo os. Fenikowskiego 01",1,22699
+6,28,28_277602,"Wejherowo os. Fenikowskiego 01",1,22699
+6,28,28_277606,"Wejherowo os. Fenikowskiego 01",1,22699
+6,28,28_277595,"Wejherowo Karnowskiego 02",0,22700
+6,28,28_277597,"Wejherowo Karnowskiego 02",0,22700
+6,28,28_277601,"Wejherowo Karnowskiego 02",0,22700
+6,28,28_277603,"Wejherowo Karnowskiego 02",0,22700
+6,28,28_277607,"Wejherowo Karnowskiego 02",0,22700
+6,28,28_277598,"Wejherowo os. Fenikowskiego 01",1,22745
+6,28,28_277604,"Wejherowo os. Fenikowskiego 01",1,22745
+6,28,28_277599,"Wejherowo Karnowskiego 02",0,22748
+6,28,28_277605,"Wejherowo Karnowskiego 02",0,22748
+7,24,24_275745,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275749,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275792,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275796,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275800,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275847,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275881,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276129,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276133,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276135,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276145,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276445,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_276449,"Bolszewo Leśna - Szkoła 02",1,22701
+7,24,24_275744,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275748,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275791,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275795,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275799,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275846,"Wejherowo Cegielnia 01",0,22702
+7,24,24_275880,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276128,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276132,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276134,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276144,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276444,"Wejherowo Cegielnia 01",0,22702
+7,24,24_276448,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278702,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278744,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278746,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278841,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278847,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278849,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278877,"Bolszewo Leśna - Szkoła 02",1,22701
+7,27,27_278701,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278743,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278745,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278840,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278846,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278848,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278876,"Wejherowo Cegielnia 01",0,22702
+7,27,27_278839,"Bolszewo Leśna - Szkoła 02",1,22749
+7,27,27_278703,"Wejherowo Dworzec PKP 01",0,22751
+7,28,28_277615,"Bolszewo Leśna - Szkoła 02",1,22701
+7,28,28_277617,"Bolszewo Leśna - Szkoła 02",1,22701
+7,28,28_277619,"Bolszewo Leśna - Szkoła 02",1,22701
+7,28,28_277616,"Wejherowo Cegielnia 01",0,22702
+7,28,28_277618,"Wejherowo Cegielnia 01",0,22702
+7,28,28_277611,"Gościcino Robakowska 02",1,22750
+7,28,28_277613,"Gościcino Robakowska 02",1,22750
+7,28,28_277612,"Wejherowo Cegielnia 01",0,22752
+7,28,28_277614,"Wejherowo Cegielnia 01",0,22752
+7,28,28_277610,"Wejherowo Cegielnia 01",0,22753
+8,24,24_275832,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_275836,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_275840,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276022,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276026,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276030,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276034,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276036,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276152,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276156,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_276160,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,24,24_275831,"Wejherowo Szpital 02",0,22704
+8,24,24_275835,"Wejherowo Szpital 02",0,22704
+8,24,24_275839,"Wejherowo Szpital 02",0,22704
+8,24,24_275843,"Wejherowo Szpital 02",0,22704
+8,24,24_276021,"Wejherowo Szpital 02",0,22704
+8,24,24_276025,"Wejherowo Szpital 02",0,22704
+8,24,24_276029,"Wejherowo Szpital 02",0,22704
+8,24,24_276033,"Wejherowo Szpital 02",0,22704
+8,24,24_276151,"Wejherowo Szpital 02",0,22704
+8,24,24_276155,"Wejherowo Szpital 02",0,22704
+8,24,24_276159,"Wejherowo Szpital 02",0,22704
+8,24,24_276163,"Wejherowo Szpital 02",0,22704
+8,24,24_275830,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_275834,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_275838,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_275842,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276024,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276028,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276032,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276150,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276154,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276158,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276162,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_276164,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,24,24_275828,"Rumia C.H. ""Port Rumia"" 01",1,22755
+8,24,24_276148,"Rumia C.H. ""Port Rumia"" 01",1,22755
+8,24,24_276020,"Rumia C.H. ""Port Rumia"" 01",1,22756
+8,24,24_275829,"Wejherowo Szpital 02",0,22757
+8,24,24_275833,"Wejherowo Szpital 02",0,22757
+8,24,24_275837,"Wejherowo Szpital 02",0,22757
+8,24,24_275841,"Wejherowo Szpital 02",0,22757
+8,24,24_276023,"Wejherowo Szpital 02",0,22757
+8,24,24_276027,"Wejherowo Szpital 02",0,22757
+8,24,24_276031,"Wejherowo Szpital 02",0,22757
+8,24,24_276035,"Wejherowo Szpital 02",0,22757
+8,24,24_276037,"Wejherowo Szpital 02",0,22757
+8,24,24_276149,"Wejherowo Szpital 02",0,22757
+8,24,24_276153,"Wejherowo Szpital 02",0,22757
+8,24,24_276157,"Wejherowo Szpital 02",0,22757
+8,24,24_276161,"Wejherowo Szpital 02",0,22757
+8,24,24_276165,"Wejherowo Kochanowskiego SKM Nanice 01",0,22758
+8,24,24_276263,"Wejherowo Szpital 02",0,22759
+8,27,27_278621,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278625,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278685,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278687,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278691,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278695,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278697,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278917,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278921,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,27,27_278616,"Wejherowo Szpital 02",0,22704
+8,27,27_278618,"Wejherowo Szpital 02",0,22704
+8,27,27_278620,"Wejherowo Szpital 02",0,22704
+8,27,27_278624,"Wejherowo Szpital 02",0,22704
+8,27,27_278628,"Wejherowo Szpital 02",0,22704
+8,27,27_278690,"Wejherowo Szpital 02",0,22704
+8,27,27_278694,"Wejherowo Szpital 02",0,22704
+8,27,27_278920,"Wejherowo Szpital 02",0,22704
+8,27,27_278924,"Wejherowo Szpital 02",0,22704
+8,27,27_278615,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278617,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278619,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278623,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278627,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278629,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278689,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278693,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278919,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278923,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,27,27_278613,"Rumia C.H. ""Port Rumia"" 01",1,22755
+8,27,27_278683,"Rumia C.H. ""Port Rumia"" 01",1,22756
+8,27,27_278614,"Wejherowo Szpital 02",0,22757
+8,27,27_278622,"Wejherowo Szpital 02",0,22757
+8,27,27_278626,"Wejherowo Szpital 02",0,22757
+8,27,27_278684,"Wejherowo Szpital 02",0,22757
+8,27,27_278686,"Wejherowo Szpital 02",0,22757
+8,27,27_278688,"Wejherowo Szpital 02",0,22757
+8,27,27_278692,"Wejherowo Szpital 02",0,22757
+8,27,27_278696,"Wejherowo Szpital 02",0,22757
+8,27,27_278698,"Wejherowo Szpital 02",0,22757
+8,27,27_278918,"Wejherowo Szpital 02",0,22757
+8,27,27_278922,"Wejherowo Szpital 02",0,22757
+8,27,27_278630,"Wejherowo Kochanowskiego SKM Nanice 01",0,22758
+8,27,27_278474,"Wejherowo Szpital 02",0,22759
+8,28,28_277242,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277250,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277254,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277565,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277652,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277656,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277671,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277676,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277680,"Rumia C.H. ""Port Rumia"" 01",1,22703
+8,28,28_277247,"Wejherowo Szpital 02",0,22704
+8,28,28_277249,"Wejherowo Szpital 02",0,22704
+8,28,28_277253,"Wejherowo Szpital 02",0,22704
+8,28,28_277257,"Wejherowo Szpital 02",0,22704
+8,28,28_277655,"Wejherowo Szpital 02",0,22704
+8,28,28_277659,"Wejherowo Szpital 02",0,22704
+8,28,28_277679,"Wejherowo Szpital 02",0,22704
+8,28,28_277683,"Wejherowo Szpital 02",0,22704
+8,28,28_277244,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277246,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277248,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277252,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277256,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277654,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277658,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277678,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277682,"Rumia C.H. ""Port Rumia"" 01",1,22754
+8,28,28_277243,"Wejherowo Szpital 02",0,22757
+8,28,28_277245,"Wejherowo Szpital 02",0,22757
+8,28,28_277251,"Wejherowo Szpital 02",0,22757
+8,28,28_277255,"Wejherowo Szpital 02",0,22757
+8,28,28_277566,"Wejherowo Szpital 02",0,22757
+8,28,28_277653,"Wejherowo Szpital 02",0,22757
+8,28,28_277657,"Wejherowo Szpital 02",0,22757
+8,28,28_277672,"Wejherowo Szpital 02",0,22757
+8,28,28_277677,"Wejherowo Szpital 02",0,22757
+8,28,28_277681,"Wejherowo Szpital 02",0,22757
+8,28,28_277241,"Wejherowo Szpital 02",0,22759
+9,24,24_275810,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275812,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275814,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275816,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275818,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275820,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275822,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275824,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275944,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275946,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275948,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275950,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275952,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275954,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275956,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275958,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275960,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275962,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275964,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275966,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276091,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276093,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276095,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276097,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276099,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276101,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276103,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276105,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_276107,"Reda Rekowo Lipowa 04",1,22705
+9,24,24_275809,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275811,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275813,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275815,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275817,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275819,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275821,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275823,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275943,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275945,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275947,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275949,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275951,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275953,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275955,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275957,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275959,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275961,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275963,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275965,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276090,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276092,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276094,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276096,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276098,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276100,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276102,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276104,"Rumia Dworzec PKP 92",0,22706
+9,24,24_276106,"Rumia Dworzec PKP 92",0,22706
+9,24,24_275808,"Reda Rekowo Lipowa 04",1,22760
+9,24,24_275942,"Reda Rekowo Lipowa 04",1,22760
+9,24,24_276089,"Reda Rekowo Lipowa 04",1,22760
+9,24,24_275825,"Reda Ciechocino 02",0,22761
+9,24,24_275967,"Reda Ciechocino 02",0,22761
+9,24,24_276108,"Reda Ciechocino 02",0,22761
+9,27,27_278445,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278447,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278449,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278451,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278453,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278455,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278457,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278459,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278461,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278463,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278465,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278467,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278469,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278591,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278593,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278595,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278597,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278599,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278601,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278603,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278605,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278607,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278609,"Reda Rekowo Lipowa 04",1,22705
+9,27,27_278444,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278446,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278448,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278450,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278452,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278454,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278456,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278458,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278460,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278462,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278464,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278466,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278468,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278590,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278592,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278594,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278596,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278598,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278600,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278602,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278604,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278606,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278608,"Rumia Dworzec PKP 92",0,22706
+9,27,27_278443,"Reda Rekowo Lipowa 04",1,22760
+9,27,27_278589,"Reda Rekowo Lipowa 04",1,22760
+9,27,27_278470,"Reda Ciechocino 02",0,22761
+9,27,27_278610,"Reda Ciechocino 02",0,22761
+9,28,28_277350,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277352,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277354,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277356,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277358,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277360,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277362,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277364,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277366,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277368,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277401,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277403,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277405,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277407,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277409,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277411,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277413,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277415,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277417,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277419,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277421,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277423,"Reda Rekowo Lipowa 04",1,22705
+9,28,28_277349,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277351,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277353,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277355,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277357,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277359,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277361,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277363,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277365,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277367,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277400,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277402,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277404,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277406,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277408,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277410,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277412,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277414,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277416,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277418,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277420,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277422,"Rumia Dworzec PKP 92",0,22706
+9,28,28_277348,"Reda Rekowo Lipowa 04",1,22760
+9,28,28_277399,"Reda Rekowo Lipowa 04",1,22760
+9,28,28_277369,"Reda Ciechocino 02",0,22761
+9,28,28_277424,"Reda Ciechocino 02",0,22761
+10,24,24_275720,"Kębłowo Wiejska 01",1,22707
+10,24,24_275722,"Kębłowo Wiejska 01",1,22707
+10,24,24_275724,"Kębłowo Wiejska 01",1,22707
+10,24,24_275726,"Kębłowo Wiejska 01",1,22707
+10,24,24_275728,"Kębłowo Wiejska 01",1,22707
+10,24,24_275730,"Kębłowo Wiejska 01",1,22707
+10,24,24_275993,"Kębłowo Wiejska 01",1,22707
+10,24,24_275995,"Kębłowo Wiejska 01",1,22707
+10,24,24_275997,"Kębłowo Wiejska 01",1,22707
+10,24,24_275999,"Kębłowo Wiejska 01",1,22707
+10,24,24_276001,"Kębłowo Wiejska 01",1,22707
+10,24,24_276388,"Kębłowo Wiejska 01",1,22707
+10,24,24_276390,"Kębłowo Wiejska 01",1,22707
+10,24,24_276394,"Kębłowo Wiejska 01",1,22707
+10,24,24_276396,"Kębłowo Wiejska 01",1,22707
+10,24,24_275721,"Wejherowo Pomorska 02",0,22708
+10,24,24_275723,"Wejherowo Pomorska 02",0,22708
+10,24,24_275725,"Wejherowo Pomorska 02",0,22708
+10,24,24_275727,"Wejherowo Pomorska 02",0,22708
+10,24,24_275729,"Wejherowo Pomorska 02",0,22708
+10,24,24_275992,"Wejherowo Pomorska 02",0,22708
+10,24,24_275994,"Wejherowo Pomorska 02",0,22708
+10,24,24_275996,"Wejherowo Pomorska 02",0,22708
+10,24,24_275998,"Wejherowo Pomorska 02",0,22708
+10,24,24_276000,"Wejherowo Pomorska 02",0,22708
+10,24,24_276002,"Wejherowo Pomorska 02",0,22708
+10,24,24_276070,"Wejherowo Pomorska 02",0,22708
+10,24,24_276387,"Wejherowo Pomorska 02",0,22708
+10,24,24_276389,"Wejherowo Pomorska 02",0,22708
+10,24,24_276391,"Wejherowo Pomorska 02",0,22708
+10,24,24_276395,"Wejherowo Pomorska 02",0,22708
+10,24,24_276397,"Wejherowo Pomorska 02",0,22708
+10,24,24_276069,"Kębłowo Wiejska 01",1,22763
+10,24,24_276386,"Kębłowo Wiejska 01",1,22763
+10,24,24_275731,"Wejherowo Dworzec PKP 04",0,22764
+10,24,24_275719,"Wejherowo Pomorska 02",0,22765
+10,27,27_278757,"Kębłowo Wiejska 01",1,22707
+10,27,27_278761,"Kębłowo Wiejska 01",1,22707
+10,27,27_278765,"Kębłowo Wiejska 01",1,22707
+10,27,27_278769,"Kębłowo Wiejska 01",1,22707
+10,27,27_278773,"Kębłowo Wiejska 01",1,22707
+10,27,27_278775,"Kębłowo Wiejska 01",1,22707
+10,27,27_278754,"Wejherowo Pomorska 02",0,22708
+10,27,27_278758,"Wejherowo Pomorska 02",0,22708
+10,27,27_278762,"Wejherowo Pomorska 02",0,22708
+10,27,27_278766,"Wejherowo Pomorska 02",0,22708
+10,27,27_278770,"Wejherowo Pomorska 02",0,22708
+10,27,27_278774,"Wejherowo Pomorska 02",0,22708
+10,27,27_278755,"Gościcino Równa 04",1,22762
+10,27,27_278759,"Gościcino Równa 04",1,22762
+10,27,27_278763,"Gościcino Równa 04",1,22762
+10,27,27_278767,"Gościcino Równa 04",1,22762
+10,27,27_278771,"Gościcino Równa 04",1,22762
+10,27,27_278753,"Kębłowo Wiejska 01",1,22763
+10,27,27_278776,"Wejherowo Dworzec PKP 04",0,22764
+10,27,27_278756,"Wejherowo Pomorska 02",0,22766
+10,27,27_278760,"Wejherowo Pomorska 02",0,22766
+10,27,27_278764,"Wejherowo Pomorska 02",0,22766
+10,27,27_278768,"Wejherowo Pomorska 02",0,22766
+10,27,27_278772,"Wejherowo Pomorska 02",0,22766
+10,28,28_277452,"Kębłowo Wiejska 01",1,22707
+10,28,28_277456,"Kębłowo Wiejska 01",1,22707
+10,28,28_277460,"Kębłowo Wiejska 01",1,22707
+10,28,28_277464,"Kębłowo Wiejska 01",1,22707
+10,28,28_277468,"Kębłowo Wiejska 01",1,22707
+10,28,28_277470,"Kębłowo Wiejska 01",1,22707
+10,28,28_277449,"Wejherowo Pomorska 02",0,22708
+10,28,28_277453,"Wejherowo Pomorska 02",0,22708
+10,28,28_277457,"Wejherowo Pomorska 02",0,22708
+10,28,28_277461,"Wejherowo Pomorska 02",0,22708
+10,28,28_277465,"Wejherowo Pomorska 02",0,22708
+10,28,28_277469,"Wejherowo Pomorska 02",0,22708
+10,28,28_277450,"Gościcino Równa 04",1,22762
+10,28,28_277454,"Gościcino Równa 04",1,22762
+10,28,28_277458,"Gościcino Równa 04",1,22762
+10,28,28_277462,"Gościcino Równa 04",1,22762
+10,28,28_277466,"Gościcino Równa 04",1,22762
+10,28,28_277448,"Kębłowo Wiejska 01",1,22763
+10,28,28_277471,"Wejherowo Dworzec PKP 04",0,22764
+10,28,28_277451,"Wejherowo Pomorska 02",0,22766
+10,28,28_277455,"Wejherowo Pomorska 02",0,22766
+10,28,28_277459,"Wejherowo Pomorska 02",0,22766
+10,28,28_277463,"Wejherowo Pomorska 02",0,22766
+10,28,28_277467,"Wejherowo Pomorska 02",0,22766
+11,24,24_276191,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276223,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276234,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276246,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276250,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276320,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276403,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276407,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276428,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276432,"Gniewowo Spacerowa 01",1,22709
+11,24,24_276192,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276235,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276247,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276251,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276404,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276429,"Wejherowo Dworzec PKP 03",0,22710
+11,24,24_276224,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22767
+11,24,24_276321,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22767
+11,24,24_276408,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22767
+11,24,24_276433,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22767
+11,27,27_278779,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278783,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278787,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278791,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278795,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278799,"Gniewowo Spacerowa 01",1,22709
+11,27,27_278780,"Wejherowo Dworzec PKP 03",0,22710
+11,27,27_278784,"Wejherowo Dworzec PKP 03",0,22710
+11,27,27_278788,"Wejherowo Dworzec PKP 03",0,22710
+11,27,27_278792,"Wejherowo Dworzec PKP 03",0,22710
+11,27,27_278796,"Wejherowo Dworzec PKP 03",0,22710
+11,27,27_278800,"Wejherowo Dworzec PKP 03",0,22710
+11,28,28_277495,"Gniewowo Spacerowa 01",1,22709
+11,28,28_277499,"Gniewowo Spacerowa 01",1,22709
+11,28,28_277503,"Gniewowo Spacerowa 01",1,22709
+11,28,28_277507,"Gniewowo Spacerowa 01",1,22709
+11,28,28_277511,"Gniewowo Spacerowa 01",1,22709
+11,28,28_277496,"Wejherowo Dworzec PKP 03",0,22710
+11,28,28_277500,"Wejherowo Dworzec PKP 03",0,22710
+11,28,28_277504,"Wejherowo Dworzec PKP 03",0,22710
+11,28,28_277508,"Wejherowo Dworzec PKP 03",0,22710
+11,28,28_277512,"Wejherowo Dworzec PKP 03",0,22710
+12,24,24_276196,"Gowino Brzozowa 01",1,22711
+12,24,24_276198,"Gowino Brzozowa 01",1,22711
+12,24,24_276200,"Gowino Brzozowa 01",1,22711
+12,24,24_276202,"Gowino Brzozowa 01",1,22711
+12,24,24_276204,"Gowino Brzozowa 01",1,22711
+12,24,24_276206,"Gowino Brzozowa 01",1,22711
+12,24,24_276208,"Gowino Brzozowa 01",1,22711
+12,24,24_276210,"Gowino Brzozowa 01",1,22711
+12,24,24_276212,"Gowino Brzozowa 01",1,22711
+12,24,24_276214,"Gowino Brzozowa 01",1,22711
+12,24,24_276216,"Gowino Brzozowa 01",1,22711
+12,24,24_276218,"Gowino Brzozowa 01",1,22711
+12,24,24_276220,"Gowino Brzozowa 01",1,22711
+12,24,24_276227,"Gowino Brzozowa 01",1,22711
+12,24,24_276229,"Gowino Brzozowa 01",1,22711
+12,24,24_276197,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276199,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276201,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276203,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276205,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276207,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276209,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276211,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276213,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276215,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276217,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276219,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276221,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276228,"Wejherowo Dworzec PKP 01",0,22712
+12,24,24_276230,"Wejherowo Dworzec PKP 01",0,22712
+12,27,27_278511,"Gowino Brzozowa 01",1,22711
+12,27,27_278515,"Gowino Brzozowa 01",1,22711
+12,27,27_278660,"Gowino Brzozowa 01",1,22711
+12,27,27_278704,"Gowino Brzozowa 01",1,22711
+12,27,27_278735,"Gowino Brzozowa 01",1,22711
+12,27,27_278512,"Wejherowo Dworzec PKP 01",0,22712
+12,27,27_278516,"Wejherowo Dworzec PKP 01",0,22712
+12,27,27_278661,"Wejherowo Dworzec PKP 01",0,22712
+12,27,27_278705,"Wejherowo Dworzec PKP 01",0,22712
+12,27,27_278736,"Wejherowo Dworzec PKP 01",0,22712
+12,28,28_277271,"Gowino Brzozowa 01",1,22711
+12,28,28_277275,"Gowino Brzozowa 01",1,22711
+12,28,28_277562,"Gowino Brzozowa 01",1,22711
+12,28,28_277582,"Gowino Brzozowa 01",1,22711
+12,28,28_277272,"Wejherowo Dworzec PKP 01",0,22712
+12,28,28_277276,"Wejherowo Dworzec PKP 01",0,22712
+12,28,28_277563,"Wejherowo Dworzec PKP 01",0,22712
+12,28,28_277583,"Wejherowo Dworzec PKP 01",0,22712
+13,24,24_276193,"Kąpino Parkowa 01",1,22713
+13,24,24_276232,"Kąpino Parkowa 01",1,22713
+13,24,24_276236,"Kąpino Parkowa 01",1,22713
+13,24,24_276238,"Kąpino Parkowa 01",1,22713
+13,24,24_276240,"Kąpino Parkowa 01",1,22713
+13,24,24_276242,"Kąpino Parkowa 01",1,22713
+13,24,24_276244,"Kąpino Parkowa 01",1,22713
+13,24,24_276248,"Kąpino Parkowa 01",1,22713
+13,24,24_276252,"Kąpino Parkowa 01",1,22713
+13,24,24_276254,"Kąpino Parkowa 01",1,22713
+13,24,24_276256,"Kąpino Parkowa 01",1,22713
+13,24,24_276258,"Kąpino Parkowa 01",1,22713
+13,24,24_276401,"Kąpino Parkowa 01",1,22713
+13,24,24_276405,"Kąpino Parkowa 01",1,22713
+13,24,24_276426,"Kąpino Parkowa 01",1,22713
+13,24,24_276430,"Kąpino Parkowa 01",1,22713
+13,24,24_276233,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276237,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276239,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276241,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276243,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276245,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276249,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276253,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276255,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276257,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276400,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276402,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276406,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276427,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276431,"Wejherowo Dworzec PKP 03",0,22714
+13,24,24_276194,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22768
+13,24,24_276259,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22768
+13,27,27_278477,"Kąpino Parkowa 01",1,22713
+13,27,27_278781,"Kąpino Parkowa 01",1,22713
+13,27,27_278785,"Kąpino Parkowa 01",1,22713
+13,27,27_278789,"Kąpino Parkowa 01",1,22713
+13,27,27_278793,"Kąpino Parkowa 01",1,22713
+13,27,27_278797,"Kąpino Parkowa 01",1,22713
+13,27,27_278801,"Kąpino Parkowa 01",1,22713
+13,27,27_278803,"Kąpino Parkowa 01",1,22713
+13,27,27_278476,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278782,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278786,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278790,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278794,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278798,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278802,"Wejherowo Dworzec PKP 03",0,22714
+13,27,27_278478,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22768
+13,27,27_278804,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22768
+13,28,28_277493,"Kąpino Parkowa 01",1,22713
+13,28,28_277497,"Kąpino Parkowa 01",1,22713
+13,28,28_277501,"Kąpino Parkowa 01",1,22713
+13,28,28_277505,"Kąpino Parkowa 01",1,22713
+13,28,28_277509,"Kąpino Parkowa 01",1,22713
+13,28,28_277513,"Kąpino Parkowa 01",1,22713
+13,28,28_277494,"Wejherowo Dworzec PKP 03",0,22714
+13,28,28_277498,"Wejherowo Dworzec PKP 03",0,22714
+13,28,28_277502,"Wejherowo Dworzec PKP 03",0,22714
+13,28,28_277506,"Wejherowo Dworzec PKP 03",0,22714
+13,28,28_277510,"Wejherowo Dworzec PKP 03",0,22714
+13,28,28_277514,"Wejherowo Broniewskiego - Dworzec PKP 01",0,22768
+14,24,24_276454,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276456,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276458,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276476,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276478,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276480,"Wejherowo Dworzec PKP 04",1,22715
+14,24,24_276453,"Orle Szkoła 01",0,22716
+14,24,24_276455,"Orle Szkoła 01",0,22716
+14,24,24_276457,"Orle Szkoła 01",0,22716
+14,24,24_276475,"Orle Szkoła 01",0,22716
+14,24,24_276477,"Orle Szkoła 01",0,22716
+14,24,24_276479,"Orle Szkoła 01",0,22716
+16,24,24_275850,"Wejherowo Krofeya 01",1,22717
+16,24,24_275852,"Wejherowo Krofeya 01",1,22717
+16,24,24_275854,"Wejherowo Krofeya 01",1,22717
+16,24,24_275856,"Wejherowo Krofeya 01",1,22717
+16,24,24_275858,"Wejherowo Krofeya 01",1,22717
+16,24,24_275860,"Wejherowo Krofeya 01",1,22717
+16,24,24_275862,"Wejherowo Krofeya 01",1,22717
+16,24,24_275864,"Wejherowo Krofeya 01",1,22717
+16,24,24_275866,"Wejherowo Krofeya 01",1,22717
+16,24,24_275868,"Wejherowo Krofeya 01",1,22717
+16,24,24_275870,"Wejherowo Krofeya 01",1,22717
+16,24,24_275872,"Wejherowo Krofeya 01",1,22717
+16,24,24_275874,"Wejherowo Krofeya 01",1,22717
+16,24,24_275913,"Wejherowo Krofeya 01",1,22717
+16,24,24_275915,"Wejherowo Krofeya 01",1,22717
+16,24,24_275917,"Wejherowo Krofeya 01",1,22717
+16,24,24_275919,"Wejherowo Krofeya 01",1,22717
+16,24,24_275921,"Wejherowo Krofeya 01",1,22717
+16,24,24_275923,"Wejherowo Krofeya 01",1,22717
+16,24,24_275925,"Wejherowo Krofeya 01",1,22717
+16,24,24_275927,"Wejherowo Krofeya 01",1,22717
+16,24,24_275929,"Wejherowo Krofeya 01",1,22717
+16,24,24_275931,"Wejherowo Krofeya 01",1,22717
+16,24,24_275933,"Wejherowo Krofeya 01",1,22717
+16,24,24_275935,"Wejherowo Krofeya 01",1,22717
+16,24,24_275937,"Wejherowo Krofeya 01",1,22717
+16,24,24_275939,"Wejherowo Krofeya 01",1,22717
+16,24,24_276017,"Wejherowo Krofeya 01",1,22717
+16,24,24_276066,"Wejherowo Krofeya 01",1,22717
+16,24,24_275849,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275851,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275853,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275855,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275857,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275859,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275861,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275863,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275865,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275867,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275869,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275871,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275873,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275914,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275916,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275918,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275920,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275922,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275924,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275926,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275928,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275930,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275932,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275934,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275936,"Wejherowo os. Sikorskiego 01",0,22718
+16,24,24_275938,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278481,"Wejherowo Krofeya 01",1,22717
+16,27,27_278483,"Wejherowo Krofeya 01",1,22717
+16,27,27_278485,"Wejherowo Krofeya 01",1,22717
+16,27,27_278487,"Wejherowo Krofeya 01",1,22717
+16,27,27_278489,"Wejherowo Krofeya 01",1,22717
+16,27,27_278491,"Wejherowo Krofeya 01",1,22717
+16,27,27_278493,"Wejherowo Krofeya 01",1,22717
+16,27,27_278495,"Wejherowo Krofeya 01",1,22717
+16,27,27_278497,"Wejherowo Krofeya 01",1,22717
+16,27,27_278559,"Wejherowo Krofeya 01",1,22717
+16,27,27_278586,"Wejherowo Krofeya 01",1,22717
+16,27,27_278717,"Wejherowo Krofeya 01",1,22717
+16,27,27_278719,"Wejherowo Krofeya 01",1,22717
+16,27,27_278721,"Wejherowo Krofeya 01",1,22717
+16,27,27_278723,"Wejherowo Krofeya 01",1,22717
+16,27,27_278725,"Wejherowo Krofeya 01",1,22717
+16,27,27_278727,"Wejherowo Krofeya 01",1,22717
+16,27,27_278729,"Wejherowo Krofeya 01",1,22717
+16,27,27_278731,"Wejherowo Krofeya 01",1,22717
+16,27,27_278733,"Wejherowo Krofeya 01",1,22717
+16,27,27_278480,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278482,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278484,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278486,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278488,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278490,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278492,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278494,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278496,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278716,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278718,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278720,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278722,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278724,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278726,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278728,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278730,"Wejherowo os. Sikorskiego 01",0,22718
+16,27,27_278732,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277318,"Wejherowo Krofeya 01",1,22717
+16,28,28_277345,"Wejherowo Krofeya 01",1,22717
+16,28,28_277533,"Wejherowo Krofeya 01",1,22717
+16,28,28_277535,"Wejherowo Krofeya 01",1,22717
+16,28,28_277537,"Wejherowo Krofeya 01",1,22717
+16,28,28_277539,"Wejherowo Krofeya 01",1,22717
+16,28,28_277541,"Wejherowo Krofeya 01",1,22717
+16,28,28_277543,"Wejherowo Krofeya 01",1,22717
+16,28,28_277545,"Wejherowo Krofeya 01",1,22717
+16,28,28_277623,"Wejherowo Krofeya 01",1,22717
+16,28,28_277625,"Wejherowo Krofeya 01",1,22717
+16,28,28_277627,"Wejherowo Krofeya 01",1,22717
+16,28,28_277629,"Wejherowo Krofeya 01",1,22717
+16,28,28_277631,"Wejherowo Krofeya 01",1,22717
+16,28,28_277633,"Wejherowo Krofeya 01",1,22717
+16,28,28_277635,"Wejherowo Krofeya 01",1,22717
+16,28,28_277532,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277534,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277536,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277538,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277540,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277542,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277544,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277622,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277624,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277626,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277628,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277630,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277632,"Wejherowo os. Sikorskiego 01",0,22718
+16,28,28_277634,"Wejherowo os. Sikorskiego 01",0,22718
+17,24,24_276360,"Reda Cmentarz 01",1,22719
+17,24,24_276362,"Reda Cmentarz 01",1,22719
+17,24,24_276364,"Reda Cmentarz 01",1,22719
+17,24,24_276366,"Reda Cmentarz 01",1,22719
+17,24,24_276368,"Reda Cmentarz 01",1,22719
+17,24,24_276370,"Reda Cmentarz 01",1,22719
+17,24,24_276372,"Reda Cmentarz 01",1,22719
+17,24,24_276374,"Reda Cmentarz 01",1,22719
+17,24,24_276376,"Reda Cmentarz 01",1,22719
+17,24,24_276378,"Reda Cmentarz 01",1,22719
+17,24,24_276380,"Reda Cmentarz 01",1,22719
+17,24,24_276382,"Reda Cmentarz 01",1,22719
+17,24,24_276359,"Reda Dworzec PKP 04",0,22720
+17,24,24_276361,"Reda Dworzec PKP 04",0,22720
+17,24,24_276363,"Reda Dworzec PKP 04",0,22720
+17,24,24_276365,"Reda Dworzec PKP 04",0,22720
+17,24,24_276367,"Reda Dworzec PKP 04",0,22720
+17,24,24_276369,"Reda Dworzec PKP 04",0,22720
+17,24,24_276371,"Reda Dworzec PKP 04",0,22720
+17,24,24_276373,"Reda Dworzec PKP 04",0,22720
+17,24,24_276375,"Reda Dworzec PKP 04",0,22720
+17,24,24_276377,"Reda Dworzec PKP 04",0,22720
+17,24,24_276379,"Reda Dworzec PKP 04",0,22720
+17,24,24_276381,"Reda Dworzec PKP 04",0,22720
+17,24,24_276383,"Reda Dworzec PKP 04",0,22720
+17,27,27_278808,"Reda Cmentarz 01",1,22719
+17,27,27_278811,"Reda Cmentarz 01",1,22719
+17,27,27_278814,"Reda Cmentarz 01",1,22719
+17,27,27_278817,"Reda Cmentarz 01",1,22719
+17,27,27_278820,"Reda Cmentarz 01",1,22719
+17,27,27_278809,"Reda Dworzec PKP 04",0,22720
+17,27,27_278812,"Reda Dworzec PKP 04",0,22720
+17,27,27_278815,"Reda Dworzec PKP 04",0,22720
+17,27,27_278818,"Reda Dworzec PKP 04",0,22720
+17,27,27_278821,"Reda Dworzec PKP 04",0,22720
+17,28,28_277519,"Reda Cmentarz 01",1,22719
+17,28,28_277522,"Reda Cmentarz 01",1,22719
+17,28,28_277525,"Reda Cmentarz 01",1,22719
+17,28,28_277528,"Reda Cmentarz 01",1,22719
+17,28,28_277517,"Reda Dworzec PKP 04",0,22720
+17,28,28_277520,"Reda Dworzec PKP 04",0,22720
+17,28,28_277523,"Reda Dworzec PKP 04",0,22720
+17,28,28_277526,"Reda Dworzec PKP 04",0,22720
+17,28,28_277529,"Reda Dworzec PKP 04",0,22720
+18,24,24_276114,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276116,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276118,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276120,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276122,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276124,"Rumia C.H. ""Port Rumia"" 01",1,22769
+18,24,24_276125,"Reda Ciechocino 02",1,22770
+18,24,24_276113,"Reda Dworzec PKP 04",1,22771
+18,24,24_276115,"Reda Dworzec PKP 04",1,22771
+18,24,24_276117,"Reda Dworzec PKP 04",1,22771
+18,24,24_276119,"Reda Dworzec PKP 04",1,22771
+18,24,24_276121,"Reda Dworzec PKP 04",1,22771
+18,24,24_276123,"Reda Dworzec PKP 04",1,22771
+18,24,24_276112,"Rumia C.H. ""Port Rumia"" 01",1,22772
+18,24,24_276111,"Rumia C.H. ""Port Rumia"" 01",1,22773
+18,27,27_278807,"Reda Dworzec PKP 04",1,22721
+18,27,27_278810,"Reda Dworzec PKP 04",1,22721
+18,27,27_278813,"Reda Dworzec PKP 04",1,22721
+18,27,27_278816,"Reda Dworzec PKP 04",1,22721
+18,27,27_278819,"Reda Dworzec PKP 04",1,22721
+18,27,27_278869,"Reda Dworzec PKP 04",1,22721
+18,28,28_277518,"Reda Dworzec PKP 04",1,22721
+18,28,28_277521,"Reda Dworzec PKP 04",1,22721
+18,28,28_277524,"Reda Dworzec PKP 04",1,22721
+18,28,28_277527,"Reda Dworzec PKP 04",1,22721

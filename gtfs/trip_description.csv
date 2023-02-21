@@ -1,49 +1,27 @@
-22083,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-22084,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-21920,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-21921,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-21922,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-22093,3,0,W,kurs do: Wejherowo os. Sikorskiego
-21930,3,0,W,kurs do: Wejherowo os. Sikorskiego
-22097,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-21934,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-21933,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
-22106,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-21943,5,0,C,kurs skrócony do: Wejherowo Chopina 02
-22102,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-21939,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
-21938,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
-22109,6,1,B,kurs tylko do Szpitala
-21946,6,1,B,kurs tylko do Szpitala
-21950,7,1,R,kurs do: Gościcino Robakowska
-22121,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-21958,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-22125,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-21962,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-22128,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
-21965,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
-21963,10,1,B,kurs skrócony do: Gościcino Równa 04
-22131,11,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-21968,11,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-22132,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-21969,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-22133,18,1,R,kurs do: C.H. Port Rumia
-22136,18,1,R,kurs do: C.H. Port Rumia
-22137,18,1,R,kurs do: C.H. Port Rumia
-21970,18,1,R,kurs do: C.H. Port Rumia
-21973,18,1,R,kurs do: C.H. Port Rumia
-21974,18,1,R,kurs do: C.H. Port Rumia
-22111,6,0,S,kurs z podjazdem do Szpitala
-21948,6,0,S,kurs z podjazdem do Szpitala
-22108,6,1,A,kurs z podjazdem do Szpitala
-22109,6,1,A,kurs z podjazdem do Szpitala
-22110,6,1,A,kurs z podjazdem do Szpitala
-21945,6,1,A,kurs z podjazdem do Szpitala
-21946,6,1,A,kurs z podjazdem do Szpitala
-21947,6,1,A,kurs z podjazdem do Szpitala
-22120,8,0,C,kurs z podjazdem do Ciechocina
-21957,8,0,C,kurs z podjazdem do Ciechocina
-22117,8,0,C,kurs z podjazdem do Ciechocina
-22119,8,0,C,kurs z podjazdem do Ciechocina
-21954,8,0,C,kurs z podjazdem do Ciechocina
-21956,8,0,C,kurs z podjazdem do Ciechocina
+22722,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+22723,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+22724,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+22731,3,0,W,kurs do: Wejherowo os. Sikorskiego
+22735,4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+22734,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
+22743,5,0,C,kurs skrócony do: Wejherowo Chopina 02
+22739,5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż
+22738,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
+22746,6,1,B,kurs tylko do Szpitala
+22750,7,1,R,kurs do: Gościcino Robakowska
+22758,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+22761,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+22764,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
+22762,10,1,B,kurs skrócony do: Gościcino Równa 04
+22767,11,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
+22768,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
+22769,18,1,R,kurs do: C.H. Port Rumia
+22772,18,1,R,kurs do: C.H. Port Rumia
+22773,18,1,R,kurs do: C.H. Port Rumia
+22748,6,0,S,kurs z podjazdem do Szpitala
+22745,6,1,A,kurs z podjazdem do Szpitala
+22746,6,1,A,kurs z podjazdem do Szpitala
+22747,6,1,A,kurs z podjazdem do Szpitala
+22757,8,0,C,kurs z podjazdem do Ciechocina
+22754,8,0,C,kurs z podjazdem do Ciechocina
+22756,8,0,C,kurs z podjazdem do Ciechocina

@@ -1,2 +1,2 @@
 ﻿agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone,agency_fare_url
-2,"MZK Wejherowo",http://mzkwejherowo.pl/,Europe/Warsaw,pl,+48585722930,http://mzkwejherowo.pl/taryfy-i-przepisy
+2,"MZK Wejherowo",http://mzkwejherowo.pl/,Europe/Warsaw,pl,+48585722933,http://mzkwejherowo.pl/taryfy-i-przepisy
