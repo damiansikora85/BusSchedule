@@ -50,19 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Pages\RouteStopsListPage.xaml.cs">
-      <DependentUpon>RouteStopsListPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <MauiXaml Update="AppShell.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\FavoritesPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </MauiXaml>
-    <MauiXaml Update="Pages\RouteMapPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </MauiXaml>
     <MauiXaml Update="Pages\RoutePage.xaml">
