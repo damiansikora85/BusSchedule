@@ -109,18 +109,8 @@ namespace BusSchedule.Core.GTFS
             {
                 return serviceId;
             }
-            if (date.DayOfWeek == DayOfWeek.Saturday)
-            {
-                return await dataProvider.GetSaturdayServiceId();
-            }
-            else if (date.DayOfWeek == DayOfWeek.Sunday || HolidaysHelper.IsTodayHoliday())
-            {
-                return await dataProvider.GetSundayServiceId();
-            }
-            else
-            {
-                return await dataProvider.GetWorkdaysServiceId();
-            }
+
+            return await dataProvider.GetServiceIdByWeekDay(date.DayOfWeek);
         }
 
         public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)

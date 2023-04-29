@@ -225,6 +225,38 @@ namespace BusSchedule.Providers
             return string.Empty;
         }
 
+        public async Task<string> GetServiceIdByWeekDay(DayOfWeek dayOfWeek)
+        {
+            var connection = await GetDatabaseConnectionAsync<Core.Model.Calendar>().ConfigureAwait(false);
+            var info = new Core.Model.Calendar();
+            switch (dayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Monday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Tuesday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Tuesday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Wednesday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Wednesday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Thursday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Thursday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Friday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Friday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Saturday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Saturday == "1").FirstOrDefaultAsync());
+                    break;
+                case DayOfWeek.Sunday:
+                    info = await AttemptAndRetry(() => connection.Table<Core.Model.Calendar>().Where(cal => cal.Sunday == "1").FirstOrDefaultAsync());
+                    break; 
+            }
+
+            return info.Service_Id;
+        }
+
         public async Task SaveNews(IList<News> news)
         {
             var connection = await GetDatabaseConnectionAsync<News>().ConfigureAwait(false);
