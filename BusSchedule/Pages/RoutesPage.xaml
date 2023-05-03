@@ -84,6 +84,16 @@
                 TextColorSelected="White">
                 <views:FavoritesView x:Name="FavoritesView" />
             </xct:TabViewItem>
+            <xct:TabViewItem
+                ControlTemplate="{StaticResource TabItemTemplate}"
+                FontSize="12"
+                FontSizeSelected="16"
+                Icon="outline_credit_card_white_24"
+                Text="Stan karty"
+                TextColor="LightGray"
+                TextColorSelected="White">
+                <views:CardsList x:Name="CardListView" />
+            </xct:TabViewItem>
         </xct:TabView>
     </ContentPage.Content>
 </ContentPage>
