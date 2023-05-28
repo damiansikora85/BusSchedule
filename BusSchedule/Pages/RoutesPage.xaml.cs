@@ -78,6 +78,7 @@ namespace BusSchedule.Pages
             }
 
             await FavoritesView.RefreshView();
+            await CardListView.RefreshView();
 
             base.OnAppearing();
         }

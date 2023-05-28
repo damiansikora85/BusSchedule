@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI" 
+             xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+             x:DataType="views:CardsListViewModel"
              x:Class="BusSchedule.Pages.Views.CardsList">
     <ContentView.Resources>
         <ResourceDictionary>
@@ -10,11 +13,34 @@
     </ContentView.Resources>
   <ContentView.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Cards}" IsVisible="{Binding HasCards}">
-
+            <ListView ItemsSource="{Binding Cards}" IsVisible="{Binding HasCards}" SelectedItem="{Binding SelectedCard}" ItemSelected="OnCardSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid x:DataType="model:ElectronicCardData" ColumnDefinitions="*,50,50" RowDefinitions="*,*">
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Number}" Grid.Row="1"/>
+                                <Button Text="&#xe3c9;" Grid.Column="1" Grid.RowSpan="2" BackgroundColor="Transparent" FontSize="24" TextColor="#797979">
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Button.FontFamily>
+                                </Button>
+                                <Button Text="&#xe872;" Grid.Column="2" Grid.RowSpan="2" BackgroundColor="Transparent" FontSize="24" TextColor="#797979">
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Button.FontFamily>
+                                </Button>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
             <Label Text="Brak dodanych kart" IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-            <Button Text="Dodaj karte" Command="{Binding AddCardCommand}"/>
+            <Button Text="Dodaj karte" Clicked="OnAddCard"/>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

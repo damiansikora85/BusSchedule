@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.CardDetailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Title="{Binding CardName}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+            <Grid
+                ColumnDefinitions="*,*"
+                IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
+                RowDefinitions="*,*,*,*">
+                <Label
+                    FontSize="14"
+                    Text="Numer karty:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="1"
+                    FontSize="18"
+                    Text="{Binding CardNumber}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Column="1"
+                    FontSize="14"
+                    Text="Typ:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding CardName}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Row="2"
+                    FontSize="14"
+                    Text="Karta ważna do:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="3"
+                    FontSize="18"
+                    Text="{Binding ValidTo, StringFormat='{0:d}'}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="14"
+                    Text="Ulga ważna do:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding DiscountValidTo, StringFormat='{0:d}'}"
+                    VerticalTextAlignment="Start" />
+            </Grid>
+            <ListView
+                Margin="2,16"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Tickets}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame>
+                                <Grid
+                                    Padding="2,4"
+                                    ColumnDefinitions="5*,*"
+                                    RowDefinitions="*,*,*,*"
+                                    RowSpacing="2">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Name}" />
+                                    <Label
+                                        Grid.RowSpan="3"
+                                        Grid.Column="1"
+                                        FontSize="18"
+                                        Text="{Binding Price, StringFormat='{0}zł'}"
+                                        VerticalTextAlignment="Center" />
+                                    <Label Grid.Row="1" Text="{Binding Zone, StringFormat='Strefa: {0}'}" />
+                                    <Label Grid.Row="2" Text="{Binding Valid, StringFormat='Ważność: {0}'}" />
+                                    <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0}'}" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

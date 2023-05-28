@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.AddCardPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+    xmlns:pages="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI" 
+    x:DataType="pages:AddCardViewModel"
+    Title="Dodaj karte elektroniczną">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Keyboard="Numeric"
+                    Text="{Binding SearchCardNumber, Mode=TwoWay}" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}" />
+                <Button Command="{Binding SearchCardCommand}" Text="Szukaj" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"/>
+            </StackLayout>
+            <ActivityIndicator IsVisible="{Binding IsSearching}" IsRunning="True"/>
+            <Frame Margin="4" IsVisible="{Binding IsCardFound}">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
+                    <Label
+                        FontSize="14"
+                        Text="Numer karty:"
+                        VerticalTextAlignment="End" />
+                    <Label
+                        Grid.Row="1"
+                        FontSize="18"
+                        Text="{Binding CardNumber}"
+                        VerticalTextAlignment="Start" />
+
+                    <Label
+                        Grid.Column="1"
+                        FontSize="14"
+                        Text="Typ:"
+                        VerticalTextAlignment="End" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontSize="18"
+                        Text="{Binding CardName}"
+                        VerticalTextAlignment="Start" />
+
+                    <Label
+                        Grid.Row="2"
+                        FontSize="14"
+                        Text="Karta ważna do:"
+                        VerticalTextAlignment="End" />
+                    <Label
+                        Grid.Row="3"
+                        FontSize="18"
+                        Text="{Binding ValidTo, StringFormat='{0:d}'}"
+                        VerticalTextAlignment="Start" />
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        FontSize="14"
+                        Text="Ulga ważna do:"
+                        VerticalTextAlignment="End" />
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        FontSize="18"
+                        Text="{Binding DiscountValidTo, StringFormat='{0:d}'}"
+                        VerticalTextAlignment="Start" />
+                    <Button
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Text="Dodaj karte" Clicked="OnAddCardClicked" />
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
