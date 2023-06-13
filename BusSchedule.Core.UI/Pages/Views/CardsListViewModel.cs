@@ -16,8 +16,9 @@ namespace BusSchedule.Core.UI.Pages.Views
         public IList<ElectronicCardData> Cards { get; private set; }
         public bool HasCards => Cards.Any();
         public ICommand AddCardCommand { get; private set; }
-        private readonly ICardsManager _cardsManager;
         public ElectronicCardData SelectedCard { get; set; }
+
+        private readonly ICardsManager _cardsManager;
 
         public CardsListViewModel(ICardsManager cardsManager)
         {
@@ -37,6 +38,11 @@ namespace BusSchedule.Core.UI.Pages.Views
         private void AddCard()
         {
             
+        }
+
+        public void DeleteCard(ElectronicCardData cardData)
+        {
+            throw new NotImplementedException();
         }
     }
 }

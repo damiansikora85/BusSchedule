@@ -1,33 +1,54 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
-             xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI" 
-             xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
-             x:DataType="views:CardsListViewModel"
-             x:Class="BusSchedule.Pages.Views.CardsList">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="BusSchedule.Pages.Views.CardsList"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="views:CardsListViewModel">
     <ContentView.Resources>
         <ResourceDictionary>
             <xct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
         </ResourceDictionary>
     </ContentView.Resources>
-  <ContentView.Content>
+    <ContentView.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding Cards}" IsVisible="{Binding HasCards}" SelectedItem="{Binding SelectedCard}" ItemSelected="OnCardSelected">
+            <ListView
+                IsVisible="{Binding HasCards}"
+                ItemSelected="OnCardSelected"
+                ItemsSource="{Binding Cards}"
+                SelectedItem="{Binding SelectedCard}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid x:DataType="model:ElectronicCardData" ColumnDefinitions="*,50,50" RowDefinitions="*,*">
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Number}" Grid.Row="1"/>
-                                <Button Text="&#xe3c9;" Grid.Column="1" Grid.RowSpan="2" BackgroundColor="Transparent" FontSize="24" TextColor="#797979">
+                            <Grid
+                                x:DataType="model:ElectronicCardData"
+                                ColumnDefinitions="*,50,50"
+                                RowDefinitions="*,*">
+                                <Label Text="{Binding Name}" />
+                                <Label Grid.Row="1" Text="{Binding Number}" />
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="Transparent"
+                                    FontSize="24"
+                                    Text="&#xe3c9;"
+                                    TextColor="#797979">
                                     <Button.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
                                         </OnPlatform>
                                     </Button.FontFamily>
                                 </Button>
-                                <Button Text="&#xe872;" Grid.Column="2" Grid.RowSpan="2" BackgroundColor="Transparent" FontSize="24" TextColor="#797979">
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnCardDelete"
+                                    FontSize="24"
+                                    Text="&#xe872;"
+                                    TextColor="#797979">
                                     <Button.FontFamily>
                                         <OnPlatform x:TypeArguments="x:String">
                                             <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
@@ -39,8 +60,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="Brak dodanych kart" IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
-            <Button Text="Dodaj karte" Clicked="OnAddCard"/>
+            <Label
+                HorizontalTextAlignment="Center"
+                IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}"
+                Text="Brak dodanych kart"
+                VerticalOptions="CenterAndExpand" />
+            <Button Clicked="OnAddCard" Text="Dodaj karte" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

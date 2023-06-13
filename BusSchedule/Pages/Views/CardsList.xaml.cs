@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.UI.Pages.Views;
+﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Interfaces.Implementation;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,14 @@ namespace BusSchedule.Pages.Views
             if (_viewModel.SelectedCard != null)
             {
                 await Navigation.PushAsync(new CardDetailsPage(_viewModel.SelectedCard));
+            }
+        }
+
+        private void OnCardDelete(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
+            {
+                _viewModel.DeleteCard(cardData);
             }
         }
     }
