@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BusSchedule.Interfaces.Implementation
@@ -28,6 +29,17 @@ namespace BusSchedule.Interfaces.Implementation
             var cards = await GetCards();
             cards.Add(card);
             await SaveCards(cards);
+        }
+
+        public async Task DeleteCard(ElectronicCardData cardData)
+        {
+            var cards = await GetCards();
+            var foundCard = cards.FirstOrDefault(card => card.Number == cardData.Number);
+            if (foundCard != null)
+            {
+                cards.Remove(foundCard);
+                await SaveCards(cards);
+            }
         }
 
         private string GetFilename()

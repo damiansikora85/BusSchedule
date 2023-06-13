@@ -40,9 +40,10 @@ namespace BusSchedule.Core.UI.Pages.Views
             
         }
 
-        public void DeleteCard(ElectronicCardData cardData)
+        public async Task DeleteCard(ElectronicCardData cardData)
         {
-            throw new NotImplementedException();
+            await _cardsManager.DeleteCard(cardData);
+            await RefreshCards();
         }
     }
 }

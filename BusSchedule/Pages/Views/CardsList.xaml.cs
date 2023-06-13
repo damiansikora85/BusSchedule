@@ -44,11 +44,14 @@ namespace BusSchedule.Pages.Views
             }
         }
 
-        private void OnCardDelete(object sender, EventArgs e)
+        private async void OnCardDelete(object sender, EventArgs e)
         {
             if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
             {
-                _viewModel.DeleteCard(cardData);
+                if (await App.Current.MainPage.DisplayAlert("Uwaga", $"Czy na pewno chcesz usunąć karte ({cardData.Name})?", "Tak", "Nie"))
+                {
+                    await _viewModel.DeleteCard(cardData);
+                }
             }
         }
     }
