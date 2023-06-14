@@ -41,6 +41,17 @@ namespace BusSchedule.Interfaces.Implementation
                 await SaveCards(cards);
             }
         }
+        public async Task EditCard(ElectronicCardData cardData, string newCardName)
+        {
+            var cards = await GetCards();
+            var foundCard = cards.FirstOrDefault(card => card.Number == cardData.Number);
+            if (foundCard != null)
+            {
+                foundCard.Name = newCardName;
+                await SaveCards(cards);
+            }
+        }
+
 
         private string GetFilename()
         {

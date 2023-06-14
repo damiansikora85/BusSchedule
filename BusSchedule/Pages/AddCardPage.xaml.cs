@@ -23,6 +23,7 @@ namespace BusSchedule.Pages
         {
 			var name = await DisplayPromptAsync("Dodaj karte", "Podaj nazwe karty", initialValue: _viewModel.CardNumber);
 			await _viewModel.SaveCard(name);
+			await Navigation.PopAsync();
         }
     }
 }

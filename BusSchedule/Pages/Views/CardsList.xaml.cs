@@ -54,5 +54,14 @@ namespace BusSchedule.Pages.Views
                 }
             }
         }
+
+        private async void OnCardEdit(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
+            {
+                var newCardName = await App.Current.MainPage.DisplayPromptAsync("Edycja karty", "Zmień nazwe karty", "Zapisz", "Anuluj", initialValue: cardData.Name);
+                await _viewModel.EditCard(cardData, newCardName);
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@
                 <Entry
                     HorizontalOptions="FillAndExpand"
                     Keyboard="Numeric"
+                    Placeholder="Wpisz numer karty"
                     Text="{Binding SearchCardNumber, Mode=TwoWay}" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}" />
                 <Button Command="{Binding SearchCardCommand}" Text="Szukaj" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"/>
             </StackLayout>

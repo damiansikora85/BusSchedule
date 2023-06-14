@@ -45,5 +45,11 @@ namespace BusSchedule.Core.UI.Pages.Views
             await _cardsManager.DeleteCard(cardData);
             await RefreshCards();
         }
+
+        public async Task EditCard(ElectronicCardData cardData, string newCardName)
+        {
+            await _cardsManager.EditCard(cardData, newCardName);
+            await RefreshCards();
+        }
     }
 }

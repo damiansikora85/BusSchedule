@@ -33,6 +33,7 @@
                                     Grid.Column="1"
                                     BackgroundColor="Transparent"
                                     FontSize="24"
+                                    Clicked="OnCardEdit"
                                     Text="&#xe3c9;"
                                     TextColor="#797979">
                                     <Button.FontFamily>
