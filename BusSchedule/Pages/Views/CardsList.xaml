@@ -18,22 +18,27 @@
                 IsVisible="{Binding HasCards}"
                 ItemSelected="OnCardSelected"
                 ItemsSource="{Binding Cards}"
+                RowHeight="60"
                 SelectedItem="{Binding SelectedCard}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid
+                                Padding="4,2"
                                 x:DataType="model:ElectronicCardData"
                                 ColumnDefinitions="*,50,50"
                                 RowDefinitions="*,*">
-                                <Label Text="{Binding Name}" />
-                                <Label Grid.Row="1" Text="{Binding Number}" />
+                                <Label FontSize="18" Text="{Binding Name}" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontSize="14"
+                                    Text="{Binding Number}" />
                                 <Button
                                     Grid.RowSpan="2"
                                     Grid.Column="1"
                                     BackgroundColor="Transparent"
-                                    FontSize="24"
                                     Clicked="OnCardEdit"
+                                    FontSize="24"
                                     Text="&#xe3c9;"
                                     TextColor="#797979">
                                     <Button.FontFamily>

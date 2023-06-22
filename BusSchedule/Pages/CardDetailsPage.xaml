@@ -14,9 +14,10 @@
         <StackLayout>
             <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
             <Grid
+                Padding="4,2"
                 ColumnDefinitions="*,*"
                 IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
-                RowDefinitions="*,*,*,*">
+                RowDefinitions="2*,3*,2*,3*">
                 <Label
                     FontSize="14"
                     Text="Numer karty:"
