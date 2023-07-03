@@ -25,6 +25,6 @@ namespace BusSchedule.Core.Model
         public DateTime TransactionTime { get; set; }
         [JsonProperty("issuer_id")]
         public int IssuerId { get; set; }
-        public string Valid => $"{ValidSince:d} - {ValidFor:d}";
+        public string Valid => $"{ValidSince:dd.MM.yyyy} - {ValidFor:dd.MM.yyyy}";
     }
 }

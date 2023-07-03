@@ -23,39 +23,47 @@ namespace BusSchedule.Core.UI.Pages
         public DateTime DiscountValidTo => _foundCard.DiscountValidTo;
         public bool IsCardFound { get; private set; }
         public bool IsSearching { get; private set; }
-        public ICommand SearchCardCommand { get; private set; }
         private readonly ICardsManager _cardsManager;
         private ElectronicCardData _foundCard;
 
         public AddCardViewModel(ICardsManager cardsManager)
         {
             _cardsManager = cardsManager;
-            SearchCardCommand = new AsyncCommand(SearchCard);
         }
 
-        private async Task SearchCard()
+        public async Task SearchCard()
         {
-            IsSearching = true;
-            OnPropertyChanged(nameof(IsSearching));
-            var httpClient = new HttpClient();
-            var response = await httpClient.GetAsync($"https://api.mzkwejherowo.pl/public/bilet-elektroniczny/k2z7d10rasogmy8uj6b5f3tc4iv9qxle/cards/{SearchCardNumber}.json");
-            if (response.IsSuccessStatusCode)
+            try
             {
-                var result = await response.Content.ReadAsStringAsync();
-                var json = JObject.Parse(result);
-                if (json["data"] != null)
+                IsSearching = true;
+                OnPropertyChanged(nameof(IsSearching));
+                var httpClient = new HttpClient();
+                var response = await httpClient.GetAsync($"https://api.mzkwejherowo.pl/public/bilet-elektroniczny/k2z7d10rasogmy8uj6b5f3tc4iv9qxle/cards/{SearchCardNumber}.json");
+                if (response.IsSuccessStatusCode)
                 {
-                    _foundCard = json["data"].ToObject<ElectronicCardData>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" });
-                    IsCardFound = true;
+                    var result = await response.Content.ReadAsStringAsync();
+                    var json = JObject.Parse(result);
+                    if (json["data"] != null)
+                    {
+                        _foundCard = json["data"].ToObject<ElectronicCardData>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" });
+                        IsCardFound = true;
 
-                    IsSearching = false;
-                    OnPropertyChanged(nameof(IsSearching));
-                    OnPropertyChanged(nameof(IsCardFound));
-                    OnPropertyChanged(nameof(CardNumber));
-                    OnPropertyChanged(nameof(CardName));
-                    OnPropertyChanged(nameof(ValidTo));
-                    OnPropertyChanged(nameof(DiscountValidTo));
+                        OnPropertyChanged(nameof(IsCardFound));
+                        OnPropertyChanged(nameof(CardNumber));
+                        OnPropertyChanged(nameof(CardName));
+                        OnPropertyChanged(nameof(ValidTo));
+                        OnPropertyChanged(nameof(DiscountValidTo));
+                    }
                 }
+            }
+            catch(Exception) 
+            {
+                throw;
+            }
+            finally
+            {
+                IsSearching = false;
+                OnPropertyChanged(nameof(IsSearching));
             }
         }
 

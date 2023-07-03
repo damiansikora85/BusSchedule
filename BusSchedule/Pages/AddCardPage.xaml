@@ -20,7 +20,7 @@
                     Keyboard="Numeric"
                     Placeholder="Wpisz numer karty"
                     Text="{Binding SearchCardNumber, Mode=TwoWay}" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}" />
-                <Button Command="{Binding SearchCardCommand}" Text="Szukaj" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"/>
+                <Button Clicked="OnSearchCardClicked" Text="Szukaj" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"/>
             </StackLayout>
             <ActivityIndicator IsVisible="{Binding IsSearching}" IsRunning="True"/>
             <Frame Margin="4" IsVisible="{Binding IsCardFound}">

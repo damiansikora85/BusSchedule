@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using BusSchedule.Core.Exceptions;
+using BusSchedule.Core.UI.Interfaces;
 
 namespace BusSchedule.Core.UI.Pages
 {
@@ -41,9 +43,10 @@ namespace BusSchedule.Core.UI.Pages
                 {
                     _cardData = json["data"].ToObject<ElectronicCardData>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" });
                 }
-                    var ticketsResponse = await httpClient.GetAsync($"https://api.mzkwejherowo.pl/public/bilet-elektroniczny/k2z7d10rasogmy8uj6b5f3tc4iv9qxle/devices/{_cardData.Number}/tickets2.json");
-                if(ticketsResponse.IsSuccessStatusCode) 
+                var ticketsResponse = await httpClient.GetAsync($"https://api.mzkwejherowo.pl/public/bilet-elektroniczny/k2z7d10rasogmy8uj6b5f3tc4iv9qxle/devices/{_cardData.Number}/tickets2.json");
+                if (ticketsResponse.IsSuccessStatusCode)
                 {
+                    throw new ElectronicCardException(_cardData.Number, ticketsResponse.StatusCode, ticketsResponse.ReasonPhrase);
                     var ticketsResult = await ticketsResponse.Content.ReadAsStringAsync();
                     var ticketsJson = JObject.Parse(ticketsResult);
                     if (ticketsJson["data"] != null)
@@ -53,6 +56,14 @@ namespace BusSchedule.Core.UI.Pages
                         Tickets.AddRange(ar.ToObject<List<TicketData>>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" }));
                     }
                 }
+                else
+                {
+                    throw new ElectronicCardException(_cardData.Number, ticketsResponse.StatusCode, ticketsResponse.ReasonPhrase);
+                }
+            }
+            else
+            {
+                throw new ElectronicCardException(_cardData.Number, response.StatusCode, response.ReasonPhrase);
             }
 
             IsLoading = false;

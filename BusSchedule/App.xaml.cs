@@ -3,6 +3,7 @@ using BusSchedule.Core.CloudService;
 using BusSchedule.Core.CloudService.Impl;
 using BusSchedule.Core.Messages;
 using BusSchedule.Core.Services;
+using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
 using BusSchedule.Pages;
@@ -48,6 +49,7 @@ namespace BusSchedule
             container.Register<INewsService, NewsService>(new NewsService(new FirebaseCloudService(), dataProvider));
             container.Register<IFirebaseStorage, Storage>().AsSingleton();
             container.Register<IScheduleUpdater, ScheduleUpdater>();
+            container.Register<ILogger, ErrorLogger>();
         }
 
         private string GetDatabaseFilename()

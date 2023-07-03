@@ -14,10 +14,11 @@
         <StackLayout>
             <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
             <Grid
-                Padding="4,2"
+                Margin="4"
                 ColumnDefinitions="*,*"
                 IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
-                RowDefinitions="2*,3*,2*,3*">
+                RowDefinitions="*,3*,*,3*"
+                RowSpacing="4">
                 <Label
                     FontSize="14"
                     Text="Numer karty:"
@@ -48,7 +49,7 @@
                 <Label
                     Grid.Row="3"
                     FontSize="18"
-                    Text="{Binding ValidTo, StringFormat='{0:d}'}"
+                    Text="{Binding ValidTo, StringFormat='{0:dd.MM.yyyy}'}"
                     VerticalTextAlignment="Start" />
 
                 <Label
@@ -61,11 +62,11 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     FontSize="18"
-                    Text="{Binding DiscountValidTo, StringFormat='{0:d}'}"
+                    Text="{Binding DiscountValidTo, StringFormat='{0:dd.MM.yyyy}'}"
                     VerticalTextAlignment="Start" />
             </Grid>
             <ListView
-                Margin="2,16"
+                Margin="4,16"
                 HasUnevenRows="True"
                 ItemsSource="{Binding Tickets}"
                 VerticalOptions="FillAndExpand">
@@ -90,7 +91,7 @@
                                         VerticalTextAlignment="Center" />
                                     <Label Grid.Row="1" Text="{Binding Zone, StringFormat='Strefa: {0}'}" />
                                     <Label Grid.Row="2" Text="{Binding Valid, StringFormat='Ważność: {0}'}" />
-                                    <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0}'}" />
+                                    <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0:dd.MM.yyyy hh:mm}'}" />
                                 </Grid>
                             </Frame>
                         </ViewCell>
