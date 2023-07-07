@@ -8,6 +8,8 @@ namespace BusSchedule.Interfaces.Implementation
     {
         public bool IsFirstLaunch => VersionTracking.IsFirstLaunchEver;
 
+        public bool IsFirstLaunchVersion => VersionTracking.IsFirstLaunchForCurrentVersion;
+
         public void Delete(string key) => Preferences.Remove(key);
 
         public string Get(string key, string defaultValue) => Preferences.Get(key, defaultValue);

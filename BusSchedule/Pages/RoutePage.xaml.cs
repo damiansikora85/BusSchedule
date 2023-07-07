@@ -78,7 +78,7 @@ namespace BusSchedule.Pages
 
             async Task RequestLocationPermissionWithExplanation()
             {
-                await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
+                await DisplayAlert("Widok mapy", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
                 _ = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             }
         }

@@ -7,6 +7,7 @@ namespace BusSchedule.Core.Services
     public interface IPreferences
     {
         bool IsFirstLaunch { get; }
+        bool IsFirstLaunchVersion { get; }
 
         void Set(string key, string value);
         void Set(string key, int value);

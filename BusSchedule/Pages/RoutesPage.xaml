@@ -91,7 +91,8 @@
                 Icon="outline_credit_card_white_24"
                 Text="Stan karty"
                 TextColor="LightGray"
-                TextColorSelected="White">
+                TextColorSelected="White"
+                TabTapped="OnCardTabSelected">
                 <views:CardsList x:Name="CardListView" />
             </xct:TabViewItem>
         </xct:TabView>

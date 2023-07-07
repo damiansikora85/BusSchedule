@@ -158,5 +158,14 @@ namespace BusSchedule.Pages
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent("NewsClicked");
             await Navigation.PushAsync(new NewsPage(_newsService));
         }
+
+        private async void OnCardTabSelected(object sender, Xamarin.CommunityToolkit.UI.Views.TabTappedEventArgs e)
+        {
+            var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
+            if(preferences.IsFirstLaunchVersion) 
+            {
+                await DisplayAlert("Stan karty", "Dodaj swoją kartę elektroniczną aby sprawdzić informacje oraz ważne bilety zakupione dla twojej karty.", "Rozumiem");
+            }
+        }
     }
 }
