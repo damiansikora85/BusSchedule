@@ -1,25 +1,22 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Components;
+using BusSchedule.Core.Messages;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.Utils;
 using BusSchedule.Dialogs;
-using BusSchedule.Interfaces;
 using BusSchedule.Pages.ViewModels;
 using BusSchedule.Tools;
 using Microsoft.AppCenter.Crashes;
+using Polly;
+using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TinyIoC;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Threading.Tasks;
-using Polly;
-using Xamarin.Essentials;
-using Rg.Plugins.Popup.Extensions;
-using BusSchedule.Popups;
-using BusSchedule.Core.CloudService;
-using BusSchedule.Core.Services;
-using BusSchedule.Core.Messages;
 
 namespace BusSchedule.Pages
 {
@@ -29,9 +26,11 @@ namespace BusSchedule.Pages
         private readonly RoutesPageViewModel _viewModel;
         private INewsService _newsService;
         private bool _selectionLock;
+        private bool _showCardInfo;
 
         public RoutesPage()
         {
+            _showCardInfo = true;
             InitializeComponent();
             _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
             BindingContext = _viewModel;
@@ -162,8 +161,9 @@ namespace BusSchedule.Pages
         private async void OnCardTabSelected(object sender, Xamarin.CommunityToolkit.UI.Views.TabTappedEventArgs e)
         {
             var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
-            if(preferences.IsFirstLaunchVersion) 
+            if(preferences.IsFirstLaunchVersion && _showCardInfo) 
             {
+                _showCardInfo = false;
                 await DisplayAlert("Stan karty", "Dodaj swoją kartę elektroniczną aby sprawdzić informacje oraz ważne bilety zakupione dla twojej karty.", "Rozumiem");
             }
         }
