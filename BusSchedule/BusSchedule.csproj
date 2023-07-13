@@ -17,16 +17,16 @@
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="4.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="4.5.0" />
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.7.56" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Polly" Version="7.2.4" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2401" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2578" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
     <PackageReference Include="Xamarin.Plugin.Firebase" Version="1.0.1" />
   </ItemGroup>
