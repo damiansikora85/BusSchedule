@@ -71,7 +71,7 @@ namespace BusSchedule.Core.UI.Pages
 
         private async Task<IList<TimetableTuple>> GetScheduleForDay()
         {
-            return _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value, SelectedDay.Date) : await GtfsUtils.GetSchedule(_dataProvider, Route, Station, SelectedDay.Date); ;
+            return _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value, SelectedDay.Date) : await GtfsUtils.GetSchedule(_dataProvider, Route, Station, SelectedDay.Date);
         }
 
         private List<Trip_Description> ParseLegend(IEnumerable<Trip_Description> legendData)
