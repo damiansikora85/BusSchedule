@@ -46,7 +46,6 @@ namespace BusSchedule.Core.UI.Pages
                 var ticketsResponse = await httpClient.GetAsync($"https://api.mzkwejherowo.pl/public/bilet-elektroniczny/k2z7d10rasogmy8uj6b5f3tc4iv9qxle/devices/{_cardData.Number}/tickets2.json");
                 if (ticketsResponse.IsSuccessStatusCode)
                 {
-                    throw new ElectronicCardException(_cardData.Number, ticketsResponse.StatusCode, ticketsResponse.ReasonPhrase);
                     var ticketsResult = await ticketsResponse.Content.ReadAsStringAsync();
                     var ticketsJson = JObject.Parse(ticketsResult);
                     if (ticketsJson["data"] != null)
