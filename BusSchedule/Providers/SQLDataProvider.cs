@@ -87,7 +87,7 @@ namespace BusSchedule.Providers
         {
             var connection = await GetDatabaseConnectionAsync<Stops>().ConfigureAwait(false);
             var stops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops Where stop_id = ?", stopId));
-            return stops.FirstOrDefault();
+            return stops.Any() ? stops.FirstOrDefault() : null;
         }
 
         public async Task<IEnumerable<Trips>> GetTripsForRoute(string routeId, string serviceId)

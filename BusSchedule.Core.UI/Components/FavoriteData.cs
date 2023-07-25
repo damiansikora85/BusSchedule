@@ -37,7 +37,6 @@ namespace BusSchedule.Core.UI.Components
             var route = await dataProvider.GetRoute(data.RouteId);
             var destinations = await dataProvider.GetRouteDestinations(route);
 
-
             var destination = data.Direction == 0 ? destinations.Outbound : destinations.Inbound;
             return data.Direction < 0 ? new FavoriteData(route, stop, destination) : new FavoriteData(route, stop, data.Direction, destination);
         }
