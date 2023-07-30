@@ -29,12 +29,16 @@ namespace BusSchedule.Core.UI.Components
 
         public static async Task<FavoriteData> Create(FavoriteDescription data, IDataProvider dataProvider)
         {
-            var stop = await dataProvider.GetStopById(data.StopId);
+            var stop = await dataProvider.GetStopById("40");
             if(stop == null)
             {
                 throw new FavoriteCreateException(data);
             }
-            var route = await dataProvider.GetRoute(data.RouteId);
+            var route = await dataProvider.GetRoute("14");
+            if(route == null)
+            {
+                throw new FavoriteCreateException(data);
+            }
             var destinations = await dataProvider.GetRouteDestinations(route);
 
             var destination = data.Direction == 0 ? destinations.Outbound : destinations.Inbound;
