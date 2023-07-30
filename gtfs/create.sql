@@ -148,3 +148,9 @@ CREATE TABLE "trips" (
 .import trips.txt trips
 DELETE FROM trips
 WHERE route_id = 'route_id';
+
+CREATE TABLE "news" (
+	"title" TEXT,
+	"show" TEXT,
+	"message" TEXT
+)
