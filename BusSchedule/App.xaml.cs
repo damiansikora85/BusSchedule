@@ -24,7 +24,7 @@ namespace BusSchedule
 {
     public partial class App : Application
     {
-        public static string DB_FILENAME = "sqlite20230724.db";
+        public static string DB_FILENAME = "sqlite20230805.db";
         private SemaphoreSlim _updateSemafor = new SemaphoreSlim(1);
         public App()
         {
