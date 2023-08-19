@@ -1,5 +1,4 @@
 ﻿using BusSchedule.Core.Model;
-using MvvmHelpers;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusSchedule.Core.Exceptions;
 using BusSchedule.Core.UI.Interfaces;
+using BusSchedule.Core.UI.Helpers;
 
 namespace BusSchedule.Core.UI.Pages
 {

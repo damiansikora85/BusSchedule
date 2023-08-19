@@ -7,8 +7,6 @@ using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using TinyIoC;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BusSchedule.Pages
 {

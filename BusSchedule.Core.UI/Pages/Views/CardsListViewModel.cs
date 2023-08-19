@@ -1,7 +1,6 @@
 ﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.UI.Helpers;
 using BusSchedule.Core.UI.Interfaces;
-using MvvmHelpers;
-using MvvmHelpers.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

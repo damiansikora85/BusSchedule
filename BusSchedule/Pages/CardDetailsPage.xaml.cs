@@ -4,8 +4,6 @@ using BusSchedule.Core.UI.Pages;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BusSchedule.Pages
 {
