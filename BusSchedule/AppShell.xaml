@@ -15,5 +15,9 @@
             Icon="baseline_favorite_white_48">
             <ShellContent ContentTemplate="{DataTemplate views:FavoritesPage}" />
         </Tab>
+        <Tab Title="Stan karty"
+            Icon="outline_credit_card_white_24">
+            <ShellContent ContentTemplate="{DataTemplate views:CardsListPage}" />
+        </Tab>
     </TabBar>
 </Shell>

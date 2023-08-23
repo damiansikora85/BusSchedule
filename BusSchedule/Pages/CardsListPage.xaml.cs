@@ -3,16 +3,16 @@ using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Interfaces.Implementation;
 
 
-namespace BusSchedule.Pages.Views;
+namespace BusSchedule.Pages;
 
 [XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class CardsList : ContentView
+public partial class CardsListPage : ContentPage
 {
     private readonly CardsListViewModel _viewModel;
     //1270567785
     //2892283797
 
-    public CardsList()
+    public CardsListPage()
     {
         InitializeComponent();
         _viewModel = new CardsListViewModel(new CardsManager());

@@ -4,48 +4,47 @@ using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
 using TinyIoC;
 
-namespace BusSchedule.Pages.Views
+namespace BusSchedule.Pages.Views;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
+public partial class FavoritesView : ContentView
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FavoritesView : ContentView
+    private FavoritesViewModel _viewModel;
+
+    public FavoritesView()
     {
-        private FavoritesViewModel _viewModel;
+        InitializeComponent();
+        _viewModel = new FavoritesViewModel(new FavoritesManager(), TinyIoCContainer.Current.Resolve<IDataProvider>());
+        ListView.ItemsSource = _viewModel.Favorites;
+    }
 
-        public FavoritesView()
+    public async Task RefreshView()
+    {
+        await _viewModel.RefreshData();
+        ListView.IsVisible = _viewModel.HasAnyFavorites;
+        EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
+    }
+
+    private async void FavoriteItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (ListView.SelectedItem is FavoriteData favoriteData)
         {
-            InitializeComponent();
-            _viewModel = new FavoritesViewModel(new FavoritesManager(), TinyIoCContainer.Current.Resolve<IDataProvider>());
-            ListView.ItemsSource = _viewModel.Favorites;
+            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
+            var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
+            await Navigation.PushAsync(page);
+            ListView.SelectedItem = null;
         }
+    }
 
-        public async Task RefreshView()
+    private async void OnDeleteClicked(object sender, System.EventArgs e)
+    {
+        if (sender is Button button && button.CommandParameter is FavoriteData favoriteData)
         {
-            await _viewModel.RefreshData();
-            ListView.IsVisible = _viewModel.HasAnyFavorites;
-            EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
-        }
-
-        private async void FavoriteItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (ListView.SelectedItem is FavoriteData favoriteData)
+            if (await App.Current.MainPage.DisplayAlert("Uwaga", "Czy na pewno chcesz usunąć?", "Tak", "Nie"))
             {
-                Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
-                var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
-                await Navigation.PushAsync(page);
-                ListView.SelectedItem = null;
-            }
-        }
-
-        private async void OnDeleteClicked(object sender, System.EventArgs e)
-        {
-            if (sender is Button button && button.CommandParameter is FavoriteData favoriteData)
-            {
-                if (await App.Current.MainPage.DisplayAlert("Uwaga", "Czy na pewno chcesz usunąć?", "Tak", "Nie"))
-                {
-                    _viewModel.DeleteItem(favoriteData);
-                    ListView.IsVisible = _viewModel.HasAnyFavorites;
-                    EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
-                }
+                _viewModel.DeleteItem(favoriteData);
+                ListView.IsVisible = _viewModel.HasAnyFavorites;
+                EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
             }
         }
     }

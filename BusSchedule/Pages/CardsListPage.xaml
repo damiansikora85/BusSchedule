@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.CardsListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Karty elektroniczne">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView
+                IsVisible="{Binding HasCards}"
+                ItemSelected="OnCardSelected"
+                ItemsSource="{Binding Cards}"
+                RowHeight="60"
+                SelectedItem="{Binding SelectedCard}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                Padding="4,2"
+                                x:DataType="model:ElectronicCardData"
+                                ColumnDefinitions="*,50,50"
+                                RowDefinitions="*,*">
+                                <Label FontSize="18" Text="{Binding Name}" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontSize="14"
+                                    Text="{Binding Number}" />
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnCardEdit"
+                                    FontSize="24"
+                                    Text="&#xe3c9;"
+                                    TextColor="#797979">
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Button.FontFamily>
+                                </Button>
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnCardDelete"
+                                    FontSize="24"
+                                    Text="&#xe872;"
+                                    TextColor="#797979">
+                                    <Button.FontFamily>
+                                        <OnPlatform x:TypeArguments="x:String">
+                                            <On Platform="Android" Value="MaterialIcons-Regular.ttf#Material Icons" />
+                                        </OnPlatform>
+                                    </Button.FontFamily>
+                                </Button>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label
+                HorizontalTextAlignment="Center"
+                IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}"
+                Text="Brak dodanych kart"
+                VerticalOptions="CenterAndExpand" />
+            <Button Clicked="OnAddCard" Text="Dodaj karte" Margin="4"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
