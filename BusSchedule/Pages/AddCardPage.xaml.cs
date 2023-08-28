@@ -4,6 +4,7 @@ using BusSchedule.Core.UI.Pages;
 using BusSchedule.Interfaces.Implementation;
 using Microsoft.AppCenter.Crashes;
 using System;
+using System.Collections.Generic;
 using TinyIoC;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -48,7 +49,10 @@ namespace BusSchedule.Pages
 			}
 			catch (Exception ex) 
 			{
-				Crashes.TrackError(ex);
+				Crashes.TrackError(ex, new Dictionary<string, string>
+				{
+					{ "cardNum", _viewModel.SearchCardNumber }
+				});
 				UserDialogs.Instance.Toast(new ToastConfig("Wystąpił problem podczas wyszukiwania karty") { MessageTextColor = System.Drawing.Color.Red });
 			}
         }
