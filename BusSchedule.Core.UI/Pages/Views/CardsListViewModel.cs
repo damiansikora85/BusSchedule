@@ -1,11 +1,6 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.UI.Helpers;
 using BusSchedule.Core.UI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace BusSchedule.Core.UI.Pages.Views

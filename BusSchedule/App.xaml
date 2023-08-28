@@ -11,6 +11,10 @@
             <Style x:Key="DefaultText" TargetType="Label">
                 <Setter Property="TextColor" Value="#797979" />
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

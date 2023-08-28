@@ -24,9 +24,10 @@ public partial class CardsListPage : ContentPage
         await Navigation.PushAsync(new AddCardPage());
     }
 
-    public async Task RefreshView()
+    protected override async void OnAppearing()
     {
         await _viewModel.RefreshCards();
+        base.OnAppearing();
     }
 
     private async void OnCardSelected(object sender, SelectedItemChangedEventArgs e)
