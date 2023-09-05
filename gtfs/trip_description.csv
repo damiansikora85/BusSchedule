@@ -1,24 +1,29 @@
-26052,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
-26053,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
-26049,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-26050,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-26066,5,0,A,kurs skrócony do: Wejherowo Obrońców Helu 01
-26075,7,0,D,kurs do: Wejherowo Dworzec PKP
-26074,7,1,R,kurs do: Gościcino Robakowska (do przystanku Gościcino PKP – Fabryczna 02 po trasie)
-26082,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
-26085,9,0,Z,kurs skrócony do: Reda Ciechocino 02
-26088,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
-26086,10,1,A,kurs skrócony do: Gościcino Równa 04
-26091,11,0,B,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-26037,11,0,A,kurs do: Wejherowo Dworzec PKP w dni wolne od nauki do: Wejherowo Broniewskiego – Dworzec PKP
-26092,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-26041,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
-26095,18,1,R,kurs do: C.H. Port Rumia
-26098,18,1,R,kurs do: C.H. Port Rumia
-26099,18,1,R,kurs do: C.H. Port Rumia
-26071,6,0,S,kurs z podjazdem do Szpitala
-26067,6,1,A,kurs z podjazdem do Szpitala
-26070,6,1,A,kurs z podjazdem do Szpitala
-26081,8,0,C,kurs z podjazdem do Ciechocina
-26078,8,0,C,kurs z podjazdem do Ciechocina
-26080,8,0,C,kurs z podjazdem do Ciechocina
+26374,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
+26375,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
+26371,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+26372,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+26380,4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa
+26388,5,0,A,kurs skrócony do: Wejherowo Obrońców Helu 01
+26385,5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej
+26390,6,1,B,kurs tylko do Szpitala
+26397,7,0,D,kurs do: Wejherowo Dworzec PKP
+26396,7,1,R,kurs do: Gościcino Robakowska (do przystanku Gościcino PKP – Fabryczna 02 po trasie)
+26404,8,0,K,kurs skrócony do: Wejherowo Kochanowskiego SKM Nanice 01
+26407,9,0,Z,kurs skrócony do: Reda Ciechocino 02
+26410,10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)
+26408,10,1,A,kurs skrócony do: Gościcino Równa 04
+26413,11,0,B,kurs do: Wejherowo Broniewskiego – Dworzec PKP
+26359,11,0,A,kurs do: Wejherowo Dworzec PKP w dni wolne od nauki do: Wejherowo Broniewskiego – Dworzec PKP
+26414,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
+26363,13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP
+26419,18,1,R,kurs do: C.H. Port Rumia
+26422,18,1,R,kurs do: C.H. Port Rumia
+26423,18,1,R,kurs do: C.H. Port Rumia
+26393,6,0,S,kurs z podjazdem do Szpitala
+26394,6,0,S,kurs z podjazdem do Szpitala
+26389,6,1,A,kurs z podjazdem do Szpitala
+26390,6,1,A,kurs z podjazdem do Szpitala
+26392,6,1,A,kurs z podjazdem do Szpitala
+26403,8,0,C,kurs z podjazdem do Ciechocina
+26400,8,0,C,kurs z podjazdem do Ciechocina
+26402,8,0,C,kurs z podjazdem do Ciechocina
