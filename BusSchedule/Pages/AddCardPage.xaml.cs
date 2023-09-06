@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using BusSchedule.Core.Exceptions;
 using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.UI.Pages;
 using BusSchedule.Interfaces.Implementation;
@@ -47,6 +48,14 @@ namespace BusSchedule.Pages
 			{
 				await _viewModel.SearchCard();
 			}
+			catch(ElectronicCardException cardException)
+			{
+                Crashes.TrackError(cardException, new Dictionary<string, string>
+                {
+                    { "cardNum", _viewModel.SearchCardNumber }
+                });
+                UserDialogs.Instance.Toast(new ToastConfig($"Nie znaleziono karty o numerze: {_viewModel.SearchCardNumber}") { MessageTextColor = System.Drawing.Color.Red });
+            }
 			catch (Exception ex) 
 			{
 				Crashes.TrackError(ex, new Dictionary<string, string>

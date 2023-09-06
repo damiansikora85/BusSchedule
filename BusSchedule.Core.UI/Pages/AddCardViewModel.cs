@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using BusSchedule.Core.Model;
 using Newtonsoft.Json.Converters;
 using BusSchedule.Core.UI.Interfaces;
+using BusSchedule.Core.Exceptions;
 
 namespace BusSchedule.Core.UI.Pages
 {
@@ -42,17 +43,24 @@ namespace BusSchedule.Core.UI.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsStringAsync();
-                    var json = JObject.Parse(result);
-                    if (json["data"] != null)
+                    if (result.StartsWith('{') && result.EndsWith('}'))
                     {
-                        _foundCard = json["data"].ToObject<ElectronicCardData>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" });
-                        IsCardFound = true;
+                        var json = JObject.Parse(result);
+                        if (json["data"] != null)
+                        {
+                            _foundCard = json["data"].ToObject<ElectronicCardData>(new JsonSerializer { DateFormatString = "yyyy-MM-dd HH:mm:ss" });
+                            IsCardFound = true;
 
-                        OnPropertyChanged(nameof(IsCardFound));
-                        OnPropertyChanged(nameof(CardNumber));
-                        OnPropertyChanged(nameof(CardName));
-                        OnPropertyChanged(nameof(ValidTo));
-                        OnPropertyChanged(nameof(DiscountValidTo));
+                            OnPropertyChanged(nameof(IsCardFound));
+                            OnPropertyChanged(nameof(CardNumber));
+                            OnPropertyChanged(nameof(CardName));
+                            OnPropertyChanged(nameof(ValidTo));
+                            OnPropertyChanged(nameof(DiscountValidTo));
+                        }
+                    }
+                    else
+                    {
+                        throw new ElectronicCardException($"Card not found: {SearchCardNumber}", System.Net.HttpStatusCode.NotFound, "Not found");
                     }
                 }
             }
