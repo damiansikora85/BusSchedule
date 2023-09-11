@@ -12,7 +12,7 @@ route_id,outbound,inbound
 11,Wejherowo Dworzec PKP,Gniewowo Spacerowa
 12,Wejherowo Dworzec PKP,Gowino Brzozowa
 13,Wejherowo Dworzec PKP,Kąpino Parkowa
-14,Orle Szkoła,Bolszewo Leszczynowa
+14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo os. Sikorskiego,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
 18,Reda Dworzec PKP,
