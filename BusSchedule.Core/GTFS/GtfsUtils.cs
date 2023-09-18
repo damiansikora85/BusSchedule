@@ -71,7 +71,7 @@ namespace BusSchedule.Core.GTFS
             var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
             foreach (var trip in tripsForRoute)
             {
-                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Where(st => st.Pickup_Type == "0").Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
                 var item = stopTimes.Select(st => new TimetableTuple
                 {
                     Time = st,
