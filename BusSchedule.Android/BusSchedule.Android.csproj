@@ -143,7 +143,7 @@
     <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
     <ProguardConfiguration Include="proguard.cfg" />
     <GoogleServicesJson Include="Assets\google-services.json" />
-    <AndroidAsset Include="Assets\sqlite20230911.db" />
+    <AndroidAsset Include="Assets\sqlite20230927.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
