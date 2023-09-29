@@ -5,8 +5,14 @@ namespace BusSchedule.Core.Model
 {
     public class ElectronicCardData
     {
+        private string _number;
+
         [JsonProperty("number")]
-        public string Number { get; set; }
+        public string Number
+        {
+            get => _number;
+            set => _number = value.PadLeft(10, '0');
+        }
         [JsonProperty("issuer_id")]
         public string IssuerId { get; set; }
         [JsonProperty("name")]
