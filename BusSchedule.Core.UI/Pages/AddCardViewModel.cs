@@ -10,10 +10,12 @@ using BusSchedule.Core.Model;
 using Newtonsoft.Json.Converters;
 using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.UI.Helpers;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace BusSchedule.Core.UI.Pages
 {
-    public class AddCardViewModel : BaseViewModel
+    public class AddCardViewModel : INotifyPropertyChanged//BaseViewModel
     {
         public string SearchCardNumber { get; set; }
         public string CardNumber => _foundCard.Number;
@@ -24,6 +26,8 @@ namespace BusSchedule.Core.UI.Pages
         public bool IsSearching { get; private set; }
         private readonly ICardsManager _cardsManager;
         private ElectronicCardData _foundCard;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public AddCardViewModel(ICardsManager cardsManager)
         {
@@ -77,6 +81,11 @@ namespace BusSchedule.Core.UI.Pages
         {
             _foundCard.Name = name;
             await _cardsManager.SaveCard(_foundCard);
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -203,9 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="8.0.1" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
     <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
-    <PackageReference Include="Microsoft.Maui.Maps" Version="6.0.525-ci.main.10868" />
+    <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.92" />
     <PackageReference Include="XTrack.Android.PlayCore" Version="0.1.6" />
   </ItemGroup>
 </Project>
