@@ -18,10 +18,10 @@ namespace BusSchedule.Core.UI.Pages
     public class AddCardViewModel : INotifyPropertyChanged//BaseViewModel
     {
         public string SearchCardNumber { get; set; }
-        public string CardNumber => _foundCard.Number;
-        public string CardName =>_foundCard.Name;
-        public DateTime ValidTo => _foundCard.ValidTo;
-        public DateTime DiscountValidTo => _foundCard.DiscountValidTo;
+        public string CardNumber => _foundCard != null ? _foundCard.Number : "";
+        public string CardName => _foundCard != null ? _foundCard.Name : "";
+        public DateTime ValidTo => _foundCard != null ? _foundCard.ValidTo : DateTime.MinValue;
+        public DateTime DiscountValidTo => _foundCard != null ? _foundCard.DiscountValidTo : DateTime.MinValue;
         public bool IsCardFound { get; private set; }
         public bool IsSearching { get; private set; }
         private readonly ICardsManager _cardsManager;

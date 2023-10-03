@@ -14,21 +14,24 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <VerticalStackLayout>
-            <HorizontalStackLayout Margin="4">
+            <Grid
+                Margin="4"
+                ColumnDefinitions="*,128"
+                HorizontalOptions="FillAndExpand">
                 <Entry
                     FontSize="18"
-                    HorizontalOptions="FillAndExpand"
                     IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"
                     Keyboard="Numeric"
                     Placeholder="Wpisz numer karty"
                     Text="{Binding SearchCardNumber, Mode=TwoWay}" />
                 <Button
+                    Grid.Column="1"
                     Clicked="OnSearchCardClicked"
                     IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"
-                    Text="Szukaj" />
-            </HorizontalStackLayout>
+                    Text="SZUKAJ" />
+            </Grid>
             <ActivityIndicator IsRunning="True" IsVisible="{Binding IsSearching}" />
-            <!--<Frame Margin="4" IsVisible="{Binding IsCardFound}">
+            <Frame Margin="4" IsVisible="{Binding IsCardFound}">
                 <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
                     <Label
                         FontSize="14"
@@ -54,6 +57,7 @@
 
                     <Label
                         Grid.Row="2"
+                        Margin="0,12,2,4"
                         FontSize="14"
                         Text="Karta ważna do:"
                         VerticalTextAlignment="End" />
@@ -66,6 +70,7 @@
                     <Label
                         Grid.Row="2"
                         Grid.Column="1"
+                        Margin="0,12,2,4"
                         FontSize="14"
                         Text="Ulga ważna do:"
                         VerticalTextAlignment="End" />
@@ -78,13 +83,11 @@
                     <Button
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
+                        Margin="4,8"
                         Clicked="OnAddCardClicked"
-                        Text="Dodaj karte" />
+                        Text="DODAJ KARTE" />
                 </Grid>
-            </Frame>-->
-           
-            <Label Text="{Binding CardName, Mode=TwoWay}" BackgroundColor="Beige" />
-            <Label Text="{Binding CardNumber, Mode=TwoWay}" BackgroundColor="Cyan"/>
+            </Frame>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
