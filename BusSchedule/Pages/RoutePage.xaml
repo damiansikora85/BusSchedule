@@ -3,12 +3,16 @@
     x:Class="BusSchedule.Pages.RoutePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BusSchedule.Converters"
+    xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
     xmlns:page="clr-namespace:BusSchedule.Pages"
+    xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="RoutePage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <local:StopLocationConverter x:Key="StopLocationConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -16,6 +20,7 @@
         <ListView
             x:Name="listView"
             Margin="6,4"
+            IsVisible="false"
             ItemSelected="OnStationSelected"
             ItemsSource="{Binding Stops}"
             RowHeight="75"
@@ -63,6 +68,21 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <maps:Map
+            x:Name="map"
+            IsShowingUser="True"
+            ItemsSource="{Binding Stops}">
+
+            <maps:Map.ItemTemplate>
+                <DataTemplate>
+                    <maps:Pin
+                        Label="{Binding Stop_Name}"
+                        Location="{Binding ., Converter={StaticResource StopLocationConverter}}"
+                        MarkerClicked="Pin_MarkerClicked" />
+                </DataTemplate>
+            </maps:Map.ItemTemplate>
+        </maps:Map>
 
 
         <HorizontalStackLayout BackgroundColor="#237194" VerticalOptions="End">

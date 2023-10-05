@@ -23,6 +23,7 @@ namespace BusSchedule.UI.ViewModels
             Route = route;
             Direction = direction;
             _dataProvider = dataProvider;
+            Stops = new List<Stops>();
         }
 
         public async Task RefreshDataAsync()

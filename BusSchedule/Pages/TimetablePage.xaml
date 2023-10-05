@@ -116,7 +116,7 @@
                     <VerticalStackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Label Text="Binding" TextColor="#404040" />
+                                <Label Text="{Binding .}" TextColor="#404040" />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </VerticalStackLayout>

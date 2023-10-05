@@ -3,6 +3,7 @@ using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Maps;
 using TinyIoC;
 
 namespace BusSchedule.Pages;
@@ -32,7 +33,7 @@ public partial class RoutePage : ContentPage
             }
 
             await _viewModel.RefreshDataAsync();
-            //CreateRoutePath();
+            CreateRoutePath();
 
             //await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
         }
@@ -115,23 +116,23 @@ public partial class RoutePage : ContentPage
     //    }
     //}
 
-    //private void CreateRoutePath()
-    //{
+    private void CreateRoutePath()
+    {
 
-    //    foreach (var trace in _viewModel.Traces)
-    //    {
-    //        Polyline polyline = new()
-    //        {
-    //            StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
-    //            StrokeWidth = 12
-    //        };
-    //        foreach (var point in trace.Points)
-    //        {
-    //            polyline.Geopath.Add(new Position(point.Latitude, point.Longitude));
-    //        }
-    //        map.MapElements.Add(polyline);
-    //    }
-    //}
+        foreach (var trace in _viewModel.Traces)
+        {
+            Polyline polyline = new()
+            {
+                StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
+                StrokeWidth = 12
+            };
+            foreach (var point in trace.Points)
+            {
+                polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
+            }
+            map.MapElements.Add(polyline);
+        }
+    }
 
     private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
     {
@@ -167,5 +168,10 @@ public partial class RoutePage : ContentPage
                     {"station", station.Stop_Name }
                 });
         }
+    }
+
+    private void Pin_MarkerClicked(object sender, Microsoft.Maui.Controls.Maps.PinClickedEventArgs e)
+    {
+
     }
 }
