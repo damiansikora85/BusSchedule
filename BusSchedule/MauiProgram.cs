@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BusSchedule.Core.Services;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace BusSchedule;
 
@@ -18,6 +19,7 @@ public static class MauiProgram
         builder.UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .UseMauiCompatibility()
+            .ConfigureSyncfusionCore()
             .UseMauiMaps()
         .ConfigureMauiHandlers(handlers =>
          {

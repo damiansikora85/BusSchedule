@@ -4,6 +4,7 @@ using BusSchedule.UI.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Maps;
+using Microsoft.Maui.Maps;
 using TinyIoC;
 
 namespace BusSchedule.Pages;
@@ -35,7 +36,7 @@ public partial class RoutePage : ContentPage
             await _viewModel.RefreshDataAsync();
             CreateRoutePath();
 
-            //await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
+            await SetMapPosition(await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>() == PermissionStatus.Granted);
         }
         catch (Exception exc)
         {
@@ -77,44 +78,42 @@ public partial class RoutePage : ContentPage
         }
     }
 
+    private async Task SetMapPosition(bool locationPermissionGranted)
+    {
+        var defaultPosition = new Location(54.605868, 18.235334);
+        try
+        {
+            if (locationPermissionGranted)
+            {
+                var location = await Geolocation.GetLastKnownLocationAsync();
+                if (location != null)
+                {
+                    var positionOnMap = new Location(location.Latitude, location.Longitude);
+                    map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
+                }
+            }
+            else
+            {
+                var centerPoint = _viewModel.CalculateCenterPosition();
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
+            }
+        }
+        catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException)
+        {
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
+        }
+        catch (Exception exc)
+        {
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
 
-
-    //private async Task SetMapPosition(bool locationPermissionGranted)
-    //{
-    //    var defaultPosition = new Position(54.605868, 18.235334);
-    //    try
-    //    {
-    //        if (locationPermissionGranted)
-    //        {
-    //            var location = await Geolocation.GetLastKnownLocationAsync();
-    //            if (location != null)
-    //            {
-    //                var positionOnMap = new Position(location.Latitude, location.Longitude);
-    //                map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
-    //            }
-    //        }
-    //        else
-    //        {
-    //            var centerPoint = _viewModel.CalculateCenterPosition();
-    //            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
-    //        }
-    //    }
-    //    catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException)
-    //    {
-    //        map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
-    //    }
-    //    catch (Exception exc)
-    //    {
-    //        map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
-
-    //        // Unable to get location
-    //        Crashes.TrackError(exc, new Dictionary<string, string>
-    //            {
-    //                {"route", _viewModel.Route.Route_Short_Name },
-    //                {"direction", _viewModel.Direction.ToString()}
-    //            });
-    //    }
-    //}
+            // Unable to get location
+            Crashes.TrackError(exc, new Dictionary<string, string>
+                {
+                    {"route", _viewModel.Route.Route_Short_Name },
+                    {"direction", _viewModel.Direction.ToString()}
+                });
+        }
+    }
 
     private void CreateRoutePath()
     {
@@ -130,7 +129,7 @@ public partial class RoutePage : ContentPage
             {
                 polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
             }
-            map.MapElements.Add(polyline);
+            //map.MapElements.Add(polyline);
         }
     }
 
@@ -171,6 +170,11 @@ public partial class RoutePage : ContentPage
     }
 
     private void Pin_MarkerClicked(object sender, Microsoft.Maui.Controls.Maps.PinClickedEventArgs e)
+    {
+
+    }
+
+    private void SfTabView_SelectionChanged(object sender, Syncfusion.Maui.TabView.TabSelectionChangedEventArgs e)
     {
 
     }

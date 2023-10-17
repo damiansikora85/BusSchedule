@@ -27,6 +27,7 @@ namespace BusSchedule
         private SemaphoreSlim _updateSemafor = new SemaphoreSlim(1);
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjc1NTQ1NUAzMjMzMmUzMDJlMzBJelJsdWpLNGRwc3NCclFld3NkdUd1dzRnWitLeDNvZFhBTlF5QXhTRFF3PQ==;Mjc1NTQ1NkAzMjMzMmUzMDJlMzBJelJsdWpLNGRwc3NCclFld3NkdUd1dzRnWitLeDNvZFhBTlF5QXhTRFF3PQ==");
             InitializeComponent();
             VersionTracking.Track();
             RegisterIoC();
