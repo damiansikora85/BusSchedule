@@ -6,6 +6,7 @@ def create_legend_by_destination(db,file):
         ["1","1","Gościcino Robakowska 02",",1,1,R,kurs do: Gościcino Robakowska"],
         ["1","1","Góra Szkolna 02",",1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)"],
         ["1","1","Wejherowo Budowlanych 02",",1,1,Z,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)"],
+        ["3","0","Wejherowo Cmentarz 02",",3,0,C,kurs do: Wejherowo Cmentarz"],
         ["4","1","Wejherowo Urząd Pracy 01 n/ż",",4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
         ["4","1","Orle Szkoła 01",",4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa"],
         ["5","0","Wejherowo Obrońców Helu 01",",5,0,A,kurs skrócony do: Wejherowo Obrońców Helu 01"],
@@ -38,7 +39,7 @@ def create_legend_by_destination(db,file):
 
     for data in legend:
         #print (data)
-        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 2 OR service_id = 24 OR service_id = 27  OR service_id = 28)", (data[0], data[1]))
+        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 10 OR service_id = 14 OR service_id = 16 OR service_id = 17  OR service_id = 24)", (data[0], data[1]))
         db.commit()
         all_rows = cursor.fetchall()
         shapes_dict = {}

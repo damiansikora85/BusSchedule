@@ -13,11 +13,12 @@ route_id,outbound,inbound
 12,Wejherowo Dworzec PKP,Gowino Brzozowa
 13,Wejherowo Dworzec PKP,Kąpino Parkowa
 14,Orle Szkoła,Wejherowo Dworzec PKP
-16,WWejherowo Obrońców Westerplatte,Wejherowo Krofeya
+16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
 18,Reda Dworzec PKP,
 A,Wejherowo Cmentarz,Wejherowo Dworzec PKP
 B,Wejherowo Cmentarz,Wejherowo os. Fenikowskiego
 C,Wejherowo Cmentarz,Wejherowo Pomorska
 D,Wejherowo Cmentarz,Wejherowo Karnowskiego
+E,Reda Cmentarz,Reda Ciechocino
 P,Wejherowo Necla,Piaśnica Las Piaśnicki
