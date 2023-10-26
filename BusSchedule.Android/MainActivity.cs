@@ -15,60 +15,34 @@ using Android.Content;
 namespace BusSchedule.Droid
 {
     [Activity(Label = "Rozkład jazdy MZK Wejherowo", Icon = "@mipmap/icon", RoundIcon = "@mipmap/icon_round", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity, IOnSuccessListener
+    public class MainActivity : MauiAppCompatActivity, IOnSuccessListener
     {
         private IAppUpdateManager _appUpdateManager;
         private const int UpdateRequestCode = 123;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
+            UserDialogs.Init(this);
             base.OnCreate(savedInstanceState);
             _appUpdateManager = AppUpdateManagerFactory.Create(this);
 
-            UserDialogs.Init(this);
-            Rg.Plugins.Popup.Popup.Init(this);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            Xamarin.Forms.Forms.SetFlags("Shapes_Experimental");
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Xamarin.FormsMaps.Init(this, savedInstanceState);
-            LoadApplication(new App());
-        }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            
         }
 
-        public override void OnBackPressed()
-        {
-            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
-            {
-                // Do something if there are some pages in the `PopupStack`
-            }
-            else
-            {
-                // Do something if there are not any pages in the `PopupStack`
-            }
-        }
+        //protected override void OnResume()
+        //{
+        //    var sharedPref = GetPreferences(FileCreationMode.Private);
+        //    var defaultValue = DateTime.MinValue.Ticks;
+        //    var savedValue = sharedPref.GetLong("LAST_UPDATE_CHECK", defaultValue);
+        //    var lastUpdateCheckTime = new DateTime(savedValue);
 
-        protected override void OnResume()
-        {
-            var sharedPref = GetPreferences(FileCreationMode.Private);
-            var defaultValue = DateTime.MinValue.Ticks;
-            var savedValue = sharedPref.GetLong("LAST_UPDATE_CHECK", defaultValue);
-            var lastUpdateCheckTime = new DateTime(savedValue);
-
-            if ((DateTime.Now - lastUpdateCheckTime).TotalHours >= 24)
-            {
-                var appUpdateInfoTask = _appUpdateManager.AppUpdateInfo;
-                appUpdateInfoTask.AddOnSuccessListener(this);
-            }
-            base.OnResume();
-        }
+        //    if ((DateTime.Now - lastUpdateCheckTime).TotalHours >= 24)
+        //    {
+        //        var appUpdateInfoTask = _appUpdateManager.AppUpdateInfo;
+        //        appUpdateInfoTask.AddOnSuccessListener(this);
+        //    }
+        //    base.OnResume();
+        //}
 
         public void OnSuccess(Java.Lang.Object data)
         {

@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="BusSchedule.Pages.RoutesPage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodels="clr-namespace:BusSchedule.Pages.ViewModels;assembly=BusSchedule.Core.UI"
     xmlns:views="clr-namespace:BusSchedule.Pages.Views"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     Title="MZK Wejherowo"
     x:DataType="viewmodels:RoutesPageViewModel"
     BackgroundColor="White">
@@ -13,88 +12,26 @@
         <ToolbarItem Clicked="OnContactClicked" IconImageSource="baseline_email_white_24" />
         <ToolbarItem Clicked="OnNewsClicked" IconImageSource="baseline_article_white_24" />
     </ContentPage.ToolbarItems>
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <ControlTemplate x:Key="TabItemTemplate">
-                <Grid RowSpacing="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Image
-                        Grid.Row="0"
-                        Margin="3"
-                        HeightRequest="24"
-                        HorizontalOptions="Center"
-                        Source="{TemplateBinding CurrentIcon}"
-                        VerticalOptions="Center"
-                        WidthRequest="24" />
-                    <Label
-                        Grid.Row="1"
-                        FontSize="{TemplateBinding CurrentFontSize}"
-                        HorizontalOptions="Center"
-                        Text="{TemplateBinding Text}"
-                        TextColor="{TemplateBinding CurrentTextColor}"
-                        VerticalOptions="Center" />
-                </Grid>
-            </ControlTemplate>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <xct:TabView
-            TabStripBackgroundColor="#237194"
-            TabStripHeight="60"
-            TabStripPlacement="Bottom">
-            <xct:TabViewItem
-                ControlTemplate="{StaticResource TabItemTemplate}"
-                FontSize="12"
-                FontSizeSelected="16"
-                Icon="baseline_view_module_white_48"
-                Text="Linie"
-                TextColor="LightGray"
-                TextColorSelected="White">
-                <ScrollView>
-                    <StackLayout>
-                        <Label Margin="4" TextColor="#404040">
-                            <Label.FormattedText>
-                                <FormattedString>
-                                    <Span Text="Rozkład ważny od " />
-                                    <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}" />
-                                    <Span Text=" do " />
-                                    <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}" />
-                                </FormattedString>
-                            </Label.FormattedText>
-                        </Label>
-                        <Grid
-                            x:Name="grid"
-                            Margin="8,16"
-                            ColumnDefinitions="*, *, *, *"
-                            HorizontalOptions="Center"
-                            RowDefinitions="80, 80, 80, 80, 80, 80" />
-                    </StackLayout>
-                </ScrollView>
-            </xct:TabViewItem>
-            <xct:TabViewItem
-                ControlTemplate="{StaticResource TabItemTemplate}"
-                FontSize="12"
-                FontSizeSelected="16"
-                Icon="baseline_favorite_white_48"
-                Text="Ulubione"
-                TextColor="LightGray"
-                TextColorSelected="White">
-                <views:FavoritesView x:Name="FavoritesView" />
-            </xct:TabViewItem>
-            <xct:TabViewItem
-                ControlTemplate="{StaticResource TabItemTemplate}"
-                FontSize="12"
-                FontSizeSelected="16"
-                Icon="outline_credit_card_white_24"
-                Text="Stan karty"
-                TextColor="LightGray"
-                TextColorSelected="White"
-                TabTapped="OnCardTabSelected">
-                <views:CardsList x:Name="CardListView" />
-            </xct:TabViewItem>
-        </xct:TabView>
+        <ScrollView>
+            <StackLayout>
+                <Label Margin="4" TextColor="#404040">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Rozkład ważny od " />
+                            <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                            <Span Text=" do " />
+                            <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Grid
+                    x:Name="grid"
+                    Margin="8,16"
+                    ColumnDefinitions="*, *, *, *"
+                    RowDefinitions="80, 80, 80, 80, 80, 80" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -4,8 +4,6 @@ using BusSchedule.Core.UI.Pages;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace BusSchedule.Pages
 {
@@ -32,7 +30,9 @@ namespace BusSchedule.Pages
                 {
                     { "id", _viewModel.CardNumber.ToString() }
                 });
-                UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas pobierania danych karty") { MessageTextColor = Color.Red });
+#if ANDROID
+                UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas pobierania danych karty") { MessageTextColor = System.Drawing.Color.Red });
+#endif
                 await Navigation.PopAsync();
             }
         }

@@ -1,14 +1,12 @@
 ﻿using BusSchedule.Core.Services;
-using Rg.Plugins.Popup.Extensions;
-using Rg.Plugins.Popup.Pages;
-using System;
-using Xamarin.Essentials;
-using Xamarin.Forms.Xaml;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Maui.Views;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RatePopup : PopupPage
+    public partial class RatePopup : Popup
     {
         private IPreferences _preferences;
         //private IReviewService _reviewService;
@@ -18,12 +16,13 @@ namespace BusSchedule.Dialogs
             _preferences = preferences;
             //_reviewService = reviewService;
             InitializeComponent();
+            Opened += OnOpened;
         }
 
-        protected override void OnAppearing()
+        void OnOpened(object? sender, PopupOpenedEventArgs e)
         {
+            Opened += OnOpened;
             _preferences.Set("rate_popup_last_shown", DateTime.Today.ToString());
-            base.OnAppearing();
         }
 
         private async void OnRateClicked(object sender, EventArgs e)
@@ -32,13 +31,14 @@ namespace BusSchedule.Dialogs
             await Launcher.OpenAsync(new Uri("market://details?id=com.darktower.bus"));
             _preferences.Set("rated", "1");
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateNow");
-            await Navigation.PopPopupAsync();
+            //await Navigation.PopPopupAsync();
+            Close();
         }
 
-        private async void OnRateLaterClicked(object sender, EventArgs e)
+        private void OnRateLaterClicked(object sender, EventArgs e)
         {
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateLater");
-            await Navigation.PopPopupAsync();
+            Close();
         }
     }
 }

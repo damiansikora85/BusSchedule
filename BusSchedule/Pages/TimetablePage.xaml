@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="BusSchedule.Pages.TodayTimetablePage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    x:Class="BusSchedule.Pages.TimetablePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:BusSchedule.Converters"
-    xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    BackgroundColor="White">
+    xmlns:converters="clr-namespace:BusSchedule.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ColorConverter x:Key="ColorConverter" />
@@ -40,17 +38,16 @@
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="4,0">
-                            <pancakeview:PancakeView
+                        <StackLayout Padding="4,0" BackgroundColor="Transparent">
+                            <Border
                                 Padding="8"
-                                BackgroundColor="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
-                                CornerRadius="8"
-                                WidthRequest="60">
-
-                                <!--<pancakeview:PancakeView.Border>
-                                    <pancakeview:Border Thickness="4" Color="#237194" />
-                                </pancakeview:PancakeView.Border>-->
-                                <StackLayout>
+                                Background="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
+                                HorizontalOptions="Center"
+                                Stroke="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
+                                StrokeShape="RoundRectangle 8,8,8,8"
+                                StrokeThickness="4"
+                                WidthRequest="80">
+                                <VerticalStackLayout>
                                     <Label
                                         FontSize="20"
                                         HorizontalTextAlignment="Center"
@@ -61,9 +58,9 @@
                                         HorizontalTextAlignment="Center"
                                         Text="{Binding DayNum}"
                                         TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
-                                </StackLayout>
+                                </VerticalStackLayout>
 
-                            </pancakeview:PancakeView>
+                            </Border>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
                                     <VisualState x:Name="Normal">
@@ -93,7 +90,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout BackgroundColor="{Binding BackgroundColor}" Orientation="Horizontal">
+                            <HorizontalStackLayout BackgroundColor="{Binding BackgroundColor}">
                                 <Label
                                     Margin="4,0"
                                     FontAttributes="Bold"
@@ -101,7 +98,7 @@
                                     Text="{Binding Hour}"
                                     TextColor="#404040"
                                     VerticalTextAlignment="Center" />
-                                <StackLayout BindableLayout.ItemsSource="{Binding Minutes}" Orientation="Horizontal">
+                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
                                             <Label
@@ -110,40 +107,19 @@
                                                 VerticalTextAlignment="Center" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
-                                </StackLayout>
-                            </StackLayout>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                <!--<ListView.Header>
-                <StackLayout Orientation="Horizontal">
-                    <Label
-                        FontSize="18"
-                        TextColor="Black"
-                        VerticalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Rozkład jazdy na dzień: " />
-                                <Span Text="{Binding TodayDate}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Button
-                        BackgroundColor="Transparent"
-                        Text="Zmień date"/>
-                </StackLayout>
-            </ListView.Header>-->
                 <ListView.Footer>
-
-                    <StackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
+                    <VerticalStackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Label Text="{Binding .}" TextColor="#404040" />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
-                    </StackLayout>
-
-
+                    </VerticalStackLayout>
                 </ListView.Footer>
             </ListView>
         </StackLayout>

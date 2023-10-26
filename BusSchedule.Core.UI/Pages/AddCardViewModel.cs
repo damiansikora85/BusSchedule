@@ -1,6 +1,4 @@
-﻿using MvvmHelpers;
-using MvvmHelpers.Commands;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -11,21 +9,26 @@ using Newtonsoft.Json.Linq;
 using BusSchedule.Core.Model;
 using Newtonsoft.Json.Converters;
 using BusSchedule.Core.UI.Interfaces;
+using BusSchedule.Core.UI.Helpers;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using BusSchedule.Core.Exceptions;
 
 namespace BusSchedule.Core.UI.Pages
 {
-    public class AddCardViewModel : BaseViewModel
+    public class AddCardViewModel : INotifyPropertyChanged//BaseViewModel
     {
         public string SearchCardNumber { get; set; }
-        public string CardNumber => _foundCard.Number;
-        public string CardName =>_foundCard.Name;
-        public DateTime ValidTo => _foundCard.ValidTo;
-        public DateTime DiscountValidTo => _foundCard.DiscountValidTo;
+        public string CardNumber => _foundCard != null ? _foundCard.Number : "";
+        public string CardName => _foundCard != null ? _foundCard.Name : "";
+        public DateTime ValidTo => _foundCard != null ? _foundCard.ValidTo : DateTime.MinValue;
+        public DateTime DiscountValidTo => _foundCard != null ? _foundCard.DiscountValidTo : DateTime.MinValue;
         public bool IsCardFound { get; private set; }
         public bool IsSearching { get; private set; }
         private readonly ICardsManager _cardsManager;
         private ElectronicCardData _foundCard;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public AddCardViewModel(ICardsManager cardsManager)
         {
@@ -79,6 +82,11 @@ namespace BusSchedule.Core.UI.Pages
         {
             _foundCard.Name = name;
             await _cardsManager.SaveCard(_foundCard);
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

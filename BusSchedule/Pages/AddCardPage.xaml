@@ -1,28 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="BusSchedule.Pages.AddCardPage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
-    xmlns:pages="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI" 
-    x:DataType="pages:AddCardViewModel"
-    Title="Dodaj karte elektroniczną">
+    xmlns:pages="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="Dodaj karte elektroniczną"
+    x:DataType="pages:AddCardViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <xct:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
+        <VerticalStackLayout>
+            <Grid
+                Margin="4"
+                ColumnDefinitions="*,128"
+                HorizontalOptions="FillAndExpand">
                 <Entry
-                    HorizontalOptions="FillAndExpand"
+                    FontSize="18"
+                    IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"
                     Keyboard="Numeric"
                     Placeholder="Wpisz numer karty"
-                    Text="{Binding SearchCardNumber, Mode=TwoWay}" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}" />
-                <Button Clicked="OnSearchCardClicked" Text="Szukaj" IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"/>
-            </StackLayout>
-            <ActivityIndicator IsVisible="{Binding IsSearching}" IsRunning="True"/>
+                    Text="{Binding SearchCardNumber, Mode=TwoWay}" />
+                <Button
+                    Grid.Column="1"
+                    Clicked="OnSearchCardClicked"
+                    IsEnabled="{Binding IsSearching, Converter={StaticResource InvertedBoolConverter}}"
+                    Text="SZUKAJ" />
+            </Grid>
+            <ActivityIndicator IsRunning="True" IsVisible="{Binding IsSearching}" />
             <Frame Margin="4" IsVisible="{Binding IsCardFound}">
                 <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
                     <Label
@@ -49,6 +57,7 @@
 
                     <Label
                         Grid.Row="2"
+                        Margin="0,12,2,4"
                         FontSize="14"
                         Text="Karta ważna do:"
                         VerticalTextAlignment="End" />
@@ -61,6 +70,7 @@
                     <Label
                         Grid.Row="2"
                         Grid.Column="1"
+                        Margin="0,12,2,4"
                         FontSize="14"
                         Text="Ulga ważna do:"
                         VerticalTextAlignment="End" />
@@ -73,9 +83,11 @@
                     <Button
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
-                        Text="Dodaj karte" Clicked="OnAddCardClicked" />
+                        Margin="4,8"
+                        Clicked="OnAddCardClicked"
+                        Text="DODAJ KARTE" />
                 </Grid>
             </Frame>
-        </StackLayout>
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

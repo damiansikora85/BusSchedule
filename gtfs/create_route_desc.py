@@ -6,11 +6,13 @@ def create_legend_by_destination(db,file):
         ["1","1","Gościcino Robakowska 02",",1,1,R,kurs do: Gościcino Robakowska"],
         ["1","1","Góra Szkolna 02",",1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)"],
         ["1","1","Wejherowo Budowlanych 02",",1,1,Z,kurs skrócony do: Wejherowo Budowlanych 02 (do przystanku Wejherowo Tartaczna 01 po trasie)"],
-        ["4","1","Wejherowo Urząd Pracy 01 n/ż",",4,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
+        ["3","0","Wejherowo Cmentarz 02",",3,0,C,kurs do: Wejherowo Cmentarz"],
+        ["4","0","Wejherowo Gulgowskiego 02",",4,0,A,kurs skrócony do: Wejherowo Gulgowskiego 02"],
+        ["4","0","Wejherowo Dworzec PKP 01",",4,0,B,kurs do: Wejherowo Dworzec PKP (do przyst. Kwiatowa - Dworzec PKP 92 po trasie)"],
         ["4","1","Orle Szkoła 01",",4,1,S,kurs do: Orle Szkoła w dni wolne od nauki do: Orle Łąkowa"],
         ["5","0","Wejherowo Obrońców Helu 01",",5,0,A,kurs skrócony do: Wejherowo Obrońców Helu 01"],
         ["5","1","Wejherowo Urząd Pracy 01 n/ż",",5,1,Z,kurs skrócony do: Wejherowo Urząd Pracy 01 n/ż"],
-        ["5","1","Orle Szkoła 01",",5,1,S,kurs wydłużony do: Orle Szkoła w dni nauki szkolnej"],
+        ["5","1","Orle Szkoła 01",",5,1,S,kurs do: Orle Szkoła w dni nauki - w dni wolne od nauki do: Orle Łąkowa"],
         ["6","1","Wejherowo Szpital 02",",6,1,B,kurs tylko do Szpitala"],
         ["7","0","Wejherowo Sobieskiego - GS 02",",7,0,S,kurs skrócony do: Wejherowo Sobieskiego - GS 02"],
         ["7","0","Wejherowo Dworzec PKP 01",",7,0,D,kurs do: Wejherowo Dworzec PKP"],
@@ -22,11 +24,14 @@ def create_legend_by_destination(db,file):
         ["10","0","Bolszewo Zamostna 04",",10,0,Z,kurs skrócony do: Bolszewo Zamostna 04"],
         ["10","0","Wejherowo Dworzec PKP 04",",10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)"],
         ["10","1","Gościcino Równa 04",",10,1,A,kurs skrócony do: Gościcino Równa 04"],
+        ["10","1","Kębłowo Wiejska 02",",10,1,B,kurs do: Kębłowo Wiejska 02 (zatoka przy ul. Wejherowskiej)"],
         ["11","0","Wejherowo Broniewskiego - Dworzec PKP 01",",11,0,B,kurs do: Wejherowo Broniewskiego – Dworzec PKP"],
-        ["11","0","Wejherowo Dworzec PKP 03",",11,0,A,kurs do: Wejherowo Dworzec PKP w dni wolne od nauki do: Wejherowo Broniewskiego – Dworzec PKP"],
         ["13","0","Wejherowo Broniewskiego - Dworzec PKP 01",",13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP"],
+        ["13","0","Wejherowo Prusa - Szkoła 02",",13,0,B,kurs wykonywany wyłącznie w dni nauki szkolnej do: Wejherowo Prusa – Szkoła (do przystanku Kusocińskiego po trasie)"],
         ["13","0","Wejherowo Dworzec PKP 03",",13,0,A,kurs do: Wejherowo Broniewskiego – Dworzec PKP"],
-        ["18","1","Rumia C.H. \"Port Rumia\" 01",",18,1,R,kurs do: C.H. Port Rumia"]
+        ["14","0","Bolszewo Słowackiego 01",",14,0,A,kurs do: Bolszewo Słowackiego"],
+        ["18","1","Rumia C.H. \"Port Rumia\" 01",",18,1,R,kurs do: C.H. Port Rumia"],
+        ["18","1","Reda Ciechocino 02",",18,1,Z,kurs skrócony do: Reda Ciechocino 02"]
     ]
 
     #create dictionary [shape_id] = trip_headsign for each route
@@ -38,7 +43,7 @@ def create_legend_by_destination(db,file):
 
     for data in legend:
         #print (data)
-        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 2 OR service_id = 24 OR service_id = 27  OR service_id = 28)", (data[0], data[1]))
+        cursor.execute("SELECT shape_id, trip_headsign FROM trips WHERE route_id = (?) AND direction_id = (?) AND (service_id = 10 OR service_id = 14 OR service_id = 16 OR service_id = 17  OR service_id = 24 OR service_id = 27 OR service_id = 28)", (data[0], data[1]))
         db.commit()
         all_rows = cursor.fetchall()
         shapes_dict = {}
@@ -59,8 +64,9 @@ def create_legend_by_stop(db,file):
         ["6", "0", "318",",6,0,S,kurs z podjazdem do Szpitala"],
         ["6", "1", "318",",6,1,A,kurs z podjazdem do Szpitala"],
         ["8", "0", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
-        ["8", "1", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
-        ["11", "1", "115",",11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego"]
+        ["8", "1", "199",",8,1,C,kurs z podjazdem do Ciechocina"],
+        ["11", "1", "115",",11,1,K,kurs przez: Rybacką Prusa Pomorską Kochanowskiego"],
+        ["11", "0", "426",",11,0,C,kurs przez: Sędzickiego i Sikorskiego"]
     ]
 
     cursor = db.cursor()

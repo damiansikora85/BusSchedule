@@ -1,5 +1,5 @@
-﻿using MvvmHelpers;
-using MvvmHelpers.Commands;
+﻿using BusSchedule.Core.UI.Helpers;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -16,7 +16,7 @@ namespace BusSchedule.Core.UI.Pages.Views
 
         public EcardViewModel() 
         {
-            FindCardCommand = new AsyncCommand(OnFindCard);
+            FindCardCommand = new AsyncRelayCommand(OnFindCard);
         }
 
         private async Task OnFindCard()

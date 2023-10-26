@@ -1,15 +1,8 @@
 ﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.Services;
-using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
-using MvvmHelpers.Commands;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using Point = BusSchedule.Core.Model.Point;
 
 namespace BusSchedule.UI.ViewModels
 {
@@ -30,6 +23,7 @@ namespace BusSchedule.UI.ViewModels
             Route = route;
             Direction = direction;
             _dataProvider = dataProvider;
+            Stops = new List<Stops>();
         }
 
         public async Task RefreshDataAsync()

@@ -1,13 +1,9 @@
 ﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
 using Polly;
 using SQLite;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Threading.Tasks;
+using Point = BusSchedule.Core.Model.Point;
 
 namespace BusSchedule.Providers
 {

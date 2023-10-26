@@ -1,14 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.App">
+<Application
+    x:Class="BusSchedule.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
         <ResourceDictionary>
             <Style x:Key="BgBlue" TargetType="View">
-                <Setter Property="BackgroundColor" Value="#237194"/>
+                <Setter Property="BackgroundColor" Value="#237194" />
             </Style>
             <Style x:Key="DefaultText" TargetType="Label">
-                <Setter Property="TextColor" Value="#797979"/>
+                <Setter Property="TextColor" Value="#797979" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="LightGray" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

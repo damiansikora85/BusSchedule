@@ -1,20 +1,11 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Dialogs.ViewModels;
-using Rg.Plugins.Popup.Pages;
-using Rg.Plugins.Popup.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using CommunityToolkit.Maui.Views;
 
 namespace BusSchedule.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RouteSelectionDialog : PopupPage
+    public partial class RouteSelectionDialog : Popup
     {
         private RouteSelectionViewModel _viewModel;
         private TaskCompletionSource<int> _taskCompletionSource;
@@ -27,31 +18,31 @@ namespace BusSchedule.Dialogs
             BindingContext = _viewModel;
         }
 
-        protected override bool OnBackButtonPressed()
-        {
-            _taskCompletionSource.TrySetCanceled();
-            return base.OnBackButtonPressed();
-        }
+        //protected override Task OnDismissedByTappingOutsideOfPopup()
+        //{
+        //    _taskCompletionSource.TrySetCanceled();
+        //    return base.OnDismissedByTappingOutsideOfPopup();
+        //}
 
         internal Task<int> WaitForResult()
         {
             return _taskCompletionSource.Task;
         }
 
-        private async void FirstRouteClicked(object sender, EventArgs e)
+        private void FirstRouteClicked(object sender, EventArgs e)
         {
-            await SetResult(0);
+            SetResult(0);
         }
 
-        private async void SecondRouteClicked(object sender, EventArgs e)
+        private void SecondRouteClicked(object sender, EventArgs e)
         {
-            await SetResult(1);
+            SetResult(1);
         }
 
-        private async Task SetResult(int selectedDest)
+        private void SetResult(int selectedDest)
         { 
-            _taskCompletionSource.TrySetResult(selectedDest);        
-            await PopupNavigation.Instance.RemovePageAsync(this);
+            _taskCompletionSource.TrySetResult(selectedDest);
+            Close();
         }
     }
 }

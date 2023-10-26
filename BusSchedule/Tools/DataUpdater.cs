@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Plugin.Firebase;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Tools
 {
@@ -47,7 +48,7 @@ namespace BusSchedule.Tools
 
         public static async Task UpdateDataIfNeeded(IFileAccess fileAccess, IPreferences preferences)
         {
-            var dbVersion = await fileAccess.ReadAssetFile("DbVersion.txt");
+            //var dbVersion = await fileAccess.ReadAssetFile("DbVersion.txt");
             if (!fileAccess.CheckLocalFileExist(App.DB_FILENAME))
             {
                 _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath(App.DB_FILENAME), App.DB_FILENAME);
@@ -55,12 +56,12 @@ namespace BusSchedule.Tools
             else
             {
                 var currentDbVersion = preferences.Get("dbVersion", "1");
-                if (currentDbVersion != dbVersion)
+                //if (currentDbVersion != dbVersion)
                 {
                     _ = await fileAccess.CopyFromAssetsToLocal(fileAccess.GetLocalFilePath(App.DB_FILENAME), App.DB_FILENAME);
                 }
             }
-            preferences.Set("dbVersion", dbVersion);
+            //preferences.Set("dbVersion", dbVersion);
         }
     }
 }

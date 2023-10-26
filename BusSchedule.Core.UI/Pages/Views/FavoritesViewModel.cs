@@ -2,21 +2,19 @@
 using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.AppCenter.Crashes;
-using MvvmHelpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace BusSchedule.Core.UI.Pages.Views
 {
-    public class FavoritesViewModel : BaseViewModel
+    [INotifyPropertyChanged]
+    public partial class FavoritesViewModel
     {
         private readonly IFavoritesManager _favoritesManager;
         private readonly IDataProvider _dataProvider;
 
-        public ObservableRangeCollection<FavoriteData> Favorites { get; } = new ObservableRangeCollection<FavoriteData>();
+        public ObservableCollection<FavoriteData> Favorites { get; } = new ObservableCollection<FavoriteData>();
         public bool HasAnyFavorites => Favorites.Any();
         public bool HasNoFavorites => !Favorites.Any();
 
