@@ -70,7 +70,7 @@
                             Margin="8,16"
                             ColumnDefinitions="*, *, *, *"
                             HorizontalOptions="Center"
-                            RowDefinitions="80, 80, 80, 80, 80" />
+                            RowDefinitions="80, 80, 80, 80, 80, 80" />
                     </StackLayout>
                 </ScrollView>
             </xct:TabViewItem>
