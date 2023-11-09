@@ -16,9 +16,9 @@ route_id,outbound,inbound
 16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
 17,Reda Dworzec PKP,Reda Cmentarz
 18,Reda Dworzec PKP,
-A,Wejherowo Cmentarz,Wejherowo Dworzec PKP
-B,Wejherowo Cmentarz,Wejherowo os. Fenikowskiego
-C,Wejherowo Cmentarz,Wejherowo Pomorska
-D,Wejherowo Cmentarz,Wejherowo Karnowskiego
-E,Reda Cmentarz,Reda Ciechocino
+A,Wejherowo Dworzec PKP,Wejherowo Cmentarz
+B,Wejherowo os. Fenikowskiego,Wejherowo Cmentarz
+C,Wejherowo Pomorska,Wejherowo Cmentarz
+D,Wejherowo Karnowskiego,Wejherowo Cmentarz
+E,Reda Ciechocino,Reda Cmentarz
 P,Wejherowo Necla,Piaśnica Las Piaśnicki
