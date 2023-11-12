@@ -30,7 +30,7 @@
                     x:Name="grid"
                     Margin="8,16"
                     ColumnDefinitions="*, *, *, *"
-                    RowDefinitions="80, 80, 80, 80, 80" />
+                    RowDefinitions="80, 80, 80, 80, 80, 80" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

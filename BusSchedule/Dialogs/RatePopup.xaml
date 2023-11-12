@@ -6,6 +6,7 @@
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <VerticalStackLayout
+        Margin="8"
         Padding="16"
         BackgroundColor="White"
         Spacing="32"
@@ -14,13 +15,10 @@
             FontSize="Large"
             Text="Czy podoba Ci się aplikacja?"
             TextColor="#404040" />
-        <Label HorizontalTextAlignment="Center" TextColor="#404040">
-            <Label.Text>
-                Dziękujemy za korzystanie z naszej aplikacji.
-                Jeśli jest ona dla Ciebie przydatna to daj znać innym
-                i wystaw ocenę w sklepie Google Play.
-            </Label.Text>
-        </Label>
+        <Label
+            HorizontalTextAlignment="Center"
+            Text="Dziękujemy za korzystanie z naszej aplikacji. Jeśli jest ona dla Ciebie przydatna to daj znać innym i wystaw ocenę w sklepie Google Play."
+            TextColor="#404040" />
         <HorizontalStackLayout Margin="0,8" HorizontalOptions="End">
             <Button
                 BackgroundColor="Transparent"

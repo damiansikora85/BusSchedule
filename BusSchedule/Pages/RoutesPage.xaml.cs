@@ -107,7 +107,6 @@ public partial class RoutesPage : ContentPage
                 var dialog = new RouteSelectionDialog(destination);
                 await this.ShowPopupAsync(dialog);
                 var selectedDirection = await dialog.WaitForResult();
-                //await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
                 await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
             }
             else if (!string.IsNullOrEmpty(destination.Outbound) || !string.IsNullOrEmpty(destination.Inbound))
