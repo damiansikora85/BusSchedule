@@ -12,6 +12,7 @@ using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.UI.Helpers;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using BusSchedule.Core.Exceptions;
 
 namespace BusSchedule.Core.UI.Pages
 {
