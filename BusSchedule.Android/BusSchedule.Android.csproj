@@ -8,6 +8,9 @@
 	  	<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
+    <AndroidAsset Remove="Assets\google-services.json" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -200,6 +203,9 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_map_white_36.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\baseline_map_white_48.png" />
     <AndroidResource Include="Resources\values\keys.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <GoogleServicesJson Include="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="8.0.1" />
