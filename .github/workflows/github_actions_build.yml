@@ -1,0 +1,39 @@
+name: windowsCI
+
+on:
+  push:
+    branches: [ maui ]
+  pull_request:
+    branches: [ maui ]
+
+  workflow_dispatch:
+
+env:
+    DOTNETVERSION: 6.0.300
+    
+jobs:
+    buildAndroid:
+      runs-on: windows-2022
+
+      steps:
+        - uses: actions/checkout@v2
+
+        - name: Setup .NET SDK ${{env.DOTNETVERSION}}
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version:  '${{env.DOTNETVERSION}}'
+
+        - name: List installed .NET info
+          shell: pwsh
+          run: dotnet --info
+
+        - name: Install .NET MAUI
+          shell: bash
+          run: |
+            dotnet nuget locals all --clear 
+            dotnet workload install maui --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
+            dotnet workload install android maui wasm-tools --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
+
+        - name: Restore nuget packages
+          run: |
+            dotnet restore BusSchedule.sln
