@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
     	<ImplicitUsings>enable</ImplicitUsings>
 	  	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-	  	<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
+	  	<TargetFrameworks>net6.0-android33.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <AndroidAsset Remove="Assets\google-services.json" />
@@ -209,7 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="8.0.1" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="6.0.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
     <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
     <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.92" />
     <PackageReference Include="Syncfusion.Maui.TabView" Version="23.1.40" />
