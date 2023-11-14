@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <UseMaui>true</UseMaui>
-    <TargetFramework>net7.0</TargetFramework>
     <OutputType>Exe</OutputType>
     	<ImplicitUsings>enable</ImplicitUsings>
 	  	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
