@@ -39,13 +39,17 @@ public partial class RoutesPage : ContentPage
     {
         try
         {
+#if ANDROID
             UserDialogs.Instance.ShowLoading("");
+#endif
             var resolver = TinyIoCContainer.Current;
             var preferences = resolver.Resolve<IPreferences>();
             var fileAccess = resolver.Resolve<IFileAccess>();
             await DataUpdater.UpdateDataIfNeeded(fileAccess, preferences);
             await RefreshData();
+#if ANDROID
             UserDialogs.Instance.HideLoading();
+#endif
 
 
             int row = 0, col = 0;

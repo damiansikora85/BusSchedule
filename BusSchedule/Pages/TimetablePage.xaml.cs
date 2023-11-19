@@ -31,7 +31,9 @@ namespace BusSchedule.Pages
 
         protected async override void OnAppearing()
         {
+#if ANDROID
             UserDialogs.Instance.ShowLoading("");
+#endif
             try
             {
                 await _viewModel.RefreshTimetableAsync();
@@ -46,7 +48,9 @@ namespace BusSchedule.Pages
             }
             finally
             {
+#if ANDROID
                 UserDialogs.Instance.HideLoading();
+#endif
                 base.OnAppearing();
             }
         }
@@ -69,12 +73,16 @@ namespace BusSchedule.Pages
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteAdd");
             _viewModel.AddThisToFavorites();
             ToolbarItems.Clear();
+#if ANDROID
             UserDialogs.Instance.Toast("Dodano do Ulubionych");
+#endif
         }
 
         private async void SelectedDayChanged(object sender, SelectionChangedEventArgs e)
         {
+#if ANDROID
             UserDialogs.Instance.ShowLoading("");
+#endif
             if(e.PreviousSelection.Any() && e.PreviousSelection.First() is TimetableDate previous)
             {
                 previous.Deselect();
@@ -84,7 +92,9 @@ namespace BusSchedule.Pages
                 current.Select();
             }
             await _viewModel.OnNewDaySelected();
+#if ANDROID
             UserDialogs.Instance.HideLoading();
+#endif
         }
     }
 }

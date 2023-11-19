@@ -32,7 +32,9 @@ namespace BusSchedule.Pages
 			catch (Exception ex) 
 			{
 				Crashes.TrackError(ex);
+#if ANDROID
 				UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas zapisywania") { MessageTextColor = System.Drawing.Color.Red });
+#endif
 			}
 			finally
 			{
@@ -52,7 +54,9 @@ namespace BusSchedule.Pages
                 {
                     { "cardNum", _viewModel.SearchCardNumber }
                 });
+#if ANDROID
                 UserDialogs.Instance.Toast(new ToastConfig($"Nie znaleziono karty o numerze: {_viewModel.SearchCardNumber}") { MessageTextColor = System.Drawing.Color.Red });
+#endif
             }
 			catch (Exception ex) 
 			{
@@ -60,7 +64,9 @@ namespace BusSchedule.Pages
 				{
 					{ "cardNum", _viewModel.SearchCardNumber }
 				});
+#if ANDROID
 				UserDialogs.Instance.Toast(new ToastConfig("Wystąpił problem podczas wyszukiwania karty") { MessageTextColor = System.Drawing.Color.Red });
+#endif
 			}
         }
     }

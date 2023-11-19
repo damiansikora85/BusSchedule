@@ -166,7 +166,9 @@ namespace BusSchedule
             {
                 await MainPage.Navigation.PopToRootAsync();
                 MessagingCenter.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
+#if ANDROID
                 UserDialogs.Instance.Toast("Rozkład jazdy został zaktualizowany");
+#endif
             });
         }
     }

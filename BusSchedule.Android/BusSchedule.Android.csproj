@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     	<ImplicitUsings>enable</ImplicitUsings>
 	  	<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-	  	<TargetFrameworks>net6.0-android33.0</TargetFrameworks>
+	  	<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
     <AndroidAsset Remove="Assets\google-services.json" />

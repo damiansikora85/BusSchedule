@@ -30,7 +30,9 @@ namespace BusSchedule.Pages
                 {
                     { "id", _viewModel.CardNumber.ToString() }
                 });
+#if ANDROID
                 UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas pobierania danych karty") { MessageTextColor = System.Drawing.Color.Red });
+#endif
                 await Navigation.PopAsync();
             }
         }
