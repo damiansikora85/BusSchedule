@@ -68,7 +68,6 @@ jobs:
             $version = (150+$($Env:GITHUB_RUN_NUMBER))
             echo $version
             echo "VERSION_NUMBER=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-            echo running on branch ${{ github.ref_name }}
 
         - name: Set version
           uses: damienaicheh/update-android-version-manifest-action@v1.0.0
@@ -83,6 +82,7 @@ jobs:
             dotnet build BusSchedule.Android/BusSchedule.Android.csproj -c Release /p:AndroidKeyStore=true /p:AndroidSigningKeyStore=keystore.jks /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASS }} /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_ALIAS_PASS }} --no-restore
 
         - name: Upload build to Google Play
+          if: ${{ github.ref_name == 'master' }}
           uses: KevinRohn/github-action-upload-play-store@v1.0.0
           with:
             service_account_json: ${{ secrets.SERVICE_ACCOUNT_JSON }}
