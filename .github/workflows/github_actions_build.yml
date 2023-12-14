@@ -68,7 +68,7 @@ jobs:
             $version = (150+$($Env:GITHUB_RUN_NUMBER))
             echo $version
             echo "VERSION_NUMBER=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-            echo running on branch ${GITHUB_REF##*/}
+            echo running on branch ${{ github.ref_name }}
 
         - name: Set version
           uses: damienaicheh/update-android-version-manifest-action@v1.0.0
