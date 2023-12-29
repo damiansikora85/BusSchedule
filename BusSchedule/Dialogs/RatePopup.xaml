@@ -3,7 +3,8 @@
     x:Class="BusSchedule.Dialogs.RatePopup"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Size="360,220">
 
     <VerticalStackLayout
         Margin="8"
@@ -17,6 +18,7 @@
             TextColor="#404040" />
         <Label
             HorizontalTextAlignment="Center"
+            LineBreakMode="WordWrap"
             Text="Dziękujemy za korzystanie z naszej aplikacji. Jeśli jest ona dla Ciebie przydatna to daj znać innym i wystaw ocenę w sklepie Google Play."
             TextColor="#404040" />
         <HorizontalStackLayout Margin="0,8" HorizontalOptions="End">

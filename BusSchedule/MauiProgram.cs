@@ -1,13 +1,6 @@
-﻿using CommunityToolkit.Maui;
+﻿using BusSchedule.Core.Services;
+using CommunityToolkit.Maui;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BusSchedule.Core.Services;
-using Syncfusion.Maui.Core.Hosting;
 
 namespace BusSchedule;
 
@@ -19,7 +12,6 @@ public static class MauiProgram
         builder.UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .UseMauiCompatibility()
-            .ConfigureSyncfusionCore()
             .UseMauiMaps()
         .ConfigureMauiHandlers(handlers =>
          {

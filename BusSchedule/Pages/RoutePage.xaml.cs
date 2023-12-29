@@ -77,7 +77,7 @@ public partial class RoutePage : ContentPage
             _ = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
         }
     }
-
+    private MapSpan mapPos;
     private async Task SetMapPosition(bool locationPermissionGranted)
     {
         var defaultPosition = new Location(54.605868, 18.235334);
@@ -89,13 +89,15 @@ public partial class RoutePage : ContentPage
                 if (location != null)
                 {
                     var positionOnMap = new Location(location.Latitude, location.Longitude);
-                    map.MoveToRegion(MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500)));
+                    mapPos = MapSpan.FromCenterAndRadius(positionOnMap, Distance.FromMeters(500));
+                    map.MoveToRegion(mapPos);
                 }
             }
             else
             {
                 var centerPoint = _viewModel.CalculateCenterPosition();
-                map.MoveToRegion(MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000)));
+                mapPos = MapSpan.FromCenterAndRadius(new Location(centerPoint.Latitude, centerPoint.Longitude), Distance.FromMeters(2000));
+                map.MoveToRegion(mapPos);
             }
         }
         catch (Exception ex) when (ex is FeatureNotSupportedException || ex is FeatureNotEnabledException || ex is PermissionException)
@@ -129,7 +131,7 @@ public partial class RoutePage : ContentPage
             {
                 polyline.Geopath.Add(new Location(point.Latitude, point.Longitude));
             }
-            //map.MapElements.Add(polyline);
+            map.MapElements.Add(polyline);
         }
     }
 
@@ -143,13 +145,13 @@ public partial class RoutePage : ContentPage
         }
     }
 
-    //private async void Pin_MarkerClicked(object sender, PinClickedEventArgs e)
-    //{
-    //    if (sender is Pin pin && pin.BindingContext is Stops stop)
-    //    {
-    //        await ShowScheduleForStop(stop);
-    //    }
-    //}
+    private async void Pin_MarkerClicked(object sender, PinClickedEventArgs e)
+    {
+        if (sender is Pin pin && pin.BindingContext is Stops stop)
+        {
+            await ShowScheduleForStop(stop);
+        }
+    }
 
     private async Task ShowScheduleForStop(Stops station)
     {
@@ -169,13 +171,28 @@ public partial class RoutePage : ContentPage
         }
     }
 
-    private void Pin_MarkerClicked(object sender, Microsoft.Maui.Controls.Maps.PinClickedEventArgs e)
-    {
 
+    private void OnMapClicked(object sender, EventArgs e)
+    {
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            if (!map.IsVisible)
+            {
+                map.IsVisible = true;
+                listView.IsVisible = false;
+                map.MoveToRegion(mapPos);
+            }
+        });
     }
-
-    private void SfTabView_SelectionChanged(object sender, Syncfusion.Maui.TabView.TabSelectionChangedEventArgs e)
+    private void OnListClicked(object sender, EventArgs e)
     {
-
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            if (!listView.IsVisible)
+            {
+                map.IsVisible = false;
+                listView.IsVisible = true;
+            }
+        });
     }
 }

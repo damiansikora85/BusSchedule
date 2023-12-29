@@ -6,15 +6,10 @@ using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
-using BusSchedule.Pages;
 using BusSchedule.Providers;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using TinyIoC;
 using Xamarin.Plugin.Firebase;
 using IPreferences = BusSchedule.Core.Services.IPreferences;
@@ -27,7 +22,6 @@ namespace BusSchedule
         private SemaphoreSlim _updateSemafor = new SemaphoreSlim(1);
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjc1NTQ1NUAzMjMzMmUzMDJlMzBJelJsdWpLNGRwc3NCclFld3NkdUd1dzRnWitLeDNvZFhBTlF5QXhTRFF3PQ==;Mjc1NTQ1NkAzMjMzMmUzMDJlMzBJelJsdWpLNGRwc3NCclFld3NkdUd1dzRnWitLeDNvZFhBTlF5QXhTRFF3PQ==");
             InitializeComponent();
             VersionTracking.Track();
             RegisterIoC();
@@ -59,6 +53,7 @@ namespace BusSchedule
             container.Register<IFirebaseStorage, Storage>().AsSingleton();
             container.Register<IScheduleUpdater, ScheduleUpdater>();
             container.Register<ILogger, ErrorLogger>();
+            container.Register((c, p) => Preferences.Default);
         }
 
         private string GetDatabaseFilename()
