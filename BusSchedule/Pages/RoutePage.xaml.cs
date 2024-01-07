@@ -13,6 +13,7 @@ public partial class RoutePage : ContentPage
 {
     private RoutePageViewModel _viewModel;
     private bool _firstTimeAppearing = true;
+    private bool _mapFirstTimeClick = true;
 
     public RoutePage(Routes route, string destinationName, int? direction)
     {
@@ -70,11 +71,19 @@ public partial class RoutePage : ContentPage
             }
             preferences.Set("wasAskingLocationPermission", true);
         }
+        else
+        {
+            map.IsShowingUser = status == PermissionStatus.Granted;
+        }
 
         async Task RequestLocationPermissionWithExplanation()
         {
             await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyæ swoj¹ lokalizacjê na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
-            _ = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+            var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+            if (status == PermissionStatus.Granted)
+            {
+                map.IsShowingUser = true;
+            }
         }
     }
     private MapSpan mapPos;
@@ -124,7 +133,7 @@ public partial class RoutePage : ContentPage
         {
             Polyline polyline = new()
             {
-                StrokeColor = Color.FromHex(_viewModel.Route.Route_Color),
+                StrokeColor = Color.FromArgb(_viewModel.Route.Route_Color),
                 StrokeWidth = 12
             };
             foreach (var point in trace.Points)
@@ -171,19 +180,24 @@ public partial class RoutePage : ContentPage
         }
     }
 
-
     private void OnMapClicked(object sender, EventArgs e)
     {
-        MainThread.BeginInvokeOnMainThread(() =>
+        MainThread.BeginInvokeOnMainThread(async () =>
         {
             if (!map.IsVisible)
             {
                 map.IsVisible = true;
                 listView.IsVisible = false;
-                map.MoveToRegion(mapPos);
+                if (_mapFirstTimeClick && mapPos != null)
+                {
+                    await Task.Delay(500);
+                    map.MoveToRegion(mapPos);
+                }
+                _mapFirstTimeClick = false;
             }
         });
     }
+
     private void OnListClicked(object sender, EventArgs e)
     {
         MainThread.BeginInvokeOnMainThread(() =>

@@ -73,7 +73,7 @@
 
         <maps:Map
             x:Name="map"
-            IsShowingUser="True"
+            IsShowingUser="False"
             IsVisible="false"
             ItemsSource="{Binding Stops}">
 
@@ -87,7 +87,7 @@
             </maps:Map.ItemTemplate>
         </maps:Map>
 
-        
+
         <Grid
             BackgroundColor="#237194"
             ColumnDefinitions="*,*"
