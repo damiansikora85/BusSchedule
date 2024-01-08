@@ -25,7 +25,7 @@ namespace BusSchedule
             InitializeComponent();
             VersionTracking.Track();
             RegisterIoC();
-            //UserAppTheme = OSAppTheme.Light;
+            Application.Current.UserAppTheme = AppTheme.Light;
             TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
 
             try
