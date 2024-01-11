@@ -42,6 +42,8 @@ public partial class RoutesPage : ContentPage
 #if ANDROID
             UserDialogs.Instance.ShowLoading("");
 #endif
+            Shell.SetTabBarIsVisible(this, true);
+
             var resolver = TinyIoCContainer.Current;
             var preferences = resolver.Resolve<IPreferences>();
             var fileAccess = resolver.Resolve<IFileAccess>();
@@ -162,14 +164,4 @@ public partial class RoutesPage : ContentPage
         Microsoft.AppCenter.Analytics.Analytics.TrackEvent("NewsClicked");
         await Navigation.PushAsync(new NewsPage(_newsService));
     }
-
-    //private async void OnCardTabSelected(object sender, Xamarin.CommunityToolkit.UI.Views.TabTappedEventArgs e)
-    //{
-    //    var preferences = TinyIoCContainer.Current.Resolve<IPreferences>();
-    //    if (preferences.IsFirstLaunchVersion && _showCardInfo)
-    //    {
-    //        _showCardInfo = false;
-    //        await DisplayAlert("Stan karty", "Dodaj swoją kartę elektroniczną aby sprawdzić informacje oraz ważne bilety zakupione dla twojej karty.", "Rozumiem");
-    //    }
-    //}
 }

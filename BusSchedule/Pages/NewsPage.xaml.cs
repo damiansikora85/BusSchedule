@@ -19,6 +19,7 @@ public partial class NewsPage : ContentPage
     {
         try
         {
+            Shell.SetTabBarIsVisible(this, false);
             await _viewModel.RefreshView();
         }
         catch(Exception exc)

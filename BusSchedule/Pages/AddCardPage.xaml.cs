@@ -1,12 +1,8 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Exceptions;
-using BusSchedule.Core.UI.Interfaces;
 using BusSchedule.Core.UI.Pages;
 using BusSchedule.Interfaces.Implementation;
 using Microsoft.AppCenter.Crashes;
-using System;
-using System.Collections.Generic;
-using TinyIoC;
 
 namespace BusSchedule.Pages
 {
@@ -21,11 +17,17 @@ namespace BusSchedule.Pages
 			InitializeComponent ();
 		}
 
+        protected override void OnAppearing()
+        {
+            Shell.SetTabBarIsVisible(this, false);
+            base.OnAppearing();
+        }
+
         private async void OnAddCardClicked(object sender, EventArgs e)
         {
 			try
 			{
-				var name = await DisplayPromptAsync("Dodaj karte", "Podaj nazwe karty", initialValue: _viewModel.CardNumber);
+				var name = await DisplayPromptAsync("Dodaj kartę", "Podaj nazwę karty", initialValue: _viewModel.CardNumber);
 				await _viewModel.SaveCard(name);
 				Microsoft.AppCenter.Analytics.Analytics.TrackEvent("CardAdded");
 			}
