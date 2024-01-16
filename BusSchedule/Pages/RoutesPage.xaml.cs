@@ -33,6 +33,7 @@ public partial class RoutesPage : ContentPage
     private async void OnScheduleUpdated(ScheduleDataUpdatedMessage message)
     {
         await RefreshData();
+        RefreshGrid();
     }
 
     protected override async void OnAppearing()
@@ -53,19 +54,7 @@ public partial class RoutesPage : ContentPage
             UserDialogs.Instance.HideLoading();
 #endif
 
-
-            int row = 0, col = 0;
-            int maxCol = grid.ColumnDefinitions.Count;
-            grid.Children.Clear();
-            foreach (var busService in _viewModel.Routes)
-            {
-                var item = new RouteView(busService);
-                item.OnServiceClicked += OnBusServiceSelected;
-                grid.Add(item, col, row);
-                col++;
-                row = col == maxCol ? row + 1 : row;
-                col %= maxCol;
-            }
+            RefreshGrid();
 
             if (DateTime.TryParse(preferences.Get("rate_popup_last_shown", DateTime.MinValue.ToString()), out var ratePopupLastShown))
             {
@@ -87,6 +76,22 @@ public partial class RoutesPage : ContentPage
         //await FavoritesView.RefreshView();
 
         base.OnAppearing();
+    }
+
+    private void RefreshGrid()
+    {
+        int row = 0, col = 0;
+        int maxCol = grid.ColumnDefinitions.Count;
+        grid.Children.Clear();
+        foreach (var busService in _viewModel.Routes)
+        {
+            var item = new RouteView(busService);
+            item.OnServiceClicked += OnBusServiceSelected;
+            grid.Add(item, col, row);
+            col++;
+            row = col == maxCol ? row + 1 : row;
+            col %= maxCol;
+        }
     }
 
     private Task RefreshData()
