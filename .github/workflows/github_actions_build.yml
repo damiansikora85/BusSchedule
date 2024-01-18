@@ -1,5 +1,13 @@
 name: windowsCI
 
+on:
+  push:
+    branches: [ ]
+  pull_request:
+    branches: [ ]
+
+  workflow_dispatch:
+
 env:
     DOTNETVERSION: 8.0.x
     
