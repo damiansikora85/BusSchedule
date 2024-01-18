@@ -1,13 +1,5 @@
 name: windowsCI
 
-on:
-  push:
-    branches: [ maui ]
-  pull_request:
-    branches: [ maui ]
-
-  workflow_dispatch:
-
 env:
     DOTNETVERSION: 8.0.x
     
