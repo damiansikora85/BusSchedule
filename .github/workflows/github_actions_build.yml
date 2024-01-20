@@ -87,6 +87,6 @@ jobs:
           with:
             service_account_json: ${{ secrets.SERVICE_ACCOUNT_JSON }}
             package_name: "com.darktower.bus"
-            aab_file_path: "BusSchedule.Android/bin/Release/net7.0-android33.0/com.darktower.bus-Signed.aab"
+            aab_file_path: "BusSchedule.Android/bin/Release/net8.0-android34.0/com.darktower.bus-Signed.aab"
             track: "beta"
             release_status: "draft"
