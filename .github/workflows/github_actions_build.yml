@@ -75,7 +75,7 @@ jobs:
             android-manifest-path: './BusSchedule.Android/Properties/AndroidManifest.xml'
             version-code: ${{ env.VERSION_NUMBER }}
             print-file: true
-            version-name: '5.9'
+            version-name: '6.0'
         
         - name: Build
           run: |
