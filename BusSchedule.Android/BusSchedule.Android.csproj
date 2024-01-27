@@ -212,7 +212,7 @@
     <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
     <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.92" />
     <PackageReference Include="XTrack.Android.PlayCore" Version="0.1.6" />
-    <PackageReference Include="Xamarin.AndroidX.Activity" Version="1.7.2.1" />
-		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.7.2.1" />
+    <PackageReference Include="Xamarin.AndroidX.Activity" Version="1.8.0.1" />
+		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.8.0.1" />
   </ItemGroup>
 </Project>
