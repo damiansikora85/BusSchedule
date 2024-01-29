@@ -78,7 +78,7 @@ public partial class RoutePage : ContentPage
 
         async Task RequestLocationPermissionWithExplanation()
         {
-            await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyæ swoj¹ lokalizacjê na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
+            await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyÄ‡ swojÄ… lokalizacjÄ™ na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
             var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             if (status == PermissionStatus.Granted)
             {
