@@ -81,6 +81,13 @@ jobs:
           run: |
             dotnet build BusSchedule.Android/BusSchedule.Android.csproj -c Release /p:AndroidKeyStore=true /p:AndroidSigningKeyStore=keystore.jks /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }} /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASS }} /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_ALIAS_PASS }} --no-restore
 
+        - name: 'Upload Artifact'
+          uses: actions/upload-artifact@v4
+          with:
+            name: Bundle
+            path: BusSchedule.Android/bin/Release/net8.0-android34.0/com.darktower.bus-Signed.aab
+            retention-days: 5
+
         - name: Upload build to Google Play
           if: ${{ github.ref_name == 'master' }}
           uses: KevinRohn/github-action-upload-play-store@v1.0.0
