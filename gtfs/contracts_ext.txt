@@ -1,0 +1,1 @@
+﻿contract_id,contract_conclusion_date,contract_start_date,contract_end_date,contract_number,contract_short_name,contract_operators_name,contract_desc,contract_op_id
