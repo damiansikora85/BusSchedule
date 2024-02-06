@@ -22,3 +22,4 @@ C,Wejherowo Pomorska,Wejherowo Cmentarz
 D,Wejherowo Karnowskiego,Wejherowo Cmentarz
 E,Reda Ciechocino,Reda Cmentarz
 P,Wejherowo Necla,Piaśnica Las Piaśnicki
+701,Wejherowo Budowlanych,
