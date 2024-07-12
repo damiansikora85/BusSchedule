@@ -211,9 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="8.0.1" />
-    <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
+    <PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
     <PackageReference Include="Microsoft.AppCenter" Version="5.0.1" />
-    <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.92" />
+    <PackageReference Include="Microsoft.Maui.Maps" Version="8.0.70" />
     <PackageReference Include="XTrack.Android.PlayCore" Version="0.1.6" />
     <PackageReference Include="Xamarin.AndroidX.Activity" Version="1.8.0.1" />
 		<PackageReference Include="Xamarin.AndroidX.Activity.Ktx" Version="1.8.0.1" />
