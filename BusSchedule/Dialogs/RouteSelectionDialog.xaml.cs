@@ -18,10 +18,10 @@ namespace BusSchedule.Dialogs
             BindingContext = _viewModel;
         }
 
-        protected override void OnDismissedByTappingOutsideOfPopup()
+        protected override Task OnDismissedByTappingOutsideOfPopup(CancellationToken token = default)
         {
             _taskCompletionSource.TrySetCanceled();
-            base.OnDismissedByTappingOutsideOfPopup();
+            return base.OnDismissedByTappingOutsideOfPopup(token);
         }
 
         internal Task<int> WaitForResult()
