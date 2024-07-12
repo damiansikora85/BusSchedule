@@ -8,7 +8,7 @@ all_routes = cursor.fetchall()
 is_valid = True
 for route in all_routes:
     #print(route)
-    cursor.execute("SELECT stop_id FROM Route_Stop WHERE route_id = ? AND direction_id = ?", (route[0], 0))
+    cursor.execute("SELECT stop_id FROM Route_Stop WHERE route_id = ? AND direction_id = ?", (route[0], 1))
     db.commit()
     stopIds = cursor.fetchall()
     for stopId in stopIds:

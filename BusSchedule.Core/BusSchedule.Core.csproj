@@ -12,6 +12,14 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.21" />
+  </ItemGroup>
+
   <!--<ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.7.56" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />

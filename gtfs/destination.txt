@@ -4,13 +4,13 @@ route_id,outbound,inbound
 3,Wejherowo Obrońców Westerplatte,Gościcino Robakowska
 4,Wejherowo os. Fenikowskiego,Orle Łąkowa
 5,Wejherowo Szpital,Orle Łąkowa
-6,Wejherowo Karnowskiego,Wejherowo os. Fenikowskiego
-7,Wejherowo Cegielnia,Bolszewo Leśna – Szkoła
+6,Wejherowo Szpital,Wejherowo os. Fenikowskiego
+7,Wejherowo Cegielnia,Gościcino PKP
 8,Wejherowo Szpital,Rumia C.H. Port Rumia
 9,Rumia Dworzec PKP,Reda Rekowo Lipowa
 10,Wejherowo Pomorska,Kębłowo Wiejska
-11,Wejherowo Dworzec PKP,Gniewowo Spacerowa
-12,Wejherowo Dworzec PKP,Gowino Brzozowa
+11,Wejherowo Krofeya,Gniewowo Spacerowa
+12,Kąpino Parkowa,Gowino Brzozowa
 13,Wejherowo Dworzec PKP,Kąpino Parkowa
 14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
