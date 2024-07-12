@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="5.0.0" package="com.darktower.bus" android:installLocation="preferExternal" android:versionCode="2">
-	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34" />
 	<application android:label="Rozkład jazdy MZK Wejherowo" android:theme="@style/MainTheme" android:icon="@mipmap/icon">
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/mapsAPIKey" />
