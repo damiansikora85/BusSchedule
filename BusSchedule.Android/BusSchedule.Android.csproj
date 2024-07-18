@@ -10,7 +10,7 @@
     <AndroidAsset Remove="Assets\google-services.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Assets\sqlite20240701.db" />
+    <None Remove="Assets\sqlite20240715.db" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />

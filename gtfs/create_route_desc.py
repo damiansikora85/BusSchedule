@@ -60,9 +60,9 @@ def create_legend_by_stop(db,file):
         ["3", "1", "53", ",3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie"],
         ["8", "0", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
         ["8", "1", "199",",8,1,C,kurs z podjazdem do Ciechocina"],
-        ["11", "0", "318",",11,0,A,kurs przez: Szpital"]
+        ["11", "0", "318",",11,0,A,kurs przez: Szpital"],
         ["11", "0", "520",",11,0,B,kurs przez: Szpital i Karnowskiego"],
-        ["11", "1", "318",",11,1,A,kurs przez: Szpital"]
+        ["11", "1", "318",",11,1,A,kurs przez: Szpital"],
         ["11", "1", "520",",11,1,B,kurs przez: Karnowskiego"],
         ["12", "0", "107",",12,0,C,kurs przez os. Kaszubskie (nie kursuje przez: Pruszkowskiego)"],
         ["12", "1", "106",",12,1,A,kurs przez os. Kaszubskie"],
