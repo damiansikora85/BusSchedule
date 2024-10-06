@@ -23,6 +23,12 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <Shell.TitleView>
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label Text="{Binding StopName}" TextColor="White" FontSize="18" />
+            <Label Text="{Binding Direction, StringFormat='Kierunek: {0}'}" TextColor="White" FontSize="12" IsVisible="{Binding HasDirection}" />
+        </VerticalStackLayout>
+    </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <CollectionView

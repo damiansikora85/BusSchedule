@@ -10,9 +10,12 @@ namespace BusSchedule.Core.UI.Pages;
 public class TimetableViewModel : INotifyPropertyChanged
 {
     public Routes Route { get; private set; }
+    public string Direction { get; private set; }
+    public string StopName => Station.Stop_Name;
     public Stops Station { get; private set; }
+    public bool HasDirection => _direction.HasValue;
 
-    private IDataProvider _dataProvider;
+    private readonly IDataProvider _dataProvider;
     private int? _direction;
 
     public List<TimetableItem> Timetable { get; private set; }
@@ -44,6 +47,11 @@ public class TimetableViewModel : INotifyPropertyChanged
 
     public async Task RefreshTimetableAsync()
     {
+        if (_direction.HasValue)
+        {
+            var dest = await _dataProvider.GetRouteDestinations(Route);
+            Direction = _direction == 0 ? dest.Outbound : dest.Inbound;
+        }
         var legendData = await _dataProvider.GetRouteLegend(Route.Route_Id, _direction);
         TimetableLegend = ParseLegend(legendData);
         var schedule = await GetScheduleForDay();
@@ -52,6 +60,7 @@ public class TimetableViewModel : INotifyPropertyChanged
 
         OnPropertyChanged(nameof(Timetable));
         OnPropertyChanged(nameof(TimetableLegend));
+        OnPropertyChanged(nameof(Direction));
     }
 
     private void OnPropertyChanged(string propertyName)
