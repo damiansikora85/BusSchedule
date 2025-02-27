@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.CardDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="{Binding CardName}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+            <Grid
+                Margin="4"
+                ColumnDefinitions="*,*"
+                IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"
+                RowDefinitions="*,3*,*,3*"
+                RowSpacing="4">
+                <Label
+                    FontSize="14"
+                    Text="Numer karty:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="1"
+                    FontSize="18"
+                    Text="{Binding CardNumber}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Column="1"
+                    FontSize="14"
+                    Text="Typ:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding CardName}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Row="2"
+                    FontSize="14"
+                    Text="Karta ważna do:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="3"
+                    FontSize="18"
+                    Text="{Binding ValidTo, StringFormat='{0:dd.MM.yyyy}'}"
+                    VerticalTextAlignment="Start" />
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="14"
+                    Text="Ulga ważna do:"
+                    VerticalTextAlignment="End" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    FontSize="18"
+                    Text="{Binding DiscountValidTo, StringFormat='{0:dd.MM.yyyy}'}"
+                    VerticalTextAlignment="Start" />
+            </Grid>
+            <ListView
+                Margin="4,16"
+                HasUnevenRows="True"
+                ItemsSource="{Binding Tickets}"
+                VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame>
+                                <Grid
+                                    Padding="2,4"
+                                    ColumnDefinitions="5*,*"
+                                    RowDefinitions="*,*,*,*"
+                                    RowSpacing="2">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="18"
+                                        Text="{Binding Name}" />
+                                    <Label
+                                        Grid.RowSpan="3"
+                                        Grid.Column="1"
+                                        FontSize="18"
+                                        Text="{Binding Price, StringFormat='{0}zł'}"
+                                        VerticalTextAlignment="Center" />
+                                    <Label Grid.Row="1" Text="{Binding Zone, StringFormat='Strefa: {0}'}" />
+                                    <Label Grid.Row="2" Text="{Binding Valid, StringFormat='Ważność: {0}'}" />
+                                    <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0:dd.MM.yyyy hh:mm}'}" />
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="BusSchedule.Pages.Views.CardsList"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
+    x:DataType="views:CardsListViewModel">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <ListView
+                IsVisible="{Binding HasCards}"
+                ItemSelected="OnCardSelected"
+                ItemsSource="{Binding Cards}"
+                RowHeight="60"
+                SelectedItem="{Binding SelectedCard}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                Padding="4,2"
+                                x:DataType="model:ElectronicCardData"
+                                ColumnDefinitions="*,50,50"
+                                RowDefinitions="*,*">
+                                <Label FontSize="18" Text="{Binding Name}" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontSize="14"
+                                    Text="{Binding Number}" />
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnCardEdit"
+                                    FontFamily="MaterialIcons"
+                                    FontSize="24"
+                                    Text="&#xe3c9;"
+                                    TextColor="#797979" />
+                                <Button
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    BackgroundColor="Transparent"
+                                    Clicked="OnCardDelete"
+                                    FontFamily="MaterialIcons"
+                                    FontSize="24"
+                                    Text="&#xe872;"
+                                    TextColor="#797979" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label
+                HorizontalTextAlignment="Center"
+                IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}"
+                Text="Brak dodanych kart"
+                VerticalOptions="CenterAndExpand" />
+            <Button Clicked="OnAddCard" Text="Dodaj karte" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

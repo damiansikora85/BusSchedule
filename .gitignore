@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 BusSchedule.Android/Resources/values/keys.xml
 BusSchedule.Android/Assets/google-services.json
+BusScheduleMaui/Platforms/Android/google-services.json
+BusScheduleMaui/Platforms/Android/Resources/values/keys.xml

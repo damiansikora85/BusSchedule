@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.RoutesPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodels="clr-namespace:BusSchedule.Pages.ViewModels;assembly=BusSchedule.Core.UI"
+    xmlns:views="clr-namespace:BusSchedule.Pages.Views"
+    Title="MZK Wejherowo"
+    x:DataType="viewmodels:RoutesPageViewModel"
+    BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnContactClicked" IconImageSource="baseline_email_white_24" />
+        <ToolbarItem Clicked="OnNewsClicked" IconImageSource="baseline_article_white_24" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Margin="4" TextColor="#404040">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Rozkład ważny od " />
+                            <Span Text="{Binding FeedStartDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                            <Span Text=" do " />
+                            <Span Text="{Binding FeedEndDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Grid
+                    x:Name="grid"
+                    Margin="8,16"
+                    ColumnDefinitions="*, *, *, *"
+                    RowDefinitions="80, 80, 80, 80, 80, 80" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BusSchedule.Pages.NewsPage" Title="Aktualności">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding News}" HasUnevenRows="True" Margin="4" IsVisible="{Binding HasAnyNews}" ItemSelected="ListView_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
+                                <Label Text="{Binding Message}" TextType="Html"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Brak nowych wiadomości" FontSize="28" HorizontalTextAlignment="Center" IsVisible="{Binding HasAnyNews, Converter={StaticResource InvertedBoolConverter}}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

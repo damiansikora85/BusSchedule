@@ -1,6 +1,4 @@
 ﻿using BusSchedule.Core.CloudService;
-using System;
-using System.Threading.Tasks;
 using Xamarin.Plugin.Firebase;
 
 namespace BusSchedule.Core.Services

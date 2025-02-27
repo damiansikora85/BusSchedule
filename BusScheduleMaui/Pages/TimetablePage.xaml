@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BusSchedule.Pages.TimetablePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:BusSchedule.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ColorConverter x:Key="ColorConverter" />
+            <Style x:Key="CustomStyle" TargetType="CollectionView">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Shell.TitleView>
+        <VerticalStackLayout VerticalOptions="Center">
+            <Label Text="{Binding StopName}" TextColor="White" FontSize="18" />
+            <Label Text="{Binding Direction, StringFormat='Kierunek: {0}'}" TextColor="White" FontSize="12" IsVisible="{Binding HasDirection}" />
+        </VerticalStackLayout>
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView
+                Margin="0,8,0,0"
+                HeightRequest="100"
+                ItemsSource="{Binding Dates}"
+                SelectedItem="{Binding SelectedDay}"
+                SelectionChanged="SelectedDayChanged"
+                SelectionMode="Single"
+                VerticalOptions="Start">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="4,0" BackgroundColor="Transparent">
+                            <Border
+                                Padding="8"
+                                Background="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
+                                HorizontalOptions="Center"
+                                Stroke="{Binding BackgroundColor, Converter={converters:ColorConverter}}"
+                                StrokeShape="RoundRectangle 8,8,8,8"
+                                StrokeThickness="4"
+                                WidthRequest="80">
+                                <VerticalStackLayout>
+                                    <Label
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding DayOfWeek}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
+                                    <Label
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding DayNum}"
+                                        TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
+                                </VerticalStackLayout>
+
+                            </Border>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+            <ListView
+                x:Name="listView"
+                ItemsSource="{Binding Timetable}"
+                SelectedItem="{Binding NextBus, Mode=TwoWay}"
+                SelectionMode="None"
+                SeparatorColor="#404040"
+                SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <HorizontalStackLayout BackgroundColor="{Binding BackgroundColor}">
+                                <Label
+                                    Margin="4,0"
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding Hour}"
+                                    TextColor="#404040"
+                                    VerticalTextAlignment="Center" />
+                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Label
+                                                Text="{Binding}"
+                                                TextColor="#404040"
+                                                VerticalTextAlignment="Center" />
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </HorizontalStackLayout>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <VerticalStackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" TextColor="#404040" />
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
