@@ -7,7 +7,7 @@ route_id,outbound,inbound
 6,Wejherowo Szpital,Wejherowo os. Fenikowskiego
 7,Wejherowo Cegielnia,Gościcino PKP
 8,Wejherowo Szpital,Rumia C.H. Port Rumia
-9,Rumia Dworzec PKP,Reda Rekowo Lipowa
+9,Reda Rekowo Lipowa,Rumia Dworzec PKP
 10,Wejherowo Pomorska,Kębłowo Wiejska
 11,Wejherowo Krofeya,Gniewowo Spacerowa
 12,Kąpino Parkowa,Gowino Brzozowa
