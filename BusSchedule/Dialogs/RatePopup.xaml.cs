@@ -1,6 +1,8 @@
 ﻿using BusSchedule.Core.Services;
+using BusSchedule.Interfaces;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
+using TinyIoC;
 using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Dialogs
@@ -27,17 +29,15 @@ namespace BusSchedule.Dialogs
 
         private async void OnRateClicked(object sender, EventArgs e)
         {
-            //await _reviewService.ShowReviewPopup();
             await Launcher.OpenAsync(new Uri("market://details?id=com.darktower.bus"));
             _preferences.Set("rated", "1");
-            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateNow");
-            //await Navigation.PopPopupAsync();
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("RateNow");
             Close();
         }
 
         private void OnRateLaterClicked(object sender, EventArgs e)
         {
-            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateLater");
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("RateLater");
             Close();
         }
     }

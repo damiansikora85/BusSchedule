@@ -1,15 +1,10 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Model;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
 using BusSchedule.Core.UI.Utils;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
-using Microsoft.AppCenter.Crashes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TinyIoC;
 
 namespace BusSchedule.Pages
@@ -40,11 +35,7 @@ namespace BusSchedule.Pages
             }
             catch (Exception exc)
             {
-                Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"station", _viewModel.Station.Stop_Name }
-                });
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
             }
             finally
             {
@@ -70,7 +61,7 @@ namespace BusSchedule.Pages
 
         private void AddToFavoritesClicked(object sender, EventArgs e)
         {
-            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteAdd");
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("FavoriteAdd");
             _viewModel.AddThisToFavorites();
             ToolbarItems.Clear();
 #if ANDROID

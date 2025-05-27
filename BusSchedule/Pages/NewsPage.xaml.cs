@@ -1,6 +1,6 @@
 ﻿using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
-using Microsoft.AppCenter.Crashes;
+using TinyIoC;
 
 namespace BusSchedule.Pages;
 
@@ -24,7 +24,7 @@ public partial class NewsPage : ContentPage
         }
         catch(Exception exc)
         {
-            Crashes.TrackError(exc);
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
     }
 

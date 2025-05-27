@@ -1,9 +1,9 @@
 ﻿using BusSchedule.Core.Exceptions;
 using BusSchedule.Core.Interfaces;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.Utils;
 using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.AppCenter.Crashes;
 using System.Collections.ObjectModel;
 
 namespace BusSchedule.Core.UI.Pages.Views
@@ -37,29 +37,24 @@ namespace BusSchedule.Core.UI.Pages.Views
                 }
                 catch(FavoriteCreateException favoriteException)
                 {
-                    Crashes.TrackError(favoriteException, new Dictionary<string, string>
-                    {
-                        {"routeId", favoriteData.RouteId },
-                        {"stopId", favoriteData.StopId }
-                    });
                     _favoritesManager.Delete(favoriteData.RouteId, favoriteData.StopId);
                 }
                 catch (Exception exc)
                 {
-                    Crashes.TrackError(exc, new Dictionary<string, string>
-                    {
-                        {"routeId", favoriteData.RouteId },
-                        {"stopId", favoriteData.StopId }
-                    });
+                    //TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(favoriteException);
+                    //Crashes.TrackError(exc, new Dictionary<string, string>
+                    //{
+                    //    {"routeId", favoriteData.RouteId },
+                    //    {"stopId", favoriteData.StopId }
+                    //});
                 }
             }
         }
 
         public void DeleteItem(FavoriteData favoriteData)
         {
-            if(Favorites.Contains(favoriteData))
+            if(Favorites.Remove(favoriteData))
             {
-                Favorites.Remove(favoriteData);
                 _favoritesManager.Delete(favoriteData.Route.Route_Id, favoriteData.Stop.Stop_Id);
                 OnPropertyChanged(nameof(HasAnyFavorites));
                 OnPropertyChanged(nameof(HasNoFavorites));

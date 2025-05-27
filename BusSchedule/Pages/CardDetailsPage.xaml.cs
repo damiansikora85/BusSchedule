@@ -1,9 +1,8 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Model;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
-using Microsoft.AppCenter.Crashes;
-using System;
-using System.Collections.Generic;
+using TinyIoC;
 
 namespace BusSchedule.Pages
 {
@@ -26,10 +25,7 @@ namespace BusSchedule.Pages
             }
             catch(Exception exc)
             {
-                Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    { "id", _viewModel.CardNumber.ToString() }
-                });
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
 #if ANDROID
                 UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas pobierania danych karty") { MessageTextColor = System.Drawing.Color.Red });
 #endif

@@ -1,4 +1,5 @@
-﻿using BusSchedule.Core.UI.Components;
+﻿using BusSchedule.Core.Services;
+using BusSchedule.Core.UI.Components;
 using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
@@ -29,7 +30,7 @@ public partial class FavoritesView : ContentView
     {
         if (ListView.SelectedItem is FavoriteData favoriteData)
         {
-            Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("FavoriteClicked");
             var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
             await Navigation.PushAsync(page);
             ListView.SelectedItem = null;

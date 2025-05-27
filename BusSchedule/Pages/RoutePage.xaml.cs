@@ -1,11 +1,11 @@
 using BusSchedule.Core.Model;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
-using Microsoft.AppCenter.Crashes;
-using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Maps;
 using Microsoft.Maui.Maps;
 using TinyIoC;
+using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule.Pages;
 
@@ -41,11 +41,7 @@ public partial class RoutePage : ContentPage
         }
         catch (Exception exc)
         {
-            Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString()}
-                });
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
 
         base.OnAppearing();
@@ -117,12 +113,9 @@ public partial class RoutePage : ContentPage
         {
             map.MoveToRegion(MapSpan.FromCenterAndRadius(defaultPosition, Distance.FromMeters(2000)));
 
+
             // Unable to get location
-            Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString()}
-                });
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
     }
 
@@ -171,12 +164,7 @@ public partial class RoutePage : ContentPage
         }
         catch (Exception exc)
         {
-            Crashes.TrackError(exc, new Dictionary<string, string>
-                {
-                    {"route", _viewModel.Route.Route_Short_Name },
-                    {"direction", _viewModel.Direction.ToString() },
-                    {"station", station.Stop_Name }
-                });
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
     }
 

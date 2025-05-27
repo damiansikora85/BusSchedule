@@ -1,8 +1,9 @@
 ﻿using Acr.UserDialogs;
 using BusSchedule.Core.Exceptions;
+using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
 using BusSchedule.Interfaces.Implementation;
-using Microsoft.AppCenter.Crashes;
+using TinyIoC;
 
 namespace BusSchedule.Pages
 {
@@ -29,13 +30,13 @@ namespace BusSchedule.Pages
 			{
 				var name = await DisplayPromptAsync("Dodaj kartę", "Podaj nazwę karty", initialValue: _viewModel.CardNumber);
 				await _viewModel.SaveCard(name);
-				Microsoft.AppCenter.Analytics.Analytics.TrackEvent("CardAdded");
-			}
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("CardAdded");
+            }
 			catch (Exception ex) 
 			{
-				Crashes.TrackError(ex);
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(ex);
 #if ANDROID
-				UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas zapisywania") { MessageTextColor = System.Drawing.Color.Red });
+                UserDialogs.Instance.Toast(new ToastConfig("Wystąpił błąd podczas zapisywania") { MessageTextColor = System.Drawing.Color.Red });
 #endif
 			}
 			finally
@@ -52,20 +53,14 @@ namespace BusSchedule.Pages
 			}
 			catch(ElectronicCardException cardException)
 			{
-                Crashes.TrackError(cardException, new Dictionary<string, string>
-                {
-                    { "cardNum", _viewModel.SearchCardNumber }
-                });
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(cardException);
 #if ANDROID
                 UserDialogs.Instance.Toast(new ToastConfig($"Nie znaleziono karty o numerze: {_viewModel.SearchCardNumber}") { MessageTextColor = System.Drawing.Color.Red });
 #endif
             }
 			catch (Exception ex) 
 			{
-				Crashes.TrackError(ex, new Dictionary<string, string>
-				{
-					{ "cardNum", _viewModel.SearchCardNumber }
-				});
+                TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(ex);
 #if ANDROID
 				UserDialogs.Instance.Toast(new ToastConfig("Wystąpił problem podczas wyszukiwania karty") { MessageTextColor = System.Drawing.Color.Red });
 #endif

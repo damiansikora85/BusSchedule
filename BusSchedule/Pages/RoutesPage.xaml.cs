@@ -7,7 +7,6 @@ using BusSchedule.Dialogs;
 using BusSchedule.Pages.ViewModels;
 using BusSchedule.Tools;
 using CommunityToolkit.Maui.Views;
-using Microsoft.AppCenter.Crashes;
 using Polly;
 using TinyIoC;
 using IPreferences = BusSchedule.Core.Services.IPreferences;
@@ -98,8 +97,7 @@ public partial class RoutesPage : ContentPage
     {
         return Policy.Handle<Exception>().RetryAsync(async (exc, retryNum) =>
         {
-            Crashes.TrackError(exc);
-            //await DataUpdater.ForceCopy(DependencyService.Get<IFileAccess>());
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }).ExecuteAsync(async () => await _viewModel.RefreshBusServicesAsync());
     }
 
@@ -131,7 +129,7 @@ public partial class RoutesPage : ContentPage
         }
         catch(Exception exc)
         {
-            Crashes.TrackError(exc, new Dictionary<string, string> { { "route", route.Route_Short_Name } });
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
         finally
         {
@@ -153,20 +151,20 @@ public partial class RoutesPage : ContentPage
         catch (FeatureNotSupportedException fbsEx)
         {
             // Email is not supported on this device
-            Crashes.TrackError(fbsEx);
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(fbsEx);
             await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
         }
         catch (Exception exc)
         {
             // Some other exception occurred
-            Crashes.TrackError(exc);
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
             await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
         }
     }
 
     private async void OnNewsClicked(object sender, EventArgs e)
     {
-        Microsoft.AppCenter.Analytics.Analytics.TrackEvent("NewsClicked");
+        TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("NewsClicked");
         await Navigation.PushAsync(new NewsPage(_newsService));
     }
 }
