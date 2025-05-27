@@ -14,7 +14,7 @@ route_id,outbound,inbound
 13,Wejherowo Dworzec PKP,Kąpino Parkowa
 14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
-17,Reda Dworzec PKP,Reda Cmentarz
+17,Reda Pieleszewo Karłowicza,Reda Gniewowska - Cmentarz
 18,Reda Dworzec PKP,
 A,Wejherowo Dworzec PKP,Wejherowo Cmentarz
 B,Wejherowo os. Fenikowskiego,Wejherowo Cmentarz
