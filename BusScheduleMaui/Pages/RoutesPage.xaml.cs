@@ -145,7 +145,7 @@ public partial class RoutesPage : ContentPage
             var message = new EmailMessage
             {
                 Subject = "Rozkład jazdy MZK Wejherowo",
-                To = new List<string> { "kontakt@darktowerlab.pl" },
+                To = new List<string> { "kontakt@darktowerlab.com.pl" },
             };
             await Email.ComposeAsync(message);
         }
