@@ -65,7 +65,8 @@ CREATE TABLE "route_stop" (
 	"route_id"	INTEGER,
 	"direction_id"	INTEGER,
 	"stop_sequence"	INTEGER,
-	"stop_id"	INTEGER
+	"stop_id"	INTEGER,
+	"is_opt"	INTEGER
 );
 .separator ,
 .import route_stop.txt route_stop

@@ -58,6 +58,7 @@ def create_legend_by_destination(db,file):
 def create_legend_by_stop(db,file):
     legend = [
         ["3", "1", "53", ",3,1,D,kurs z podjazdem do przystanków przy ul. Drzewiarza w Gościcinie"],
+        ["5", "1", "158", ",5,1,B,kurs do: Orle Szkoła przez: Bolszewo Paradyż"],
         ["8", "0", "199",",8,0,C,kurs z podjazdem do Ciechocina"],
         ["8", "1", "199",",8,1,C,kurs z podjazdem do Ciechocina"],
         ["11", "0", "318",",11,0,A,kurs przez: Szpital"],

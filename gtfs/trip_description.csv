@@ -1,41 +1,36 @@
-36688,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
-36685,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-36687,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
-36699,4,0,A,kurs skrócony do: Wejherowo Sobieskiego - GS 02
-36700,4,0,B,kurs skrócony do: Wejherowo Budowlanych 02
-36702,4,0,B,kurs skrócony do: Wejherowo Budowlanych 02
-36695,4,1,A,kurs do: Orle Szkoła
-36696,4,1,B,kurs do: Bolszewo Słoneczna
-36713,5,0,B,kurs do: Broniewskiego - Dworzec PKP. Dalej jako linia 1 do: Os. Fenikowskiego
-36703,5,1,A,kurs do: Orle Szkoła
-36705,5,1,A,kurs do: Orle Szkoła
-36706,5,1,A,kurs do: Orle Szkoła
-36717,6,0,A,kurs do: Karnowskiego. Nie kursuje przez: Szpital
-36718,6,0,A,kurs do: Karnowskiego. Nie kursuje przez: Szpital
-36662,6,1,A,kurs do: Os. Fenikowskiego przez: Szpital
-36716,6,1,A,kurs do: Os. Fenikowskiego przez: Szpital
-36726,7,0,A,kurs do: Wejherowo Dworzec PKP
-36728,7,0,A,kurs do: Wejherowo Dworzec PKP
-36730,7,0,A,kurs do: Wejherowo Dworzec PKP
-36732,7,0,A,kurs do: Wejherowo Dworzec PKP
-36721,7,1,A,kurs do: Gościcino Szkoła bez zajazdu na: Gościcino PKP
-36722,7,1,A,kurs do: Gościcino Szkoła bez zajazdu na: Gościcino PKP
-36723,7,1,B,kurs do: Bolszewo Słoneczna bez zajazdu na: Gościcino PKP
-36724,7,1,B,kurs do: Bolszewo Słoneczna bez zajazdu na: Gościcino PKP
-36725,7,1,C,kurs do: Gościcino Robakowska bez zajazdu na: Gościcino PKP
-36742,10,1,A,kurs skrócony do: Gościcino Równa 04
-36741,10,1,A,kurs skrócony do: Gościcino Równa 04
-36743,10,1,B,kurs do: Kębłowo Wiejska 02 (zatoka przy ul. Wejherowskiej)
-36770,18,1,Z,kurs skrócony do: Reda Ciechocino 02
-36736,8,0,C,kurs z podjazdem do Ciechocina
-36733,8,1,C,kurs z podjazdem do Ciechocina
-36735,8,1,C,kurs z podjazdem do Ciechocina
-36753,11,0,A,kurs przez: Szpital
-36754,11,0,A,kurs przez: Szpital
-36754,11,0,B,kurs przez: Szpital i Karnowskiego
-36750,11,1,A,kurs przez: Szpital
-36751,11,1,A,kurs przez: Szpital
-36749,11,1,B,kurs przez: Karnowskiego
-36751,11,1,B,kurs przez: Karnowskiego
-36759,12,0,C,kurs przez os. Kaszubskie (nie kursuje przez: Pruszkowskiego)
-36755,12,1,A,kurs przez os. Kaszubskie
+37872,1,0,A,kurs skrócony do: Bolszewo Strażacka 02
+37869,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+37871,1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)
+37883,4,0,A,kurs skrócony do: Wejherowo Sobieskiego - GS 02
+37884,4,0,B,kurs skrócony do: Wejherowo Budowlanych 02
+37886,4,0,B,kurs skrócony do: Wejherowo Budowlanych 02
+37879,4,1,A,kurs do: Orle Szkoła
+37880,4,1,B,kurs do: Bolszewo Słoneczna
+37897,5,0,B,kurs do: Broniewskiego - Dworzec PKP. Dalej jako linia 1 do: Os. Fenikowskiego
+37887,5,1,A,kurs do: Orle Szkoła
+37889,5,1,A,kurs do: Orle Szkoła
+37890,5,1,A,kurs do: Orle Szkoła
+37849,6,1,A,kurs do: Os. Fenikowskiego przez: Szpital
+37903,7,0,A,kurs do: Wejherowo Dworzec PKP
+37905,7,0,A,kurs do: Wejherowo Dworzec PKP
+37907,7,0,A,kurs do: Wejherowo Dworzec PKP
+37900,7,1,A,kurs do: Gościcino Szkoła bez zajazdu na: Gościcino PKP
+37901,7,1,A,kurs do: Gościcino Szkoła bez zajazdu na: Gościcino PKP
+37917,10,1,A,kurs skrócony do: Gościcino Równa 04
+37916,10,1,A,kurs skrócony do: Gościcino Równa 04
+37918,10,1,B,kurs do: Kębłowo Wiejska 02 (zatoka przy ul. Wejherowskiej)
+37948,18,1,Z,kurs skrócony do: Reda Ciechocino 02
+37889,5,1,B,kurs do: Orle Szkoła przez: Bolszewo Paradyż
+37890,5,1,B,kurs do: Orle Szkoła przez: Bolszewo Paradyż
+37911,8,0,C,kurs z podjazdem do Ciechocina
+37908,8,1,C,kurs z podjazdem do Ciechocina
+37910,8,1,C,kurs z podjazdem do Ciechocina
+37928,11,0,A,kurs przez: Szpital
+37929,11,0,A,kurs przez: Szpital
+37929,11,0,B,kurs przez: Szpital i Karnowskiego
+37925,11,1,A,kurs przez: Szpital
+37926,11,1,A,kurs przez: Szpital
+37924,11,1,B,kurs przez: Karnowskiego
+37926,11,1,B,kurs przez: Karnowskiego
+37934,12,0,C,kurs przez os. Kaszubskie (nie kursuje przez: Pruszkowskiego)
+37930,12,1,A,kurs przez os. Kaszubskie

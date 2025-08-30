@@ -1,7 +1,7 @@
 route_id,outbound,inbound
 1,Wejherowo os. Fenikowskiego,Bolszewo Leśna – Szkoła (Góra Szkolna)
 2,Wejherowo Szpital,
-3,Wejherowo Obrońców Westerplatte,Gościcino Robakowska
+3,Wejherowo Os. Sikorskiego,Gościcino Cmentarz
 4,Wejherowo os. Fenikowskiego,Orle Łąkowa
 5,Wejherowo Szpital,Orle Łąkowa
 6,Wejherowo Szpital,Wejherowo os. Fenikowskiego
@@ -11,7 +11,7 @@ route_id,outbound,inbound
 10,Wejherowo Pomorska,Kębłowo Wiejska
 11,Wejherowo Krofeya,Gniewowo Spacerowa
 12,Kąpino Parkowa,Gowino Brzozowa
-13,Wejherowo Dworzec PKP,Kąpino Parkowa
+13,Wejherowo Szpital,
 14,Orle Szkoła,Wejherowo Dworzec PKP
 16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
 17,Reda Pieleszewo Karłowicza,Reda Gniewowska - Cmentarz
