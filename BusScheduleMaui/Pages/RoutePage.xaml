@@ -8,8 +8,11 @@
     xmlns:page="clr-namespace:BusSchedule.Pages"
     xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:viewModel="clr-namespace:BusSchedule.UI.ViewModels;assembly=BusSchedule.Core.UI"
     BackgroundColor="White"
-    Title="RoutePage">
+    Title="RoutePage"
+    x:DataType="viewModel:RoutePageViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
@@ -19,31 +22,29 @@
 
     </ContentPage.Resources>
 
-    <StackLayout>
-
-        <ListView
+    <Grid RowDefinitions="*,64">
+        <CollectionView
             x:Name="listView"
             Margin="6,4"
-            ItemSelected="OnStationSelected"
-            ItemsSource="{Binding Stops}"
-            RowHeight="75"
-            SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid
+            SelectionMode="Single"
+            SelectionChanged="OnStationSelected"
+            ItemsSource="{Binding Stops}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Stops">
+                    <Grid
+                        HeightRequest="75"
                             ColumnDefinitions="30,*"
                             ColumnSpacing="0"
                             RowDefinitions="*,Auto,*"
                             RowSpacing="0">
-                            <BoxView
+                        <BoxView
                                 Grid.Row="0"
                                 HorizontalOptions="Center"
                                 IsVisible="{Binding IsFirst, Converter={StaticResource InvertedBoolConverter}}"
                                 VerticalOptions="Fill"
                                 WidthRequest="3"
                                 Color="#237194" />
-                            <Ellipse
+                        <Ellipse
                                 Grid.Row="1"
                                 HeightRequest="22"
                                 HorizontalOptions="Center"
@@ -51,7 +52,7 @@
                                 StrokeThickness="3"
                                 VerticalOptions="Start"
                                 WidthRequest="22" />
-                            <Label
+                        <Label
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Margin="20,0"
@@ -59,18 +60,17 @@
                                 LineBreakMode="NoWrap"
                                 Text="{Binding Stop_Name}"
                                 TextColor="Black" />
-                            <BoxView
+                        <BoxView
                                 Grid.Row="2"
                                 HorizontalOptions="Center"
                                 IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
                                 VerticalOptions="Fill"
                                 WidthRequest="3"
                                 Color="#237194" />
-                        </Grid>
-                    </ViewCell>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
         <maps:Map
             x:Name="map"
@@ -79,7 +79,7 @@
             ItemsSource="{Binding Stops}">
 
             <maps:Map.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="model:Stops">
                     <maps:Pin
                         Label="{Binding Stop_Name}"
                         Location="{Binding ., Converter={StaticResource StopLocationConverter}}"
@@ -88,8 +88,7 @@
             </maps:Map.ItemTemplate>
         </maps:Map>
 
-
-        <Grid
+        <Grid Grid.Row="1"
             BackgroundColor="#237194"
             ColumnDefinitions="*,*"
             RowDefinitions="64"
@@ -112,5 +111,5 @@
                 Text="Mapa"
                 TextColor="White" />
         </Grid>
-    </StackLayout>
+    </Grid>
 </ContentPage>

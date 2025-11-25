@@ -19,7 +19,7 @@ namespace BusSchedule.Dialogs
             Opened += OnOpened;
         }
 
-        void OnOpened(object? sender, PopupOpenedEventArgs e)
+        void OnOpened(object? sender, EventArgs e)
         {
             Opened += OnOpened;
             _preferences.Set("rate_popup_last_shown", DateTime.Today.ToString());
@@ -32,13 +32,13 @@ namespace BusSchedule.Dialogs
             _preferences.Set("rated", "1");
             //Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateNow");
             //await Navigation.PopPopupAsync();
-            Close();
+            await CloseAsync();
         }
 
-        private void OnRateLaterClicked(object sender, EventArgs e)
+        private async void OnRateLaterClicked(object sender, EventArgs e)
         {
             //Microsoft.AppCenter.Analytics.Analytics.TrackEvent("RateLater");
-            Close();
+            await CloseAsync();
         }
     }
 }

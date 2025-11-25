@@ -4,12 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    Size="325,150">
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    x:TypeArguments="system:Int32"
+    WidthRequest="350"
+    HeightRequest="180"
+    Padding="0">
     <Grid
         Margin="32,2"
         HorizontalOptions="FillAndExpand"
         RowDefinitions="*,*,*"
-        Padding="16"
+        Padding="0,16"
         RowSpacing="8"
         BackgroundColor="White">
         <Label

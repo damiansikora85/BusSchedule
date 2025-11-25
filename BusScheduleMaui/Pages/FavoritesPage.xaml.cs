@@ -14,7 +14,8 @@ public partial class FavoritesPage : ContentPage
 	{
 		InitializeComponent();
         _viewModel = new FavoritesViewModel(new FavoritesManager(), TinyIoCContainer.Current.Resolve<IDataProvider>());
-        ListView.ItemsSource = _viewModel.Favorites;
+        BindingContext = _viewModel;
+        //ListView.ItemsSource = _viewModel.Favorites;
     }
 
     protected override async void OnAppearing()
@@ -26,18 +27,14 @@ public partial class FavoritesPage : ContentPage
     public async Task RefreshView()
     {
         await _viewModel.RefreshData();
-        ListView.IsVisible = _viewModel.HasAnyFavorites;
-        EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
     }
 
-    private async void FavoriteItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void FavoriteItemSelected(object sender, SelectionChangedEventArgs e)
     {
-        if (ListView.SelectedItem is FavoriteData favoriteData)
+        if (e.CurrentSelection.First() is FavoriteData favoriteData)
         {
-            //Microsoft.AppCenter.Analytics.Analytics.TrackEvent("FavoriteClicked");
             var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
             await Navigation.PushAsync(page);
-            ListView.SelectedItem = null;
         }
     }
 
@@ -45,11 +42,9 @@ public partial class FavoritesPage : ContentPage
     {
         if (sender is Button button && button.CommandParameter is FavoriteData favoriteData)
         {
-            if (await App.Current.MainPage.DisplayAlert("Uwaga", "Czy na pewno chcesz usun¹æ?", "Tak", "Nie"))
+            if (await App.Current.MainPage.DisplayAlertAsync("Uwaga", "Czy na pewno chcesz usun¹æ?", "Tak", "Nie"))
             {
                 _viewModel.DeleteItem(favoriteData);
-                ListView.IsVisible = _viewModel.HasAnyFavorites;
-                EmptyListLabel.IsVisible = _viewModel.HasNoFavorites;
             }
         }
     }

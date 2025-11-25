@@ -7,11 +7,11 @@ using TinyIoC;
 namespace BusSchedule.Pages.Views;
 
 [XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class FavoritesView : ContentView
+public partial class FavoritesView123 : ContentView
 {
     private FavoritesViewModel _viewModel;
 
-    public FavoritesView()
+    public FavoritesView123()
     {
         InitializeComponent();
         _viewModel = new FavoritesViewModel(new FavoritesManager(), TinyIoCContainer.Current.Resolve<IDataProvider>());
@@ -40,7 +40,7 @@ public partial class FavoritesView : ContentView
     {
         if (sender is Button button && button.CommandParameter is FavoriteData favoriteData)
         {
-            if (await App.Current.MainPage.DisplayAlert("Uwaga", "Czy na pewno chcesz usunąć?", "Tak", "Nie"))
+            if (await App.Current.MainPage.DisplayAlertAsync("Uwaga", "Czy na pewno chcesz usunąć?", "Tak", "Nie"))
             {
                 _viewModel.DeleteItem(favoriteData);
                 ListView.IsVisible = _viewModel.HasAnyFavorites;

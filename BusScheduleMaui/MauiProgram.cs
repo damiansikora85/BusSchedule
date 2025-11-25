@@ -12,7 +12,6 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder.UseMauiApp<App>()
         .UseMauiCommunityToolkit()
-        .UseMauiCompatibility()
         .UseMauiMaps()
         .ConfigureMauiHandlers(handlers =>
         {

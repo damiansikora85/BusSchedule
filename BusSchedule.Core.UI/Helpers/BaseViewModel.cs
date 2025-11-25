@@ -2,6 +2,7 @@
 
 namespace BusSchedule.Core.UI.Helpers;
 
+#nullable enable
 public class BaseViewModel : ObservableObject
 {
     string? title = string.Empty;

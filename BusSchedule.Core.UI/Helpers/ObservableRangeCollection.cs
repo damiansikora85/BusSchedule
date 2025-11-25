@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 
 namespace BusSchedule.Core.UI.Helpers;
-
+#nullable enable
 public class ObservableRangeCollection<T> : ObservableCollection<T>
 {
 

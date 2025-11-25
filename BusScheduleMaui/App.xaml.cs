@@ -6,8 +6,9 @@ using BusSchedule.Core.Services;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
 using BusSchedule.Providers;
+using CommunityToolkit.Mvvm.Messaging;
 using TinyIoC;
-using Xamarin.Plugin.Firebase;
+using Xamarin.Plugin.Firebase; 
 using IPreferences = BusSchedule.Core.Services.IPreferences;
 
 namespace BusSchedule;
@@ -23,15 +24,11 @@ public partial class App : Application
         RegisterIoC();
         Application.Current.UserAppTheme = AppTheme.Light;
         TaskScheduler.UnobservedTaskException += UnobservedTaskExceptionHandler;
+    }
 
-        try
-        {
-            MainPage = new AppShell();//new NavigationPage(new RoutesPage()) { BarBackgroundColor = Color.FromHex("#237194") };
-        }
-        catch (Exception exc)
-        {
-            var msg = exc.Message;
-        }
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        return new Window(new AppShell());
     }
 
     private void RegisterIoC()
@@ -146,8 +143,8 @@ public partial class App : Application
 
         await MainThread.InvokeOnMainThreadAsync(async () =>
         {
-            await MainPage.Navigation.PopToRootAsync();
-            MessagingCenter.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
+            await Windows[0].Page.Navigation.PopToRootAsync();
+            WeakReferenceMessenger.Default.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
 #if ANDROID
             UserDialogs.Instance.Toast("Rozkład jazdy został zaktualizowany");
 #endif

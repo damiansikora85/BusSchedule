@@ -8,8 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace BusSchedule.Core.UI.Pages.Views
 {
-    [INotifyPropertyChanged]
-    public partial class FavoritesViewModel
+    public partial class FavoritesViewModel : ObservableObject
     {
         private readonly IFavoritesManager _favoritesManager;
         private readonly IDataProvider _dataProvider;

@@ -17,7 +17,6 @@ public partial class RoutePage : ContentPage
 
     public RoutePage(Routes route, string destinationName, int? direction)
     {
-        //Microsoft.Maui.Maps.
         Shell.SetTabBarIsVisible(this, false);
         _viewModel = new RoutePageViewModel(route, direction, TinyIoCContainer.Current.Resolve<IDataProvider>());
         InitializeComponent();
@@ -75,7 +74,7 @@ public partial class RoutePage : ContentPage
 
         async Task RequestLocationPermissionWithExplanation()
         {
-            await DisplayAlert("Nowa funkcja - mapa", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
+            await DisplayAlertAsync("Nowa funkcja - mapa", "Aby zobaczyć swoją lokalizację na mapie, aplikacja potrzebuje Twojej zgody.", "Rozumiem");
             var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
             if (status == PermissionStatus.Granted)
             {
@@ -121,7 +120,6 @@ public partial class RoutePage : ContentPage
 
     private void CreateRoutePath()
     {
-
         foreach (var trace in _viewModel.Traces)
         {
             Polyline polyline = new()
@@ -137,11 +135,9 @@ public partial class RoutePage : ContentPage
         }
     }
 
-    private async void OnStationSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void OnStationSelected(object sender, SelectionChangedEventArgs e)
     {
-        //listView.SelectedItem = null;
-
-        if (e.SelectedItem is Stops station)
+        if (e.CurrentSelection.First() is Stops station)
         {
             await ShowScheduleForStop(station);
         }

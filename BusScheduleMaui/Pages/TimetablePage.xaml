@@ -3,7 +3,12 @@
     x:Class="BusSchedule.Pages.TimetablePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:BusSchedule.Converters">
+    xmlns:converters="clr-namespace:BusSchedule.Converters"
+    xmlns:data="clr-namespace:BusSchedule.Core.UI;assembly=BusSchedule.Core.UI"
+    xmlns:local="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI"
+    xmlns:utils="clr-namespace:BusSchedule.Core.UI.Utils;assembly=BusSchedule.Core.UI"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    x:DataType="local:TimetableViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:ColorConverter x:Key="ColorConverter" />
@@ -30,20 +35,20 @@
         </VerticalStackLayout>
     </Shell.TitleView>
     <ContentPage.Content>
-        <StackLayout>
+        <Grid RowDefinitions="100,*">
             <CollectionView
                 Margin="0,8,0,0"
-                HeightRequest="100"
                 ItemsSource="{Binding Dates}"
                 SelectedItem="{Binding SelectedDay}"
                 SelectionChanged="SelectedDayChanged"
                 SelectionMode="Single"
-                VerticalOptions="Start">
+                VerticalOptions="Start"
+                HorizontalScrollBarVisibility="Never">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="utils:TimetableDate">
                         <StackLayout Padding="4,0" BackgroundColor="Transparent">
                             <Border
                                 Padding="8"
@@ -84,50 +89,50 @@
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-
             </CollectionView>
-            <ListView
+            
+            <CollectionView
                 x:Name="listView"
+                Grid.Row="1"
                 ItemsSource="{Binding Timetable}"
                 SelectedItem="{Binding NextBus, Mode=TwoWay}"
-                SelectionMode="None"
-                SeparatorColor="#404040"
-                SeparatorVisibility="Default">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <HorizontalStackLayout BackgroundColor="{Binding BackgroundColor}">
+                SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="data:TimetableItem">
+                        <Grid RowDefinitions="*,1">
+                            <HorizontalStackLayout BackgroundColor="{Binding BackgroundColor}" Padding="2,4">
                                 <Label
-                                    Margin="4,0"
-                                    FontAttributes="Bold"
-                                    FontSize="Large"
-                                    Text="{Binding Hour}"
-                                    TextColor="#404040"
-                                    VerticalTextAlignment="Center" />
-                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6">
+                                        Margin="4,0"
+                                        FontAttributes="Bold"
+                                        FontSize="Large"
+                                        Text="{Binding Hour}"
+                                        TextColor="#404040"
+                                        VerticalTextAlignment="Center" />
+                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6" >
                                     <BindableLayout.ItemTemplate>
-                                        <DataTemplate>
+                                        <DataTemplate x:DataType="data:TimetableItem+TimetableItemMinutes">
                                             <Label
-                                                Text="{Binding}"
-                                                TextColor="#404040"
-                                                VerticalTextAlignment="Center" />
+                                                    Text="{Binding}"
+                                                    TextColor="#404040"
+                                                    VerticalTextAlignment="Center" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </HorizontalStackLayout>
                             </HorizontalStackLayout>
-                        </ViewCell>
+                            <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="#C0C0C0" />
+                        </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.Footer>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
                     <VerticalStackLayout Margin="4,4" BindableLayout.ItemsSource="{Binding TimetableLegend}">
                         <BindableLayout.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="model:Trip_Description">
                                 <Label Text="{Binding .}" TextColor="#404040" />
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </VerticalStackLayout>
-                </ListView.Footer>
-            </ListView>
-        </StackLayout>
+                </CollectionView.Footer>
+            </CollectionView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
 
 env:
-  DOTNETVERSION: 9.0.x
+  DOTNETVERSION: 10.0.100
 
 jobs:
   buildAndroid:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'microsoft'
-
+      
       - name: Install .NET MAUI workloads
         run: dotnet workload install maui
 
@@ -81,7 +81,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Bundle
-          path: BusScheduleMaui/bin/Release/net9.0-android/com.darktower.bus-Signed.aab
+          path: BusScheduleMaui/bin/Release/net10.0-android/com.darktower.bus-Signed.aab
           retention-days: 5
 
       - name: Upload build to Google Play
@@ -89,6 +89,6 @@ jobs:
         with:
           service_account_json: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           package_name: "com.darktower.bus"
-          aab_file_path: "BusScheduleMaui/bin/Release/net9.0-android/com.darktower.bus-Signed.aab"
+          aab_file_path: "BusScheduleMaui/bin/Release/net10.0-android/com.darktower.bus-Signed.aab"
           track: "beta"
           release_status: "draft"

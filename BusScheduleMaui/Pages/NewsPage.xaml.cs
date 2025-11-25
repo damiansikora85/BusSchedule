@@ -27,12 +27,4 @@ public partial class NewsPage : ContentPage
             TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
         }
     }
-
-    private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        if(sender is ListView listView)
-        {
-            listView.SelectedItem = null;
-        }
-    }
 }

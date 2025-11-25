@@ -41,7 +41,7 @@ public partial class CardsList : ContentView
     {
         if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
         {
-            if (await App.Current.MainPage.DisplayAlert("Uwaga", $"Czy na pewno chcesz usunąć karte ({cardData.Name})?", "Tak", "Nie"))
+            if (await App.Current.MainPage.DisplayAlertAsync("Uwaga", $"Czy na pewno chcesz usunąć karte ({cardData.Name})?", "Tak", "Nie"))
             {
                 await _viewModel.DeleteCard(cardData);
             }

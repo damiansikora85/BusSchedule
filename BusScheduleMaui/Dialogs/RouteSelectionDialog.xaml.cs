@@ -5,44 +5,25 @@ using CommunityToolkit.Maui.Views;
 namespace BusSchedule.Dialogs
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RouteSelectionDialog : Popup
+    public partial class RouteSelectionDialog : Popup<int>
     {
         private RouteSelectionViewModel _viewModel;
-        private TaskCompletionSource<int> _taskCompletionSource;
 
         public RouteSelectionDialog(Destination destination)
         {
-            _taskCompletionSource = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
             _viewModel = new RouteSelectionViewModel(destination);
             InitializeComponent();
             BindingContext = _viewModel;
         }
 
-        protected override Task OnDismissedByTappingOutsideOfPopup(CancellationToken token = default)
+        private async void FirstRouteClicked(object sender, EventArgs e)
         {
-            _taskCompletionSource.TrySetCanceled();
-            return base.OnDismissedByTappingOutsideOfPopup(token);
+            await CloseAsync(0);
         }
 
-        internal Task<int> WaitForResult()
+        private async void SecondRouteClicked(object sender, EventArgs e)
         {
-            return _taskCompletionSource.Task;
-        }
-
-        private void FirstRouteClicked(object sender, EventArgs e)
-        {
-            SetResult(0);
-        }
-
-        private void SecondRouteClicked(object sender, EventArgs e)
-        {
-            SetResult(1);
-        }
-
-        private void SetResult(int selectedDest)
-        { 
-            _taskCompletionSource.TrySetResult(selectedDest);
-            Close();
+            await CloseAsync(1);
         }
     }
 }

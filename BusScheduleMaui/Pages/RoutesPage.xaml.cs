@@ -6,7 +6,10 @@ using BusSchedule.Core.Utils;
 using BusSchedule.Dialogs;
 using BusSchedule.Pages.ViewModels;
 using BusSchedule.Tools;
+using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Extensions;
 using CommunityToolkit.Maui.Views;
+using CommunityToolkit.Mvvm.Messaging;
 using Polly;
 using TinyIoC;
 using IPreferences = BusSchedule.Core.Services.IPreferences;
@@ -26,10 +29,10 @@ public partial class RoutesPage : ContentPage
         _viewModel = new RoutesPageViewModel(TinyIoCContainer.Current.Resolve<IDataProvider>());
         BindingContext = _viewModel;
         _newsService = TinyIoCContainer.Current.Resolve<INewsService>();
-        MessagingCenter.Subscribe<ScheduleDataUpdatedMessage>(this, ScheduleDataUpdatedMessage.Name, OnScheduleUpdated);
+        WeakReferenceMessenger.Default.Register<ScheduleDataUpdatedMessage>(this, handler: OnScheduleUpdated);
     }
 
-    private async void OnScheduleUpdated(ScheduleDataUpdatedMessage message)
+    private async void OnScheduleUpdated(object recipient, ScheduleDataUpdatedMessage message)
     {
         await RefreshData();
         RefreshGrid();
@@ -59,7 +62,10 @@ public partial class RoutesPage : ContentPage
             {
                 if (!preferences.IsFirstLaunch && preferences.Get("rated", "0") != "1" && (DateTime.Today - ratePopupLastShown).TotalDays >= 5)
                 {
-                    await this.ShowPopupAsync(new RatePopup(preferences));
+                    await this.ShowPopupAsync(new RatePopup(preferences), new PopupOptions
+                    {
+                        Shape = null
+                    });
                 }
             }
             else
@@ -115,8 +121,15 @@ public partial class RoutesPage : ContentPage
             if (!string.IsNullOrEmpty(destination.Outbound) && !string.IsNullOrEmpty(destination.Inbound))
             {
                 var dialog = new RouteSelectionDialog(destination);
-                await this.ShowPopupAsync(dialog);
-                var selectedDirection = await dialog.WaitForResult();
+                var popupResult = await this.ShowPopupAsync<int>(dialog, new PopupOptions
+                {
+                    Shape = null
+                });
+                if(popupResult.WasDismissedByTappingOutsideOfPopup)
+                {
+                    return;
+                }
+                var selectedDirection = popupResult.Result;
                 await Navigation.PushAsync(new RoutePage(route, selectedDirection == 0 ? destination.Outbound : destination.Inbound, selectedDirection));
             }
             else if (!string.IsNullOrEmpty(destination.Outbound) || !string.IsNullOrEmpty(destination.Inbound))
@@ -153,13 +166,13 @@ public partial class RoutesPage : ContentPage
         {
             // Email is not supported on this device
             TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(fbsEx);
-            await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
+            await DisplayAlertAsync("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
         }
         catch (Exception exc)
         {
             // Some other exception occurred
             TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
-            await DisplayAlert("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
+            await DisplayAlertAsync("Uwaga", "Wystąpił problem - nie można wysłać wiadomości", "OK");
         }
     }
 

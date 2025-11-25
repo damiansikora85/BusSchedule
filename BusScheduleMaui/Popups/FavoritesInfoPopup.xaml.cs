@@ -10,8 +10,8 @@ public partial class FavoritesInfoPopup : Popup
         InitializeComponent();
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-        Close();
+        await CloseAsync();
     }
 }
