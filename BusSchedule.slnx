@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="Benchmark.Droid/Benchmark.Droid.Android/Benchmark.Droid.Android.csproj">
+    <Deploy />
+  </Project>
+  <Project Path="Benchmark.Droid/Benchmark.Droid/Benchmark.Droid.csproj" />
+  <Project Path="BusSchedule.Core.UI/BusSchedule.Core.UI.csproj" />
+  <Project Path="BusSchedule.Core/BusSchedule.Core.csproj" />
+  <Project Path="BusSchedule.NUnitTests/BusSchedule.NUnitTests.csproj" />
+  <Project Path="BusScheduleMaui/BusScheduleMaui.csproj">
+    <Deploy />
+  </Project>
+</Solution>
