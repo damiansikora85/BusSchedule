@@ -71,7 +71,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
-		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.8.1" />
+		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9" />
 		<PackageReference Include="Xamarin.Firebase.Crashlytics" Version="119.4.1" />
 		<PackageReference Include="Xamarin.Google.Android.Play.Core" Version="1.10.3.18" />
 	</ItemGroup>
