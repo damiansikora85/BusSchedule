@@ -70,11 +70,6 @@
 		<PackageReference Include="Polly" Version="8.6.4" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
-		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9" />
-		<PackageReference Include="Xamarin.Firebase.Crashlytics" Version="119.4.1" />
-	</ItemGroup>
-
 	<ItemGroup>
 	  <ProjectReference Include="..\BusSchedule.Core.UI\BusSchedule.Core.UI.csproj" />
 	  <ProjectReference Include="..\BusSchedule.Core\BusSchedule.Core.csproj" />
