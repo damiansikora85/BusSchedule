@@ -59,7 +59,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 		<PackageReference Include="Acr.UserDialogs" Version="9.2.2" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="12.3.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="10.0.10" />
@@ -68,11 +67,14 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="10.0.10" />
 		<PackageReference Include="Microsoft.Maui.Maps" Version="10.0.10" />
 		<PackageReference Include="Polly" Version="8.6.4" />
+		<PackageReference Include="SourceGear.sqlite3" Version="3.50.4.5" />
+		<PackageReference Include="sqlite-net-e" Version="1.11.0" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net10.0-android'">
 		<PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9" />
 		<PackageReference Include="Xamarin.Firebase.Crashlytics" Version="119.4.1" />
+		<PackageReference Include="Xamarin.Google.Android.Play.Core" Version="1.10.3.18" />
 	</ItemGroup>
 
 	<ItemGroup>
