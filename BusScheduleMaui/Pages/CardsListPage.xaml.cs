@@ -2,7 +2,6 @@
 using BusSchedule.Core.UI.Pages.Views;
 using BusSchedule.Interfaces.Implementation;
 
-
 namespace BusSchedule.Pages;
 
 [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -30,7 +29,7 @@ public partial class CardsListPage : ContentPage
         base.OnAppearing();
     }
 
-    private async void OnCardSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void OnCardSelected(object sender, SelectionChangedEventArgs e)
     {
         if (_viewModel.SelectedCard != null)
         {

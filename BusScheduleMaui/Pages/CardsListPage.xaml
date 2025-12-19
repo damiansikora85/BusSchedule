@@ -6,6 +6,7 @@
     xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages.Views;assembly=BusSchedule.Core.UI"
+    x:DataType="views:CardsListViewModel"
     Title="Karty elektroniczne">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -13,59 +14,58 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView
+        <Grid RowDefinitions="*,46">
+            <CollectionView
                 IsVisible="{Binding HasCards}"
-                ItemSelected="OnCardSelected"
                 ItemsSource="{Binding Cards}"
-                RowHeight="60"
-                SelectedItem="{Binding SelectedCard}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid
-                                Padding="4,2"
-                                x:DataType="model:ElectronicCardData"
-                                ColumnDefinitions="*,50,50"
-                                RowDefinitions="*,*">
-                                <Label FontSize="18" Text="{Binding Name}" />
-                                <Label
-                                    Grid.Row="1"
-                                    FontSize="14"
-                                    Text="{Binding Number}" />
-                                <Button
-                                    Grid.RowSpan="2"
-                                    Grid.Column="1"
-                                    BackgroundColor="Transparent"
-                                    Clicked="OnCardEdit"
-                                    FontFamily="MaterialIcons"
-                                    FontSize="24"
-                                    Text="&#xe3c9;"
-                                    TextColor="#797979" />
-                                <Button
-                                    Grid.RowSpan="2"
-                                    Grid.Column="2"
-                                    BackgroundColor="Transparent"
-                                    Clicked="OnCardDelete"
-                                    FontFamily="MaterialIcons"
-                                    FontSize="24"
-                                    Text="&#xe872;"
-                                    TextColor="#797979" />
-                            </Grid>
-                        </ViewCell>
+                SelectedItem="{Binding SelectedCard}"
+                SelectionChanged="OnCardSelected"
+                SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:ElectronicCardData">
+                        <Grid
+                            Padding="4,2"
+                            x:DataType="model:ElectronicCardData"
+                            ColumnDefinitions="*,50,50"
+                            RowDefinitions="*,*">
+                            <Label FontSize="18" Text="{Binding Name}" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="14"
+                                Text="{Binding Number}" />
+                            <Button
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                BackgroundColor="Transparent"
+                                Clicked="OnCardEdit"
+                                FontFamily="MaterialIcons"
+                                FontSize="24"
+                                Text="&#xe3c9;"
+                                TextColor="#797979" />
+                            <Button
+                                Grid.RowSpan="2"
+                                Grid.Column="2"
+                                BackgroundColor="Transparent"
+                                Clicked="OnCardDelete"
+                                FontFamily="MaterialIcons"
+                                FontSize="24"
+                                Text="&#xe872;"
+                                TextColor="#797979" />
+                        </Grid>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Label
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center"
-                IsVisible="{Binding HasCards, Converter={StaticResource InvertedBoolConverter}}"
-                Text="Brak dodanych kart"
-                VerticalOptions="CenterAndExpand" />
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Brak dodanych kart" />
+                </CollectionView.EmptyView>
+            </CollectionView>
             <Button
+                Grid.Row="1"
                 Margin="4"
                 Clicked="OnAddCard"
                 Text="Dodaj karte" />
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

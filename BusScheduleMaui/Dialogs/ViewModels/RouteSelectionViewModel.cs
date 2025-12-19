@@ -1,8 +1,4 @@
 ﻿using BusSchedule.Core.Model;
-using BusSchedule.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BusSchedule.Dialogs.ViewModels
 {

@@ -7,13 +7,11 @@ namespace BusSchedule.Dialogs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RouteSelectionDialog : Popup<int>
     {
-        private RouteSelectionViewModel _viewModel;
-
         public RouteSelectionDialog(Destination destination)
         {
-            _viewModel = new RouteSelectionViewModel(destination);
+            var viewModel = new RouteSelectionViewModel(destination);
             InitializeComponent();
-            BindingContext = _viewModel;
+            BindingContext = viewModel;
         }
 
         private async void FirstRouteClicked(object sender, EventArgs e)

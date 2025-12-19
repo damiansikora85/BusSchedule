@@ -4,12 +4,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:views="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI"
+    x:DataType="views:CardDetailsPageViewModel"
     Title="{Binding CardName}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
             <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
@@ -65,39 +69,42 @@
                     Text="{Binding DiscountValidTo, StringFormat='{0:dd.MM.yyyy}'}"
                     VerticalTextAlignment="Start" />
             </Grid>
-            <ListView
+            <CollectionView
                 Margin="4,16"
-                HasUnevenRows="True"
                 ItemsSource="{Binding Tickets}"
                 VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame>
-                                <Grid
-                                    Padding="2,4"
-                                    ColumnDefinitions="5*,*"
-                                    RowDefinitions="*,*,*,*"
-                                    RowSpacing="2">
-                                    <Label
-                                        FontAttributes="Bold"
-                                        FontSize="18"
-                                        Text="{Binding Name}" />
-                                    <Label
-                                        Grid.RowSpan="3"
-                                        Grid.Column="1"
-                                        FontSize="18"
-                                        Text="{Binding Price, StringFormat='{0}zł'}"
-                                        VerticalTextAlignment="Center" />
-                                    <Label Grid.Row="1" Text="{Binding Zone, StringFormat='Strefa: {0}'}" />
-                                    <Label Grid.Row="2" Text="{Binding Valid, StringFormat='Ważność: {0}'}" />
-                                    <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0:dd.MM.yyyy hh:mm}'}" />
-                                </Grid>
-                            </Frame>
-                        </ViewCell>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:TicketData">
+                        <Border>
+                            <Grid
+                                Padding="2,4"
+                                ColumnDefinitions="5*,*"
+                                RowDefinitions="*,*,*,*"
+                                RowSpacing="2">
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="18"
+                                    Text="{Binding Name}" />
+                                <Label
+                                    Grid.RowSpan="3"
+                                    Grid.Column="1"
+                                    FontSize="18"
+                                    Text="{Binding Price, StringFormat='{0}zł'}"
+                                    VerticalTextAlignment="Center" />
+                                <Label Grid.Row="1" Text="{Binding Zone, StringFormat='Strefa: {0}'}" />
+                                <Label Grid.Row="2" Text="{Binding Valid, StringFormat='Ważność: {0}'}" />
+                                <Label Grid.Row="3" Text="{Binding TransactionTime, StringFormat='Zakup: {0:dd.MM.yyyy hh:mm}'}" />
+                            </Grid>
+                        </Border>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="Brak zakupionych biletów dla tej karty." />
+                </CollectionView.EmptyView>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,7 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:BusSchedule.Dialogs.ViewModels"
     x:TypeArguments="system:Int32"
+    x:DataType="local:RouteSelectionViewModel"
     WidthRequest="350"
     HeightRequest="180"
     Padding="0">
