@@ -6,8 +6,8 @@
     xmlns:converters="clr-namespace:BusSchedule.Converters"
     xmlns:data="clr-namespace:BusSchedule.Core.UI;assembly=BusSchedule.Core.UI"
     xmlns:local="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI"
-    xmlns:utils="clr-namespace:BusSchedule.Core.UI.Utils;assembly=BusSchedule.Core.UI"
     xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+    xmlns:utils="clr-namespace:BusSchedule.Core.UI.Utils;assembly=BusSchedule.Core.UI"
     x:DataType="local:TimetableViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -30,20 +30,27 @@
     </ContentPage.Resources>
     <Shell.TitleView>
         <VerticalStackLayout VerticalOptions="Center">
-            <Label Text="{Binding StopName}" TextColor="White" FontSize="18" />
-            <Label Text="{Binding Direction, StringFormat='Kierunek: {0}'}" TextColor="White" FontSize="12" IsVisible="{Binding HasDirection}" />
+            <Label
+                FontSize="18"
+                Text="{Binding StopName}"
+                TextColor="White" />
+            <Label
+                FontSize="12"
+                IsVisible="{Binding HasDirection}"
+                Text="{Binding Direction, StringFormat='Kierunek: {0}'}"
+                TextColor="White" />
         </VerticalStackLayout>
     </Shell.TitleView>
     <ContentPage.Content>
         <Grid RowDefinitions="100,*">
             <CollectionView
                 Margin="0,8,0,0"
+                HorizontalScrollBarVisibility="Never"
                 ItemsSource="{Binding Dates}"
                 SelectedItem="{Binding SelectedDay}"
                 SelectionChanged="SelectedDayChanged"
                 SelectionMode="Single"
-                VerticalOptions="Start"
-                HorizontalScrollBarVisibility="Never">
+                VerticalOptions="Start">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="8" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
@@ -70,7 +77,13 @@
                                         Text="{Binding DayNum}"
                                         TextColor="{Binding TextColor, Converter={converters:ColorConverter}}" />
                                 </VerticalStackLayout>
-
+                                <Border.Shadow>
+                                    <Shadow
+                                        Brush="Black"
+                                        Opacity="0.5"
+                                        Radius="6"
+                                        Offset="4,4" />
+                                </Border.Shadow>
                             </Border>
                             <VisualStateManager.VisualStateGroups>
                                 <VisualStateGroup x:Name="CommonStates">
@@ -90,7 +103,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
+
             <CollectionView
                 x:Name="listView"
                 Grid.Row="1"
@@ -100,26 +113,29 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="data:TimetableItem">
                         <Grid RowDefinitions="*,1">
-                            <HorizontalStackLayout BackgroundColor="{Binding BackgroundColor}" Padding="2,4">
+                            <HorizontalStackLayout Padding="2,4" BackgroundColor="{Binding BackgroundColor}">
                                 <Label
-                                        Margin="4,0"
-                                        FontAttributes="Bold"
-                                        FontSize="Large"
-                                        Text="{Binding Hour}"
-                                        TextColor="#404040"
-                                        VerticalTextAlignment="Center" />
-                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6" >
+                                    Margin="4,0"
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding Hour}"
+                                    TextColor="#404040"
+                                    VerticalTextAlignment="Center" />
+                                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Minutes}" Spacing="6">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate x:DataType="data:TimetableItem+TimetableItemMinutes">
                                             <Label
-                                                    Text="{Binding}"
-                                                    TextColor="#404040"
-                                                    VerticalTextAlignment="Center" />
+                                                Text="{Binding}"
+                                                TextColor="#404040"
+                                                VerticalTextAlignment="Center" />
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </HorizontalStackLayout>
                             </HorizontalStackLayout>
-                            <BoxView Grid.Row="1" HeightRequest="1" BackgroundColor="#C0C0C0" />
+                            <BoxView
+                                Grid.Row="1"
+                                BackgroundColor="#C0C0C0"
+                                HeightRequest="1" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

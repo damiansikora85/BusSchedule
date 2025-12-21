@@ -31,7 +31,18 @@
                     Text="SZUKAJ" />
             </Grid>
             <ActivityIndicator IsRunning="True" IsVisible="{Binding IsSearching}" />
-            <Frame Margin="4" IsVisible="{Binding IsCardFound}">
+            <Border
+                Margin="4"
+                IsVisible="{Binding IsCardFound}"
+                Stroke="Gray"
+                StrokeShape="RoundRectangle 4">
+                <!--<Border.Shadow>
+                    <Shadow
+                        Brush="Red"
+                        Opacity="0.25"
+                        Radius="4"
+                        Offset="4,4" />
+                </Border.Shadow>-->
                 <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*">
                     <Label
                         FontSize="14"
@@ -87,7 +98,7 @@
                         Clicked="OnAddCardClicked"
                         Text="DODAJ KARTE" />
                 </Grid>
-            </Frame>
+            </Border>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

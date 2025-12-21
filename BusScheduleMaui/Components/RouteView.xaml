@@ -11,6 +11,13 @@
             Padding="8,2"
             BackgroundColor="{Binding RouteColor}"
             StrokeShape="RoundRectangle 5">
+            <Border.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity="0.5"
+                    Radius="6"
+                    Offset="4,4" />
+            </Border.Shadow>
             <Border.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
             </Border.GestureRecognizers>
