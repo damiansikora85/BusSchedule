@@ -63,5 +63,10 @@ namespace BusScheduleMaui
                 }
             }
         }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+        }
     }
 }

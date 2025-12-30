@@ -17,6 +17,7 @@ public partial class App : Application
 {
     public static string DB_FILENAME = "sqlite20251210.db";
     private SemaphoreSlim _updateSemafor = new SemaphoreSlim(1);
+    private CancellationTokenSource _updateCancellationTokenSource = new CancellationTokenSource();
     public App()
     {
         InitializeComponent();
@@ -72,25 +73,40 @@ public partial class App : Application
                 await TryUpdateSchedule(scheduleUpdater);
                 await TryUpdateNews(resolver.Resolve<INewsService>(), resolver.Resolve<IPreferences>());
             }
-            catch (Exception ex)
+            catch (Exception exc)
             {
-                var message = ex.ToString();
+                var analyticsService = TinyIoCContainer.Current.Resolve<IAnalyticsService>();
+                analyticsService.LogEvent("Exception in OnStart");
+                analyticsService.LogException(exc);
+            }
+        });
+    }
+
+    protected override async void OnResume()
+    {
+        System.Diagnostics.Debug.WriteLine("App.OnResume called");
+        _updateCancellationTokenSource = new CancellationTokenSource(); // Reset token on resume
+        Task.Run(async () =>
+        {
+            try
+            {
+                var resolver = TinyIoCContainer.Current;
+                await TryUpdateSchedule(resolver.Resolve<IScheduleUpdater>());
+                await TryUpdateNews(resolver.Resolve<INewsService>(), resolver.Resolve<IPreferences>());
+            }
+            catch (Exception exc)
+            {
+                System.Diagnostics.Debug.WriteLine($"Exception in OnResume task: {exc.ToString()}");
+                var analyticsService = TinyIoCContainer.Current.Resolve<IAnalyticsService>();
+                analyticsService.LogEvent("Exception in OnResume");
+                analyticsService.LogException(exc);
             }
         });
     }
 
     protected override void OnSleep()
     {
-    }
-
-    protected override async void OnResume()
-    {
-        Task.Run(async () =>
-        {
-            var resolver = TinyIoCContainer.Current;
-            await TryUpdateSchedule(resolver.Resolve<IScheduleUpdater>());
-            await TryUpdateNews(resolver.Resolve<INewsService>(), resolver.Resolve<IPreferences>());
-        });
+        _updateCancellationTokenSource.Cancel();
     }
 
     private async Task TryUpdateNews(INewsService newsService, IPreferences preferences)
@@ -116,23 +132,30 @@ public partial class App : Application
 
     private async Task TryUpdateSchedule(IScheduleUpdater scheduleUpdater)
     {
+        var analyticsService = TinyIoCContainer.Current.Resolve<IAnalyticsService>();
         try
         {
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet && await scheduleUpdater.TryUpdateSchedule(TinyIoCContainer.Current.Resolve<IFileAccess>(), DB_FILENAME))
             {
+                analyticsService.LogEvent("Schedule updated successfully");
                 await OnScheduleUpdated();
             }
         }
         catch (Exception exc)
         {
-            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(exc);
+            analyticsService.LogEvent("Exception in TryUpdateSchedule");
+            analyticsService.LogException(exc);
         }
     }
 
     private async Task OnScheduleUpdated()
     {
-
+        if (_updateCancellationTokenSource.IsCancellationRequested)
+        {
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogEvent("OnScheduleUpdated cancelled due to app sleep");
+            return;
+        }
         var resolver = TinyIoCContainer.Current;
         var dataProvider = resolver.Resolve<IDataProvider>();
         var fileAccess = resolver.Resolve<IFileAccess>();
@@ -141,13 +164,21 @@ public partial class App : Application
         var databasePath = fileAccess.GetLocalFilePath(filename);
         dataProvider.SetDatabasePath(databasePath);
 
-        await MainThread.InvokeOnMainThreadAsync(async () =>
+        try
         {
-            await Windows[0].Page.Navigation.PopToRootAsync();
-            WeakReferenceMessenger.Default.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
+            await MainThread.InvokeOnMainThreadAsync(async () =>
+            {
+                await Windows[0].Page.Navigation.PopToRootAsync();
+                WeakReferenceMessenger.Default.Send(new ScheduleDataUpdatedMessage(), ScheduleDataUpdatedMessage.Name);
 #if ANDROID
-            UserDialogs.Instance.Toast("Rozkład jazdy został zaktualizowany");
+                UserDialogs.Instance.Toast("Rozkład jazdy został zaktualizowany");
 #endif
-        });
+            });
+        }
+        catch (Exception ex)
+        {
+            TinyIoCContainer.Current.Resolve<IAnalyticsService>().LogException(ex);
+            throw;
+        }
     }
 }
