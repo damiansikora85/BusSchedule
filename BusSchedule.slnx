@@ -1,8 +1,7 @@
 <Solution>
-  <Project Path="Benchmark.Droid/Benchmark.Droid.Android/Benchmark.Droid.Android.csproj">
-    <Deploy />
+  <Project Path="BusSchedule.Benchmark/BusSchedule.Benchmark.csproj" Id="950e64cf-7a58-4f28-a507-494529e578f2">
+    <Deploy Solution="Debug|*" />
   </Project>
-  <Project Path="Benchmark.Droid/Benchmark.Droid/Benchmark.Droid.csproj" />
   <Project Path="BusSchedule.Core.UI/BusSchedule.Core.UI.csproj" />
   <Project Path="BusSchedule.Core/BusSchedule.Core.csproj" />
   <Project Path="BusSchedule.NUnitTests/BusSchedule.NUnitTests.csproj" />
