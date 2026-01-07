@@ -35,7 +35,7 @@ jobs:
         run: dotnet --info
 
       - name: Restore NuGet packages
-        run: dotnet restore BusSchedule.sln
+        run: dotnet restore BusSchedule.slnx
 
       - name: Setup project secrets
         shell: pwsh
