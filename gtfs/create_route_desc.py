@@ -2,6 +2,7 @@ import sqlite3
 
 def create_legend_by_destination(db,file):
     legend = [
+        #route_id, direction_id, trip_headsign, trip_description info
         ["1","0","Bolszewo Strażacka 02",",1,0,A,kurs skrócony do: Bolszewo Strażacka 02"],
         ["1","1","Gościcino Robakowska 02",",1,1,R,kurs do: Gościcino Robakowska"],
         ["1","1","Góra Szkolna 02",",1,1,G,kurs do: Góra Szkolna (do przystanku Bolszewo Prusa 01 po trasie)"],
@@ -25,7 +26,8 @@ def create_legend_by_destination(db,file):
         ["10","0","Wejherowo Dworzec PKP 04",",10,0,D,kurs do: Wejherowo Dworzec PKP (do przystanku Urząd Pracy po trasie)"],
         ["10","1","Gościcino Równa 04",",10,1,A,kurs skrócony do: Gościcino Równa 04"],
         ["10","1","Kębłowo Wiejska 02",",10,1,B,kurs do: Kębłowo Wiejska 02 (zatoka przy ul. Wejherowskiej)"],
-        ["12","0","Wejherowo Broniewskiego - Dworzec PKP 01",",11,0,B,kurs skrócony do: Wejherowo Broniewskiego - Dworzec PKP 01"],
+        ["12","0","Wejherowo Dworzec PKP 02",",12,0,A,kurs do: Wejherowo Dworzec PKP"],
+        ["12","0","Wejherowo Broniewskiego - Dworzec PKP 02",",12,0,B,kurs skrócony do: Wejherowo Broniewskiego - Dworzec PKP 02"],
         ["14","0","Bolszewo Słowackiego 01",",14,0,A,kurs do: Bolszewo Słowackiego"],
         ["18","1","Rumia C.H. \"Port Rumia\" 01",",18,1,R,kurs do: C.H. Port Rumia"],
         ["18","1","Reda Ciechocino 02",",18,1,Z,kurs skrócony do: Reda Ciechocino 02"]
