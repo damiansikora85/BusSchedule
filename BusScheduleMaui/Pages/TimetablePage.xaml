@@ -80,9 +80,9 @@
                                 <Border.Shadow>
                                     <Shadow
                                         Brush="Black"
-                                        Opacity="0.5"
-                                        Radius="6"
-                                        Offset="4,4" />
+                                        Opacity="0.4"
+                                        Radius="4"
+                                        Offset="2,2" />
                                 </Border.Shadow>
                             </Border>
                             <VisualStateManager.VisualStateGroups>

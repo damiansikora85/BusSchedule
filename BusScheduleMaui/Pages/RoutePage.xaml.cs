@@ -168,16 +168,23 @@ public partial class RoutePage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(async () =>
         {
-            if (!map.IsVisible)
+            try
             {
-                map.IsVisible = true;
-                listView.IsVisible = false;
-                if (_mapFirstTimeClick && mapPos != null)
+                if (!map.IsVisible)
                 {
-                    await Task.Delay(500);
-                    map.MoveToRegion(mapPos);
+                    map.IsVisible = true;
+                    listView.IsVisible = false;
+                    if (_mapFirstTimeClick && mapPos != null)
+                    {
+                        await Task.Delay(500);
+                        map.MoveToRegion(mapPos);
+                    }
+                    _mapFirstTimeClick = false;
                 }
-                _mapFirstTimeClick = false;
+            }
+            catch (ObjectDisposedException)
+            {
+                // Ignore if disposed
             }
         });
     }
@@ -186,10 +193,17 @@ public partial class RoutePage : ContentPage
     {
         MainThread.BeginInvokeOnMainThread(() =>
         {
-            if (!listView.IsVisible)
+            try
             {
-                map.IsVisible = false;
-                listView.IsVisible = true;
+                if (!listView.IsVisible)
+                {
+                    map.IsVisible = false;
+                    listView.IsVisible = true;
+                }
+            }
+            catch (ObjectDisposedException)
+            {
+                // Ignore if disposed
             }
         });
     }

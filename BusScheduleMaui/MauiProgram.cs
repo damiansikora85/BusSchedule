@@ -22,8 +22,6 @@ public static class MauiProgram
         .ConfigureFonts(fonts =>
         {
             fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
-        //    fonts.AddFont("materialdesignicons-webfont.ttf", "MaterialIcons");
-        //    fonts.AddFont("Michella-Garden.otf", "Michella");
         });
 
         builder.Services.AddTransient<FileAccessService>();

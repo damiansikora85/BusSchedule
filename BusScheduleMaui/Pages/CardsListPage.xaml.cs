@@ -41,7 +41,7 @@ public partial class CardsListPage : ContentPage
     {
         if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
         {
-            if (await App.Current.MainPage.DisplayAlertAsync("Uwaga", $"Czy na pewno chcesz usunąć karte ({cardData.Name})?", "Tak", "Nie"))
+            if (await App.Current.Windows[0].Page.DisplayAlertAsync("Uwaga", $"Czy na pewno chcesz usunąć karte ({cardData.Name})?", "Tak", "Nie"))
             {
                 await _viewModel.DeleteCard(cardData);
             }
@@ -52,7 +52,7 @@ public partial class CardsListPage : ContentPage
     {
         if (sender is Button button && button.BindingContext is ElectronicCardData cardData)
         {
-            var newCardName = await App.Current.MainPage.DisplayPromptAsync("Edycja karty", "Zmień nazwe karty", "Zapisz", "Anuluj", initialValue: cardData.Name);
+            var newCardName = await App.Current.Windows[0].Page.DisplayPromptAsync("Edycja karty", "Zmień nazwe karty", "Zapisz", "Anuluj", initialValue: cardData.Name);
             await _viewModel.EditCard(cardData, newCardName);
         }
     }

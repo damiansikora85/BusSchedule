@@ -42,7 +42,7 @@ public partial class FavoritesPage : ContentPage
     {
         if (sender is Button button && button.CommandParameter is FavoriteData favoriteData)
         {
-            if (await App.Current.MainPage.DisplayAlertAsync("Uwaga", "Czy na pewno chcesz usun¹æ?", "Tak", "Nie"))
+            if (await App.Current.Windows[0].Page.DisplayAlertAsync("Uwaga", "Czy na pewno chcesz usun¹æ?", "Tak", "Nie"))
             {
                 _viewModel.DeleteItem(favoriteData);
             }

@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusSchedule.Pages.NewsPage" Title="Aktualności">
+             xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
+             xmlns:viewmodels="clr-namespace:BusSchedule.Core.UI.Pages;assembly=BusSchedule.Core.UI"
+             x:Class="BusSchedule.Pages.NewsPage" Title="Aktualności" x:DataType="viewmodels:NewsPageViewModel">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
@@ -10,7 +12,7 @@
     </ContentPage.Resources>
     <CollectionView ItemsSource="{Binding News}" Margin="4" IsVisible="{Binding HasAnyNews}" SelectionMode="None" EmptyView="Brak nowych wiadomości">
         <CollectionView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate x:DataType="model:News">
                 <StackLayout>
                     <Label Text="{Binding Title}" Margin="0,16" FontSize="32"/>
                     <Label Text="{Binding Message}" TextType="Html"/>
