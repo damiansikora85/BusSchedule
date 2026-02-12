@@ -12,10 +12,9 @@ route_id,outbound,inbound
 11,Wejherowo Krofeya,Gniewowo Spacerowa
 12,Kąpino Parkowa,Gowino Brzozowa
 13,Wejherowo Szpital,
-14,Orle Szkoła,Wejherowo Dworzec PKP
-16,Wejherowo Obrońców Westerplatte,Wejherowo Krofeya
+16,Wejherowo Os. Sikorskiego,Wejherowo Krofeya
 17,Reda Pieleszewo Karłowicza,Reda Gniewowska - Cmentarz
-18,Reda Dworzec PKP,
+18,Rumia C.H. Port Rumia,
 A,Wejherowo Dworzec PKP,Wejherowo Cmentarz
 B,Wejherowo os. Fenikowskiego,Wejherowo Cmentarz
 C,Wejherowo Pomorska,Wejherowo Cmentarz
