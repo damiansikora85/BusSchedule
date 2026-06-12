@@ -44,19 +44,49 @@ namespace BusSchedule.Providers
         public async Task<List<Stops>> GetStopsForRoute(Routes route, int direction)
         {
             var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);
-            var routeStops = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction))).Select(rs => rs.Stop_Id).ToList();
-            //var allStops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops"));
+
+            // Get route_stop rows (so we can read optional flag if needed elsewhere)
+            var routeStopRows = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction))).ToList();
+            var routeStops = routeStopRows.Select(rs => rs.Stop_Id).ToList();
+
             var temp = await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).ToListAsync());
-            return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+
+            // Order stops according to route_stop sequence
+            var ordered = temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+
+            return ordered;
+        }
+
+        public async Task<List<Route_Stop>> GetRouteStopsForRoute(Routes route, int direction)
+        {
+            var connection = await GetDatabaseConnectionAsync<Route_Stop>().ConfigureAwait(false);
+            var rows = await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction));
+            return rows.ToList();
+        }
+
+        public async Task<List<Route_Stop>> GetRouteStopsForRoute(Routes route)
+        {
+            var connection = await GetDatabaseConnectionAsync<Route_Stop>().ConfigureAwait(false);
+            var rows = await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? Order by stop_sequence", route.Route_Id));
+            return rows.ToList();
         }
 
         public async Task<List<Stops>> GetStopsForRoute(Routes route)
         {
             var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);
-            var routeStops = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? Order by stop_sequence", route.Route_Id))).Select(rs => rs.Stop_Id).ToList();
-            //var allStops = await AttemptAndRetry(() => connection.QueryAsync<Stops>("Select * From Stops"));
+
+            // Get route_stop rows (so we can read optional flag if needed elsewhere)
+            var routeStopRows = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? Order by stop_sequence", route.Route_Id))).ToList();
+            var routeStops = routeStopRows.Select(rs => rs.Stop_Id).ToList();
+
             var temp = await AttemptAndRetry(() => connection.Table<Stops>().Where(stop => routeStops.Contains(stop.Stop_Id)).ToListAsync());
-            return temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+
+            var ordered = temp.OrderBy(stop => routeStops.IndexOf(stop.Stop_Id)).ToList();
+
+            // NOTE: Optional flag lives only on Route_Stop (routeStopRows). Do not add IsOptional to Stops.
+            // If UI needs optional info, have the ViewModel build a wrapper or expose a set/dictionary of optional stop ids.
+
+            return ordered;
         }
 
         public async Task Test()

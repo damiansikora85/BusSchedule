@@ -3,92 +3,173 @@
     x:Class="BusSchedule.Pages.RoutePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BusSchedule.Converters"
+    xmlns:converters="clr-namespace:BusSchedule.Converters"
+    xmlns:local="clr-namespace:BusSchedule.UI.ViewModels;assembly=BusSchedule.Core.UI"
     xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
     xmlns:page="clr-namespace:BusSchedule.Pages"
     xmlns:sensors="clr-namespace:Microsoft.Maui.Devices.Sensors;assembly=Microsoft.Maui.Essentials"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-    xmlns:model="clr-namespace:BusSchedule.Core.Model;assembly=BusSchedule.Core"
-    xmlns:viewModel="clr-namespace:BusSchedule.UI.ViewModels;assembly=BusSchedule.Core.UI"
-    BackgroundColor="White"
+    xmlns:viewModel="clr-namespace:BusSchedule.Core.UI.ViewModels;assembly=BusSchedule.Core.UI"
     Title="RoutePage"
-    x:DataType="viewModel:RoutePageViewModel">
+    x:DataType="local:RoutePageViewModel"
+    BackgroundColor="White">
     <ContentPage.Resources>
         <ResourceDictionary>
             <toolkit:InvertedBoolConverter x:Key="InvertedBoolConverter" />
-            <local:StopLocationConverter x:Key="StopLocationConverter" />
+            <converters:StopLocationConverter x:Key="StopLocationConverter" />
+
+            <!--  Default template (required stops)  -->
+            <DataTemplate x:Key="DefaultRouteStopTemplate" x:DataType="viewModel:RouteStopViewModel">
+                <Grid
+                    ColumnDefinitions="30,*"
+                    ColumnSpacing="0"
+                    HeightRequest="75"
+                    RowDefinitions="Auto,*"
+                    RowSpacing="0">
+                    <Ellipse
+                        HeightRequest="22"
+                        HorizontalOptions="Center"
+                        Stroke="#237194"
+                        StrokeThickness="3"
+                        VerticalOptions="Start"
+                        WidthRequest="22" />
+                    <Label
+                        Grid.Column="1"
+                        Margin="20,0"
+                        FontSize="Body"
+                        LineBreakMode="NoWrap"
+                        Text="{Binding Name}"
+                        TextColor="Black" />
+                    <BoxView
+                        Grid.Row="1"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
+                        VerticalOptions="Fill"
+                        WidthRequest="3"
+                        Color="#237194" />
+                </Grid>
+            </DataTemplate>
+
+            <!--  Optional template (optional stops use different color)  -->
+            <DataTemplate x:Key="OptionalRouteStopTemplate" x:DataType="viewModel:RouteStopViewModel">
+                <Grid
+                    ColumnDefinitions="30,30,*"
+                    ColumnSpacing="0"
+                    HeightRequest="75"
+                    RowDefinitions="Auto,*"
+                    RowSpacing="0">
+
+                    <Path
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"
+                        Stroke="#9E9E9E"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathGeometry.Figures>
+                                    <PathFigureCollection>
+                                        <PathFigure StartPoint="45,15">
+                                            <PathFigure.Segments>
+                                                <PathSegmentCollection>
+                                                    <BezierSegment
+                                                        Point1="45,80"
+                                                        Point2="15,15"
+                                                        Point3="15,80" />
+                                                </PathSegmentCollection>
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathFigureCollection>
+                                </PathGeometry.Figures>
+                            </PathGeometry>
+                        </Path.Data>
+                    </Path>
+                    <Path
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"
+                        Stroke="#9E9E9E"
+                        StrokeThickness="2">
+                        <Path.Data>
+                            <PathGeometry>
+                                <PathGeometry.Figures>
+                                    <PathFigureCollection>
+                                        <PathFigure StartPoint="15,15">
+                                            <PathFigure.Segments>
+                                                <PathSegmentCollection>
+                                                    <BezierSegment
+                                                        Point1="15,80"
+                                                        Point2="45,15"
+                                                        Point3="45,80" />
+                                                </PathSegmentCollection>
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathFigureCollection>
+                                </PathGeometry.Figures>
+                            </PathGeometry>
+                        </Path.Data>
+                    </Path>
+
+                    <Ellipse
+                        Grid.Column="1"
+                        Fill="white"
+                        HeightRequest="22"
+                        HorizontalOptions="Center"
+                        Stroke="#9E9E9E"
+                        StrokeThickness="3"
+                        VerticalOptions="Start"
+                        WidthRequest="22" />
+                    <Label
+                        Grid.Column="2"
+                        Margin="20,0"
+                        FontSize="Body"
+                        LineBreakMode="NoWrap"
+                        Text="{Binding Name}"
+                        TextColor="Black" />
+
+                    <!--<BoxView
+                        Grid.Row="2"
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
+                        VerticalOptions="Fill"
+                        WidthRequest="3"
+                        Color="#9E9E9E" />-->
+                </Grid>
+            </DataTemplate>
+
+            <!--  Template selector instance  -->
+            <viewModel:RouteStopTemplateSelector
+                x:Key="RouteStopTemplateSelector"
+                DefaultTemplate="{StaticResource DefaultRouteStopTemplate}"
+                OptionalTemplate="{StaticResource OptionalRouteStopTemplate}" />
         </ResourceDictionary>
-
-
     </ContentPage.Resources>
 
     <Grid RowDefinitions="*,64">
         <CollectionView
             x:Name="listView"
             Margin="6,4"
-            SelectionMode="Single"
+            ItemTemplate="{StaticResource RouteStopTemplateSelector}"
+            ItemsSource="{Binding RouteStops}"
             SelectionChanged="OnStationSelected"
-            ItemsSource="{Binding Stops}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Stops">
-                    <Grid
-                        HeightRequest="75"
-                            ColumnDefinitions="30,*"
-                            ColumnSpacing="0"
-                            RowDefinitions="*,Auto,*"
-                            RowSpacing="0">
-                        <BoxView
-                                Grid.Row="0"
-                                HorizontalOptions="Center"
-                                IsVisible="{Binding IsFirst, Converter={StaticResource InvertedBoolConverter}}"
-                                VerticalOptions="Fill"
-                                WidthRequest="3"
-                                Color="#237194" />
-                        <Ellipse
-                                Grid.Row="1"
-                                HeightRequest="22"
-                                HorizontalOptions="Center"
-                                Stroke="#237194"
-                                StrokeThickness="3"
-                                VerticalOptions="Start"
-                                WidthRequest="22" />
-                        <Label
-                                Grid.Row="1"
-                                Grid.Column="1"
-                                Margin="20,0"
-                                FontSize="Body"
-                                LineBreakMode="NoWrap"
-                                Text="{Binding Stop_Name}"
-                                TextColor="Black" />
-                        <BoxView
-                                Grid.Row="2"
-                                HorizontalOptions="Center"
-                                IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
-                                VerticalOptions="Fill"
-                                WidthRequest="3"
-                                Color="#237194" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            SelectionMode="Single" />
 
         <maps:Map
             x:Name="map"
             IsShowingUser="False"
             IsVisible="false"
-            ItemsSource="{Binding Stops}">
+            ItemsSource="{Binding RouteStops}">
 
             <maps:Map.ItemTemplate>
-                <DataTemplate x:DataType="model:Stops">
+                <DataTemplate x:DataType="viewModel:RouteStopViewModel">
                     <maps:Pin
-                        Label="{Binding Stop_Name}"
-                        Location="{Binding ., Converter={StaticResource StopLocationConverter}}"
+                        Label="{Binding Name}"
+                        Location="{Binding StopLocation}"
                         MarkerClicked="Pin_MarkerClicked" />
                 </DataTemplate>
             </maps:Map.ItemTemplate>
         </maps:Map>
 
-        <Grid Grid.Row="1"
+        <Grid
+            Grid.Row="1"
             BackgroundColor="#237194"
             ColumnDefinitions="*,*"
             RowDefinitions="64"

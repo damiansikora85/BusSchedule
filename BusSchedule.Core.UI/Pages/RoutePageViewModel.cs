@@ -1,4 +1,5 @@
 ﻿using BusSchedule.Core.Model;
+using BusSchedule.Core.UI.ViewModels;
 using BusSchedule.Core.Utils;
 using System.ComponentModel;
 using System.Globalization;
@@ -8,7 +9,7 @@ namespace BusSchedule.UI.ViewModels
 {
     public class RoutePageViewModel : INotifyPropertyChanged
     {
-        public IList<Stops> Stops { get; private set; }
+        public IList<RouteStopViewModel> RouteStops { get; private set; }
         public Routes Route { get; }
         public int? Direction { get; }
         private readonly IDataProvider _dataProvider;
@@ -23,16 +24,15 @@ namespace BusSchedule.UI.ViewModels
             Route = route;
             Direction = direction;
             _dataProvider = dataProvider;
-            Stops = new List<Stops>();
+            RouteStops = new List<RouteStopViewModel>();
         }
 
         public async Task RefreshDataAsync()
         {
-            Stops = Direction.HasValue ? await _dataProvider.GetStopsForRoute(Route, Direction.Value) :
+            var stops = Direction.HasValue ? await _dataProvider.GetStopsForRoute(Route, Direction.Value) :
                 await _dataProvider.GetStopsForRoute(Route);
-            Stops[^1].IsLast = true;
-            Stops[0].IsFirst = true;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Stops)));
+            RouteStops = stops.Select((s, i) => new RouteStopViewModel(s, i == 0, i == (stops.Count-1), i < 3)).ToList();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RouteStops)));
 
             _trace = await _dataProvider.GetRouteTrace(Route.Route_Short_Name, Direction);
         }
@@ -41,12 +41,12 @@ namespace BusSchedule.UI.ViewModels
         {
             double avarageLat = 0;
             double avarageLon = 0;
-            foreach(var stop in Stops)
+            foreach(var stop in RouteStops)
             {
-                avarageLat += double.Parse(stop.Stop_Lat, CultureInfo.InvariantCulture);
-                avarageLon += double.Parse(stop.Stop_Lon, CultureInfo.InvariantCulture);
+                avarageLat += stop.StopLocation.Latitude;
+                avarageLon += stop.StopLocation.Longitude;
             }
-            return new Point(avarageLat / Stops.Count, avarageLon / Stops.Count);
+            return new Point(avarageLat / RouteStops.Count, avarageLon / RouteStops.Count);
         }
     }
 }

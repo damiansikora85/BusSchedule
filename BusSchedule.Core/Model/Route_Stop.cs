@@ -10,5 +10,8 @@ namespace BusSchedule.Core.Model
         public int Direction_Id { get; set; }
         public int Stop_Sequence { get; set; }
         public string Stop_Id { get; set; }
+
+        // Optional flag stored only on Route_Stop (0 = required, 1 = optional)
+        public int Optional { get; set; }
     }
 }
