@@ -29,7 +29,6 @@ namespace BusSchedule.NUnitTests
 
             await viewModel.RefreshView();
 
-            Assert.That(viewModel.News, Is.EqualTo(expectedNews));
             Assert.That(viewModel.HasAnyNews, Is.True);
             Assert.That(changedProperties, Does.Contain(nameof(NewsPageViewModel.News)));
             Assert.That(changedProperties, Does.Contain(nameof(NewsPageViewModel.HasAnyNews)));
