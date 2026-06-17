@@ -37,6 +37,9 @@ jobs:
       - name: Restore NuGet packages
         run: dotnet restore BusSchedule.slnx
 
+      - name: Run NUnit unit tests
+        run: dotnet test BusSchedule.NUnitTests/BusSchedule.NUnitTests.csproj --configuration Release --no-restore
+
       - name: Setup project secrets
         shell: pwsh
         env:

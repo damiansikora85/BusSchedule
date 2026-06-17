@@ -1,6 +1,7 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.UI.Helpers;
 using BusSchedule.Core.UI.Interfaces;
+using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 
 namespace BusSchedule.Core.UI.Pages.Views
@@ -18,7 +19,7 @@ namespace BusSchedule.Core.UI.Pages.Views
         {
             _cardsManager = cardsManager;
             Cards = new List<ElectronicCardData>();
-            AddCardCommand = new Command(AddCard);
+            AddCardCommand = new RelayCommand(AddCard);
         }
 
         public async Task RefreshCards()
