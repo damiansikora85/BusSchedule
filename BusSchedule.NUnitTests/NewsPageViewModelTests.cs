@@ -21,7 +21,8 @@ namespace BusSchedule.NUnitTests
                 new News { Title = "B", Message = "Other" }
             };
 
-            newsServiceMock.Setup(x => x.GetNews(false)).ReturnsAsync(expectedNews);
+            newsServiceMock.Setup(x => x.GetNews()).ReturnsAsync(expectedNews);
+            newsServiceMock.Setup(x => x.GetNews(It.IsAny<bool>())).ReturnsAsync(expectedNews);
 
             var viewModel = new NewsPageViewModel(newsServiceMock.Object);
             var changedProperties = new List<string>();
@@ -32,7 +33,7 @@ namespace BusSchedule.NUnitTests
             Assert.That(viewModel.HasAnyNews, Is.True);
             Assert.That(changedProperties, Does.Contain(nameof(NewsPageViewModel.News)));
             Assert.That(changedProperties, Does.Contain(nameof(NewsPageViewModel.HasAnyNews)));
-            newsServiceMock.Verify(x => x.GetNews(false), Times.Once);
+            newsServiceMock.Verify(x => x.GetNews(), Times.Once);
         }
     }
 }
