@@ -2,9 +2,9 @@ name: windowsCI
 
 on:
   push:
-    branches: [ ]
+    branches: [ main ]
   pull_request:
-    branches: [ ]
+    branches: [ main ]
   workflow_dispatch:
 
 env:
@@ -16,6 +16,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: ${{ runner.os }}-nuget-
+
+      - name: Cache .NET workloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.dotnet/workloads
+          key: ${{ runner.os }}-dotnet-workloads-${{ env.DOTNETVERSION }}
+          restore-keys: ${{ runner.os }}-dotnet-workloads-
 
       - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
@@ -62,22 +76,17 @@ jobs:
           $version = 150 + [int]$env:GITHUB_RUN_NUMBER
           echo "VERSION_NUMBER=$version" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf-8 -Append
 
-      - name: Set version
-        uses: damienaicheh/update-android-version-manifest-action@v1.0.0
-        with:
-          android-manifest-path: './BusScheduleMaui/Platforms/Android/AndroidManifest.xml'
-          version-code: ${{ env.VERSION_NUMBER }}
-          print-file: true
-          version-name: '6.0'
-
-      - name: Build
+      - name: Publish Android App Bundle
         run: >
-          dotnet build BusScheduleMaui/BusScheduleMaui.csproj -c Release
+          dotnet publish BusScheduleMaui/BusScheduleMaui.csproj -c Release -f net10.0-android
+          /p:AndroidPackageFormat=aab
           /p:AndroidKeyStore=true
           /p:AndroidSigningKeyStore=Platforms/Android/keystore.jks
           /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }}
           /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASS }}
           /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_ALIAS_PASS }}
+          /p:AndroidVersionCode=${{ env.VERSION_NUMBER }}
+          /p:AndroidVersionName=6.0
           --no-restore
 
       - name: Upload Artifact
