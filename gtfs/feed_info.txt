@@ -1,2 +1,2 @@
 ﻿feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date
-"MZK Wejherowo","","pl","20260202","20260630"
+"MZK Wejherowo","","pl","20260627","20261231"
