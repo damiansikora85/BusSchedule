@@ -15,6 +15,7 @@ route_id,outbound,inbound
 16,Wejherowo Os. Sikorskiego,Wejherowo Krofeya
 17,Reda Pieleszewo Karłowicza,Reda Gniewowska - Cmentarz
 18,Rumia C.H. Port Rumia,
+19,Reda Os. Konopnickiej,Rumia Derdowskiego – Przychodnia
 A,Wejherowo Dworzec PKP,Wejherowo Cmentarz
 B,Wejherowo os. Fenikowskiego,Wejherowo Cmentarz
 C,Wejherowo Pomorska,Wejherowo Cmentarz
