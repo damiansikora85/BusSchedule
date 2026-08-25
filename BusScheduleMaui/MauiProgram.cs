@@ -1,6 +1,5 @@
 ﻿using BusSchedule.Core.Services;
 using CommunityToolkit.Maui;
-using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.Controls.Hosting;
 
 namespace BusSchedule;

@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.Maui.Controls" Version="10.0.71" />
+    <PackageReference Update="Microsoft.Maui.Controls" Version="10.0.100" />
   </ItemGroup>
 
 </Project>
