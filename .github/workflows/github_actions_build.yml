@@ -85,8 +85,8 @@ jobs:
           /p:AndroidSigningKeyAlias=${{ secrets.KEYSTORE_ALIAS }}
           /p:AndroidSigningKeyPass=${{ secrets.KEYSTORE_PASS }}
           /p:AndroidSigningStorePass=${{ secrets.KEYSTORE_ALIAS_PASS }}
-          /p:AndroidVersionCode=${{ env.VERSION_NUMBER }}
-          /p:AndroidVersionName=6.0
+          /p:ApplicationVersion=${{ env.VERSION_NUMBER }}
+          /p:ApplicationDisplayVersion=6.0
           --no-restore
 
       - name: Upload Artifact
