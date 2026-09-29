@@ -17,13 +17,14 @@ namespace BusSchedule.Core.UI.ViewModels
         public bool IsFirst { get; }
         public bool IsLast { get; }
         public bool IsOptional { get; }
+        public bool IsOnRequest { get; }
 
         public RouteStopType StopType { get; set; }
 
         public string Name => _stop.Stop_Name;
         public Location StopLocation { get; }
 
-        public RouteStopViewModel(Stops stop, bool isFirst, bool isLast, bool isOptional)
+        public RouteStopViewModel(Stops stop, bool isFirst, bool isLast, Route_Stop.StopType type)
         {
             _stop = stop;
             IsFirst = isFirst;
@@ -31,7 +32,8 @@ namespace BusSchedule.Core.UI.ViewModels
             var latitude = double.Parse(_stop.Stop_Lat, CultureInfo.InvariantCulture);
             var longitude = double.Parse(_stop.Stop_Lon, CultureInfo.InvariantCulture);
             StopLocation = new Location(latitude, longitude);
-            IsOptional = isOptional;
+            IsOptional = type == Route_Stop.StopType.Optional;
+            IsOnRequest = type == Route_Stop.StopType.OnRequest;
         }
     }
 }

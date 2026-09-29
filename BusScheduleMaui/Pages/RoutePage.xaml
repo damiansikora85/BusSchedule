@@ -21,7 +21,7 @@
             <!--  Default template (required stops)  -->
             <DataTemplate x:Key="DefaultRouteStopTemplate" x:DataType="viewModel:RouteStopViewModel">
                 <Grid
-                    ColumnDefinitions="30,*"
+                    ColumnDefinitions="30,*,30"
                     ColumnSpacing="0"
                     HeightRequest="75"
                     RowDefinitions="Auto,*"
@@ -37,9 +37,19 @@
                         Grid.Column="1"
                         Margin="20,0"
                         FontSize="Body"
+                        IsVisible="{Binding IsOnRequest, Converter={StaticResource InvertedBoolConverter}}"
                         LineBreakMode="NoWrap"
                         Text="{Binding Name}"
                         TextColor="Black" />
+                    <Label
+                        Grid.Column="1"
+                        Margin="20,0"
+                        FontAttributes="Italic"
+                        FontSize="Body"
+                        IsVisible="{Binding IsOnRequest}"
+                        LineBreakMode="NoWrap"
+                        Text="{Binding Name}"
+                        TextColor="#242424" />
                     <BoxView
                         Grid.Row="1"
                         HorizontalOptions="Center"
@@ -47,6 +57,20 @@
                         VerticalOptions="Fill"
                         WidthRequest="3"
                         Color="#237194" />
+                    <Border
+                        Grid.Column="2"
+                        BackgroundColor="Red"
+                        IsVisible="{Binding IsOnRequest}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="10" />
+                        </Border.StrokeShape>
+                        <Label
+                            FontSize="12"
+                            HorizontalTextAlignment="Center"
+                            Text="N/Ż"
+                            TextColor="White"
+                            VerticalTextAlignment="Center" />
+                    </Border>
                 </Grid>
             </DataTemplate>
 
@@ -62,6 +86,7 @@
                     <Path
                         Grid.RowSpan="2"
                         Grid.ColumnSpan="2"
+                        IsVisible="True"
                         Stroke="#9E9E9E"
                         StrokeThickness="2">
                         <Path.Data>
@@ -86,6 +111,7 @@
                     <Path
                         Grid.RowSpan="2"
                         Grid.ColumnSpan="2"
+                        IsVisible="False"
                         Stroke="#9E9E9E"
                         StrokeThickness="2">
                         <Path.Data>
@@ -125,13 +151,14 @@
                         Text="{Binding Name}"
                         TextColor="Black" />
 
-                    <!--<BoxView
+                    <BoxView
                         Grid.Row="2"
+                        Grid.Column="1"
                         HorizontalOptions="Center"
                         IsVisible="{Binding IsLast, Converter={StaticResource InvertedBoolConverter}}"
                         VerticalOptions="Fill"
                         WidthRequest="3"
-                        Color="#9E9E9E" />-->
+                        Color="#9E9E9E" />
                 </Grid>
             </DataTemplate>
 

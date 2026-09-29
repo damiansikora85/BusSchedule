@@ -45,7 +45,6 @@ namespace BusSchedule.Providers
         {
             var connection = await GetDatabaseConnectionAsync<Stops, Route_Stop>().ConfigureAwait(false);
 
-            // Get route_stop rows (so we can read optional flag if needed elsewhere)
             var routeStopRows = (await AttemptAndRetry(() => connection.QueryAsync<Route_Stop>("Select * From Route_Stop Where route_id = ? And direction_id = ? Order by stop_sequence", route.Route_Id, direction))).ToList();
             var routeStops = routeStopRows.Select(rs => rs.Stop_Id).ToList();
 

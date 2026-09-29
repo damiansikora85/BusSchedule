@@ -31,7 +31,12 @@ namespace BusSchedule.UI.ViewModels
         {
             var stops = Direction.HasValue ? await _dataProvider.GetStopsForRoute(Route, Direction.Value) :
                 await _dataProvider.GetStopsForRoute(Route);
-            RouteStops = stops.Select((s, i) => new RouteStopViewModel(s, i == 0, i == (stops.Count-1), i < 3)).ToList();
+
+            var routeStops = Direction.HasValue ? await _dataProvider.GetRouteStopsForRoute(Route, Direction.Value) :
+                await _dataProvider.GetRouteStopsForRoute(Route);
+
+            RouteStops = routeStops.Select((rs, i) => new RouteStopViewModel(stops.First(stop => stop.Stop_Id == rs.Stop_Id), i == 0, i == (routeStops.Count - 1), rs.Type)).ToList();
+                //stops.Select((s, i) => new RouteStopViewModel(s, i == 0, i == (stops.Count-1), i < 3)).ToList();
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RouteStops)));
 
             _trace = await _dataProvider.GetRouteTrace(Route.Route_Short_Name, Direction);
