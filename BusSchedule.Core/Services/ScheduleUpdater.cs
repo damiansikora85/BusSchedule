@@ -19,7 +19,9 @@ namespace BusSchedule.Core.Services
 
         public async Task<bool> TryUpdateSchedule(IFileAccess fileAccess, string defaultDbFilename)
         {
-            //return false;
+#if DEBUG
+            return false;
+#else
             var result = false;
             var lastNewsUpdateTime = _preferences.Get("lastScheduleUpdate", DateTime.MinValue);
             if ((DateTime.Now - lastNewsUpdateTime).TotalDays < SCHEDULE_UPDATE_DAYS)
@@ -36,6 +38,7 @@ namespace BusSchedule.Core.Services
             }
             _preferences.Set("lastScheduleUpdate", DateTime.Now);
             return result;
+#endif
         }
     }
 }

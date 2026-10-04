@@ -33,7 +33,7 @@ namespace BusSchedule.Core.UI.ViewModels
             var longitude = double.Parse(_stop.Stop_Lon, CultureInfo.InvariantCulture);
             StopLocation = new Location(latitude, longitude);
             IsOptional = type == Route_Stop.StopType.Optional;
-            IsOnRequest = type == Route_Stop.StopType.OnRequest;
+            IsOnRequest = stop.Stop_Name.EndsWith("n/ż");
         }
     }
 }

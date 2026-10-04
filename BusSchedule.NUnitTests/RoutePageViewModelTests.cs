@@ -27,9 +27,9 @@ namespace BusSchedule.NUnitTests
 
             await viewModel.RefreshDataAsync();
 
-            Assert.That(viewModel.Stops.Count, Is.EqualTo(2));
-            Assert.That(viewModel.Stops[0].Stop_Name, Is.EqualTo("Stop 1"));
-            Assert.That(viewModel.Stops[1].Stop_Name, Is.EqualTo("Stop 2"));
+            Assert.That(viewModel.RouteStops.Count, Is.EqualTo(2));
+            Assert.That(viewModel.RouteStops[0].Name, Is.EqualTo("Stop 1"));
+            Assert.That(viewModel.RouteStops[1].Name, Is.EqualTo("Stop 2"));
             Assert.That(viewModel.Traces, Is.EqualTo(trace));
             Assert.That(viewModel.CalculateCenterPosition().Latitude, Is.EqualTo((50.0 + 50.5) / 2).Within(0.0001));
             Assert.That(viewModel.CalculateCenterPosition().Longitude, Is.EqualTo((20.0 + 20.5) / 2).Within(0.0001));
