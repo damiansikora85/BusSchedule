@@ -18,10 +18,13 @@ namespace BusSchedule.NUnitTests
             var station1 = new Stops { Stop_Id = "S1", Stop_Name = "Stop 1", Stop_Lat = "50.0", Stop_Lon = "20.0" };
             var station2 = new Stops { Stop_Id = "S2", Stop_Name = "Stop 2", Stop_Lat = "50.5", Stop_Lon = "20.5" };
             var trace = new List<Trace> { new Trace { Points = new List<Point> { new Point(50, 20) } } };
+            var routeStop1 = new Route_Stop {Direction_Id = 0, Route_Id = route.Route_Id, Stop_Id = station1.Stop_Id, Stop_Sequence = 1 };
+            var routeStop2 = new Route_Stop { Direction_Id = 0, Route_Id = route.Route_Id, Stop_Id = station2.Stop_Id, Stop_Sequence = 2 };
 
             var dataProviderMock = new Mock<IDataProvider>();
             dataProviderMock.Setup(x => x.GetStopsForRoute(route, It.IsAny<int>())).ReturnsAsync(new List<Stops> { station1, station2 });
             dataProviderMock.Setup(x => x.GetRouteTrace(route.Route_Short_Name, 1)).ReturnsAsync(trace);
+            dataProviderMock.Setup(x => x.GetRouteStopsForRoute(route, It.IsAny<int>())).ReturnsAsync(new List<Route_Stop> { routeStop1, routeStop2 });
 
             var viewModel = new RoutePageViewModel(route, 1, dataProviderMock.Object);
 
