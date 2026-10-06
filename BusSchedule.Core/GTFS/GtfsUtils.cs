@@ -1,11 +1,5 @@
 ﻿using BusSchedule.Core.Model;
 using BusSchedule.Core.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static BusSchedule.Core.Model.Calendar;
 
 namespace BusSchedule.Core.GTFS
 {
@@ -37,7 +31,7 @@ namespace BusSchedule.Core.GTFS
             return stopsForRoute;
         }
 
-        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station)
+        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, string stopId)
         {
             var schedule = new Dictionary<string, List<TimetableTuple>>();
             var calendar = await dataProvider.GetCalendar();
@@ -49,7 +43,7 @@ namespace BusSchedule.Core.GTFS
                 var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
-                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, stopId)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
                     var item = stopTimes.Select(st => new TimetableTuple
                     {
                         Time = st,
@@ -62,7 +56,7 @@ namespace BusSchedule.Core.GTFS
             return schedule;
         }
 
-        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, DateTime date)
+        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, string stopId, DateTime date)
         {
             var schedule = new List<TimetableTuple>();
             var serviceId = await GetServiceIdForDate(date, dataProvider);
@@ -71,7 +65,7 @@ namespace BusSchedule.Core.GTFS
             var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
             foreach (var trip in tripsForRoute)
             {
-                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Where(st => st.Pickup_Type == "0").Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, stopId)).Where(st => st.Pickup_Type == "0").Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
                 var item = stopTimes.Select(st => new TimetableTuple
                 {
                     Time = st,
@@ -82,7 +76,7 @@ namespace BusSchedule.Core.GTFS
             return schedule;
         }
 
-        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction, DateTime date)
+        public static async Task<List<TimetableTuple>> GetSchedule(IDataProvider dataProvider, Routes route, string stopId, int direction, DateTime date)
         {
             var schedule = new List<TimetableTuple>();
             var serviceId = await GetServiceIdForDate(date, dataProvider);
@@ -91,7 +85,7 @@ namespace BusSchedule.Core.GTFS
             var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
             foreach (var trip in tripsForRoute)
             {
-                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, stopId)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
                 var item = stopTimes.Select(st => new TimetableTuple
                 {
                     Time = st,
@@ -113,7 +107,7 @@ namespace BusSchedule.Core.GTFS
             return await dataProvider.GetServiceIdByWeekDay(date.DayOfWeek);
         }
 
-        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, Stops station, int direction)
+        public static async Task<Dictionary<string, List<TimetableTuple>>> GetSchedule(IDataProvider dataProvider, Routes route, string stopId, int direction)
         {
             var schedule = new Dictionary<string, List<TimetableTuple>>();
             var calendar = await dataProvider.GetCalendar();
@@ -126,7 +120,7 @@ namespace BusSchedule.Core.GTFS
                 var desc = await dataProvider.GetRouteDescriptionForTrips(tripsForRoute);
                 foreach (var trip in tripsForRoute)
                 {
-                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, station.Stop_Id)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
+                    var stopTimes = (await dataProvider.GetStopTimesForTrip(trip.Trip_Id, stopId)).Select(stopTime => TimeSpan.Parse(stopTime.Arrival_Time));
                     var item = stopTimes.Select(st => new TimetableTuple
                     {
                         Time = st,

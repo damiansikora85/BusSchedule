@@ -23,6 +23,7 @@ namespace BusSchedule.Core.UI.ViewModels
 
         public string Name => _stop.Stop_Name;
         public Location StopLocation { get; }
+        public string StopId => _stop.Stop_Id;
 
         public RouteStopViewModel(Stops stop, bool isFirst, bool isLast, Route_Stop.StopType type)
         {

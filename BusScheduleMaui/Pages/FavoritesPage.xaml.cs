@@ -33,7 +33,7 @@ public partial class FavoritesPage : ContentPage
     {
         if (e.CurrentSelection.First() is FavoriteData favoriteData)
         {
-            var page = new TimetablePage(favoriteData.Stop, favoriteData.Route, favoriteData.Direction);
+            var page = new TimetablePage(new Core.UI.ViewModels.RouteStopViewModel(favoriteData.Stop, false, false, Core.Model.Route_Stop.StopType.Normal), favoriteData.Route, favoriteData.Direction);
             await Navigation.PushAsync(page);
         }
     }

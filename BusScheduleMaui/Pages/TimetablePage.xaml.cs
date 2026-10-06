@@ -3,6 +3,7 @@ using BusSchedule.Core.Model;
 using BusSchedule.Core.Services;
 using BusSchedule.Core.UI.Pages;
 using BusSchedule.Core.UI.Utils;
+using BusSchedule.Core.UI.ViewModels;
 using BusSchedule.Core.Utils;
 using BusSchedule.Interfaces.Implementation;
 using TinyIoC;
@@ -14,13 +15,13 @@ namespace BusSchedule.Pages
     {
         private TimetableViewModel _viewModel;
 
-        public TimetablePage(Stops station, Routes route, int? direction)
+        public TimetablePage(RouteStopViewModel station, Routes route, int? direction)
         {
             Shell.SetTabBarIsVisible(this, false);
             InitializeComponent();
             _viewModel = new TimetableViewModel(route, station, direction, TinyIoCContainer.Current.Resolve<IDataProvider>(), new FavoritesManager());
             BindingContext = _viewModel;
-            Title = station.Stop_Name;
+            Title = station.Name;
             SetupToolbar();
         }
 

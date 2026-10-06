@@ -2,6 +2,7 @@
 using BusSchedule.Core.Interfaces;
 using BusSchedule.Core.Model;
 using BusSchedule.Core.UI.Utils;
+using BusSchedule.Core.UI.ViewModels;
 using BusSchedule.Core.Utils;
 using System.ComponentModel;
 
@@ -11,8 +12,8 @@ public class TimetableViewModel : INotifyPropertyChanged
 {
     public Routes Route { get; private set; }
     public string Direction { get; private set; }
-    public string StopName => Station.Stop_Name;
-    public Stops Station { get; private set; }
+    public string StopName => Station.Name;
+    public RouteStopViewModel Station { get; private set; }
     public bool HasDirection => _direction.HasValue;
 
     private readonly IDataProvider _dataProvider;
@@ -32,7 +33,7 @@ public class TimetableViewModel : INotifyPropertyChanged
 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public TimetableViewModel(Routes route, Stops station, int? direction, IDataProvider dataProvider, IFavoritesManager favoritesManager)
+    public TimetableViewModel(Routes route, RouteStopViewModel station, int? direction, IDataProvider dataProvider, IFavoritesManager favoritesManager)
     {
         Route = route;
         Station = station;
@@ -70,17 +71,17 @@ public class TimetableViewModel : INotifyPropertyChanged
 
     public bool IsOnFavoritesList()
     {
-        return _favoritesManager.IsOnList(Route.Route_Id, Station.Stop_Id);
+        return _favoritesManager.IsOnList(Route.Route_Id, Station.StopId);
     }
 
     public void AddThisToFavorites()
     {
-        _favoritesManager.Add(Route.Route_Id, Station.Stop_Id, _direction);
+        _favoritesManager.Add(Route.Route_Id, Station.StopId, _direction);
     }
 
     private async Task<IList<TimetableTuple>> GetScheduleForDay()
     {
-        return _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station, _direction.Value, SelectedDay.Date) : await GtfsUtils.GetSchedule(_dataProvider, Route, Station, SelectedDay.Date); ;
+        return _direction.HasValue ? await GtfsUtils.GetSchedule(_dataProvider, Route, Station.StopId, _direction.Value, SelectedDay.Date) : await GtfsUtils.GetSchedule(_dataProvider, Route, Station.StopId, SelectedDay.Date); ;
     }
 
     private List<Trip_Description> ParseLegend(IEnumerable<Trip_Description> legendData)

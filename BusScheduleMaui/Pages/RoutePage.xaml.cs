@@ -1,5 +1,6 @@
 using BusSchedule.Core.Model;
 using BusSchedule.Core.Services;
+using BusSchedule.Core.UI.ViewModels;
 using BusSchedule.Core.Utils;
 using BusSchedule.UI.ViewModels;
 using Microsoft.Maui.Controls.Maps;
@@ -137,7 +138,7 @@ public partial class RoutePage : ContentPage
 
     private async void OnStationSelected(object sender, SelectionChangedEventArgs e)
     {
-        if (e.CurrentSelection.First() is Stops station)
+        if (e.CurrentSelection.First() is RouteStopViewModel station)
         {
             await ShowScheduleForStop(station);
         }
@@ -145,13 +146,13 @@ public partial class RoutePage : ContentPage
 
     private async void Pin_MarkerClicked(object sender, PinClickedEventArgs e)
     {
-        if (sender is Pin pin && pin.BindingContext is Stops stop)
+        if (sender is Pin pin && pin.BindingContext is RouteStopViewModel stop)
         {
             await ShowScheduleForStop(stop);
         }
     }
 
-    private async Task ShowScheduleForStop(Stops station)
+    private async Task ShowScheduleForStop(RouteStopViewModel station)
     {
         try
         {
