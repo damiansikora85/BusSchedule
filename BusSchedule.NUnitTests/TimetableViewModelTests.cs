@@ -21,7 +21,7 @@ namespace BusSchedule.NUnitTests
         public void IsOnFavoritesList_ReturnsTrueWhenRouteAndStopAreFavorite()
         {
             var route = new Routes { Route_Id = "R1" };
-            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Stop 1" };
+            var stop = new Core.UI.ViewModels.RouteStopViewModel(new Stops { Stop_Id = "S1", Stop_Name = "Stop 1", Stop_Lat = "10.5", Stop_Lon = "20.5" }, false, false, Route_Stop.StopType.Normal);
             var favoritesManagerMock = new Mock<IFavoritesManager>();
             favoritesManagerMock.Setup(x => x.IsOnList("R1", "S1")).Returns(true);
 
@@ -34,7 +34,7 @@ namespace BusSchedule.NUnitTests
         public void AddThisToFavorites_CallsFavoritesManagerAddWithCurrentRouteStopAndDirection()
         {
             var route = new Routes { Route_Id = "R1" };
-            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Stop 1" };
+            var stop = new Core.UI.ViewModels.RouteStopViewModel(new Stops { Stop_Id = "S1", Stop_Name = "Stop 1", Stop_Lat = "10.5", Stop_Lon = "20.5" }, false, false, Route_Stop.StopType.Normal);
             var favoritesManagerMock = new Mock<IFavoritesManager>();
 
             var viewModel = new TimetableViewModel(route, stop, 1, Mock.Of<IDataProvider>(), favoritesManagerMock.Object);
@@ -49,8 +49,9 @@ namespace BusSchedule.NUnitTests
         {
             // Arrange
             var route = new Routes { Route_Id = "R1" };
-            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Station A" };
-            int? direction = 0;
+            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Station A", Stop_Lat = "10.5", Stop_Lon = "20.5" };
+            var routeStopVM = new Core.UI.ViewModels.RouteStopViewModel(stop, false, false, Route_Stop.StopType.Normal);
+            int ? direction = 0;
 
             var dataProviderMock = new Mock<IDataProvider>();
 
@@ -103,7 +104,7 @@ namespace BusSchedule.NUnitTests
 
             var favoritesMock = new Mock<IFavoritesManager>();
 
-            var vm = new TimetableViewModel(route, stop, direction, dataProviderMock.Object, favoritesMock.Object);
+            var vm = new TimetableViewModel(route, routeStopVM, direction, dataProviderMock.Object, favoritesMock.Object);
 
             // Act
             await vm.RefreshTimetableAsync();
@@ -121,7 +122,7 @@ namespace BusSchedule.NUnitTests
         public void ParseLegend_RemovesDuplicateShortDescriptions()
         {
             var route = new Routes { Route_Id = "R1" };
-            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Stop 1" };
+            var stop = new Core.UI.ViewModels.RouteStopViewModel(new Stops { Stop_Id = "S1", Stop_Name = "Stop 1", Stop_Lat = "10.5", Stop_Lon = "20.5" }, false, false, Route_Stop.StopType.Normal);
             var viewModel = new TimetableViewModel(route, stop, null, Mock.Of<IDataProvider>(), Mock.Of<IFavoritesManager>());
 
             var legendItems = new List<Trip_Description>
@@ -142,7 +143,7 @@ namespace BusSchedule.NUnitTests
         public void Setup_GroupsTimetableTuplesByHourAndIncludesAdditionalInfo()
         {
             var route = new Routes { Route_Id = "R1" };
-            var stop = new Stops { Stop_Id = "S1", Stop_Name = "Stop 1" };
+            var stop = new Core.UI.ViewModels.RouteStopViewModel(new Stops { Stop_Id = "S1", Stop_Name = "Stop 1", Stop_Lat = "10.5", Stop_Lon = "20.5" }, false, false, Route_Stop.StopType.Normal);
             var viewModel = new TimetableViewModel(route, stop, null, Mock.Of<IDataProvider>(), Mock.Of<IFavoritesManager>());
 
             var tuples = new List<TimetableTuple>
