@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOTNETVERSION: 10.0.100
+  DOTNETVERSION: 11.0.10
 
 jobs:
   buildAndroid:
