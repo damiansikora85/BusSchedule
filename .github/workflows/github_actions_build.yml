@@ -54,6 +54,9 @@ jobs:
       - name: Run NUnit unit tests
         run: dotnet test BusSchedule.NUnitTests/BusSchedule.NUnitTests.csproj --configuration Release --no-restore
 
+      - name: Restore Android ReadyToRun packages
+        run: dotnet restore BusScheduleMaui/BusScheduleMaui.csproj -p:Configuration=Release -p:PublishReadyToRun=true
+
       - name: Setup project secrets
         shell: pwsh
         env:
